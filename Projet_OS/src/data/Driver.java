@@ -1,7 +1,5 @@
 package data;
 
-import java.util.HashMap;
-
 public abstract class Driver {
 	
 	/*
@@ -14,7 +12,7 @@ public abstract class Driver {
 		
 	private String driverID;
 	private Interaction authorization;
-	private HashMap<String, Peripheral> linkperipheral;
+	private String linkperipheral;
 	// --------------------------------------
 	// Methods
 	// --------------------------------------
@@ -24,13 +22,40 @@ public abstract class Driver {
 	 * 
 	 *  peripheral that are connected to it
 	 */
-	public Driver(String driverID, Interaction authorization, HashMap<String, Peripheral> linkperipheral) {
+	
+	// This is the constructor of the driver class 
+	public Driver(String driverID, Interaction authorization, String linkperipheral) {
+		this.setDriverID(driverID);
+		this.setAuthorization(authorization);
+		this.setLinkperipheral(linkperipheral);
+	}
+
+	// getters and setters
+	public String getDriverID() {
+		return driverID;
+	}
+
+	public void setDriverID(String driverID) {
 		this.driverID = driverID;
+	}
+
+	public Interaction getAuthorization() {
+		return authorization;
+	}
+
+	public void setAuthorization(Interaction authorization) {
 		this.authorization = authorization;
+	}
+
+	public String getLinkperipheral() {
+		return linkperipheral;
+	}
+
+	public void setLinkperipheral(String linkperipheral) {
 		this.linkperipheral = linkperipheral;
 	}
 	
-	// getters and setters
+	
 	
 	
 }

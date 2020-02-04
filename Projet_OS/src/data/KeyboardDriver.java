@@ -1,12 +1,10 @@
 package data;
 
-import java.util.HashMap;
-
 public class KeyboardDriver extends Driver{
 	/*
 	 *  This class is the driver of the Keyboard class, and have to translate the coded input
 	 *  
-	 * 	of the keyboard to what has been really written
+	 * 	of the keyboard to what have been really written
 	 */
 	
 	// --------------------------------------
@@ -19,7 +17,7 @@ public class KeyboardDriver extends Driver{
 	// Methods
 	// --------------------------------------
 	
-	public KeyboardDriver(String driverID, Interaction authorization, HashMap<String, Peripheral> linkperipheral) {
+	public KeyboardDriver(String driverID, Interaction authorization, String linkperipheral) {
 		super(driverID, authorization, linkperipheral);
 	}
 	
@@ -33,6 +31,8 @@ public class KeyboardDriver extends Driver{
 		}
 		return translated;
 	}
+	
+	// Getters and setters
 
 	public String getInput() {
 		return input;

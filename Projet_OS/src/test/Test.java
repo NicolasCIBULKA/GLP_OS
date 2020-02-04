@@ -7,10 +7,10 @@ import data.*;
 public class Test {
 
 	public static void main(String[] args) {
-		HashMap<String, Peripheral> hmp = new HashMap<String, Peripheral>();
+		String idkeyboard = "kb";
 		Interaction per = new Interaction();
 		Keyboard kb = new Keyboard("kb_1");
-		KeyboardDriver kbd = new KeyboardDriver("kbd_1", per, hmp);
+		KeyboardDriver kbd = new KeyboardDriver("kbd_1", per, idkeyboard);
 		String s;
 		for(int i = 0; i<5 ; i++ ) {
 			kb.keyinput("33");
