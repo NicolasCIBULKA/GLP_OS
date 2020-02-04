@@ -11,18 +11,19 @@ public class KeyboardDriver extends Driver{
 	// Attributs
 	// --------------------------------------
 	
-	private String input;
+	private Keyboard keyboard;
 	
 	// --------------------------------------
 	// Methods
 	// --------------------------------------
 	
-	public KeyboardDriver(String driverID, Interaction authorization, String linkperipheral) {
-		super(driverID, authorization, linkperipheral);
+	public KeyboardDriver(String driverID, Interaction authorization, Keyboard keyboard) {
+		super(driverID, authorization);
+		this.keyboard = keyboard;
 	}
 	
-	public String translate(String input) {
-		String[] tabinput = input.split(";");
+	public String translate() {
+		String[] tabinput = keyboard.toString().split(";");
 		String translated = "";
 		int intascii;
 		for(int i = 0; i< tabinput.length; i++) {
@@ -32,14 +33,5 @@ public class KeyboardDriver extends Driver{
 		return translated;
 	}
 	
-	// Getters and setters
-
-	public String getInput() {
-		return input;
-	}
-
-	public void setInput(String input) {
-		this.input = input;
-	}
 	
 }
