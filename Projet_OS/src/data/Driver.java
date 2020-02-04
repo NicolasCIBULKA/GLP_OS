@@ -3,7 +3,7 @@ package data;
 public abstract class Driver {
 	
 	/*
-	 * 
+	 * This is the abstract class Driver
 	 */
 	
 	// --------------------------------------
@@ -12,7 +12,6 @@ public abstract class Driver {
 		
 	private String driverID;
 	private Interaction authorization;
-	private String linkperipheral;
 	// --------------------------------------
 	// Methods
 	// --------------------------------------
@@ -24,10 +23,9 @@ public abstract class Driver {
 	 */
 	
 	// This is the constructor of the driver class 
-	public Driver(String driverID, Interaction authorization, String linkperipheral) {
+	public Driver(String driverID, Interaction authorization) {
 		this.setDriverID(driverID);
 		this.setAuthorization(authorization);
-		this.setLinkperipheral(linkperipheral);
 	}
 
 	// getters and setters
@@ -46,16 +44,6 @@ public abstract class Driver {
 	public void setAuthorization(Interaction authorization) {
 		this.authorization = authorization;
 	}
-
-	public String getLinkperipheral() {
-		return linkperipheral;
-	}
-
-	public void setLinkperipheral(String linkperipheral) {
-		this.linkperipheral = linkperipheral;
-	}
-	
-	
 	
 	
 }
