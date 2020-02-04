@@ -7,6 +7,7 @@ public class HardDisk extends Peripheral {
 
 	public HardDisk(int maxCharacters, String peripheralid) {
 		
+		super(perpheralid);
 		this.maxCharacters = maxCharacters;
 		isRunning = true;
 		content = "";
