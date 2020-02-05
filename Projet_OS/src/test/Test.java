@@ -1,25 +1,42 @@
 package test;
 
-import java.util.HashMap;
-
-import data.*;
+import data.drivers.*;
+import data.peripheral.*;
 
 public class Test {
 
 	public static void main(String[] args) {
-		String idkeyboard = "kb";
+		// test du clavier
 		Interaction per = new Interaction();
 		Keyboard kb = new Keyboard("kb_1");
-		KeyboardDriver kbd = new KeyboardDriver("kbd_1", per, idkeyboard);
-		String s;
+		KeyboardDriver kbd = new KeyboardDriver("kbd_1", per, kb);
+		
+		System.out.println("----------------------------------------");
+		System.out.println("Test du clavier");
+		System.out.println("----------------------------------------");
+		
 		for(int i = 0; i<5 ; i++ ) {
 			kb.keyinput("33");
 		}
 		System.out.println(kb.toString());
-		 
-		s = kb.toString();
-		 
-		System.out.println(kbd.translate(s));
+				 
+		System.out.println(kbd.translate());
+		
+		// test de l'ecran
+		
+		System.out.println("----------------------------------------");
+		System.out.println("Test de l'ecran");
+		System.out.println("----------------------------------------");
+		
+		Screen sc = new Screen("sc_1");
+		ScreenDriver scd = new ScreenDriver("scd_1", per, sc);
+		scd.addStringScreen(kbd.translate());
+		System.out.println("Screen content:" + scd.toString());
+		scd.addStringScreen("ceci est un test");
+		System.out.println("Screen content:" + scd.toString());
+		
+		scd.resetScreen();
+		System.out.println("Screen content:" + scd.toString());
 	}
 
 }

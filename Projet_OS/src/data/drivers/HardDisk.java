@@ -1,19 +1,32 @@
-package data;
+package data.drivers;
+
+
 public class HardDisk extends Peripheral {
+	
+	
 	int maxCharacters; // Maximum capacity in number of characters
 	String content;
 	int usedSpace; // Space used in number of characters
 	boolean isRunning;
+	boolean canAddContent;
 
 	public HardDisk(int maxCharacters, String peripheralid) {
-		
-		super(perpheralid);
+		super(peripheralid);
 		this.maxCharacters = maxCharacters;
 		isRunning = true;
 		content = "";
 		usedSpace = 0;
+		canAddContent = true;
 		
 		
+	}
+
+	public boolean isCanAddContent() {
+		return canAddContent;
+	}
+
+	public void setCanAddContent(boolean canAddContent) {
+		this.canAddContent = canAddContent;
 	}
 
 	public int getMaxCharacters() {
@@ -32,7 +45,7 @@ public class HardDisk extends Peripheral {
 	public void setContent(String content) {
 		this.content = content;
 	}
-
+	
 	public int getUsedSpace() {
 		return usedSpace;
 	}

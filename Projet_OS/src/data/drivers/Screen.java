@@ -1,11 +1,12 @@
-package data;
+package data.drivers;
 
-public class Screen {
+public class Screen extends Peripheral{
 	/*
 	 * This class is the screen of the OS, and will stock all the 
 	 * 
 	 * past inputs of the Keyboard
 	 * 
+	 * @Author Nicolas CIBULKA
 	 */
 	
 	// --------------------------------------
@@ -20,7 +21,8 @@ public class Screen {
 	// --------------------------------------
 	
 	// This is the constructor of the Screen
-	public Screen() {
+	public Screen(String peripheralid) {
+		super(peripheralid);
 		this.setScreencontent("");
 		this.setState(false);
 		this.setLuminosity(100);
@@ -59,6 +61,10 @@ public class Screen {
 
 	public void setTheme(String theme) {
 		this.theme = theme;
+	}
+	
+	public String toString() {
+		return screencontent;
 	}
 	
 	

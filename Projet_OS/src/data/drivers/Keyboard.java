@@ -1,4 +1,4 @@
-package data;
+package data.drivers;
 
 public class Keyboard extends Peripheral {
 	/*
@@ -17,7 +17,7 @@ public class Keyboard extends Peripheral {
 	// --------------------------------------
 	
 	/*
-	 * This is the constructor from the Keyboard classs
+	 * This is the constructor from the Keyboard class
 	 */
 	public Keyboard(String peripheralid) {
 		super(peripheralid);
