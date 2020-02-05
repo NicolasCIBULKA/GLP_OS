@@ -1,5 +1,9 @@
-package data;
+package data.drivers;
+
+
 public class HardDisk extends Peripheral {
+	
+	
 	int maxCharacters; // Maximum capacity in number of characters
 	String content;
 	int usedSpace; // Space used in number of characters

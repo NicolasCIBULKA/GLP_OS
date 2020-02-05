@@ -1,4 +1,4 @@
-package data;
+package data.peripheral;
 
 public abstract class Driver {
 	

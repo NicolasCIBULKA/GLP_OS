@@ -1,6 +1,7 @@
 package test;
 
-import data.*;
+import data.drivers.*;
+import data.peripheral.*;
 
 public class Test {
 
