@@ -15,6 +15,15 @@ public class Point {
 		ordonnee=0;
 	}
 	
+	public boolean equals(Point p) {
+		if((p.getAbscisse()==this.abscisse)&&(p.getOrdonnee()==this.ordonnee)){
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+	
 	
 	/*
 	 * method using a vector coordinates to move the point

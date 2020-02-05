@@ -4,38 +4,57 @@ import data.Interaction;
 public class MouseDriver extends Driver{
 
 	/*
-	 * the driver is supposed to tell that the mouse is moving,
-	 * tell where the mouse is,
-	 * and not moving it if the bound of the screen is reached.
-	 * the constant value MAXVALUE represents the format of the screen,
-	 * it's value might change in other version.
+	 * the driver is supposed to tell where the mouse is. Constant values might be used
+	 * in this class. A constant values repository will be created later but
+	 * some values will be defined here for testing purpose on early versions
 	 * 
-	 * the constant value MAXVALUE may be moved in a constant repository later.
-	 * it is used here for testing purpose.
 	 * 
 	 * @version 1.0
 	 */
-	final int MAXVALUE=100;
-	final int MINVALUE=-MAXVALUE;
+	
+	private final int BASICMOVEVALUE=1;
 	
 	private Mouse mouse;
+	private Point registeredPosition;
 
 	
 	public MouseDriver(String driverID, Interaction authorization, String linkperipheral, Mouse mouse) {
 		super(driverID, authorization, linkperipheral);
 		this.mouse=mouse;
+		registeredPosition=mouse.getPosition();
+	}
+	/*
+	 * test constructor
+	 */
+	public MouseDriver(Mouse mouse) {
+		this.mouse=mouse;
+		registeredPosition=mouse.getPosition();
 	}
 	
 	
-	public void move(int abs, int ord){
-		if((mouse.getPosition().getAbscisse()>=MINVALUE)&&(mouse.getPosition().getAbscisse()<=MAXVALUE)) {
-			mouse.getPosition().move(abs, 0);
-			if((mouse.getPosition().getOrdonnee()>=MINVALUE)&&(mouse.getPosition().getOrdonnee()<=MAXVALUE)) {
-				mouse.getPosition().move(0, ord);
-			}
-		}
-		else if((mouse.getPosition().getOrdonnee()>=MINVALUE)&&(mouse.getPosition().getOrdonnee()<=MAXVALUE)) {
-			mouse.getPosition().move(0, ord);
-		}
+	/*
+	 * move methods: up, down, left, right
+	 * might add a click method later
+	 * 
+	 * @author rédouane débart
+	 */
+	
+	public void moveUp() {
+		registeredPosition.setOrdonnee(registeredPosition.getOrdonnee()+BASICMOVEVALUE);
 	}
+	
+	public void moveDown() {
+		registeredPosition.setOrdonnee(registeredPosition.getOrdonnee()-BASICMOVEVALUE);
+	}
+	
+	public void moveLeft() {
+		registeredPosition.setAbscisse(registeredPosition.getAbscisse()-BASICMOVEVALUE);
+	}
+	
+	public void moveRight(){
+		registeredPosition.setAbscisse(registeredPosition.getAbscisse()+BASICMOVEVALUE);
+	}
+	
+	
+	
 }
