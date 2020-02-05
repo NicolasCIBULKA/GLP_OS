@@ -12,23 +12,19 @@ public class MouseDriver extends Driver{
 	 * @version 1.0
 	 */
 	
-	private final int BASICMOVEVALUE=1;
 	
 	private Mouse mouse;
-	private Point registeredPosition;
 
 	
 	public MouseDriver(String driverID, Interaction authorization, String linkperipheral, Mouse mouse) {
 		super(driverID, authorization, linkperipheral);
 		this.mouse=mouse;
-		registeredPosition=mouse.getPosition();
 	}
 	/*
 	 * test constructor
 	 */
 	public MouseDriver(Mouse mouse) {
 		this.mouse=mouse;
-		registeredPosition=mouse.getPosition();
 	}
 	
 	
@@ -40,21 +36,19 @@ public class MouseDriver extends Driver{
 	 */
 	
 	public void moveUp() {
-		registeredPosition.setOrdonnee(registeredPosition.getOrdonnee()+BASICMOVEVALUE);
+		mouse.moveUp();
 	}
 	
 	public void moveDown() {
-		registeredPosition.setOrdonnee(registeredPosition.getOrdonnee()-BASICMOVEVALUE);
+		mouse.moveDown();
 	}
 	
 	public void moveLeft() {
-		registeredPosition.setAbscisse(registeredPosition.getAbscisse()-BASICMOVEVALUE);
+		mouse.moveLeft();
 	}
 	
 	public void moveRight(){
-		registeredPosition.setAbscisse(registeredPosition.getAbscisse()+BASICMOVEVALUE);
+		mouse.moveRight();
 	}
-	
-	
 	
 }

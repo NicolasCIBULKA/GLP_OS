@@ -2,6 +2,8 @@ package data;
 
 public class Point {
 	
+	private final int BASICMOVEVALUE=1;
+	
 	private int abscisse;
 	private int ordonnee;
 	
@@ -40,24 +42,24 @@ public class Point {
 	 * methods that move the point by incrementing one coordinate.
 	 * it will be used if the simulated mouse is moved with a cross to move in
 	 * only one direction at a time.
-	 * 
+	 * added basic move value
 	 * @author rédouane débart
 	 */
 	
 	void moveUp() {
-		ordonnee++;
+		ordonnee+=BASICMOVEVALUE;
 	}
 	
 	void moveDown() {
-		ordonnee--;
+		ordonnee-=BASICMOVEVALUE;
 	}
 	
 	void moveRight(){
-		abscisse++;
+		abscisse+=BASICMOVEVALUE;
 	}
 	
 	void moveLeft() {
-		abscisse--;
+		abscisse-=BASICMOVEVALUE;
 	}
 
 	
