@@ -4,6 +4,8 @@ package data.peripheral;
 public class Interaction {
 	/*
 	 * This class regulate the reading, writing and executing access
+	 * 
+	 * @Author Nicolas CIBULKA
 	 */
 
 	// --------------------------------------

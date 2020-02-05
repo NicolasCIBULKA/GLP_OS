@@ -6,6 +6,7 @@ public class Screen extends Peripheral{
 	 * 
 	 * past inputs of the Keyboard
 	 * 
+	 * @Author Nicolas CIBULKA
 	 */
 	
 	// --------------------------------------

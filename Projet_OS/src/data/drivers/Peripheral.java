@@ -3,6 +3,8 @@ package data.drivers;
 public abstract class Peripheral {
 	/**
 	 * All the peripheral inherit of this abstract class to get their id
+	 * 
+	 * @Author Nicolas CIBULKA
 	 */
 	
 	// --------------------------------------

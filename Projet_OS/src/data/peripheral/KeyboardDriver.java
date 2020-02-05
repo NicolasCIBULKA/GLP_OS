@@ -7,6 +7,8 @@ public class KeyboardDriver extends Driver{
 	 *  This class is the driver of the Keyboard class, and have to translate the coded input
 	 *  
 	 * 	of the keyboard to what have been really written
+	 * 
+	 * @Author Nicolas CIBULKA
 	 */
 	
 	// --------------------------------------

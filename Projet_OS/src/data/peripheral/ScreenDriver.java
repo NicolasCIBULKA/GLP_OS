@@ -5,6 +5,8 @@ import data.drivers.Screen;
 public class ScreenDriver extends Driver{
 	/*
 	 *  This is the driver of the peripheral Screen
+	 *  
+	 *  @Author Nicolas CIBULKA
 	 */
 	
 	// --------------------------------------

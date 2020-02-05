@@ -4,6 +4,8 @@ public abstract class Driver {
 	
 	/*
 	 * This is the abstract class Driver
+	 * 
+	 * @Author Nicolas CIBULKA
 	 */
 	
 	// --------------------------------------
