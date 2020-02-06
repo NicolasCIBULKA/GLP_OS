@@ -1,6 +1,6 @@
-package data.peripheral;
+package data.drivers;
 
-import data.drivers.HardDisk;
+import data.peripheral.HardDisk;
 
 public class HardDiskDriver extends Driver{
 

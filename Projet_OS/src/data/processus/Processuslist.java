@@ -6,7 +6,7 @@ public class Processuslist {
 	/*
 	 * This is the class that agregates all the processus, and will be used for Roud robin treatment 
 	 * 
-	 * @Author Nicolas CIBULKA
+	 * @author Nicolas CIBULKA
 	 */
 	
 	// --------------------------------------
@@ -19,7 +19,16 @@ public class Processuslist {
 	
 	// Constructor of the Processuslist class
 	public Processuslist() {
-		this.Processuslist = new ArrayList<Processus>();
+		this.setProcessuslist(new ArrayList<Processus>());
+	}
+
+	// getters and setters
+	public ArrayList<Processus> getProcessuslist() {
+		return Processuslist;
+	}
+
+	public void setProcessuslist(ArrayList<Processus> processuslist) {
+		Processuslist = processuslist;
 	}
 	
 	

@@ -1,5 +1,7 @@
-package data;
-import data.Interaction;
+package data.drivers;
+
+import data.peripheral.*;
+
 
 public class MouseDriver extends Driver{
 
@@ -17,16 +19,18 @@ public class MouseDriver extends Driver{
 
 	
 	public MouseDriver(String driverID, Interaction authorization, String linkperipheral, Mouse mouse) {
-		super(driverID, authorization, linkperipheral);
+		super(driverID, authorization);
 		this.mouse=mouse;
 	}
 	/*
 	 * test constructor
 	 */
+	
+	/*
 	public MouseDriver(Mouse mouse) {
 		this.mouse=mouse;
 	}
-	
+	*/
 	
 	/*
 	 * move methods: up, down, left, right

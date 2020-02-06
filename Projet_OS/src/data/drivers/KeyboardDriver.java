@@ -1,6 +1,6 @@
-package data.peripheral;
+package data.drivers;
 
-import data.drivers.Keyboard;
+import data.peripheral.Keyboard;
 
 public class KeyboardDriver extends Driver{
 	/*
