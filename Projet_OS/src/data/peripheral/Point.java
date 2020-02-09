@@ -1,4 +1,4 @@
-package data;
+package data.peripheral;
 
 public class Point {
 	

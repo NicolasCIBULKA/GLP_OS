@@ -1,5 +1,5 @@
-package data;
-import data.Interaction;
+package data.drivers;
+import data.peripheral.*;
 
 public class MouseDriver extends Driver{
 
@@ -54,3 +54,4 @@ public class MouseDriver extends Driver{
 		return mouse.getPosition();
 	}
 }
+
