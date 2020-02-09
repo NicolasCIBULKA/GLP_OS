@@ -2,8 +2,6 @@ package test;
 
 import data.drivers.*;
 import data.peripheral.*;
-import data.processus.*;
-import data.operation.*;
 
 public class Test {
 
@@ -39,6 +37,7 @@ public class Test {
 		
 		scd.resetScreen();
 		System.out.println("Screen content:" + scd.toString());
+
 		
 		// test des operations
 		System.out.println("----------------------------------------");
@@ -56,8 +55,6 @@ public class Test {
 		System.out.println("Test de la multiplication");
 		Arithmeticaloperation c = new Multiplication(2,4);
 		System.out.println(c.calculate());
-		
-		// 
-	}
+	
 
 }

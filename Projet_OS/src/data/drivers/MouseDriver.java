@@ -2,7 +2,6 @@ package data.drivers;
 
 import data.peripheral.*;
 
-
 public class MouseDriver extends Driver{
 
 	/*
@@ -18,19 +17,13 @@ public class MouseDriver extends Driver{
 	private Mouse mouse;
 
 	
-	public MouseDriver(String driverID, Interaction authorization, String linkperipheral, Mouse mouse) {
+	public MouseDriver(String driverID, Interaction authorization, Mouse mouse) {
 		super(driverID, authorization);
 		this.mouse=mouse;
 	}
-	/*
-	 * test constructor
-	 */
+
+
 	
-	/*
-	public MouseDriver(Mouse mouse) {
-		this.mouse=mouse;
-	}
-	*/
 	
 	/*
 	 * move methods: up, down, left, right
@@ -54,5 +47,8 @@ public class MouseDriver extends Driver{
 	public void moveRight(){
 		mouse.moveRight();
 	}
-	
+	public Point clic() {
+		return mouse.getPosition();
+	}
 }
+

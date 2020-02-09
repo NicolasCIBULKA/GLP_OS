@@ -7,7 +7,7 @@ public class Processus {
 	/*
 	 * This class contains all the operations of a processus in the arrayList
 	 * 
-	 * @author Nicolas CIBULKA
+	 * @Author Nicolas CIBULKA
 	 * 
 	 */
 	

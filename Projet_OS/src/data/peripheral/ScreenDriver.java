@@ -1,6 +1,6 @@
-package data.drivers;
+package data.peripheral;
 
-import data.peripheral.Screen;
+import data.drivers.Screen;
 
 public class ScreenDriver extends Driver{
 	/*

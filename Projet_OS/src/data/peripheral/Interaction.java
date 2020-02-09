@@ -1,4 +1,4 @@
-package data.drivers;
+package data.peripheral;
 
 
 public class Interaction {

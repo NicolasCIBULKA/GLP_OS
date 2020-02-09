@@ -1,6 +1,6 @@
 package data.processus;
 
-public abstract class Operation extends Processus{
+public abstract class Operation {
 	/*
 	 * This is the abstract class Operation, that allow us to 
 	 * 
@@ -8,7 +8,7 @@ public abstract class Operation extends Processus{
 	 * 
 	 *  of all the different operations
 	 *  
-	 *  @author Nicolas CIBULKA
+	 *  @Author Nicolas CIBULKA
 	 */
 	
 	// --------------------------------------
@@ -32,10 +32,6 @@ public abstract class Operation extends Processus{
 	public void setOperationpriority(int operationpriority) {
 		this.operationpriority = operationpriority;
 	}
-
-	
-	
-	
 	
 	
 	
