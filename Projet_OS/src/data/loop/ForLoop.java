@@ -4,22 +4,19 @@ import java.util.ArrayList;
 
 import data.processus.Operation;
 
-public class ForLoop extends LoopOperation{
+public abstract class ForLoop extends LoopOperation{
 	/*
 	 * @author Nicolas CIBULKA
 	 */
 	
-	// --------------------------------------
-	// Attributs
-	// --------------------------------------
-	private ArrayList<Operation> operations;
 	private int iternumber;
+	private int iterstart;
 	// --------------------------------------
 	// Methods
 	// --------------------------------------
 	
 	// Constructor of the ForLoop Class
-	public ForLoop(ArrayList<Operation> operations, int iternumber) {
+	public ForLoop(ArrayList<Operation> operations, int iternumber, int iterstart) {
 		super(operations);
 		this.setIternumber(iternumber);
 	}
@@ -34,11 +31,21 @@ public class ForLoop extends LoopOperation{
 		this.iternumber = iternumber;
 	}
 	
+
+	public int getIterstart() {
+		return iterstart;
+	}
+
+	public void setIterstart(int iterstart) {
+		this.iterstart = iterstart;
+	}
+	
 	// Execution of the for loop
 	
 	public void execute() {
-		for(int i = 0; i < this.getIternumber() - 1; i++) {
+		for(int i = this.getIterstart(); i < this.getIternumber() - 1; i++) {
 			this.getOperations().get(i);
 		}
 	}
+
 }
