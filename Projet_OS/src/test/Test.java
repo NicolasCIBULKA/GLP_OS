@@ -1,6 +1,10 @@
 package test;
 
 import data.drivers.*;
+import data.operation.Addition;
+import data.operation.Arithmeticaloperation;
+import data.operation.Multiplication;
+import data.operation.Substraction;
 import data.peripheral.*;
 
 public class Test {
@@ -55,6 +59,5 @@ public class Test {
 		System.out.println("Test de la multiplication");
 		Arithmeticaloperation c = new Multiplication(2,4);
 		System.out.println(c.calculate());
-	
-
+	}
 }
