@@ -50,5 +50,7 @@ public class MouseDriver extends Driver{
 	public void moveRight(){
 		mouse.moveRight();
 	}
-	
+	public Point clic() {
+		return mouse.getPosition();
+	}
 }
