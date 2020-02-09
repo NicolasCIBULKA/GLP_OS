@@ -46,17 +46,18 @@ public class Test {
 		System.out.println("----------------------------------------");
 		
 		System.out.println("Test de l'addition");
-		Operation a = new Addition(2, 4);
+		Arithmeticaloperation a = new Addition(2, 4);
 		System.out.println(a.calculate());
 		
 		System.out.println("Test de la soustraction");
-		Operation b = new Substraction(2,4);
+		Arithmeticaloperation b = new Substraction(2,4);
 		System.out.println(b.calculate());
 		
 		System.out.println("Test de la multiplication");
-		Operation c = new Multiplication(2,4);
+		Arithmeticaloperation c = new Multiplication(2,4);
 		System.out.println(c.calculate());
 		
+		// 
 	}
 
 }
