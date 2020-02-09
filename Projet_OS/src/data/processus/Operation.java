@@ -32,8 +32,9 @@ public abstract class Operation extends Processus{
 	public void setOperationpriority(int operationpriority) {
 		this.operationpriority = operationpriority;
 	}
-	
+
 	public abstract float calculate();
+	
 	
 	
 	
