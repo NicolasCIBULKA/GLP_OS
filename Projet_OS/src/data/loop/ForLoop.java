@@ -40,12 +40,5 @@ public abstract class ForLoop extends LoopOperation{
 		this.iterstart = iterstart;
 	}
 	
-	// Execution of the for loop
-	
-	public void execute() {
-		for(int i = this.getIterstart(); i < this.getIternumber() - 1; i++) {
-			this.getOperations().get(i);
-		}
-	}
 
 }
