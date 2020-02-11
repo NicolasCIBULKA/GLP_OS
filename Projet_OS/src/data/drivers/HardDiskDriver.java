@@ -2,14 +2,13 @@ package data.drivers;
 
 import data.peripheral.HardDisk;
 import data.peripheral.Slot;
-
 public class HardDiskDriver extends Driver{
 
 	private HardDisk hd;
 	
-	public HardDiskDriver(String driverID, Interaction authorization, HardDisk disk) {
+	public HardDiskDriver(String driverID, Interaction authorization, String linkperipheral) {
 		super(driverID, authorization);
-		this.hd = disk;
+		hd.setperipheralid(linkperipheral);
 	}
 	
 	public void hardDiskWrite(String text,int slotnumber){
@@ -49,6 +48,10 @@ public class HardDiskDriver extends Driver{
 		}
 		else {
 			hd.setCanAddContent(true);
+		}
+	}
+
+}
 		}
 	}
 
