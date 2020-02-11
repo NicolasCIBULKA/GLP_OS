@@ -1,24 +1,29 @@
-package data.drivers;
+package data.peripheral;
 
+import java.util.HashMap;
+
+import data.processus.Processus;
 
 public class HardDisk extends Peripheral {
 	
-	
-	int maxCharacters; // Maximum capacity in number of characters
-	String content;
-	int usedSpace; // Space used in number of characters
-	boolean isRunning;
-	boolean canAddContent;
+	private boolean isRunning;
+	private String content;
+	private boolean canAddContent;
+	private HashMap<Integer,Slot> slotlist;
+	private int slotnumber = 1;
 
-	public HardDisk(int maxCharacters, String peripheralid) {
+	public HardDisk(Slot slot, String peripheralid) {
 		super(peripheralid);
-		this.maxCharacters = maxCharacters;
+		slotlist.put(slotnumber, slot);
+		slotnumber++;
 		isRunning = true;
 		content = "";
-		usedSpace = 0;
 		canAddContent = true;
-		
-		
+	}
+	public void addSlot(int size,Processus processus) {
+		Slot slot = new Slot(size,processus);
+		slotlist.put(slotnumber, slot);
+		slotnumber++;
 	}
 
 	public boolean isCanAddContent() {
@@ -29,13 +34,6 @@ public class HardDisk extends Peripheral {
 		this.canAddContent = canAddContent;
 	}
 
-	public int getMaxCharacters() {
-		return maxCharacters;
-	}
-
-	public void setMaxCharacters(int maxCharacters) {
-		this.maxCharacters = maxCharacters;
-	}
 
 
 	public String getContent() {
@@ -46,13 +44,6 @@ public class HardDisk extends Peripheral {
 		this.content = content;
 	}
 	
-	public int getUsedSpace() {
-		return usedSpace;
-	}
-
-	public void setUsedSpace(int usedSpace) {
-		this.usedSpace = usedSpace;
-	}
 
 	public boolean isRunning() {
 		return isRunning;
