@@ -1,4 +1,6 @@
-package data.drivers;
+package data.peripheral;
+
+import data.drivers.Peripheral;
 
 public class Screen extends Peripheral{
 	/*

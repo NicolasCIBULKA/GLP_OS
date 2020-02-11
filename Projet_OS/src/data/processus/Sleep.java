@@ -1,14 +1,27 @@
 package data.processus;
 
-public class Sleep {
-
-	private int quantum = 10; //  quantum of 10ms for now
+public class Sleep extends ProcessusControl {
 	
-	public Sleep(int time) throws InterruptedException {
-		Thread.sleep(time);
-		
+	
+	// --------------------------------------
+	// Attributs
+	// --------------------------------------
+	private int time; // time in ms
+	
+	// --------------------------------------
+	// Methods
+	// --------------------------------------
+	public Sleep(Processus processus, int time) {
+		super(processus);
+		this.setTime(time);
 	}
-	public void sleepRoundRobin() throws InterruptedException {
+	
+	public Sleep(Processus processus) {
+		super(processus);
+		this.setTime(1000);
+	}
+	/*
+	public void sleepRoundRobin()  {
 		Thread.sleep(quantum);
 	}
 	
@@ -18,5 +31,22 @@ public class Sleep {
 	public void setQuantum(int quantum) {
 		this.quantum = quantum;
 	}
+	 */
+	
+	// getters and setters
+	
+	public int getTime() {
+		return time;
+	}
 
+	public void setTime(int time) {
+		this.time = time;
+	}
+	// toString 
+	public String toString() {
+		return "Processus : " + this.getProcessus().getProcessusname() + " -  PID : " + this.getProcessus().getpid() + " - has been sleeped for " + this.getTime() + "ms" ;
+
+	}
+
+	
 }
