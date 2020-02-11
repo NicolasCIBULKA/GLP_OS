@@ -25,6 +25,9 @@ public class HardDisk extends Peripheral {
 		slotlist.put(slotnumber, slot);
 		slotnumber++;
 	}
+	public void eraseSlot(int slotnumber) {
+		slotlist.remove(slotnumber);
+	}
 
 	public boolean isCanAddContent() {
 		return canAddContent;
