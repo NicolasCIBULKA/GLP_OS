@@ -4,7 +4,9 @@ import data.processus.*;
 
 public class Slot {
 
-	private int size;
+	private int size = 2000; // 2000 characters
+	private String content;
+	
 	private Processus processus;
 	
 	
@@ -25,6 +27,13 @@ public class Slot {
 	}
 	public void setProcessus(Processus processus) {
 		this.processus = processus;
+	}
+	public String getContent() {
+		return content;
+	}
+
+	public void setContent(String content) {
+		this.content = content;
 	}
 	
 
