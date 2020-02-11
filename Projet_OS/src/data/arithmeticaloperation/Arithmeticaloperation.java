@@ -1,4 +1,4 @@
-package data.operation;
+package data.arithmeticaloperation;
 
 import data.processus.Operation;
 

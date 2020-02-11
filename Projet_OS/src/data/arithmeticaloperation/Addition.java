@@ -1,4 +1,4 @@
-package data.operation;
+package data.arithmeticaloperation;
 
 public class Addition extends Arithmeticaloperation{
 	/*

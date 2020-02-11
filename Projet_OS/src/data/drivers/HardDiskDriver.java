@@ -1,31 +1,51 @@
-package data.peripheral;
+package data.drivers;
 
-import data.drivers.HardDisk;
+import data.peripheral.HardDisk;
+import data.peripheral.Slot;
 
 public class HardDiskDriver extends Driver{
 
 	private HardDisk hd;
 	
-	public HardDiskDriver(String driverID, Interaction authorization, String linkperipheral) {
+	public HardDiskDriver(String driverID, Interaction authorization, HardDisk disk) {
 		super(driverID, authorization);
-		hd.setperipheralid(linkperipheral);
+		this.hd = disk;
 	}
 	
-	public void hardDiskWrite(String text){
-		checkMaxChar(text);
-		hd.setContent(text);
+	public void hardDiskWrite(String text,int slotnumber){
+		Slot slot = hd.getSlotlist().get(slotnumber);
+		try {
+			checkFullHD(text);
+		} catch (FullHDException e) {
+			e.printStackTrace();
+		}
+		int sizeSlot = slot.getSize();
+		int sizeText = text.length();
+		slot.setSize(sizeSlot - sizeText );
+		slot.setContent(text);
+		
+		
 	}
 	
-	public void hardDiskRead() {
-		hd.getContent();
+	public void hardDiskRead(int slotnumber) {
+		Slot slot = hd.getSlotlist().get(slotnumber);
+		slot.getContent();
 		
 	}
-	public void checkMaxChar(String text) {
-		int max = hd.getMaxCharacters();
-		int usedspace = hd.getUsedSpace();
+	public void checkFullHD(String text) throws FullHDException {
+		int maxslot = hd.getSlotnumber() * 2000;
+		int i;
+		Slot slot;
+		int usedSpace = 0;
+		for(i=0;i<maxslot;i++) {
+			 slot = hd.getSlotlist().get(i); 
+			 usedSpace = usedSpace + slot.getSize();
+			
+		}
 		
-		if((usedspace + text.length()) >= max) {
+		if((usedSpace) >= maxslot) {
 			hd.setCanAddContent(false);
+			throw new FullHDException();
 		}
 		else {
 			hd.setCanAddContent(true);

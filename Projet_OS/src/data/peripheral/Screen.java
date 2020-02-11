@@ -1,7 +1,5 @@
 package data.peripheral;
 
-import data.drivers.Peripheral;
-
 public class Screen extends Peripheral{
 	/*
 	 * This class is the screen of the OS, and will stock all the 

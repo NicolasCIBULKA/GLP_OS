@@ -1,10 +1,7 @@
 package test;
 
 import data.drivers.*;
-import data.operation.Addition;
-import data.operation.Arithmeticaloperation;
-import data.operation.Multiplication;
-import data.operation.Substraction;
+import data.arithmeticaloperation.*;
 import data.peripheral.*;
 
 public class Test {

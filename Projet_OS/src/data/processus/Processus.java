@@ -17,6 +17,7 @@ public class Processus {
 	private ArrayList<Operation> operationlist;
 	private int priority;
 	private int pid;
+	private String Processusname;
 	// --------------------------------------
 	// Methods
 	// --------------------------------------
@@ -43,12 +44,22 @@ public class Processus {
 		this.pid = pid;	
 	}
 	
+	public String getProcessusname() {
+		return Processusname;
+	}
+
+	public void setProcessusname(String processusname) {
+		Processusname = processusname;
+	}
+
+	
 	// Methods
 	
 	public void addOperation(Operation op) {
 		operationlist.add(op);
 	}
-	
+
+
 	
 		
 }
