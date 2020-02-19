@@ -8,7 +8,7 @@ public abstract class Operation {
 	 * 
 	 *  of all the different operations
 	 *  
-	 *  @Author Nicolas CIBULKA
+	 *  @author Nicolas CIBULKA
 	 */
 	
 	// --------------------------------------

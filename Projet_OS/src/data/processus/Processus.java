@@ -29,6 +29,11 @@ public class Processus {
 	}
 	
 	// Getters and setters
+	
+	public ArrayList<Operation> getOplist() {
+		return operationlist;
+	}
+	
 	public int getPriority() {
 		return priority;
 	}

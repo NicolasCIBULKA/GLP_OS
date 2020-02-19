@@ -12,7 +12,7 @@ public class Substraction extends Arithmeticaloperation{
 	// --------------------------------------
 	// Attributs
 	// --------------------------------------
-	
+
 	// --------------------------------------
 	// Methods
 	// --------------------------------------
@@ -22,6 +22,7 @@ public class Substraction extends Arithmeticaloperation{
 		super(a,b, result);
 	}
 	
+
 	public <T> T accept(ArrayListVisitor<T> visitor) {
 		return visitor.visit(this);
 	}

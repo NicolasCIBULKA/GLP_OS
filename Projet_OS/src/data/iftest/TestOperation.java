@@ -1,7 +1,8 @@
 package data.iftest;
 
-import java.util.ArrayList;
+import data.arithmeticaloperation.Comparaison;
 import data.processus.Operation;
+import data.processus.Processus;
 
 public abstract class TestOperation extends Operation{
 	/*
@@ -13,35 +14,45 @@ public abstract class TestOperation extends Operation{
 	// --------------------------------------
 	// Attributs
 	// --------------------------------------
-	private ArrayList<Operation> operations;
-	private String ifcondition;
+	private Processus ifproc;
+	private Processus elseproc;
+	private Comparaison comparaison;
 	// --------------------------------------
 	// Methods
 	// --------------------------------------
 	
 	// Constructor of the testOperation class
 	
-	public TestOperation(ArrayList<Operation> operations, String ifcondition) {
-		this.setOperations(operations);
-		this.setIfcondition(ifcondition);		
+	public TestOperation(Processus ifproc,Processus elseproc, Comparaison comparaison) {
+		this.setIfprocessus(ifproc);
+		this.setElseprocessus(elseproc);
+		this.setComparaison(comparaison);		
 	}
 	
 	//getters and setters
 
-	public ArrayList<Operation> getOperations() {
-		return operations;
+	public Processus getIfprocessus() {
+		return ifproc;
 	}
 
-	public void setOperations(ArrayList<Operation> operations) {
-		this.operations = operations;
+	public void setIfprocessus(Processus ifproc) {
+		this.ifproc = ifproc;
 	}
 
-	public String getIfcondition() {
-		return ifcondition;
+	public Comparaison getComparaison() {
+		return comparaison;
 	}
 
-	public void setIfcondition(String ifcondition) {
-		this.ifcondition = ifcondition;
+	public void setComparaison(Comparaison comparaison) {
+		this.comparaison = comparaison;
+	}
+
+	public Processus getElseprocessus() {
+		return elseproc;
+	}
+
+	public void setElseprocessus(Processus elseproc) {
+		this.elseproc = elseproc;
 	}
 	
 }

@@ -21,7 +21,7 @@ public class Multiplication extends Arithmeticaloperation{
 	public Multiplication(Intvariable a, Intvariable b, Intvariable result) {
 		super(a,b, result);
 	}
-
+	
 	public <T> T accept(ArrayListVisitor<T> visitor) {
 		return visitor.visit(this);
 	}

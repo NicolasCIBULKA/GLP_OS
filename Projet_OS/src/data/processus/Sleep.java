@@ -2,7 +2,7 @@ package data.processus;
 
 import process.visitor.ArrayListVisitor;
 
-public class Sleep {
+public class Sleep extends Operation{
 	
 	
 	// --------------------------------------

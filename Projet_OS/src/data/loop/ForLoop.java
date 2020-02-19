@@ -1,10 +1,8 @@
 package data.loop;
 
-import java.util.ArrayList;
+import data.processus.Processus;
 
-import data.processus.Operation;
-
-public abstract class ForLoop extends LoopOperation{
+public class ForLoop extends LoopOperation{
 	/*
 	 * @author Nicolas CIBULKA
 	 */
@@ -16,8 +14,8 @@ public abstract class ForLoop extends LoopOperation{
 	// --------------------------------------
 	
 	// Constructor of the ForLoop Class
-	public ForLoop(ArrayList<Operation> operations, int iternumber, int iterstart) {
-		super(operations);
+	public ForLoop(Processus proc, int iterstart, int iternumber) {
+		super(proc);
 		this.setIternumber(iternumber);
 	}
 	

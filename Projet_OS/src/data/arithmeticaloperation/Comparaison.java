@@ -3,8 +3,9 @@ package data.arithmeticaloperation;
 import data.variable.Intvariable;
 import process.visitor.ArrayListVisitor;
 
-public class Addition extends Arithmeticaloperation{
+public class Comparaison extends Arithmeticaloperation{
 	/*
+	 * Abstract class of the test Operations
 	 * 
 	 * @author Nicolas CIBULKA
 	 */
@@ -13,19 +14,29 @@ public class Addition extends Arithmeticaloperation{
 	// Attributs
 	// --------------------------------------
 	
+	private String comparator;
 	
 	// --------------------------------------
 	// Methods
 	// --------------------------------------
 	
-	// This is the Constructor of the class Addition
-	public Addition(Intvariable a, Intvariable b, Intvariable result) {
-		super(a,b, result);
+	public Comparaison(Intvariable a, Intvariable b, Intvariable result, String comparator) {
+		super(a, b, result);
+		this.setComparator(comparator);
 	}
+
+	// getters and setters
 	
+	public String getComparator() {
+		return comparator;
+	}
+
+	public void setComparator(String comparator) {
+		this.comparator = comparator;
+	}
+
+	@Override
 	public <T> T accept(ArrayListVisitor<T> visitor) {
 		return visitor.visit(this);
 	}
-	
-	
 }

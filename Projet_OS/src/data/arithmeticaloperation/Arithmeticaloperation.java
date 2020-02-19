@@ -44,6 +44,7 @@ public abstract class Arithmeticaloperation extends Operation{
 		this.b = b;
 	}
 	
+	
 	public Intvariable getResult() {
 		return result;
 	}

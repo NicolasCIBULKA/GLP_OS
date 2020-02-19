@@ -59,12 +59,14 @@ public class OperationVisitor implements ArrayListVisitor<Void>{
 
 	@Override
 	public Void visit(Kill node) {
+		/*
 		if(node.getKilloption() == "PAUSE") {
 			
 		}
 		else if(node.getKilloption() == "RESTART") {
 			notify();
 		}
+		*/
 		return null;
 	}
 
@@ -77,6 +79,62 @@ public class OperationVisitor implements ArrayListVisitor<Void>{
 	@Override
 	public Void visit(Pause node) {
 		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Void visit(Comparaison node) {
+		// Result is set to 0 if the comparaison is true, -1 for false
+		int a = node.getA().getContent();
+		int b = node.getB().getContent();
+		Intvariable res = new Intvariable(0);
+		if(node.getComparator().equals("==")){
+			if(a == b) {
+				res.setContent(0);
+			}
+			else {
+				res.setContent(-1);
+			}
+			
+		}
+		
+		else if(node.getComparator().equals("<")) {
+			if(a < b) {
+				res.setContent(0);
+			}
+			else {
+				res.setContent(-1);
+			}
+		}
+		
+		else if(node.getComparator().equals(">")) {
+			if(a > b) {
+				res.setContent(0);
+			}
+			else {
+				res.setContent(-1);
+			}
+		}
+		
+		else if(node.getComparator().equals("<=")) {
+			if(a <= b) {
+				res.setContent(0);
+			}
+			else {
+				res.setContent(-1);
+			}
+		}
+		
+		else if(node.getComparator().equals(">=")) {
+			if(a >= b) {
+				res.setContent(0);
+			}
+			else {
+				res.setContent(-1);
+			}
+		}
+		
+		node.setResult(res);
 		return null;
 	}
 	

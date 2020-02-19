@@ -28,5 +28,7 @@ public interface ArrayListVisitor<T> {
 	T visit(Nice node);
 	
 	T visit(Pause node);
+
+	T visit(Comparaison node);
 	
 }

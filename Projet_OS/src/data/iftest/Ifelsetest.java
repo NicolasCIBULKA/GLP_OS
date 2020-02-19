@@ -1,8 +1,7 @@
 package data.iftest;
 
-import java.util.ArrayList;
-
-import data.processus.Operation;
+import data.arithmeticaloperation.Comparaison;
+import data.processus.Processus;
 
 public class Ifelsetest extends TestOperation{
 	/*
@@ -21,8 +20,8 @@ public class Ifelsetest extends TestOperation{
 	
 	// Constructor of the if else data class
 	
-	public Ifelsetest(ArrayList<Operation> ifoperations, String ifcondition) {
-		super(ifoperations, ifcondition);
+	public Ifelsetest(Processus ifproc, Processus elseproc, Comparaison comparaison) {
+		super(ifproc, elseproc, comparaison);
 	}
 	
 }

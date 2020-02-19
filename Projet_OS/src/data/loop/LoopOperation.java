@@ -1,8 +1,7 @@
 package data.loop;
 
-import java.util.ArrayList;
-
 import data.processus.Operation;
+import data.processus.Processus;
 
 public abstract class LoopOperation extends Operation{
 	
@@ -18,25 +17,25 @@ public abstract class LoopOperation extends Operation{
 	// --------------------------------------
 	// Attributs
 	// --------------------------------------
-	private ArrayList<Operation> operations;
+	private Processus proc;
 	
 	// --------------------------------------
 	// Methods
 	// --------------------------------------
 
 	// This is the constructors of the LoopOperation 
-	public LoopOperation(ArrayList<Operation> operations) {
-		this.setOperations(operations);
+	public LoopOperation(Processus proc) {
+		this.setProcessus(proc);
 	}
 	
 	
 	// getters and setters
 
-	public ArrayList<Operation> getOperations() {
-		return operations;
+	public Processus getOperations() {
+		return proc;
 	}
 
-	public void setOperations(ArrayList<Operation> operations) {
-		this.operations = operations;
+	public void setProcessus(Processus proc) {
+		this.proc = proc;
 	}
 }

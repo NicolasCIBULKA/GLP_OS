@@ -4,7 +4,6 @@ import data.processus.*;
 import data.variable.Intvariable;
 import process.visitor.*;
 import data.arithmeticaloperation.*;
-import data.loop.*;
 
 public class TestProcessus {
 
@@ -21,7 +20,7 @@ public class TestProcessus {
 		
 		// Creations des processus
 		
-		Addition op1 = new Addition(a,b,c);
+		Arithmeticaloperation op1 = new Addition(a,b,c);
 		Substraction op2 = new Substraction(a, one, a);
 		Sleep slp = new Sleep(1000);
 		Kill killpause = new Kill("PAUSE");
@@ -34,7 +33,7 @@ public class TestProcessus {
 		
 		System.out.println("Nombre d'operations dans le processus 1: " + proc.getNboperation());
 		ArrayListVisitor<Void> visitor = new OperationVisitor();
-		visitor.visit(op1);
+		visitor.visit((Addition) op1);
 		System.out.println("Resultat de l'Operation 3 + 1 = " + op1.getResult().getContent());
 		
 		for(i.setContent(0); i.getContent() < 10; i.setContent(i.getContent()+1)) {
