@@ -2,6 +2,7 @@ package data.drivers;
 
 import data.peripheral.HardDisk;
 import data.peripheral.Slot;
+
 public class HardDiskDriver extends Driver{
 
 	private HardDisk hd;
@@ -52,7 +53,4 @@ public class HardDiskDriver extends Driver{
 	}
 
 }
-		}
-	}
 
-}

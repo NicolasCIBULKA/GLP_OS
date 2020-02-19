@@ -1,5 +1,7 @@
 package data.processus;
 
+import process.visitor.ArrayListVisitor;
+
 public class Exit extends ProcessusControl{
 	/*
 	 * Data class of the Exit primitive 
@@ -24,9 +26,11 @@ public class Exit extends ProcessusControl{
 	
 	
 	// toString 
-		public String toString() {
-			return "Processus : " + this.getProcessus().getProcessusname() + " -  PID : " + this.getProcessus().getpid() + " - has been stopped" ;
-		}
+	public String toString() {
+		return "Processus : " + this.getProcessus().getProcessusname() + " -  PID : " + this.getProcessus().getpid() + " - has been stopped" ;
+	}
 	
-	
+	public <T> T accept(ArrayListVisitor<T> visitor) {
+		return visitor.visit(this);
+	}
 }

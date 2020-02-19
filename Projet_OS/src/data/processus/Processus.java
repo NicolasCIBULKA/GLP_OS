@@ -17,14 +17,15 @@ public class Processus {
 	private ArrayList<Operation> operationlist;
 	private int priority;
 	private int pid;
-	private String Processusname;
+	private String processusname;
 	// --------------------------------------
 	// Methods
 	// --------------------------------------
 	
 	// this is the constructor of the Processus class
-	public Processus() {
+	public Processus(String processusname) {
 		this.operationlist = new ArrayList<Operation>();
+		this.processusname = processusname;
 	}
 	
 	// Getters and setters
@@ -45,14 +46,16 @@ public class Processus {
 	}
 	
 	public String getProcessusname() {
-		return Processusname;
+		return processusname;
 	}
-
-	public void setProcessusname(String processusname) {
-		Processusname = processusname;
-	}
-
 	
+	public void setProcessusname(String processusname) {
+		this.processusname = processusname;
+	}
+
+	public int getNboperation() {
+		return operationlist.size();
+	}
 	// Methods
 	
 	public void addOperation(Operation op) {

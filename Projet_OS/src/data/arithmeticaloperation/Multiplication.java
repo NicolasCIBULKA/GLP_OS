@@ -1,5 +1,8 @@
 package data.arithmeticaloperation;
 
+import data.variable.Intvariable;
+import process.visitor.ArrayListVisitor;
+
 public class Multiplication extends Arithmeticaloperation{
 
 	/*
@@ -15,13 +18,12 @@ public class Multiplication extends Arithmeticaloperation{
 	// --------------------------------------
 	
 	// constructor of the Multipliation class
-	public Multiplication(float a, float b) {
-		super(a,b);
+	public Multiplication(Intvariable a, Intvariable b, Intvariable result) {
+		super(a,b, result);
 	}
-	
-	// calculate
-	public float calculate() {
-		return getA()*getB();
+
+	public <T> T accept(ArrayListVisitor<T> visitor) {
+		return visitor.visit(this);
 	}
 	
 }

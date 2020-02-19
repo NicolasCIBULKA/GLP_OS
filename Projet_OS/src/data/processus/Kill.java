@@ -1,6 +1,6 @@
 package data.processus;
 
-
+import process.visitor.ArrayListVisitor;
 
 public class Kill extends Operation {
 
@@ -34,6 +34,11 @@ public class Kill extends Operation {
 
 	public void setKilloption(String killoption) {
 		this.killoption = killoption;
+	}
+	
+	
+	public <T> T accept(ArrayListVisitor<T> visitor) {
+		return visitor.visit(this);
 	}
 	
 }

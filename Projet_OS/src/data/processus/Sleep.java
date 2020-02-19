@@ -1,6 +1,8 @@
 package data.processus;
 
-public class Sleep extends ProcessusControl {
+import process.visitor.ArrayListVisitor;
+
+public class Sleep {
 	
 	
 	// --------------------------------------
@@ -11,27 +13,19 @@ public class Sleep extends ProcessusControl {
 	// --------------------------------------
 	// Methods
 	// --------------------------------------
-	public Sleep(Processus processus, int time) {
-		super(processus);
+	public Sleep(int time) {
+		// super(processus);
 		this.setTime(time);
 	}
-	
+	/*
 	public Sleep(Processus processus) {
 		super(processus);
 		this.setTime(1000);
 	}
-	/*
-	public void sleepRoundRobin()  {
-		Thread.sleep(quantum);
+	*/
+	public Sleep() {
+		this.setTime(1000);
 	}
-	
-	public int getQuantum() {
-		return quantum;
-	}
-	public void setQuantum(int quantum) {
-		this.quantum = quantum;
-	}
-	 */
 	
 	// getters and setters
 	
@@ -42,11 +36,16 @@ public class Sleep extends ProcessusControl {
 	public void setTime(int time) {
 		this.time = time;
 	}
+	
 	// toString 
+	
 	public String toString() {
-		return "Processus : " + this.getProcessus().getProcessusname() + " -  PID : " + this.getProcessus().getpid() + " - has been sleeped for " + this.getTime() + "ms" ;
-
+		return /*"Processus : " + this.getProcessus().getProcessusname() + " -  PID : " + this.getProcessus().getpid() + */" - has been sleeped for " + this.getTime() + "ms" ;
 	}
-
+	
+	public <T> T accept(ArrayListVisitor<T> visitor) {
+		return visitor.visit(this);
+	}
+	
 	
 }

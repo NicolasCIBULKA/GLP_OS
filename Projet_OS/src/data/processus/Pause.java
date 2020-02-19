@@ -1,5 +1,7 @@
 package data.processus;
 
+import process.visitor.ArrayListVisitor;
+
 public class Pause extends ProcessusControl{
 	/*
 	 * Data class of the Pause primitive 
@@ -24,6 +26,10 @@ public class Pause extends ProcessusControl{
 	// toString 
 	public String toString() {
 		return "Processus : " + this.getProcessus().getProcessusname() + " -  PID : " + this.getProcessus().getpid() + " - has been paused" ;
+	}
+	
+	public <T> T accept(ArrayListVisitor<T> visitor) {
+		return visitor.visit(this);
 	}
 	
 }

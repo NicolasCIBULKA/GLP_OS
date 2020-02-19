@@ -1,5 +1,8 @@
 package data.arithmeticaloperation;
 
+import data.variable.Intvariable;
+import process.visitor.ArrayListVisitor;
+
 public class Substraction extends Arithmeticaloperation{
 	
 	/*
@@ -15,12 +18,13 @@ public class Substraction extends Arithmeticaloperation{
 	// --------------------------------------
 	
 	// This is the constructor of the Substraction class
-	public Substraction(float a, float b) {
-		super(a,b);
+	public Substraction(Intvariable a, Intvariable b, Intvariable result) {
+		super(a,b, result);
 	}
 	
-	// calculate
-	public float calculate() {
-		return getA()-getB();
+	public <T> T accept(ArrayListVisitor<T> visitor) {
+		return visitor.visit(this);
 	}
+	
+	
 }

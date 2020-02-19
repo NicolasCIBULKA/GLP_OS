@@ -1,5 +1,7 @@
 package data.processus;
 
+import process.visitor.ArrayListVisitor;
+
 public class Nice extends ProcessusControl{
 	
 	// --------------------------------------
@@ -37,6 +39,11 @@ public class Nice extends ProcessusControl{
 	// ToString
 	public String toString() {
 		return "Processus : " + this.getProcessus().getProcessusname() + " -  PID : " + this.getProcessus().getpid() + " has now a prioroty of " + this.getPriority();
+	}
+	
+	
+	public <T> T accept(ArrayListVisitor<T> visitor) {
+		return visitor.visit(this);
 	}
 
 }

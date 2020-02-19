@@ -1,6 +1,8 @@
 package data.arithmeticaloperation;
 
 import data.processus.Operation;
+import data.variable.Intvariable;
+import process.visitor.ArrayListVisitor;
 
 public abstract class Arithmeticaloperation extends Operation{
 	/*
@@ -10,41 +12,47 @@ public abstract class Arithmeticaloperation extends Operation{
 	// --------------------------------------
 	// Attributs
 	// --------------------------------------
-	private float a;
-	private float b;
+	private Intvariable a;
+	private Intvariable b;
+	private Intvariable result;
 	// --------------------------------------
 	// Methods
 	// --------------------------------------
 	
 	// This is the constructor of the ArithmeticalOperation
-	public Arithmeticaloperation(float a, float b) {
+	public Arithmeticaloperation(Intvariable a, Intvariable b, Intvariable result) {
 		this.setA(a);
 		this.setB(b);
+		this.setResult(result);
 	}
 	
 	// getters and setters
 	
-	public float getA() {
+	public Intvariable getA() {
 		return a;
 	}
 
-	public void setA(float a) {
+	public void setA(Intvariable a) {
 		this.a = a;
 	}
 
-	public float getB() {
+	public Intvariable getB() {
 		return b;
 	}
 
-	public void setB(float b) {
+	public void setB(Intvariable b) {
 		this.b = b;
 	}
 	
-	// calculate
-	
-	public abstract float calculate();
-	
+	public Intvariable getResult() {
+		return result;
+	}
 
+	public void setResult(Intvariable result) {
+		this.result = result;
+	}
+
+	public abstract <T> T accept(ArrayListVisitor<T> visitor); 
 	
 	
 }
