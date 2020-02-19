@@ -10,7 +10,7 @@ public class MouseDriver extends Driver{
 	 * some values will be defined here for testing purpose on early versions
 	 * 
 	 * 
-	 * @version 1.0
+	 * @version 2.0
 	 */
 	
 	
@@ -26,8 +26,7 @@ public class MouseDriver extends Driver{
 	
 	
 	/*
-	 * move methods: up, down, left, right
-	 * might add a click method later
+	 * move methods: up, down, left, right and clic
 	 * 
 	 * @author rédouane débart
 	 */
