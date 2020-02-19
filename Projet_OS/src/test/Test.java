@@ -39,6 +39,21 @@ public class Test {
 		scd.resetScreen();
 		System.out.println("Screen content:" + scd.toString());
 
+		//test de la souris//
+		System.out.println("----------------------------------------");
+		System.out.println("Test de la souris");
+		System.out.println("----------------------------------------");
+		
+		Interaction permSouris=new Interaction();
+		Mouse souris = new Mouse();
+		MouseDriver mdriv = new MouseDriver("mouse", permSouris, souris);
+		System.out.println(mdriv.clic().toString());
+		
+		System.out.println("déplacement de la souris vers le bas puis vers la droite");
+		mdriv.moveDown();
+		System.out.println(mdriv.clic().toString());
+		mdriv.moveRight();
+		System.out.println(mdriv.clic().toString());
 		
 		// test des operations
 		System.out.println("----------------------------------------");
