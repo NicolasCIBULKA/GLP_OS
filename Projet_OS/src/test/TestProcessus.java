@@ -43,8 +43,19 @@ public class TestProcessus {
 			visitor.visit(killpause);
 			System.out.println(op2.getResult().getContent());
 		}
+			
+			//test du temps d'execution des méthodes
+			int j;
+				long startTime = System.nanoTime();
+			    for (j=0; j < 100000; j++) {
+			    	visitor.visit((Addition) op1);
+			    }
+			    long endTime = System.nanoTime();
+			    System.out.println("Total elapsed time in execution of method is :"+ ((endTime-startTime)/100000));
+			  }
 		
 		
-	}
+		
+	
 
 }
