@@ -128,7 +128,7 @@ public class OperationVisitor implements ArrayListVisitor<Void>{
 				res.setContent(-1);
 			}
 		}
-		
+		System.out.println(res.getContent());
 		node.setResult(res);
 		return null;
 	}

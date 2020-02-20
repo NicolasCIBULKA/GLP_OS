@@ -64,6 +64,8 @@ public class ProcessusExec {
 			// Execution of the testOperation
 			else if(proc.getOplist().get(i) instanceof Ifelsetest) {
 				Ifelsetest test = (Ifelsetest) proc.getOplist().get(i);
+				ArrayListVisitor<Void> visitor = new OperationVisitor();
+				visitor.visit((Comparaison) test.getComparaison());	
 				int testresult = test.getComparaison().getResult().getContent();
 				if(testresult == 0) {
 					execution(test.getIfprocessus());

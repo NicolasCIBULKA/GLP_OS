@@ -25,7 +25,7 @@ public class TestProcexec {
 		Processus elseproc = new Processus("elseproc");
 		
 		
-		Comparaison comp = new Comparaison(a, b, c, "==");
+		Comparaison comp = new Comparaison(b, b, c, "==");
 		Operation ifelse = new Ifelsetest(ifproc, elseproc, comp);
 		
 		Sleep slp = new Sleep(1000);
