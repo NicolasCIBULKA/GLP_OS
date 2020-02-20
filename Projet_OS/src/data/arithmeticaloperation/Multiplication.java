@@ -26,4 +26,8 @@ public class Multiplication extends Arithmeticaloperation{
 		return visitor.visit(this);
 	}
 	
+	public String toString() {
+		return getA().getContent() + " * " + getB().getContent() + " = " + this.getResult().getContent();
+	}
+	
 }

@@ -31,5 +31,7 @@ public class Intvariable {
 		this.content = content;
 	}
 	
-	
+	public String toString() {
+		return this.getContent() + " " ;
+	}
 }

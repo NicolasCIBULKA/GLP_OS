@@ -1,6 +1,7 @@
 package process.visitor;
 
 import data.arithmeticaloperation.*;
+import data.functions.Print;
 import data.processus.*;
 
 public interface ArrayListVisitor<T> {
@@ -30,5 +31,7 @@ public interface ArrayListVisitor<T> {
 	T visit(Pause node);
 
 	T visit(Comparaison node);
+	
+	T visit(Print node);
 	
 }

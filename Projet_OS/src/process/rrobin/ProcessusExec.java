@@ -68,7 +68,7 @@ public class ProcessusExec {
 				if(testresult == 0) {
 					execution(test.getIfprocessus());
 				}
-				else {
+				else if(testresult == -1) {
 					execution(test.getElseprocessus());
 				}
 			}

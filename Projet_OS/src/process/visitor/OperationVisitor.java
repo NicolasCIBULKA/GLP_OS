@@ -1,6 +1,7 @@
 package process.visitor;
 
 import data.arithmeticaloperation.*;
+import data.functions.Print;
 import data.processus.Exit;
 import data.processus.Kill;
 import data.processus.Nice;
@@ -59,14 +60,13 @@ public class OperationVisitor implements ArrayListVisitor<Void>{
 
 	@Override
 	public Void visit(Kill node) {
-		/*
 		if(node.getKilloption() == "PAUSE") {
 			
 		}
 		else if(node.getKilloption() == "RESTART") {
 			notify();
 		}
-		*/
+		
 		return null;
 	}
 
@@ -95,9 +95,7 @@ public class OperationVisitor implements ArrayListVisitor<Void>{
 			else {
 				res.setContent(-1);
 			}
-			
 		}
-		
 		else if(node.getComparator().equals("<")) {
 			if(a < b) {
 				res.setContent(0);
@@ -106,7 +104,6 @@ public class OperationVisitor implements ArrayListVisitor<Void>{
 				res.setContent(-1);
 			}
 		}
-		
 		else if(node.getComparator().equals(">")) {
 			if(a > b) {
 				res.setContent(0);
@@ -115,7 +112,6 @@ public class OperationVisitor implements ArrayListVisitor<Void>{
 				res.setContent(-1);
 			}
 		}
-		
 		else if(node.getComparator().equals("<=")) {
 			if(a <= b) {
 				res.setContent(0);
@@ -124,7 +120,6 @@ public class OperationVisitor implements ArrayListVisitor<Void>{
 				res.setContent(-1);
 			}
 		}
-		
 		else if(node.getComparator().equals(">=")) {
 			if(a >= b) {
 				res.setContent(0);
@@ -135,6 +130,12 @@ public class OperationVisitor implements ArrayListVisitor<Void>{
 		}
 		
 		node.setResult(res);
+		return null;
+	}
+
+	@Override
+	public Void visit(Print node) {
+		System.out.println(node.print());
 		return null;
 	}
 	

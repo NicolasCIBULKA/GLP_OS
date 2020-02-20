@@ -39,4 +39,8 @@ public class Comparaison extends Arithmeticaloperation{
 	public <T> T accept(ArrayListVisitor<T> visitor) {
 		return visitor.visit(this);
 	}
+	
+	public String toString() {
+		return this.getA().getContent() + this.getComparator() + this.getB().getContent() ;
+	}
 }
