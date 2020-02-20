@@ -1,6 +1,7 @@
 package process.rrobin;
 
 import data.arithmeticaloperation.*;
+import data.functions.Print;
 import data.iftest.Ifelsetest;
 import data.loop.*;
 import data.processus.Processus;
@@ -47,17 +48,27 @@ public class ProcessusExec {
 				visitor.visit((Multiplication) proc.getOplist().get(i));
 			}
 			// Exectution of the Primitives
+			
+			// Execution of sleep
 			else if(proc.getOplist().get(i) instanceof Sleep ) {
 				ArrayListVisitor<Void> visitor = new OperationVisitor();
 				visitor.visit((Sleep) proc.getOplist().get(i));
 			}
 			
+			// Execution of the functions
+			// Execution of print
+			else if(proc.getOplist().get(i) instanceof Print ) {
+				ArrayListVisitor<Void> visitor = new OperationVisitor();
+				visitor.visit((Print) proc.getOplist().get(i));
+			}
 			// Execution of the loops Operation
+			// Execution of the forloop
 			else if(proc.getOplist().get(i) instanceof ForLoop ) {
 				ForLoop floop = (ForLoop) proc.getOplist().get(i);
 				int iterstart = floop.getIterstart();
 				int iternumber = floop.getIternumber();
-				for(int j = iterstart; j < iternumber; j++) {
+				for(int j = iterstart+1; j < iternumber+1; j++) {
+					floop.setIterstart(j);
 					execution(floop.getOperations());
 				}
 			}

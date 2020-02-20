@@ -38,5 +38,7 @@ public class ForLoop extends LoopOperation{
 		this.iterstart = iterstart;
 	}
 	
-
+	public String toString() {
+		return this.getIterstart() + " / " + this.getIternumber()  ;
+	}
 }

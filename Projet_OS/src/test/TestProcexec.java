@@ -25,7 +25,7 @@ public class TestProcexec {
 		Processus elseproc = new Processus("elseproc");
 		
 		
-		Comparaison comp = new Comparaison(b, b, c, "==");
+		Comparaison comp = new Comparaison(a, b, c, "==");
 		Operation ifelse = new Ifelsetest(ifproc, elseproc, comp);
 		
 		Sleep slp = new Sleep(1000);
@@ -45,14 +45,15 @@ public class TestProcexec {
 		
 		System.out.println("oui");
 		
-		System.out.println(prt.print());
 		pexec.execution(proc);
 		
 		System.out.println("oui2");
 		
 		ForLoop flp = new ForLoop(fortest, 0, 5);
+		Print prt2 = new Print(flp);
 		
 		proc.addOperation(flp);
+		fortest.addOperation(prt2);
 		proc.addOperation(ifelse);
 		pexec.execution(proc);
 		
