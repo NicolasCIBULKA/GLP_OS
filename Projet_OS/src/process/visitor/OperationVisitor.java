@@ -7,6 +7,7 @@ import data.primitive.Exit;
 import data.primitive.Kill;
 import data.primitive.Nice;
 import data.primitive.Pause;
+import data.processus.Processus;
 import data.variable.Intvariable;
 
 public class OperationVisitor implements ArrayListVisitor<Void>{
@@ -43,7 +44,7 @@ public class OperationVisitor implements ArrayListVisitor<Void>{
 
 	@Override
 	public Void visit(Exit node) {
-		
+		node.getProcessus().setExiting(true);
 		return null;
 	}
 
@@ -61,10 +62,19 @@ public class OperationVisitor implements ArrayListVisitor<Void>{
 	@Override
 	public Void visit(Kill node) {
 		if(node.getKilloption() == "PAUSE") {
-			
+			node.getProcessus().setAblerun(false);
 		}
-		else if(node.getKilloption() == "RESTART") {
-			notify();
+		else if(node.getKilloption() == "EXIT") {
+			node.getProcessus().setExiting(true);
+		}
+		else if(node.getKilloption() == "TOP-PRIORITY") {
+			node.getProcessus().setPriority(20);
+		}
+		else if(node.getKilloption() == "BOTTOM-PRIORITY") {
+			node.getProcessus().setPriority(1);
+		}
+		else if(node.getKilloption() == "RUN") {
+			node.getProcessus().setAblerun(true);
 		}
 		
 		return null;
@@ -79,7 +89,8 @@ public class OperationVisitor implements ArrayListVisitor<Void>{
 
 	@Override
 	public Void visit(Pause node) {
-		
+		Processus proc = node.getProcessus();
+		proc.setAblerun(false);
 		return null;
 	}
 

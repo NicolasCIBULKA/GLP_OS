@@ -3,7 +3,7 @@ package data.primitive;
 import data.processus.Processus;
 import process.visitor.ArrayListVisitor;
 
-public class Exit extends ProcessusControl{
+public class Exit extends Primitive{
 	/*
 	 * Data class of the Exit primitive 
 	 * 

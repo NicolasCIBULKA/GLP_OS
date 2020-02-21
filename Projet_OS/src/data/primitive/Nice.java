@@ -3,7 +3,7 @@ package data.primitive;
 import data.processus.Processus;
 import process.visitor.ArrayListVisitor;
 
-public class Nice extends ProcessusControl{
+public class Nice extends Primitive{
 	
 	// --------------------------------------
 	// Attributs

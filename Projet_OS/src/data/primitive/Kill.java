@@ -1,10 +1,9 @@
 package data.primitive;
 
-import data.processus.Operation;
 import data.processus.Processus;
 import process.visitor.ArrayListVisitor;
 
-public class Kill extends ProcessusControl {
+public class Kill extends Primitive {
 
 	
 	/*

@@ -18,6 +18,8 @@ public class Processus {
 	private int priority;
 	private int pid;
 	private String processusname;
+	private boolean ablerun;
+	private boolean exiting;
 	// --------------------------------------
 	// Methods
 	// --------------------------------------
@@ -26,10 +28,28 @@ public class Processus {
 	public Processus(String processusname) {
 		this.operationlist = new ArrayList<Operation>();
 		this.processusname = processusname;
+		this.setAblerun(true);
+		this.setExiting(false);
 	}
 	
 	// Getters and setters
 	
+	public boolean isExiting() {
+		return exiting;
+	}
+
+	public void setExiting(boolean exiting) {
+		this.exiting = exiting;
+	}
+
+	public boolean isAblerun() {
+		return ablerun;
+	}
+
+	public void setAblerun(boolean ablerun) {
+		this.ablerun = ablerun;
+	}
+
 	public ArrayList<Operation> getOplist() {
 		return operationlist;
 	}

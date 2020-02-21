@@ -3,7 +3,7 @@ package data.primitive;
 import data.processus.Operation;
 import data.processus.Processus;
 
-public abstract class ProcessusControl extends Operation{
+public abstract class Primitive extends Operation{
 	/*
 	 * Data class of the Abstract class Processus control, that gives the processus 
 	 * 
@@ -21,7 +21,7 @@ public abstract class ProcessusControl extends Operation{
 	// --------------------------------------
 	
 	// Constructor of the Abstract class ProcessusControl
-	public ProcessusControl(Processus processus) {
+	public Primitive(Processus processus) {
 		this.setProcessus(processus);
 	}
 

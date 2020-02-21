@@ -1,12 +1,9 @@
 package process.visitor;
 
 import data.arithmeticaloperation.*;
-import data.functions.Print;
-import data.functions.Sleep;
-import data.primitive.Exit;
-import data.primitive.Kill;
-import data.primitive.Nice;
-import data.primitive.Pause;
+import data.functions.*;
+import data.primitive.*;
+
 
 
 public interface ArrayListVisitor<T> {
@@ -19,15 +16,23 @@ public interface ArrayListVisitor<T> {
 	 * @author Nicolas CIBULKA
 	 */
 	
+	// Arithmetical operations
+	
 	T visit(Addition node);
 	
 	T visit(Substraction node);
 	
 	T visit(Multiplication node);
 	
-	T visit(Exit node);
+	// Functions
 	
 	T visit(Sleep node);
+	
+	T visit(Print node);
+	
+	// Primitives
+	
+	T visit(Exit node);
 	
 	T visit(Kill node);
 	
@@ -36,7 +41,5 @@ public interface ArrayListVisitor<T> {
 	T visit(Pause node);
 
 	T visit(Comparaison node);
-	
-	T visit(Print node);
 	
 }

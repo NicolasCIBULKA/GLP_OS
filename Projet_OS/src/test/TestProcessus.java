@@ -1,11 +1,11 @@
 package test;
 
 import data.processus.*;
-import data.variable.Intvariable;
+import data.variable.*;
 import process.visitor.*;
 import data.arithmeticaloperation.*;
-import data.functions.Sleep;
-import data.primitive.Kill;
+import data.functions.*;
+import data.primitive.*;
 
 public class TestProcessus {
 
@@ -25,10 +25,6 @@ public class TestProcessus {
 		Arithmeticaloperation op1 = new Addition(a,b,c);
 		Substraction op2 = new Substraction(a, one, a);
 		Sleep slp = new Sleep(1000);
-		Kill killpause = new Kill("PAUSE");
-		
-		// Ajout des opérations dans le processus
-		
 		proc.addOperation(op1);
 		
 		// Test des méthodes
@@ -42,22 +38,16 @@ public class TestProcessus {
 			//System.out.println("Valeur de i : " + i.getContent());
 			visitor.visit(op2);
 			visitor.visit(slp);
-			visitor.visit(killpause);
+			//visitor.visit(killpause);
 			System.out.println(op2.getResult().getContent());
 		}
 			
 			//test du temps d'execution des méthodes
-			int j;
-				long startTime = System.nanoTime();
-			    for (j=0; j < 100000; j++) {
-			    	visitor.visit((Addition) op1);
-			    }
-			    long endTime = System.nanoTime();
-			    System.out.println("Total elapsed time in execution of method is :"+ ((endTime-startTime)/100000));
-			  }
-		
-		
-		
-	
-
+		int j;
+			long startTime = System.nanoTime();
+		    for (j=0; j < 100000; j++) {
+		    	visitor.visit((Addition) op1);
+		    }
+		    long endTime = System.nanoTime();			    System.out.println("Total elapsed time in execution of method is :"+ ((endTime-startTime)/100000));
+		}
 }
