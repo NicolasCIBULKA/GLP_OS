@@ -72,13 +72,14 @@ public class OperationVisitor implements ArrayListVisitor<Void>{
 
 	@Override
 	public Void visit(Nice node) {
-		// TODO Auto-generated method stub
+		int newpriority = node.getPriority();
+		node.getProcessus().setPriority(newpriority);
 		return null;
 	}
 
 	@Override
 	public Void visit(Pause node) {
-		// TODO Auto-generated method stub
+		
 		return null;
 	}
 

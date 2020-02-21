@@ -1,6 +1,8 @@
 package data.variable;
 
-public class Stringvariable {
+import data.processus.Operation;
+
+public class Stringvariable extends Operation {
 	/*
 	 * This class contain a String for the processus execution
 	 * 
@@ -29,5 +31,9 @@ public class Stringvariable {
 
 	public void setContent(String content) {
 		this.content = content;
+	}
+	
+	public String toString() {
+		return this.getContent() + " " ;
 	}
 }

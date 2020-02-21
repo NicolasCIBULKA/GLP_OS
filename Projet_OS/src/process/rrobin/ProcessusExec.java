@@ -47,7 +47,7 @@ public class ProcessusExec {
 				ArrayListVisitor<Void> visitor = new OperationVisitor();
 				visitor.visit((Multiplication) proc.getOplist().get(i));
 			}
-			// Exectution of the Primitives
+			// Execution of the Primitives
 			
 			// Execution of sleep
 			else if(proc.getOplist().get(i) instanceof Sleep ) {
@@ -56,12 +56,14 @@ public class ProcessusExec {
 			}
 			
 			// Execution of the functions
+			
 			// Execution of print
 			else if(proc.getOplist().get(i) instanceof Print ) {
 				ArrayListVisitor<Void> visitor = new OperationVisitor();
 				visitor.visit((Print) proc.getOplist().get(i));
 			}
 			// Execution of the loops Operation
+			
 			// Execution of the forloop
 			else if(proc.getOplist().get(i) instanceof ForLoop ) {
 				ForLoop floop = (ForLoop) proc.getOplist().get(i);
@@ -85,9 +87,7 @@ public class ProcessusExec {
 					execution(test.getElseprocessus());
 				}
 			}
+			
 		}
 	}
-	
-	
-	
 }

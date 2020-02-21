@@ -7,6 +7,7 @@ import data.iftest.Ifelsetest;
 import data.loop.ForLoop;
 import data.processus.*;
 import data.variable.Intvariable;
+import data.variable.Stringvariable;
 
 
 public class TestProcexec {
@@ -18,6 +19,7 @@ public class TestProcexec {
 		Intvariable a = new Intvariable(3); 
 		Intvariable b = new Intvariable(1);
 		Intvariable c = new Intvariable(0);
+		Stringvariable d = new Stringvariable("Ceci est un test");
 		
 		Processus proc = new Processus("test");
 		Processus fortest = new Processus("Test2");
@@ -34,7 +36,8 @@ public class TestProcexec {
 		Sleep slp4 = new Sleep(300);
 		//Kill pause = new Kill("PAUSE");
 		Print prt = new Print(slp);
-				
+		Print prt3 = new Print(d);
+		
 		proc.addOperation(slp);
 		ifproc.addOperation(slp3);
 		elseproc.addOperation(slp4);
@@ -54,6 +57,7 @@ public class TestProcexec {
 		
 		proc.addOperation(flp);
 		fortest.addOperation(prt2);
+		fortest.addOperation(prt3);
 		proc.addOperation(ifelse);
 		pexec.execution(proc);
 		
