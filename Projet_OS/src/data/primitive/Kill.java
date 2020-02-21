@@ -1,8 +1,10 @@
-package data.processus;
+package data.primitive;
 
+import data.processus.Operation;
+import data.processus.Processus;
 import process.visitor.ArrayListVisitor;
 
-public class Kill extends Operation {
+public class Kill extends ProcessusControl {
 
 	
 	/*
@@ -22,7 +24,8 @@ public class Kill extends Operation {
 	// --------------------------------------
 	
 	// Constructor of the Kill Operation
-	public Kill(String killoption) {
+	public Kill(Processus processus, String killoption) {
+		super(processus);
 		this.setKilloption(killoption);
 	}
 	
@@ -39,6 +42,10 @@ public class Kill extends Operation {
 	
 	public <T> T accept(ArrayListVisitor<T> visitor) {
 		return visitor.visit(this);
+	}
+	
+	public String toString() {
+		return " ";
 	}
 	
 }

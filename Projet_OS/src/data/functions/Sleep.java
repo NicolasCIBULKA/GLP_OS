@@ -1,5 +1,6 @@
-package data.processus;
+package data.functions;
 
+import data.processus.Operation;
 import process.visitor.ArrayListVisitor;
 
 public class Sleep extends Operation{
@@ -40,7 +41,8 @@ public class Sleep extends Operation{
 	// toString 
 	
 	public String toString() {
-		return /*"Processus : " + this.getProcessus().getProcessusname() + " -  PID : " + this.getProcessus().getpid() + */" - has been sleeped for " + this.getTime() + "ms" ;
+		/*return "Processus : " + this.getProcessus().getProcessusname() + " -  PID : " + this.getProcessus().getpid() + " The processus has been sleeped for " + this.getTime() + "ms" ;*/
+		return "Sleeping during " + this.getTime() + " ms";
 	}
 	
 	public <T> T accept(ArrayListVisitor<T> visitor) {

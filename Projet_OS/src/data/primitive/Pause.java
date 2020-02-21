@@ -1,5 +1,6 @@
-package data.processus;
+package data.primitive;
 
+import data.processus.Processus;
 import process.visitor.ArrayListVisitor;
 
 public class Pause extends ProcessusControl{

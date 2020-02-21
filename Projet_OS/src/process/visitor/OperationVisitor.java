@@ -2,11 +2,11 @@ package process.visitor;
 
 import data.arithmeticaloperation.*;
 import data.functions.Print;
-import data.processus.Exit;
-import data.processus.Kill;
-import data.processus.Nice;
-import data.processus.Pause;
-import data.processus.Sleep;
+import data.functions.Sleep;
+import data.primitive.Exit;
+import data.primitive.Kill;
+import data.primitive.Nice;
+import data.primitive.Pause;
 import data.variable.Intvariable;
 
 public class OperationVisitor implements ArrayListVisitor<Void>{
@@ -43,7 +43,7 @@ public class OperationVisitor implements ArrayListVisitor<Void>{
 
 	@Override
 	public Void visit(Exit node) {
-		// TODO Auto-generated method stub
+		
 		return null;
 	}
 

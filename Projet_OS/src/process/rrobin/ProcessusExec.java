@@ -2,10 +2,11 @@ package process.rrobin;
 
 import data.arithmeticaloperation.*;
 import data.functions.Print;
+import data.functions.Sleep;
 import data.iftest.Ifelsetest;
 import data.loop.*;
+import data.primitive.Kill;
 import data.processus.Processus;
-import data.processus.*;
 import process.visitor.*;
 
 public class ProcessusExec {
@@ -53,6 +54,11 @@ public class ProcessusExec {
 			else if(proc.getOplist().get(i) instanceof Sleep ) {
 				ArrayListVisitor<Void> visitor = new OperationVisitor();
 				visitor.visit((Sleep) proc.getOplist().get(i));
+			}
+			// Execution of Kill method
+			else if(proc.getOplist().get(i) instanceof Kill ) {
+				ArrayListVisitor<Void> visitor = new OperationVisitor();
+				visitor.visit((Kill) proc.getOplist().get(i));
 			}
 			
 			// Execution of the functions

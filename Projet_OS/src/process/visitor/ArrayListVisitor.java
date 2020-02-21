@@ -2,7 +2,12 @@ package process.visitor;
 
 import data.arithmeticaloperation.*;
 import data.functions.Print;
-import data.processus.*;
+import data.functions.Sleep;
+import data.primitive.Exit;
+import data.primitive.Kill;
+import data.primitive.Nice;
+import data.primitive.Pause;
+
 
 public interface ArrayListVisitor<T> {
 	

@@ -1,4 +1,7 @@
-package data.processus;
+package data.primitive;
+
+import data.processus.Operation;
+import data.processus.Processus;
 
 public abstract class ProcessusControl extends Operation{
 	/*

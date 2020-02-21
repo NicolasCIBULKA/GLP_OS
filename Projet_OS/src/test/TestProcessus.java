@@ -4,6 +4,8 @@ import data.processus.*;
 import data.variable.Intvariable;
 import process.visitor.*;
 import data.arithmeticaloperation.*;
+import data.functions.Sleep;
+import data.primitive.Kill;
 
 public class TestProcessus {
 
