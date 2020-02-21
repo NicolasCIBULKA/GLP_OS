@@ -25,6 +25,9 @@ public class TestProcessus {
 		Arithmeticaloperation op1 = new Addition(a,b,c);
 		Substraction op2 = new Substraction(a, one, a);
 		Sleep slp = new Sleep(1000);
+		Primitive killpause = new Kill(proc, "PAUSE");
+		// Ajout des opérations dans le processus
+		
 		proc.addOperation(op1);
 		
 		// Test des méthodes

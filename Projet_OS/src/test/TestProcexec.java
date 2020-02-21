@@ -6,7 +6,7 @@ import data.functions.Print;
 import data.functions.Sleep;
 import data.iftest.Ifelsetest;
 import data.loop.ForLoop;
-import data.primitive.Kill;
+import data.primitive.*;
 import data.processus.*;
 import data.variable.Intvariable;
 import data.variable.Stringvariable;
@@ -38,6 +38,7 @@ public class TestProcexec {
 		Sleep slp4 = new Sleep(300);
 		Print prt = new Print(slp);
 		Print prt3 = new Print(d);
+		Primitive exit = new Kill(proc, "PAUSE");
 		
 		proc.addOperation(slp);
 		ifproc.addOperation(slp3);
@@ -48,7 +49,7 @@ public class TestProcexec {
 		
 		
 		System.out.println("oui");
-
+		proc.addOperation(exit);
 		pexec.execution(proc);
 		
 		System.out.println("oui2");
