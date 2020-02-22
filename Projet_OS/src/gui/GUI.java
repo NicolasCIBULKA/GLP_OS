@@ -2,6 +2,7 @@ package gui;
 
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
+import java.awt.Insets;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Container;
@@ -14,13 +15,14 @@ import javax.swing.*;
 
 /**
  * work in progress:
- * mouse can be improved, gridbaglayout to get a better display,
+ * mouse can be improved,
  * other keys to be added to the keyboard
  * 
+ * v2 uses gridbaglayout to get more room for the virtual screen.
  * 
  * @author redouane
  * 
- *@version 1.0
+ *@version 2.0
  */
 
 public class GUI extends JFrame {
@@ -52,11 +54,39 @@ public class GUI extends JFrame {
 		
 		
 		Container contentPane = getContentPane();
-		contentPane.setLayout(new GridLayout(2,2));
-		contentPane.add(panel);
-		contentPane.add(panprocess);
-		contentPane.add(pankeybrd);
-		contentPane.add(panmouse);
+		contentPane.setLayout(new GridBagLayout());
+		GridBagConstraints gridcons = new GridBagConstraints();
+		gridcons.fill=GridBagConstraints.BOTH;
+		gridcons.insets = new Insets(10, 10, 10, 10);
+
+		
+		//adding the four parts
+		gridcons.weightx=2;
+		gridcons.weighty=2;
+		gridcons.gridx=0;
+		gridcons.gridy=0;
+		gridcons.gridheight=3;
+		gridcons.gridwidth=2;
+		contentPane.add(panel, gridcons);
+		gridcons.weightx=1;
+		gridcons.weighty=1;
+		gridcons.gridx=2;
+		gridcons.gridy=0;
+		gridcons.gridheight=3;
+		gridcons.gridwidth=1;
+		contentPane.add(panprocess, gridcons);
+		gridcons.gridx=0;
+		gridcons.gridy=4;
+		gridcons.gridheight=2;
+		gridcons.gridwidth=2;
+		contentPane.add(pankeybrd, gridcons);
+		gridcons.gridx=2;
+		gridcons.gridy=4;
+		gridcons.gridheight=2;
+		gridcons.gridwidth=1;
+		gridcons.weightx=0;
+		gridcons.weighty=0;
+		contentPane.add(panmouse, gridcons);
 		
 		
 		//screen
