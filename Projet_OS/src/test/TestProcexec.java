@@ -38,7 +38,7 @@ public class TestProcexec {
 		Sleep slp4 = new Sleep(300);
 		Print prt = new Print(slp);
 		Print prt3 = new Print(d);
-		Primitive exit = new Kill(proc, "PAUSE");
+		Primitive exit = new Kill(proc, "RUN");
 		
 		proc.addOperation(slp);
 		ifproc.addOperation(slp3);

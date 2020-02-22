@@ -44,7 +44,8 @@ public class Kill extends Primitive {
 	}
 	
 	public String toString() {
-		return " ";
+		return "Processus : " + this.getProcessus().getProcessusname() + " -  PID : " + this.getProcessus().getpid() + " has been stopped";
+
 	}
 	
 }

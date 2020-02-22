@@ -36,7 +36,7 @@ public class Pause extends Primitive{
 
 	// toString 
 	public String toString() {
-		return "Processus : " + this.getProcessus().getProcessusname() + " -  PID : " + this.getProcessus().getpid() + " - has been paused" ;
+		return "Processus : " + this.getProcessus().getProcessusname() + " -  PID : " + this.getProcessus().getpid() + " - has been paused for " + this.getTime() ;
 	}
 	
 	public <T> T accept(ArrayListVisitor<T> visitor) {

@@ -5,6 +5,11 @@ import process.visitor.ArrayListVisitor;
 
 public class Sleep extends Operation{
 	
+	/*
+	 * This is a function that create a short delay between 2 operations in a Processus
+	 * 
+	 * @author Nicolas CIBULKA
+	 */
 	
 	// --------------------------------------
 	// Attributs
@@ -41,7 +46,6 @@ public class Sleep extends Operation{
 	// toString 
 	
 	public String toString() {
-		/*return "Processus : " + this.getProcessus().getProcessusname() + " -  PID : " + this.getProcessus().getpid() + " The processus has been sleeped for " + this.getTime() + "ms" ;*/
 		return "Sleeping during " + this.getTime() + " ms";
 	}
 	
