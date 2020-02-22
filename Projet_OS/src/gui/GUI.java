@@ -27,6 +27,11 @@ import javax.swing.*;
 
 public class GUI extends JFrame {
 
+	/*
+	 * attributes
+	 */
+	
+	
 	private static final long serialVersionUID = 1L;
 	
 	//four major parts
@@ -43,6 +48,9 @@ public class GUI extends JFrame {
 	
 
 
+	/*
+	 * methods
+	 */
 	
 	public GUI() {
 		this.setTitle("OS Simulation");
@@ -60,7 +68,9 @@ public class GUI extends JFrame {
 		gridcons.insets = new Insets(10, 10, 10, 10);
 
 		
-		//adding the four parts
+		//adding the four parts to the frame
+		
+		//screen
 		gridcons.weightx=2;
 		gridcons.weighty=2;
 		gridcons.gridx=0;
@@ -68,6 +78,8 @@ public class GUI extends JFrame {
 		gridcons.gridheight=3;
 		gridcons.gridwidth=2;
 		contentPane.add(panel, gridcons);
+		
+		//processes
 		gridcons.weightx=1;
 		gridcons.weighty=1;
 		gridcons.gridx=2;
@@ -75,11 +87,15 @@ public class GUI extends JFrame {
 		gridcons.gridheight=3;
 		gridcons.gridwidth=1;
 		contentPane.add(panprocess, gridcons);
+		
+		//keyboard
 		gridcons.gridx=0;
 		gridcons.gridy=4;
 		gridcons.gridheight=2;
 		gridcons.gridwidth=2;
 		contentPane.add(pankeybrd, gridcons);
+		
+		//mouse
 		gridcons.gridx=2;
 		gridcons.gridy=4;
 		gridcons.gridheight=2;
@@ -88,6 +104,8 @@ public class GUI extends JFrame {
 		gridcons.weighty=0;
 		contentPane.add(panmouse, gridcons);
 		
+		
+		//adjusting the panels of each four parts
 		
 		//screen
 		
@@ -105,6 +123,8 @@ public class GUI extends JFrame {
 		panprocess.add(new JScrollPane(affichprocess,JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER));
 		panprocess.setBorder(BorderFactory.createTitledBorder("Processus"));
 		panprocess.setLayout(new GridLayout(1,1));
+		
+		
 		//pan keyboard
 		
 		pankeybrd.setPreferredSize(new Dimension(800,400));
@@ -133,13 +153,16 @@ public class GUI extends JFrame {
 		
 		panmouse.setSize(400, 400);
 		panmouse.setBorder(BorderFactory.createTitledBorder("Mouse"));
+		
+		//gridbaglayout to get the display i wanted
 		panmouse.setLayout(new GridBagLayout());
 		GridBagConstraints gcmouse= new GridBagConstraints();
 		gcmouse.gridheight=1;
 		gcmouse.gridwidth=1;
 		gcmouse.fill=GridBagConstraints.NONE;
 		
-		//ajout des fleches
+		//adding the buttons
+		
 		gcmouse.gridx=1;
 		gcmouse.gridy=0;
 		panmouse.add(new JButton("/\\"), gcmouse);
@@ -152,7 +175,6 @@ public class GUI extends JFrame {
 		gcmouse.gridx=1;
 		gcmouse.gridy=2;
 		panmouse.add(new JButton("\\/"), gcmouse);
-		
 		
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
