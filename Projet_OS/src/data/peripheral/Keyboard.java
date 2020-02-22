@@ -25,7 +25,7 @@ public class Keyboard extends Peripheral {
 	}
 	
 	/*
-	 * This method takes the argument input, that will contains a integer that wil be converted later
+	 * This method takes the argument input, that will contains a integer that will be converted later
 	 * 
 	 *  to a String by the driver by using the ASCII table
 	 */
