@@ -217,24 +217,34 @@ public class GUI extends JFrame {
 		GridBagConstraints gcmouse= new GridBagConstraints();
 		gcmouse.gridheight=1;
 		gcmouse.gridwidth=1;
-		gcmouse.fill=GridBagConstraints.NONE;
+		gcmouse.fill=GridBagConstraints.BOTH;
 		
 		//adding the buttons: arrows + click
 		
+		gcmouse.weightx=1;
+		gcmouse.weighty=1;
 		gcmouse.gridx=1;
 		gcmouse.gridy=0;
+		gcmouse.gridwidth=2;
+		gcmouse.gridheight=1;
 		panmouse.add(new JButton("/\\"), gcmouse);
+		gcmouse.gridwidth=1;
+		gcmouse.gridheight=2;
 		gcmouse.gridx=0;
 		gcmouse.gridy=1;
 		panmouse.add(new JButton("<"), gcmouse);
+		gcmouse.gridwidth=2;
 		gcmouse.gridx=1;
 		gcmouse.gridy=1;
 		panmouse.add(new JButton("click"), gcmouse);
-		gcmouse.gridx=2;
+		gcmouse.gridwidth=1;
+		gcmouse.gridx=3;
 		gcmouse.gridy=1;
 		panmouse.add(new JButton(">"), gcmouse);
+		gcmouse.gridwidth=2;
+		gcmouse.gridheight=1;
 		gcmouse.gridx=1;
-		gcmouse.gridy=2;
+		gcmouse.gridy=3;
 		panmouse.add(new JButton("\\/"), gcmouse);
 		
 		
