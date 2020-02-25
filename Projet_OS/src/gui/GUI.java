@@ -127,29 +127,60 @@ public class GUI extends JFrame {
 		
 		//pan keyboard
 		
-		pankeybrd.setPreferredSize(new Dimension(800,400));
-		pankeybrd.setBorder(BorderFactory.createTitledBorder("keyboard"));
-		GridLayout gridkey = new GridLayout(4,10);
-		pankeybrd.setLayout(gridkey);
-		
-		//regular keys
-		String row1="1234567890";
-		String row2="azertyuiop";
-		String row3="qsdfghjklm";
-		String row4="wxcvbn,;:!";
-		String[]rows= {row1,row2,row3,row4};
-		
-		for(int i=0;i<rows.length;i++) {
-		
-			char[]keys=rows[i].toCharArray();
-				for(int j=0; j<keys.length;j++) {
-					
-					pankeybrd.add(new JButton(Character.toString(keys[j])));
+				pankeybrd.setPreferredSize(new Dimension(800,400));
+				pankeybrd.setBorder(BorderFactory.createTitledBorder("keyboard"));
+				GridBagLayout gridkey = new GridBagLayout();
+				GridBagConstraints keyConstraint = new GridBagConstraints();
+				pankeybrd.setLayout(gridkey);
+				keyConstraint.fill=GridBagConstraints.BOTH;
+				
+				//regular keys
+				String row1="1234567890";
+				String row2="azertyuiop";
+				String row3="qsdfghjklm";
+				String row4="wxcvbn,;:!";
+				String[]rows= {row1,row2,row3,row4};
+				
+				for(int i=0;i<rows.length;i++) {
+				
+					char[]keys=rows[i].toCharArray();
+						for(int j=0; j<keys.length;j++) {
+							keyConstraint.gridwidth=1;
+							keyConstraint.gridheight=1;
+							keyConstraint.weightx=1;
+							keyConstraint.weighty=1;
+							keyConstraint.gridx=j;
+							keyConstraint.gridy=i;
+							pankeybrd.add(new JButton(Character.toString(keys[j])),keyConstraint);
+						}
 				}
-		}
-		//we can add others keys (change size ? +grid layout pb ?)
-		
-		//pan Mouse
+				//we can add others keys (change size ? +grid layout pb ?)
+				keyConstraint.gridy=5;
+				
+				keyConstraint.gridx=0;
+				pankeybrd.add(new JButton("ctrl"),keyConstraint);
+				keyConstraint.gridx=1;
+				pankeybrd.add(new JButton("alt"),keyConstraint);
+				keyConstraint.gridx=2;
+				keyConstraint.gridwidth=4;
+				keyConstraint.weightx=1;
+				pankeybrd.add(new JButton("space"),keyConstraint);
+				keyConstraint.gridwidth=1;
+				keyConstraint.gridx=4;
+				keyConstraint.weightx=0;
+				pankeybrd.add(new JButton("shift"),keyConstraint);
+				keyConstraint.gridx=5;
+				pankeybrd.add(new JButton("+"),keyConstraint);
+				keyConstraint.gridx=6;
+				pankeybrd.add(new JButton("="),keyConstraint);
+				keyConstraint.gridx=7;
+				pankeybrd.add(new JButton("*"),keyConstraint);
+				keyConstraint.gridwidth=2;
+				keyConstraint.gridx=8;
+				keyConstraint.weightx=1;
+				pankeybrd.add(new JButton("Enter"),keyConstraint);
+				
+				//pan Mouse
 		
 		panmouse.setSize(400, 400);
 		panmouse.setBorder(BorderFactory.createTitledBorder("Mouse"));
