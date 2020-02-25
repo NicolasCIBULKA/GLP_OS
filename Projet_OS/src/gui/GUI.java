@@ -161,7 +161,7 @@ public class GUI extends JFrame {
 		gcmouse.gridwidth=1;
 		gcmouse.fill=GridBagConstraints.NONE;
 		
-		//adding the buttons
+		//adding the buttons: arrows + click
 		
 		gcmouse.gridx=1;
 		gcmouse.gridy=0;
@@ -169,6 +169,9 @@ public class GUI extends JFrame {
 		gcmouse.gridx=0;
 		gcmouse.gridy=1;
 		panmouse.add(new JButton("<"), gcmouse);
+		gcmouse.gridx=1;
+		gcmouse.gridy=1;
+		panmouse.add(new JButton("click"), gcmouse);
 		gcmouse.gridx=2;
 		gcmouse.gridy=1;
 		panmouse.add(new JButton(">"), gcmouse);
