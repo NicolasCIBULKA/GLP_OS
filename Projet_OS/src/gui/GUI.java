@@ -74,7 +74,7 @@ public class GUI extends JFrame {
 		contentPane.setLayout(new GridBagLayout());
 		GridBagConstraints gridcons = new GridBagConstraints();
 		gridcons.fill=GridBagConstraints.BOTH;
-		gridcons.insets = new Insets(10, 10, 10, 10);
+		gridcons.insets = new Insets(5, 5, 5, 5);
 
 		
 		//adding the five parts to the frame
