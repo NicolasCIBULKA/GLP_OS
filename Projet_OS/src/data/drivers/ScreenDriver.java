@@ -1,6 +1,7 @@
 package data.drivers;
 
 import data.peripheral.Screen;
+import process.visitor.ArrayListVisitor;
 
 public class ScreenDriver extends Driver{
 	/*
@@ -13,6 +14,7 @@ public class ScreenDriver extends Driver{
 	// Attributs
 	// --------------------------------------
 	private Screen screen;
+	private String translatedscreen;
 	// --------------------------------------
 	// Methods
 	// --------------------------------------
@@ -21,6 +23,7 @@ public class ScreenDriver extends Driver{
 	public ScreenDriver(String DriverID, Interaction authorization, Screen screen) {
 		super(DriverID, authorization);
 		this.screen = screen;
+		setTranslatedscreen(" ");
 	}
 	// getters and setters 
 	public String getScreencontent() {
@@ -31,6 +34,12 @@ public class ScreenDriver extends Driver{
 		screen.setScreencontent(screencontent);
 	}
 	
+	public String getTranslatedscreen() {
+		return translatedscreen;
+	}
+	public void setTranslatedscreen(String translatedscreen) {
+		this.translatedscreen = translatedscreen;
+	}
 	// Adding a String in the Screen to be seen by user
 	public void addStringScreen(String input) {
 		//screen.setScreencontent("\nuser-input: " + screen.getScreencontent() + input);
@@ -39,15 +48,17 @@ public class ScreenDriver extends Driver{
 	
 	public void resetScreen() {
 		this.setScreencontent(" ");
+		this.setTranslatedscreen(" ");
 	}
 	
 	public String toString() {
-		String[] tabscreen = screen.getScreencontent().split(";");
-		String usablescreencontent = "";
-		for(int i = 0; i < tabscreen.length; i++) {
-			usablescreencontent += tabscreen[i] + "\n";
-		}
-		return usablescreencontent;
+		return this.getScreencontent();
+	}
+	
+	
+
+	public <T> T accept(ArrayListVisitor<T> visitor) {
+		return visitor.visit(this);
 	}
 	
 	

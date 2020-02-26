@@ -1,6 +1,7 @@
 package process.visitor;
 
 import data.arithmeticaloperation.*;
+import data.drivers.ScreenDriver;
 import data.functions.Print;
 import data.functions.Sleep;
 import data.primitive.Exit;
@@ -17,13 +18,30 @@ public class OperationVisitor implements ArrayListVisitor<Void>{
 	 * @author Nicolas CIBULKA
 	 */
 	
+	// Drivers
+	
+	@Override
+	public Void visit(ScreenDriver node) {
+		String[] tabscreen = node.getScreencontent().split(";");
+		String usablescreencontent = "";
+		for(int i = 0; i < tabscreen.length; i++) {
+			usablescreencontent += tabscreen[i] + "\n";
+		}
+		node.setTranslatedscreen(usablescreencontent);
+		return null;
+	}
+	
+	
+	
+	
+	// Arithmetical Operation
+	
 	@Override
 	public Void visit(Addition node) {
 		Intvariable a = node.getA();
 		Intvariable b = node.getB();
 		node.getResult().setContent(a.getContent() + b.getContent());
 		return null;
-
 	}
 
 	@Override
@@ -42,6 +60,8 @@ public class OperationVisitor implements ArrayListVisitor<Void>{
 		return null;
 	}
 
+	// Primitives
+	
 	@Override
 	public Void visit(Exit node) {
 		node.getProcessus().setExiting(true);
@@ -93,13 +113,15 @@ public class OperationVisitor implements ArrayListVisitor<Void>{
 		proc.setAblerun(false);
 		return null;
 	}
+	
+	// Comparaison
 
 	@Override
 	public Void visit(Comparaison node) {
 		// Result is set to 0 if the comparaison is true, -1 for false
 		int a = node.getA().getContent();
 		int b = node.getB().getContent();
-		Intvariable res = new Intvariable(0);
+		Intvariable res = new Intvariable("result",0);
 		if(node.getComparator().equals("==")){
 			if(a == b) {
 				res.setContent(0);
@@ -144,10 +166,14 @@ public class OperationVisitor implements ArrayListVisitor<Void>{
 		return null;
 	}
 
+	// Functions
+	
 	@Override
 	public Void visit(Print node) {
-		System.out.println(node.getOperation().toString());
+		System.out.println(node.toString());
 		return null;
 	}
+
+
 	
 }

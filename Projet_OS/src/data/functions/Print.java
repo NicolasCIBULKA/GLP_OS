@@ -14,32 +14,37 @@ public class Print extends Operation{
 	// Attributs
 	// --------------------------------------
 	
-	private Operation operation;
+	private String line;
 	
 	// --------------------------------------
 	// Methods
 	// --------------------------------------
 	
 	public Print(Operation operation) {
-		this.setOperation(operation);
+		this.setLine(operation.toString());
 	}
 	
 	// getters and setters
 
-	public Operation getOperation() {
-		return operation;
+	public Print(String line) {
+		this.setLine(line);
 	}
 
-	public void setOperation(Operation operation) {
-		this.operation = operation;
-	}
 	
+	public String getLine() {
+		return line;
+	}
+
+	public void setLine(String line) {
+		this.line = line;
+	}
+
 	public <T> T accept(ArrayListVisitor<T> visitor) {
 		return visitor.visit(this);
 	}
 	
 	
 	public String print() {
-		return operation.toString();
+		return line.toString();
 	}
 }

@@ -23,8 +23,6 @@ public class MouseDriver extends Driver{
 	}
 
 
-	
-	
 	/*
 	 * move methods: up, down, left, right and clic
 	 * 

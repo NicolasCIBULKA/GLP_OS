@@ -1,6 +1,7 @@
 package process.visitor;
 
 import data.arithmeticaloperation.*;
+import data.drivers.ScreenDriver;
 import data.functions.*;
 import data.primitive.*;
 
@@ -15,6 +16,10 @@ public interface ArrayListVisitor<T> {
 	 * 
 	 * @author Nicolas CIBULKA
 	 */
+	
+	// Driver
+	
+	T visit(ScreenDriver node);
 	
 	// Arithmetical operations
 	

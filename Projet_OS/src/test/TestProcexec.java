@@ -18,42 +18,39 @@ public class TestProcexec {
 		// Test de la méthode d'execution des processus
 		ProcessusExec pexec = new ProcessusExec();
 		
+		// Definition des variabless$
 		Intvariable a = new Intvariable(3); 
 		Intvariable b = new Intvariable(1);
 		Intvariable c = new Intvariable(0);
 		Stringvariable d = new Stringvariable("Ceci est un test");
+		Stringvariable e = new Stringvariable("On est dans le else");
 		
+		// Definition des processus
 		Processus proc = new Processus("test");
 		Processus fortest = new Processus("Test2");
 		Processus ifproc = new Processus("ifproc");
 		Processus elseproc = new Processus("elseproc");
 		
-		
+		// Definition des operations
 		Comparaison comp = new Comparaison(a, b, c, "==");
 		Operation ifelse = new Ifelsetest(ifproc, elseproc, comp);
 		
 		Sleep slp = new Sleep(1000);
 		Sleep slp2 = new Sleep(1000);
-		Sleep slp3 = new Sleep(10000);
+		Sleep slp3 = new Sleep(3000);
 		Sleep slp4 = new Sleep(300);
 		Print prt = new Print(slp);
 		Print prt3 = new Print(d);
+		Print prt4 = new Print(e);
 		Primitive exit = new Kill(proc, "RUN");
-		
-		proc.addOperation(slp);
+
+		// Ajout des opérations
 		ifproc.addOperation(slp3);
-		elseproc.addOperation(slp4);
+		elseproc.addOperation(prt4);
 		fortest.addOperation(slp2);
 		fortest.addOperation(prt);
 		fortest.addOperation(slp);
-		
-		
-		System.out.println("oui");
 		proc.addOperation(exit);
-		pexec.execution(proc);
-		
-		System.out.println("oui2");
-		
 		ForLoop flp = new ForLoop(fortest, 0, 5);
 		Print prt2 = new Print(flp);
 		
@@ -61,8 +58,14 @@ public class TestProcexec {
 		fortest.addOperation(prt2);
 		fortest.addOperation(prt3);
 		proc.addOperation(ifelse);
+		
+		System.out.println("----------- Test de l'execution du processus " + proc.getProcessusname() + " -----------\n\n");
+		// Le programme effectue d'abord la boucle for, puis teste avec un if else si a == b
+		// Si c'est vrai, on sleep pendant 3s, sinon écrit un texte
+		
+		
 		pexec.execution(proc);
 		
-		System.out.println("oui3");
+		System.out.println("\n\n----------- Fin de l'execution du processus " + proc.getProcessusname() + " -----------\n\n");
 	}
 }

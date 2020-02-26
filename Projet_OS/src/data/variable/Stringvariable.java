@@ -13,14 +13,16 @@ public class Stringvariable extends Operation {
 	// Attributs
 	// --------------------------------------
 	private String content;
+	private String name;
 	// --------------------------------------
 	// Methods
 	// --------------------------------------
 	
 	// Constructor
 	
-	public Stringvariable(String content) {
+	public Stringvariable(String name, String content) {
 		this.content = content;
+		this.setName(name);
 	}
 	
 	// getters and setters
@@ -33,6 +35,14 @@ public class Stringvariable extends Operation {
 		this.content = content;
 	}
 	
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
 	public String toString() {
 		return this.getContent() + " " ;
 	}

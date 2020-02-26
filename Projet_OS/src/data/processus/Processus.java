@@ -25,12 +25,19 @@ public class Processus {
 	// --------------------------------------
 	
 	// this is the constructor of the Processus class
+	
+	public Processus() {
+		this.operationlist = new ArrayList<Operation>();
+		this.setAblerun(true);
+		this.setExiting(false);
+	}
 	public Processus(String processusname) {
 		this.operationlist = new ArrayList<Operation>();
 		this.processusname = processusname;
 		this.setAblerun(true);
 		this.setExiting(false);
 	}
+	
 	
 	// Getters and setters
 	
