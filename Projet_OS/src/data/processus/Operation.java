@@ -33,6 +33,8 @@ public abstract class Operation {
 		this.operationpriority = operationpriority;
 	}
 	
-	
+	public String toString() {
+		return "";
+	}
 	
 }

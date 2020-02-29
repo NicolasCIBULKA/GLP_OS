@@ -24,6 +24,8 @@ public class ForLoop extends LoopOperation{
 	
 	// getters and setters
 
+
+
 	public int getIternumber() {
 		return iternumber;
 	}
@@ -49,8 +51,9 @@ public class ForLoop extends LoopOperation{
 		this.variable = variable;
 	}
 
-	// toString
 	
+	// toString
+
 	public String toString() {
 		return this.getIterstart() + " / " + this.getIternumber()  ;
 	}

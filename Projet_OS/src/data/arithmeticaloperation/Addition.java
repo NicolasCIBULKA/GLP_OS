@@ -13,7 +13,6 @@ public class Addition extends Arithmeticaloperation{
 	// Attributs
 	// --------------------------------------
 	
-	
 	// --------------------------------------
 	// Methods
 	// --------------------------------------
@@ -23,8 +22,13 @@ public class Addition extends Arithmeticaloperation{
 		super(a,b, result);
 	}
 	
+	
 	public <T> T accept(ArrayListVisitor<T> visitor) {
 		return visitor.visit(this);
+	}
+	
+	public int calculate() {
+		return this.getA().getContent() + this.getB().getContent();
 	}
 	
 	public String toString() {

@@ -5,6 +5,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.HashMap;
 import data.arithmeticaloperation.*;
+import data.functions.Increment;
 import data.functions.Print;
 import data.functions.Sleep;
 import data.iftest.Ifelsetest;
@@ -12,6 +13,7 @@ import data.loop.ForLoop;
 import data.processus.Operation;
 import data.processus.Processus;
 import data.variable.*;
+import process.rrobin.Variablebuffer;
 
 public class Transcriptor {
 	/*
@@ -38,31 +40,24 @@ public class Transcriptor {
 	// Methods
 	// --------------------------------------
 	public Transcriptor() {
-		intvariablelist = new HashMap<String, Intvariable>();
-		stringvariablelist = new HashMap<String, Stringvariable>();
+	
 	}
 	
 	// getters and setters
-	
-	public void resetlists() {
-		intvariablelist.clear();
-		stringvariablelist.clear();
-	}
-	
+
 	// Transcriptor
 
-	public Processus transcription(String filename) {
-		//Processus proc = new Processus();
+	public void transcription(Processus proc, String filename) {
 		try {
+			
 			/*
 			 * Definition of the different attributs
 			 */
-			
-			Processus proc = new Processus();
+			intvariablelist = proc.getVarbuffer().getIntvariablelist();
+			stringvariablelist = proc.getVarbuffer().getStringvariablelist();
 			BufferedReader procfile = new BufferedReader(new FileReader(filename));
 			String line;
 			String[] splittedline;
-			String identifier_loop_test_function_allocate;
 			int currentline = 1;
 
 			/*
@@ -71,33 +66,37 @@ public class Transcriptor {
 			
 			while((line = procfile.readLine()) != null) {
 				// Split of the line & definition of the place of the identifier
-				splittedline = line.split(" ");
-				identifier_loop_test_function_allocate = splittedline[identifier_loop_test_function_allocate_POSITION];
+				splittedline = line.split("\\s+");
 				// Test of the first line to set the processusname
-				if(identifier_loop_test_function_allocate == "PROCESSUSNAME") {
+				if(splittedline[identifier_loop_test_function_allocate_POSITION].contains("PROCESSUSNAME")) {
 					proc.setProcessusname(splittedline[1]);
 				}
 				// Test if the line create a Forloop Processus
-				else if(identifier_loop_test_function_allocate == "FOR") {
-					if(splittedline.length == 7) {
-						Processus forproc = new Processus();
-						String var = splittedline[1];
-						if(intvariablelist.containsKey(var)) {
+				else if(splittedline[identifier_loop_test_function_allocate_POSITION].contains("FOR") ) {
+					Processus forproc = new Processus();
+					String var = splittedline[1];
+					if(intvariablelist.containsKey(var)) {
+						if(splittedline.length == 7) {
 							int i = Integer.parseInt(splittedline[3]);
 							int limit = Integer.parseInt(splittedline[5]);
+							intvariablelist.get(var).setContent(i);
 							ForLoop forloop = new ForLoop(forproc, intvariablelist.get(var) , i, limit);
-							while(!line.contains("}")) {
-								Operation loopoperation = operationfinder(line, currentline);
+							line = procfile.readLine();
+							while(line.contains("}") == false) {
+								Operation loopoperation = operationfinder(line, currentline, intvariablelist, stringvariablelist);
+								//System.out.println( "loopoperation " + loopoperation);
 								forloop.getOperations().addOperation(loopoperation);
 								line = procfile.readLine();
 								currentline++;
 							}
-							proc.addOperation(forloop);
-						}
-						else {
-							Operation error = new Print("Error on line " + currentline + " : Int variable in for loop does not exists : " + line + "\n");
-							proc.addOperation(error);
-						}
+						currentline++;
+						//System.out.println(forloop.getOperations().getOplist());
+						proc.addOperation(forloop);
+					}
+					else {
+						Operation error = new Print("Error on line " + currentline + " : Int variable in for loop does not exists : " + line + "\n");
+						proc.addOperation(error);
+					}
 					}
 					else {
 						Operation error = new Print("Error on line " + currentline + " : Invalid number of arguments in for loop : " + line + "\n");
@@ -105,7 +104,7 @@ public class Transcriptor {
 					}
 				}
 				// Test if the line create a Ifelsetest
-				else if(identifier_loop_test_function_allocate == "IF") {
+				else if(splittedline[identifier_loop_test_function_allocate_POSITION].contains("IF")) {
 					if(splittedline.length == 5) {
 						Processus ifproc = new Processus();
 						Processus elseproc = new Processus();
@@ -115,16 +114,21 @@ public class Transcriptor {
 						Intvariable result = new Intvariable("result",0);
 						if((intvariablelist.containsKey(nb1)) && (intvariablelist.containsKey(nb2))) {
 							Comparaison comparaison = new Comparaison(intvariablelist.get(nb1), intvariablelist.get(nb2), result, comparator);
+							line = procfile.readLine();
+							currentline++;
 							while(!line.contains("}")) {
-								Operation ifoperation = operationfinder(line, currentline);
+								Operation ifoperation = operationfinder(line, currentline, intvariablelist, stringvariablelist);
 								ifproc.addOperation(ifoperation);
 								line = procfile.readLine();
 								currentline++;
 							}
 							line = procfile.readLine();
+							currentline++;
 							if(line.contains("ELSE")){
+								line = procfile.readLine();
+								currentline++;
 								while(!line.contains("}")) {
-									Operation elseoperation = operationfinder(line, currentline);
+									Operation elseoperation = operationfinder(line, currentline, intvariablelist, stringvariablelist);
 									elseproc.addOperation(elseoperation);
 									line = procfile.readLine();
 									currentline++;
@@ -145,18 +149,21 @@ public class Transcriptor {
 				}
 				// Going there means that the line means create a parameter, or using a function
 				else {
-					Operation operation = operationfinder(line, currentline);
-					proc.addOperation(operation);
+					Operation operation = operationfinder(line, currentline, intvariablelist, stringvariablelist);
+					if(operation != null) {
+						proc.addOperation(operation);
+						//System.out.println(proc.getOplist());
+					}
 				}
 				currentline++;
 			}
 			procfile.close();
-			resetlists();
+			//System.out.println(this.intvariablelist);
 		} catch (IOException e) {
 			
 			e.printStackTrace();
 		}	
-		return null;
+		
 	}
 	
 	
@@ -164,30 +171,32 @@ public class Transcriptor {
 	 * Methods that identify the Operation with the line
 	 */
 	
-	public Operation operationfinder(String analysedline, int linenumber) {
-		
+	public Operation operationfinder(String analysedline, int linenumber,HashMap<String, Intvariable> intvariablelist, HashMap<String, Stringvariable> stringvariablelist) {
 		String[] splittedline;
 		splittedline = analysedline.split(" ");
-		String identifier_loop_test_function_allocate = splittedline[identifier_loop_test_function_allocate_POSITION];
-		String identifier_arithmetical = splittedline[identifier_arithmetical_POSITION];
-		if(identifier_arithmetical.equals("+")) {
-			if(splittedline.length == 5) {
+		// Test if the line is a commentary
+		if(splittedline[0].contains("#")) {
+			return null;
+		}
+		// Operation haven't been recognized
+		else if(splittedline.length == 5) {
+			//System.out.println("addition" + splittedline[3]);
+			if(splittedline[identifier_arithmetical_POSITION].contains("+")) {
+				//System.out.println("addition" + linenumber);
 				String op1 = splittedline[2];
 				String op2 = splittedline[4];
 				String sol = splittedline[0];
 				if((intvariablelist.containsKey(op1)) && (intvariablelist.containsKey(op2)) && (intvariablelist.containsKey(sol))) {
-					Operation operation = new Addition(intvariablelist.get(op1), intvariablelist.get(op2), intvariablelist.get(sol));
+					Addition operation = new Addition(intvariablelist.get(op1), intvariablelist.get(op2), intvariablelist.get(sol));
 					return operation;
 				}
-			}
-			else {
-				Operation error = new Print("Error on line " + linenumber + " : Addition with an incorrect number of Parameter : " + analysedline + "\n");
-				return error;
-			}
-		}
-		
-		else if(identifier_arithmetical.equals("-")) {
-			if(splittedline.length == 5) {
+				
+				else {
+					Print error = new Print("Error on line " + linenumber + " : Addition with an incorrect number of Parameter : " + analysedline + "\n");
+					return error;
+				}
+			}	
+			else if(splittedline[identifier_arithmetical_POSITION].contains("-")) {
 				String op1 = splittedline[2];
 				String op2 = splittedline[4];
 				String sol = splittedline[0];
@@ -195,55 +204,60 @@ public class Transcriptor {
 					Operation operation = new Substraction(intvariablelist.get(op1), intvariablelist.get(op2), intvariablelist.get(sol));
 					return operation;
 				}
-			}
-			else {
-				Operation error = new Print("Error on line " + linenumber + " : Substraction with an incorrect number of Parameter : " + analysedline + "\n");
-				return error;
-		
-			}
-		}
-		
-		else if(identifier_arithmetical.equals("*")) {
-			if(splittedline.length == 5) {
-				String op1 = splittedline[2];
-				String op2 = splittedline[4];
-				String sol = splittedline[0];
-				if((intvariablelist.containsKey(op1)) && (intvariablelist.containsKey(op2)) && (intvariablelist.containsKey(sol))) {
-					Operation operation = new Multiplication(intvariablelist.get(op1), intvariablelist.get(op2), intvariablelist.get(sol));
-					return operation;
+				else {
+					Operation error = new Print("Error on line " + linenumber + " : Substraction with an incorrect number of Parameter : " + analysedline + "\n");
+					return error;
 				}
 			}
-			else {
-				Operation error = new Print("Error on line " + linenumber + " : Multiplication with an incorrect number of Parameter : " + analysedline + "\n");
-				return error;
-			}
-		}				
+			
+			else if(splittedline[identifier_arithmetical_POSITION].contains("*")) {
+				if(splittedline.length == 5) {
+					String op1 = splittedline[2];
+					String op2 = splittedline[4];
+					String sol = splittedline[0];
+					if((intvariablelist.containsKey(op1)) && (intvariablelist.containsKey(op2)) && (intvariablelist.containsKey(sol))) {
+						Operation operation = new Multiplication(intvariablelist.get(op1), intvariablelist.get(op2), intvariablelist.get(sol));
+						return operation;
+					}
+				}
+				else {
+					Operation error = new Print("Error on line " + linenumber + " : Multiplication with an incorrect number of Parameter : " + analysedline + "\n");
+					return error;
+				}
+			}	
+		}
 			
 		/*
 		 * Tests if the line do an function 
 		 */
 		
 		// test of the Sleep function
-		else if(identifier_loop_test_function_allocate.equals("SLEEP")) {
-			if(analysedline.length() == 2) {
+		else if(splittedline[identifier_loop_test_function_allocate_POSITION].contains("SLEEP")) {
+			if(splittedline.length == 2) {
 				int time = Integer.parseInt(splittedline[1]);
-				Operation operation = new Sleep(time);
+				Sleep operation = new Sleep(time);
 				return operation;
 			}
 			else {
-				Operation error = new Print("Error on line " + linenumber + " : Sleep function with an incorrect number of Parameter : " + analysedline + "\n");
+				Print error = new Print("Error on line " + linenumber + " : Sleep function with an incorrect number of Parameter : " + analysedline + "\n");
 				return error;
 			}
 		}
 		// Test of the Print function
-		else if(identifier_loop_test_function_allocate.equals("PRINT")) {
-			if(analysedline.length() == 2) {
+		else if(splittedline[identifier_loop_test_function_allocate_POSITION].contains("PRINT")) {
+			if(splittedline.length == 2) {
 				if(stringvariablelist.containsKey(splittedline[1])) {
-					Operation operation = new Print(stringvariablelist.get(splittedline[1]));
+					//System.out.println(splittedline[1]);
+					Print operation = new Print(stringvariablelist.get(splittedline[1]));
+					//System.out.println("operation avant passage " + operation.getPrintop());
+					return operation;
+				}
+				else if(intvariablelist.containsKey(splittedline[1])) {
+					Print operation = new Print(intvariablelist.get(splittedline[1]));
 					return operation;
 				}
 				else {
-					Operation error = new Print("Error on line " + linenumber + " : String variable on Print function does not exist : " + analysedline + "\n");
+					Print error = new Print("Error on line " + linenumber + " : String variable on Print function does not exist : " + analysedline + "\n");
 					return error;
 				}
 			}
@@ -252,13 +266,30 @@ public class Transcriptor {
 				return error;
 			}
 		}
+		// test for increment function 
+		else if(splittedline[identifier_loop_test_function_allocate_POSITION].contains("INCREMENT")) {
+			if(splittedline.length == 2) {
+				if(intvariablelist.containsKey(splittedline[1])) {
+					Increment operation = new Increment(intvariablelist.get(splittedline[1]));
+					return operation;
+				}
+				else {
+					Operation error = new Print("Error on line " + linenumber + " : Int variable on Increment function does not exist : " + analysedline + "\n");
+					return error;
+				}
+			}
+			else {
+				Operation error = new Print("Error on line " + linenumber + " : Increment function with an incorrect number of Parameter : " + analysedline + "\n");
+				return error;
+			}
+		}
 		/*
 		 * Tests if the line do an allocation
 		 */
 		
 		// Test for a int allocation
-		else if(identifier_loop_test_function_allocate.equals("INT")) {
-			if(analysedline.length() == 4) {
+		else if(splittedline[identifier_loop_test_function_allocate_POSITION].contains("INT")) {
+			if(splittedline.length == 4) {
 				if(stringvariablelist.containsKey(splittedline[1])) {
 					Operation error = new Print("Error on line " + linenumber + " : Int variable allocation already exists as a String variable : " + analysedline + "\n");
 					return error;
@@ -270,6 +301,7 @@ public class Transcriptor {
 				else {
 					int value = Integer.parseInt(splittedline[3]);
 					Operation operation = new Intvariable(splittedline[1], value);
+					intvariablelist.put(splittedline[1], (Intvariable) operation);
 					return operation;
 				}
 			}
@@ -279,14 +311,16 @@ public class Transcriptor {
 			}
 		}
 		// Test for a String allocation
-		else if(identifier_loop_test_function_allocate.equals("STRING")) {
-			if(splittedline[2] == "=") {
-				String result = " ";
+		
+		else if(splittedline[identifier_loop_test_function_allocate_POSITION].contains("STRING")) {
+			if(splittedline[2].contentEquals("=")) {
+				String result = "";
 				for(int i = 3; i < splittedline.length; i++) {
-					result += splittedline[i];
+					result += splittedline[i]  + " ";
 				}
-				result = result.replaceAll(result, "\"");
-				Operation operation = new Stringvariable(splittedline[1], result);
+				//String finalresult = result.replaceAll(result, "\"");
+				Stringvariable operation = new Stringvariable(splittedline[1], result);
+				stringvariablelist.put(splittedline[1], operation);
 				return operation;
 			}
 			else {
@@ -294,11 +328,15 @@ public class Transcriptor {
 				return error;
 			}
 		}
+		
 		/*
 		 * If we go in else, that means that the command haven't been recognized and we have to stop the interpretation
-		*/
-		Operation error = new Print("Error on line " + linenumber + " : Operation not recognized : " + analysedline + "\n");
-		return error;
+		*/		
+		else {
+			Operation error = new Print("Error on line " + linenumber + " : Operation not recognized : " + analysedline + "\n");
+			return error;
+		}
+		return null;
 	}
 	
 }

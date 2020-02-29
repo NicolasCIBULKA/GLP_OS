@@ -1,6 +1,8 @@
 package data.functions;
 
 import data.processus.Operation;
+import data.variable.Stringvariable;
+import data.variable.Variable;
 import process.visitor.ArrayListVisitor;
 
 public class Print extends Operation{
@@ -14,37 +16,40 @@ public class Print extends Operation{
 	// Attributs
 	// --------------------------------------
 	
-	private String line;
+	private Variable printop;
 	
 	// --------------------------------------
 	// Methods
 	// --------------------------------------
 	
-	public Print(Operation operation) {
-		this.setLine(operation.toString());
+	public Print(Variable operation) {
+		this.printop = operation;
 	}
-	
-	// getters and setters
 
 	public Print(String line) {
-		this.setLine(line);
+		printop = new Stringvariable(line);
 	}
 
+	public Print() {
+		
+	}
+
+
+	public Variable getPrintop() {
+		return printop;
+	}
 	
-	public String getLine() {
-		return line;
+	public void setPrintop(Variable printop) {
+		this.printop = printop;
 	}
 
-	public void setLine(String line) {
-		this.line = line;
-	}
 
 	public <T> T accept(ArrayListVisitor<T> visitor) {
 		return visitor.visit(this);
 	}
 	
-	
 	public String print() {
-		return line.toString();
+		//System.out.println(this.getPrintop());
+		return this.getPrintop().toString();
 	}
 }

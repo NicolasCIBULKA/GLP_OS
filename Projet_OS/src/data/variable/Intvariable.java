@@ -1,8 +1,6 @@
 package data.variable;
 
-import data.processus.Operation;
-
-public class Intvariable extends Operation{
+public class Intvariable extends Variable {
 	/*
 	 * This class contain a int for the processus execution
 	 * 
@@ -13,7 +11,7 @@ public class Intvariable extends Operation{
 	// Attributs
 	// --------------------------------------
 	private int content;
-	private String name;
+	
 	// --------------------------------------
 	// Methods
 	// --------------------------------------
@@ -21,8 +19,14 @@ public class Intvariable extends Operation{
 	// Constructor
 	
 	public Intvariable(String name, int content) {
+		super(name);
 		this.content = content;
-		this.setName(name);
+
+	}
+	
+	public Intvariable(int content) {
+		super();
+		this.content = content;
 	}
 	
 	// getters and setters
@@ -33,14 +37,6 @@ public class Intvariable extends Operation{
 
 	public void setContent(int content) {
 		this.content = content;
-	}
-	
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
 	}
 
 	public String toString() {

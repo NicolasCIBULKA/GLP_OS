@@ -1,8 +1,6 @@
 package data.variable;
 
-import data.processus.Operation;
-
-public class Stringvariable extends Operation {
+public class Stringvariable extends Variable {
 	/*
 	 * This class contain a String for the processus execution
 	 * 
@@ -21,12 +19,17 @@ public class Stringvariable extends Operation {
 	// Constructor
 	
 	public Stringvariable(String name, String content) {
+		super(name);
 		this.content = content;
-		this.setName(name);
+		
 	}
 	
 	// getters and setters
 	
+	public Stringvariable(String content) {
+		this.content = content;
+	}
+
 	public String getContent() {
 		return content;
 	}
@@ -44,6 +47,6 @@ public class Stringvariable extends Operation {
 	}
 
 	public String toString() {
-		return this.getContent() + " " ;
+		return this.getContent() ;
 	}
 }

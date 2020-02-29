@@ -1,0 +1,11 @@
+PROCESSUSNAME proctest
+INT compteur = 0
+INT compteur2 = 0
+STRING debut = ----------------------- COMPTEUR -----------------------
+STRING fin = ----------------------- FIN COMPTEUR -----------------------
+PRINT debut
+FOR compteur FROM 0 TO 10 {
+	PRINT compteur
+	SLEEP 1000
+}
+PRINT fin

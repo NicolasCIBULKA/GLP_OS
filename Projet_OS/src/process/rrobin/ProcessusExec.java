@@ -1,12 +1,15 @@
 package process.rrobin;
 
 import data.arithmeticaloperation.*;
+import data.functions.Increment;
 import data.functions.Print;
 import data.functions.Sleep;
 import data.iftest.Ifelsetest;
 import data.loop.*;
 import data.primitive.Kill;
 import data.processus.Processus;
+import data.variable.Intvariable;
+import data.variable.Stringvariable;
 import process.visitor.*;
 
 public class ProcessusExec {
@@ -20,7 +23,6 @@ public class ProcessusExec {
 	// Attributs
 	// --------------------------------------
 	
-	
 	// --------------------------------------
 	// Methods
 	// --------------------------------------
@@ -28,7 +30,6 @@ public class ProcessusExec {
 	// Constructor of the class ProcessusExec
 	
 	public ProcessusExec() {
-		
 	}
 	
 	// Method that will execute the processus
@@ -44,16 +45,36 @@ public class ProcessusExec {
 					
 					// Execution of the arithmeticalOperation
 					if(proc.getOplist().get(i) instanceof Addition ) {
+						Addition additionner = (Addition) proc.getOplist().get(i);
 						ArrayListVisitor<Void> visitor = new OperationVisitor();
-						visitor.visit((Addition) proc.getOplist().get(i));
+						visitor.visit(additionner);
+						Intvariable result = additionner.getResult();
+						proc.getVarbuffer().getIntvariablelist().get(result.getName()).setContent(result.getContent());
+						//System.out.println("res : " + additionner.getResult().getContent());
+						//System.out.println(proc.getVarbuffer().getIntvariablelist());
 					}
 					else if(proc.getOplist().get(i) instanceof Substraction ) {
+						Substraction subber = (Substraction) proc.getOplist().get(i);
 						ArrayListVisitor<Void> visitor = new OperationVisitor();
-						visitor.visit((Substraction) proc.getOplist().get(i));
+						visitor.visit(subber);
+						Intvariable result = subber.getResult();
+						proc.getVarbuffer().getIntvariablelist().get(result.getName()).setContent(result.getContent());
+
 					}
 					else if(proc.getOplist().get(i) instanceof Multiplication ) {
+						Multiplication multiplier = (Multiplication) proc.getOplist().get(i);
 						ArrayListVisitor<Void> visitor = new OperationVisitor();
-						visitor.visit((Multiplication) proc.getOplist().get(i));
+						visitor.visit(multiplier);
+						Intvariable result = multiplier.getResult();
+						proc.getVarbuffer().getIntvariablelist().get(result.getName()).setContent(result.getContent());
+					}
+					else if(proc.getOplist().get(i) instanceof Increment ) {
+						ArrayListVisitor<Void> visitor = new OperationVisitor();
+						Increment incrementer = (Increment) proc.getOplist().get(i);
+						visitor.visit(incrementer);
+						Intvariable result = incrementer.getVar();
+						proc.getVarbuffer().getIntvariablelist().get(result.getName()).setContent(result.getContent());
+						//System.out.println("incrementer : " + incrementer.getVar().getContent());
 					}
 					// Execution of the Primitives
 					
@@ -71,9 +92,24 @@ public class ProcessusExec {
 					// Execution of the functions
 					
 					// Execution of print
-					else if(proc.getOplist().get(i) instanceof Print ) {
+					else if(proc.getOplist().get(i) instanceof Print) {
+						//System.out.println(proc.getOplist());
 						ArrayListVisitor<Void> visitor = new OperationVisitor();
-						visitor.visit((Print) proc.getOplist().get(i));
+						Print printer = (Print) proc.getOplist().get(i);
+						//System.out.println(proc.getVarbuffer().getIntvariablelist().get(printer.getPrintop().getName()));
+						if(printer.getPrintop() instanceof Intvariable) {
+							Intvariable var = proc.getVarbuffer().getIntvariablelist().get(printer.getPrintop().getName());
+							//System.out.println(proc.getVarbuffer().getIntvariablelist());
+							//System.out.println(var.getContent());
+							printer.setPrintop(var);
+						}
+						else if(printer.getPrintop() instanceof Stringvariable) {
+							Stringvariable var = proc.getVarbuffer().getStringvariablelist().get(printer.getPrintop().getName());
+							//System.out.println(var.toString());
+							printer.setPrintop(var);
+						}
+						//System.out.println(printer.getPrintop());
+						visitor.visit(printer);
 					}
 					// Execution of the loops Operation
 					
@@ -82,10 +118,26 @@ public class ProcessusExec {
 						ForLoop floop = (ForLoop) proc.getOplist().get(i);
 						int iterstart = floop.getIterstart();
 						int iternumber = floop.getIternumber();
-						for(int j = iterstart+1; j < iternumber+1; j++) {
-							floop.setIterstart(j);
+						floop.getVariable().setContent(iterstart);
+						//System.out.println("Stringbuffer du proc superieur" + proc.getVarbuffer().getStringvariablelist());
+						floop.getOperations().setVarbuffer(proc.getVarbuffer());
+						//Variablebuffer varbuff = new Variablebuffer();
+						//System.out.println(floop);
+						//proc.getVarbuffer().getIntvariablelist().get(floop.getVariable().getName()).setContent(floop.getVariable().getContent());
+						for(int j = iterstart; j < iternumber; j++) {
+							//floop.setIterstart(iterstart);
+							//floop.getVariable().setContent(j);
+							//proc.getVarbuffer().getIntvariablelist().get(floop.getVariable().getName()).setContent(floop.getVariable().getContent());
+							//System.out.println("floop buffer" + floop.getOperations().getVarbuffer().getStringvariablelist());
+							proc.setVarbuffer( floop.getOperations().getVarbuffer());
+							//System.out.println("buffer varbuffer: " +  varbuff.getStringvariablelist());
 							execution(floop.getOperations());
+							//System.out.println("buffer varbuffer: " +  varbuff.getStringvariablelist());
+							proc.getVarbuffer().getIntvariablelist().get(floop.getVariable().getName()).setContent(floop.getVariable().getContent() + 1);
+							proc.setVarbuffer(floop.getOperations().getVarbuffer());
+							//System.out.println(floop.getVariable().getContent());
 						}
+						
 					}
 					// Execution of the testOperation
 					else if(proc.getOplist().get(i) instanceof Ifelsetest) {
@@ -127,4 +179,7 @@ public class ProcessusExec {
 			
 		}
 	}
+
+	
+	
 }

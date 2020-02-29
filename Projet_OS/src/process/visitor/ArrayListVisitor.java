@@ -3,6 +3,7 @@ package process.visitor;
 import data.arithmeticaloperation.*;
 import data.drivers.ScreenDriver;
 import data.functions.*;
+import data.loop.ForLoop;
 import data.primitive.*;
 
 
@@ -46,5 +47,9 @@ public interface ArrayListVisitor<T> {
 	T visit(Pause node);
 
 	T visit(Comparaison node);
+
+	T visit(Increment node);
+
+	//T visit(ForLoop node);
 	
 }

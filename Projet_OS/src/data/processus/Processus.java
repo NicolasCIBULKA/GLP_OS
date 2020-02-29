@@ -2,6 +2,8 @@ package data.processus;
 
 import java.util.ArrayList;
 
+import process.rrobin.Variablebuffer;
+
 public class Processus {
 	
 	/*
@@ -20,6 +22,7 @@ public class Processus {
 	private String processusname;
 	private boolean ablerun;
 	private boolean exiting;
+	private Variablebuffer varbuffer;
 	// --------------------------------------
 	// Methods
 	// --------------------------------------
@@ -30,12 +33,14 @@ public class Processus {
 		this.operationlist = new ArrayList<Operation>();
 		this.setAblerun(true);
 		this.setExiting(false);
+		varbuffer = new Variablebuffer();
 	}
 	public Processus(String processusname) {
 		this.operationlist = new ArrayList<Operation>();
 		this.processusname = processusname;
 		this.setAblerun(true);
 		this.setExiting(false);
+		varbuffer = new Variablebuffer();
 	}
 	
 	
@@ -84,15 +89,27 @@ public class Processus {
 	public void setProcessusname(String processusname) {
 		this.processusname = processusname;
 	}
+	
+	public Variablebuffer getVarbuffer() {
+		return varbuffer;
+	}
+	
+	public void setVarbuffer(Variablebuffer varbuffer) {
+		this.varbuffer.setIntvariablelist(varbuffer.getIntvariablelist());
+		this.varbuffer.setStringvariablelist(varbuffer.getStringvariablelist());
+	}
 
 	public int getNboperation() {
 		return operationlist.size();
 	}
 	// Methods
 	
+	
 	public void addOperation(Operation op) {
 		operationlist.add(op);
 	}
+	
+	
 
 
 	
