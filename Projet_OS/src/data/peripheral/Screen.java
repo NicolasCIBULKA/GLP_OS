@@ -63,6 +63,8 @@ public class Screen extends Peripheral{
 		this.theme = theme;
 	}
 	
+	// toString
+	
 	public String toString() {
 		return screencontent;
 	}

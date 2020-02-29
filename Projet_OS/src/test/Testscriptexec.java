@@ -1,33 +1,43 @@
 package test;
 
-import data.arithmeticaloperation.Addition;
-import data.functions.Print;
+import data.drivers.Interaction;
+import data.drivers.ScreenDriver;
+import data.peripheral.Screen;
 import data.processus.Processus;
-import data.variable.Intvariable;
 import process.rrobin.ProcessusExec;
 import process.traduction.Transcriptor;
 
 public class Testscriptexec {
 
 	public static void main(String[] args) {
+		// traducteur
+		
 		Transcriptor transcriptor = new Transcriptor();
-		ProcessusExec procexec = new ProcessusExec();
+		
+		// Necessaire a l'utilisation de lecran
+		
+		Screen screen = new Screen("Screen");
+		Interaction auth = new Interaction(true, true, true);
+		
+		ScreenDriver scdriver = new ScreenDriver("ScreenDriver", auth, screen);
+		
+		// Executeur de processus qui enverra les resultats sur le driver de l'ecran
+		
+		ProcessusExec procexec = new ProcessusExec(scdriver);
 		String filename = "/home/nico/Bureau/Fac/L2/S2/GLP/GLP_OS/GLP_OS/Projet_OS/src/scripts/compteur.txt" ;
 		Processus proc = new Processus();
+		
+		// traduction du langage interpreté en un code utilisable
+		
 		transcriptor.transcription(proc, filename);
+		
+		// execution du code 
+		
 		procexec.execution(proc);
 		
-		/*
-		Intvariable a = new Intvariable(3);
-		Intvariable b = new Intvariable(2);
-		Intvariable res = new Intvariable(1);
-		Processus test = new Processus();
-		Addition add = new Addition(a,b,res);
-		Print pr = new Print(res);
-		test.addOperation(add);
-		test.addOperation(pr);
-		procexec.execution(test);
-		*/
+		// Affichage du contenu de l'écran
+		
+		System.out.println(scdriver.toString());
 	}
 
 }

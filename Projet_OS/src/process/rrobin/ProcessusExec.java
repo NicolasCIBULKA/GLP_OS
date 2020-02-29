@@ -1,6 +1,7 @@
 package process.rrobin;
 
 import data.arithmeticaloperation.*;
+import data.drivers.ScreenDriver;
 import data.functions.Increment;
 import data.functions.Print;
 import data.functions.Sleep;
@@ -22,14 +23,15 @@ public class ProcessusExec {
 	// --------------------------------------
 	// Attributs
 	// --------------------------------------
-	
+	private ScreenDriver scdriver;
 	// --------------------------------------
 	// Methods
 	// --------------------------------------
 	
 	// Constructor of the class ProcessusExec
 	
-	public ProcessusExec() {
+	public ProcessusExec(ScreenDriver scdriver) {
+		this.scdriver = scdriver;
 	}
 	
 	// Method that will execute the processus
@@ -37,128 +39,148 @@ public class ProcessusExec {
 	public void execution(Processus proc) {
 		if(proc.isAblerun() == true) {
 			int i = 0;
-			while( i < proc.getNboperation()){
-				// Test of if the programm isn't forced to shutdown
-				if(proc.isExiting() == false) {
-					// if a shutdown primitive haven't been called, look if the program haven't been paused
-					// If not, execute the operation 
-					
-					// Execution of the arithmeticalOperation
-					if(proc.getOplist().get(i) instanceof Addition ) {
-						Addition additionner = (Addition) proc.getOplist().get(i);
-						ArrayListVisitor<Void> visitor = new OperationVisitor();
-						visitor.visit(additionner);
-						Intvariable result = additionner.getResult();
-						proc.getVarbuffer().getIntvariablelist().get(result.getName()).setContent(result.getContent());
-						//System.out.println("res : " + additionner.getResult().getContent());
-						//System.out.println(proc.getVarbuffer().getIntvariablelist());
-					}
-					else if(proc.getOplist().get(i) instanceof Substraction ) {
-						Substraction subber = (Substraction) proc.getOplist().get(i);
-						ArrayListVisitor<Void> visitor = new OperationVisitor();
-						visitor.visit(subber);
-						Intvariable result = subber.getResult();
-						proc.getVarbuffer().getIntvariablelist().get(result.getName()).setContent(result.getContent());
-
-					}
-					else if(proc.getOplist().get(i) instanceof Multiplication ) {
-						Multiplication multiplier = (Multiplication) proc.getOplist().get(i);
-						ArrayListVisitor<Void> visitor = new OperationVisitor();
-						visitor.visit(multiplier);
-						Intvariable result = multiplier.getResult();
-						proc.getVarbuffer().getIntvariablelist().get(result.getName()).setContent(result.getContent());
-					}
-					else if(proc.getOplist().get(i) instanceof Increment ) {
-						ArrayListVisitor<Void> visitor = new OperationVisitor();
-						Increment incrementer = (Increment) proc.getOplist().get(i);
-						visitor.visit(incrementer);
-						Intvariable result = incrementer.getVar();
-						proc.getVarbuffer().getIntvariablelist().get(result.getName()).setContent(result.getContent());
-						//System.out.println("incrementer : " + incrementer.getVar().getContent());
-					}
-					// Execution of the Primitives
-					
-					// Execution of sleep
-					else if(proc.getOplist().get(i) instanceof Sleep ) {
-						ArrayListVisitor<Void> visitor = new OperationVisitor();
-						visitor.visit((Sleep) proc.getOplist().get(i));
-					}
-					// Execution of Kill method
-					else if(proc.getOplist().get(i) instanceof Kill ) {
-						ArrayListVisitor<Void> visitor = new OperationVisitor();
-						visitor.visit((Kill) proc.getOplist().get(i));
-					}
-					
-					// Execution of the functions
-					
-					// Execution of print
-					else if(proc.getOplist().get(i) instanceof Print) {
-						//System.out.println(proc.getOplist());
-						ArrayListVisitor<Void> visitor = new OperationVisitor();
-						Print printer = (Print) proc.getOplist().get(i);
-						//System.out.println(proc.getVarbuffer().getIntvariablelist().get(printer.getPrintop().getName()));
-						if(printer.getPrintop() instanceof Intvariable) {
-							Intvariable var = proc.getVarbuffer().getIntvariablelist().get(printer.getPrintop().getName());
+			try {
+				while( i < proc.getNboperation()){
+					// Test of if the programm isn't forced to shutdown
+					if(proc.isExiting() == false) {
+						// if a shutdown primitive haven't been called, look if the program haven't been paused
+						// If not, execute the operation 
+						
+						// Execution of the arithmeticalOperation
+						if(proc.getOplist().get(i) instanceof Addition ) {
+							Addition additionner = (Addition) proc.getOplist().get(i);
+							ArrayListVisitor<Void> visitor = new OperationVisitor();
+							visitor.visit(additionner);
+							Intvariable result = additionner.getResult();
+							proc.getVarbuffer().getIntvariablelist().get(result.getName()).setContent(result.getContent());
+							//System.out.println("res : " + additionner.getResult().getContent());
 							//System.out.println(proc.getVarbuffer().getIntvariablelist());
-							//System.out.println(var.getContent());
-							printer.setPrintop(var);
 						}
-						else if(printer.getPrintop() instanceof Stringvariable) {
-							Stringvariable var = proc.getVarbuffer().getStringvariablelist().get(printer.getPrintop().getName());
-							//System.out.println(var.toString());
-							printer.setPrintop(var);
+						else if(proc.getOplist().get(i) instanceof Substraction ) {
+							Substraction subber = (Substraction) proc.getOplist().get(i);
+							ArrayListVisitor<Void> visitor = new OperationVisitor();
+							visitor.visit(subber);
+							Intvariable result = subber.getResult();
+							proc.getVarbuffer().getIntvariablelist().get(result.getName()).setContent(result.getContent());
+	
 						}
-						//System.out.println(printer.getPrintop());
-						visitor.visit(printer);
-					}
-					// Execution of the loops Operation
-					
-					// Execution of the forloop
-					else if(proc.getOplist().get(i) instanceof ForLoop ) {
-						ForLoop floop = (ForLoop) proc.getOplist().get(i);
-						int iterstart = floop.getIterstart();
-						int iternumber = floop.getIternumber();
-						floop.getVariable().setContent(iterstart);
-						//System.out.println("Stringbuffer du proc superieur" + proc.getVarbuffer().getStringvariablelist());
-						floop.getOperations().setVarbuffer(proc.getVarbuffer());
-						//Variablebuffer varbuff = new Variablebuffer();
-						//System.out.println(floop);
-						//proc.getVarbuffer().getIntvariablelist().get(floop.getVariable().getName()).setContent(floop.getVariable().getContent());
-						for(int j = iterstart; j < iternumber; j++) {
-							//floop.setIterstart(iterstart);
-							//floop.getVariable().setContent(j);
-							//proc.getVarbuffer().getIntvariablelist().get(floop.getVariable().getName()).setContent(floop.getVariable().getContent());
-							//System.out.println("floop buffer" + floop.getOperations().getVarbuffer().getStringvariablelist());
-							proc.setVarbuffer( floop.getOperations().getVarbuffer());
-							//System.out.println("buffer varbuffer: " +  varbuff.getStringvariablelist());
-							execution(floop.getOperations());
-							//System.out.println("buffer varbuffer: " +  varbuff.getStringvariablelist());
-							proc.getVarbuffer().getIntvariablelist().get(floop.getVariable().getName()).setContent(floop.getVariable().getContent() + 1);
-							proc.setVarbuffer(floop.getOperations().getVarbuffer());
-							//System.out.println(floop.getVariable().getContent());
+						else if(proc.getOplist().get(i) instanceof Multiplication ) {
+							Multiplication multiplier = (Multiplication) proc.getOplist().get(i);
+							ArrayListVisitor<Void> visitor = new OperationVisitor();
+							visitor.visit(multiplier);
+							Intvariable result = multiplier.getResult();
+							proc.getVarbuffer().getIntvariablelist().get(result.getName()).setContent(result.getContent());
+						}
+						else if(proc.getOplist().get(i) instanceof Increment ) {
+							ArrayListVisitor<Void> visitor = new OperationVisitor();
+							Increment incrementer = (Increment) proc.getOplist().get(i);
+							visitor.visit(incrementer);
+							Intvariable result = incrementer.getVar();
+							proc.getVarbuffer().getIntvariablelist().get(result.getName()).setContent(result.getContent());
+							//System.out.println("incrementer : " + incrementer.getVar().getContent());
+						}
+						// Execution of the Primitives
+						
+						// Execution of sleep
+						else if(proc.getOplist().get(i) instanceof Sleep ) {
+							ArrayListVisitor<Void> visitor = new OperationVisitor();
+							visitor.visit((Sleep) proc.getOplist().get(i));
+						}
+						// Execution of Kill method
+						else if(proc.getOplist().get(i) instanceof Kill ) {
+							ArrayListVisitor<Void> visitor = new OperationVisitor();
+							visitor.visit((Kill) proc.getOplist().get(i));
 						}
 						
-					}
-					// Execution of the testOperation
-					else if(proc.getOplist().get(i) instanceof Ifelsetest) {
-						Ifelsetest test = (Ifelsetest) proc.getOplist().get(i);
-						ArrayListVisitor<Void> visitor = new OperationVisitor();
-						visitor.visit((Comparaison) test.getComparaison());	
-						int testresult = test.getComparaison().getResult().getContent();
-						if(testresult == 0) {
-							execution(test.getIfprocessus());
+						// Execution of the functions
+						
+						// Execution of print
+						else if(proc.getOplist().get(i) instanceof Print) {
+							//System.out.println(proc.getOplist());
+							ArrayListVisitor<Void> visitor = new OperationVisitor();
+							Print printer = (Print) proc.getOplist().get(i);
+							//System.out.println(proc.getVarbuffer().getIntvariablelist().get(printer.getPrintop().getName()));
+							if(printer.getPrintop() instanceof Intvariable) {
+								Intvariable var = proc.getVarbuffer().getIntvariablelist().get(printer.getPrintop().getName());
+								//System.out.println(proc.getVarbuffer().getIntvariablelist());
+								//System.out.println(var.getContent());
+								//printer.setPrintop(var);
+								scdriver.addStringScreen(var.toString());
+							}
+							else if(printer.getPrintop() instanceof Stringvariable) {
+								Stringvariable var = proc.getVarbuffer().getStringvariablelist().get(printer.getPrintop().getName());
+								//System.out.println(var.toString());
+								//printer.setPrintop(var);
+								scdriver.addStringScreen(var.toString());
+							}
+							//System.out.println(proc.getVarbuffer().getIntvariablelist());
+							//System.out.println(proc.getVarbuffer().getStringvariablelist());
+	
+							//System.out.println(printer.getPrintop());
+							
 						}
-						else if(testresult == -1) {
-							execution(test.getElseprocessus());
+						// Execution of the loops Operation
+						
+						// Execution of the forloop
+						else if(proc.getOplist().get(i) instanceof ForLoop ) {
+							ForLoop floop = (ForLoop) proc.getOplist().get(i);
+							int iterstart = floop.getIterstart();
+							int iternumber = floop.getIternumber();
+							floop.getVariable().setContent(iterstart);
+							//System.out.println("Stringbuffer du proc superieur" + proc.getVarbuffer().getStringvariablelist());
+							floop.getOperations().setVarbuffer(proc.getVarbuffer());
+							//Variablebuffer varbuff = new Variablebuffer();
+							//System.out.println(floop);
+							//proc.getVarbuffer().getIntvariablelist().get(floop.getVariable().getName()).setContent(floop.getVariable().getContent());
+							for(int j = iterstart; j < iternumber; j++) {
+								//floop.setIterstart(iterstart);
+								//floop.getVariable().setContent(j);
+								//proc.getVarbuffer().getIntvariablelist().get(floop.getVariable().getName()).setContent(floop.getVariable().getContent());
+								//System.out.println("floop buffer" + floop.getOperations().getVarbuffer().getStringvariablelist());
+								proc.setVarbuffer( floop.getOperations().getVarbuffer());
+								//System.out.println("buffer varbuffer: " +  varbuff.getStringvariablelist());
+								execution(floop.getOperations());
+								//System.out.println("buffer varbuffer: " +  varbuff.getStringvariablelist());
+								proc.getVarbuffer().getIntvariablelist().get(floop.getVariable().getName()).setContent(floop.getVariable().getContent() + 1);
+								proc.setVarbuffer(floop.getOperations().getVarbuffer());
+								//System.out.println(floop.getVariable().getContent());
+							}
+							
+						}
+						// Execution of the testOperation
+						else if(proc.getOplist().get(i) instanceof Ifelsetest) {
+							Ifelsetest test = (Ifelsetest) proc.getOplist().get(i);
+							ArrayListVisitor<Void> visitor = new OperationVisitor();
+							visitor.visit((Comparaison) test.getComparaison());	
+							int testresult = test.getComparaison().getResult().getContent();
+							if(testresult == 0) {
+								test.getIfprocessus().setVarbuffer(proc.getVarbuffer());
+								execution(test.getIfprocessus());
+								proc.setVarbuffer(test.getIfprocessus().getVarbuffer());
+							}
+							else if(testresult == -1) {
+								test.getElseprocessus().setVarbuffer(proc.getVarbuffer());
+								execution(test.getElseprocessus());
+								proc.setVarbuffer(test.getElseprocessus().getVarbuffer());
+							}
+							//System.out.println(" int : " + proc.getVarbuffer().getIntvariablelist());
+							//System.out.println("string" + proc.getVarbuffer().getStringvariablelist());
 						}
 					}
+					else {
+						// If an EXIT command has been called, end the processus
+						i = proc.getNboperation();
+						
+					}
+					i++;
 				}
-				else {
-					// If an EXIT command has been called, end the processus
-					i = proc.getNboperation();
-					
-				}
-				i++;
+			}
+			catch(NullPointerException e) {
+				scdriver.addStringScreen("ERROR in program " + proc.getProcessusname());
+			}
+			catch(NumberFormatException e) {
+				//System.out.println("Error in variable allocation");
+				scdriver.addStringScreen("Error in variable allocation");
 			}
 		}
 		else {

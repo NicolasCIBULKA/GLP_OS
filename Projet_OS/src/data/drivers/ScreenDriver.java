@@ -20,12 +20,15 @@ public class ScreenDriver extends Driver{
 	// --------------------------------------
 	
 	// This is the constructor of the ScreenDriver
+	
 	public ScreenDriver(String DriverID, Interaction authorization, Screen screen) {
 		super(DriverID, authorization);
 		this.screen = screen;
-		setTranslatedscreen(" ");
+		setTranslatedscreen(">> OS_SIMULATION : \n");
 	}
+	
 	// getters and setters 
+	
 	public String getScreencontent() {
 		return screen.getScreencontent();
 	}
@@ -40,25 +43,27 @@ public class ScreenDriver extends Driver{
 	public void setTranslatedscreen(String translatedscreen) {
 		this.translatedscreen = translatedscreen;
 	}
+	
 	// Adding a String in the Screen to be seen by user
+	
 	public void addStringScreen(String input) {
 		//screen.setScreencontent("\nuser-input: " + screen.getScreencontent() + input);
 		screen.setScreencontent(screen.getScreencontent() + ";" + input);
 	}
 	
 	public void resetScreen() {
-		this.setScreencontent(" ");
-		this.setTranslatedscreen(" ");
+		this.setScreencontent("");
+		this.setTranslatedscreen(">> OS_SIMULATION : \n");
 	}
+	
+	// toString
 	
 	public String toString() {
-		return this.getScreencontent();
-	}
-	
-	
-
-	public <T> T accept(ArrayListVisitor<T> visitor) {
-		return visitor.visit(this);
+		String[] screentab = this.getScreencontent().split(";");
+		for(int i = 0; i < screentab.length; i++) {
+			this.setTranslatedscreen(this.getTranslatedscreen() + screentab[i] + "\n");
+		}
+		return this.translatedscreen;
 	}
 	
 	

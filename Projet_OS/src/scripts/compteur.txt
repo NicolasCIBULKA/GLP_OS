@@ -3,9 +3,19 @@ INT compteur = 0
 INT compteur2 = 0
 STRING debut = ----------------------- COMPTEUR -----------------------
 STRING fin = ----------------------- FIN COMPTEUR -----------------------
+STRING vrai = inf
+STRING faux = sup
+INT var = 6
 PRINT debut
 FOR compteur FROM 0 TO 10 {
 	PRINT compteur
-	SLEEP 1000
+	SLEEP 100
+	IF compteur > var {
+		PRINT vrai
+	}
+	ELSE {
+		PRINT faux
+	}
+	PRINT compteur2
 }
 PRINT fin

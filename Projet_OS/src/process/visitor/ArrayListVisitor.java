@@ -20,7 +20,7 @@ public interface ArrayListVisitor<T> {
 	
 	// Driver
 	
-	T visit(ScreenDriver node);
+	// T visit(ScreenDriver node);
 	
 	// Arithmetical operations
 	
@@ -30,11 +30,17 @@ public interface ArrayListVisitor<T> {
 	
 	T visit(Multiplication node);
 	
+	// --> add Division
+	
 	// Functions
 	
 	T visit(Sleep node);
 	
 	T visit(Print node);
+	
+	T visit(Increment node);
+	
+	// --> add Decrement
 	
 	// Primitives
 	
@@ -48,8 +54,5 @@ public interface ArrayListVisitor<T> {
 
 	T visit(Comparaison node);
 
-	T visit(Increment node);
-
-	//T visit(ForLoop node);
 	
 }

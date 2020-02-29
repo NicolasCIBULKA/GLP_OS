@@ -19,19 +19,6 @@ public class OperationVisitor implements ArrayListVisitor<Void>{
 	 * @author Nicolas CIBULKA
 	 */
 	
-	// Drivers
-	
-	@Override
-	public Void visit(ScreenDriver node) {
-		String[] tabscreen = node.getScreencontent().split(";");
-		String usablescreencontent = "";
-		for(int i = 0; i < tabscreen.length; i++) {
-			usablescreencontent += tabscreen[i] + "\n";
-		}
-		node.setTranslatedscreen(usablescreencontent);
-		return null;
-	}
-	
 	// Arithmetical Operation
 	
 	@Override
@@ -65,6 +52,8 @@ public class OperationVisitor implements ArrayListVisitor<Void>{
 		node.setVar(varincremented);
 		return null;
 	}
+	
+	
 
 	// Primitives
 	
@@ -176,6 +165,7 @@ public class OperationVisitor implements ArrayListVisitor<Void>{
 	
 	@Override
 	public Void visit(Print node) {
+		// Need to be modified to write on the Screen
 		System.out.println(node.print());
 		return null;
 	}

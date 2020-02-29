@@ -15,11 +15,6 @@ import data.primitive.Pause;
 
 public class FunctionVisitor implements ArrayListVisitor<Integer>{
 
-	@Override
-	public Integer visit(ScreenDriver node) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
 	@Override
 	public Integer visit(Addition node) {
