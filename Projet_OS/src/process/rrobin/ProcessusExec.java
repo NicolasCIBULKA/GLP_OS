@@ -153,6 +153,8 @@ public class ProcessusExec {
 								proc.setVarbuffer(floop.getOperations().getVarbuffer());
 								//System.out.println(floop.getVariable().getContent());
 							}
+							proc.getVarbuffer().getIntvariablelist().get(floop.getVariable().getName()).setContent(floop.getVariable().getContent()-1);
+
 							
 						}
 						
@@ -163,8 +165,8 @@ public class ProcessusExec {
 							Comparaison comp = whloop.getComparaison();
 							ArrayListVisitor<Void> visitor = new OperationVisitor();
 							visitor.visit(comp);
-							System.out.println( "comparaison" + comp.getResult().getContent() );
 							while(comp.getResult().getContent() == 0) {
+								//System.out.println( "comparaison" + comp.getResult().getContent() );
 								whloop.getOperations().setVarbuffer(proc.getVarbuffer());
 								execution(whloop.getOperations());
 								proc.setVarbuffer(whloop.getOperations().getVarbuffer());

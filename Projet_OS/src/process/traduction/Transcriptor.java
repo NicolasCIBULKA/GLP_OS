@@ -15,13 +15,13 @@ import data.loop.Whileloop;
 import data.processus.Operation;
 import data.processus.Processus;
 import data.variable.*;
-import process.rrobin.Variablebuffer;
+import process.rrobin.ImbricationException;
 
 public class Transcriptor {
 	/*
 	 *  This is the class that will translate a pseudo coded programm into a Processus
 	 *  
-	 *  @Author Nicolas CIBULKA
+	 *  @author Nicolas CIBULKA
 	 */
 	
 	
@@ -51,7 +51,6 @@ public class Transcriptor {
 
 	public void transcription(Processus proc, String filename) {
 		try {
-			
 			/*
 			 * Definition of the different attributs
 			 */
@@ -198,8 +197,9 @@ public class Transcriptor {
 			procfile.close();
 			//System.out.println(this.intvariablelist);
 		} catch (IOException e) {
-			
 			e.printStackTrace();
+		} catch (ImbricationException e) {
+			System.out.println("ERROR : Imbrication of loops or tests in the programm, please resolve the error");
 		}	
 		
 	}
@@ -209,7 +209,7 @@ public class Transcriptor {
 	 * Methods that identify the Operation with the line
 	 */
 	
-	public Operation operationfinder(String analysedline, int linenumber,HashMap<String, Intvariable> intvariablelist, HashMap<String, Stringvariable> stringvariablelist) {
+	public Operation operationfinder(String analysedline, int linenumber,HashMap<String, Intvariable> intvariablelist, HashMap<String, Stringvariable> stringvariablelist) throws ImbricationException {
 		String[] splittedline;
 		splittedline = analysedline.split(" ");
 		// Test if the line is a commentary
@@ -384,7 +384,9 @@ public class Transcriptor {
 				return error;
 			}
 		}
-		
+		else if(splittedline[identifier_loop_test_function_allocate_POSITION].contains("IF") || splittedline[identifier_loop_test_function_allocate_POSITION].contains("FOR") || splittedline[identifier_loop_test_function_allocate_POSITION].contains("WHILE")) {
+			throw new ImbricationException();
+		}
 		/*
 		 * If we go in else, that means that the command haven't been recognized and we have to stop the interpretation
 		*/		
@@ -392,7 +394,6 @@ public class Transcriptor {
 			Operation error = new Print("Error on line " + linenumber + " : Operation not recognized : " + analysedline + "\n");
 			return error;
 		}
-		//System.out.println("ok la c'est la merde");
 		return null;
 	}
 	

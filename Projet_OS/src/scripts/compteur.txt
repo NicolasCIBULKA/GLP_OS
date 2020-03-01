@@ -1,16 +1,26 @@
 PROCESSUSNAME proctest
+# Definition des variables
 INT compteur = 0
 INT compteur2 = 0
 STRING debut = ----------------------- COMPTEUR -----------------------
 STRING fin = --------------------- FIN COMPTEUR ---------------------
 STRING vrai = inf
 STRING faux = sup
+INT trois = 3
 INT var = 6
 PRINT debut
+# Boucle for
 FOR compteur FROM 0 TO 10 ;
 	PRINT compteur
+	IF compteur > var ;
+		PRINT vrai
+	ENDIF
+	ELSE ;
+		PRINT faux
+	ENDELSE
 	SLEEP 100
 DONE
+# Test If else
 IF compteur > var ;
 	PRINT vrai
 ENDIF
@@ -18,9 +28,10 @@ ELSE ;
 	PRINT faux
 ENDELSE
 PRINT compteur
+# Boucle While
 WHILE compteur2 < var ;
-	INCREMENT compteur2
 	PRINT compteur2
-	SLEEP 100
+	INCREMENT compteur2
+	SLEEP 1000
 ENDWHILE
 PRINT fin

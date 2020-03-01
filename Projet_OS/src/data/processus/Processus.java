@@ -54,8 +54,6 @@ public class Processus {
 	}
 	
 	// Getters and setters
-	
-	
 
 	public boolean isExiting() {
 		return exiting;

@@ -1,9 +1,9 @@
 package process.rrobin;
+
 import java.util.ArrayList;
-
 import java.util.List;
-
 import data.processus.*;
+
 public class Scheduler {
 	private List<Processus> readyQueue;
 

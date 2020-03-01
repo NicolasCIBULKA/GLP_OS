@@ -67,8 +67,8 @@ public class RoundRobin2 extends Scheduler {
 		currProcess.setResponseTime(systemCount - currProcess.getarrivalTime()); //set the ResponseTime
 		// while loop to check if multiple processes have the same arrival time
 		while((process != totalProcesses) && (processus.get(process).getarrivalTime() == systemCount)){ 
-		super.addProcess(processus.get(process)); //add process to the ReadyQueue
-		process++; //increment to next job that will arrive
+			super.addProcess(processus.get(process)); //add process to the ReadyQueue
+			process++; //increment to next job that will arrive
 	}
 		//outer while loop will keep looping until a condition is met (all processes have completed their cpu burst)
 		while(true){
