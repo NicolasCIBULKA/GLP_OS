@@ -4,7 +4,7 @@ import data.drivers.Driver;
 
 public class Write {
 	/*
-	 *  This is the driver of the Write primitive
+	 *  This is the class of the Write primitive
 	 *  
 	 *  @author Nicolas CIBULKA
 	 */

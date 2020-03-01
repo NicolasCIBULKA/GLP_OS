@@ -2,6 +2,7 @@ package process.visitor;
 
 import data.arithmeticaloperation.*;
 import data.drivers.ScreenDriver;
+import data.functions.Decrement;
 import data.functions.Increment;
 import data.functions.Print;
 import data.functions.Sleep;
@@ -53,7 +54,12 @@ public class OperationVisitor implements ArrayListVisitor<Void>{
 		return null;
 	}
 	
-	
+	@Override
+	public Void visit(Decrement node) {
+		Intvariable varincremented = new Intvariable(node.getVar().getName(),node.getVar().getContent() - 1);
+		node.setVar(varincremented);
+		return null;
+	}
 
 	// Primitives
 	

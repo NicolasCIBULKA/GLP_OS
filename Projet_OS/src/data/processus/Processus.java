@@ -2,6 +2,8 @@ package data.processus;
 
 import java.util.ArrayList;
 
+import process.rrobin.Variablebuffer;
+
 public class Processus {
 	
 	/*
@@ -17,6 +19,7 @@ public class Processus {
 	private ArrayList<Operation> operationlist;
 	private int priority;
 	private int pid;
+	private Variablebuffer varbuffer;
 	private String processusname;
 	private boolean ablerun;
 	private boolean exiting;
@@ -32,7 +35,7 @@ public class Processus {
 	// --------------------------------------
 	
 	// this is the constructor of the Processus class
-	public Processus(String processusname,int pid,int aT,int cpub) {
+	public Processus(String processusname,int pid, int aT, int cpub) {
 		this.operationlist = new ArrayList<Operation>();
 		this.processusname = processusname;
 		this.setAblerun(true);
@@ -40,11 +43,20 @@ public class Processus {
 		setarrivalTime(aT);
 		setpid(pid);
 		setcpuBurst(cpub);
-		
+		varbuffer = new Variablebuffer();
+	}
+	
+	public Processus() {
+		this.operationlist = new ArrayList<Operation>();
+		varbuffer = new Variablebuffer();
+		this.setAblerun(true);
+		this.setExiting(false);
 	}
 	
 	// Getters and setters
 	
+	
+
 	public boolean isExiting() {
 		return exiting;
 	}
@@ -152,7 +164,13 @@ public class Processus {
 		cpuBurstLeft = bl; //set the remaining count of CPU Burst left for a process when preempted (for RR and SRTF)
 	}
 
+	public Variablebuffer getVarbuffer() {
+		return this.varbuffer;
+	}
 
+	public void setVarbuffer(Variablebuffer varbuffer) {
+		this.varbuffer = varbuffer;
+	}
 	
 		
 }

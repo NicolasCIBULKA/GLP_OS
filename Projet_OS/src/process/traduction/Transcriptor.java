@@ -5,11 +5,13 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.HashMap;
 import data.arithmeticaloperation.*;
+import data.functions.Decrement;
 import data.functions.Increment;
 import data.functions.Print;
 import data.functions.Sleep;
 import data.iftest.Ifelsetest;
 import data.loop.ForLoop;
+import data.loop.Whileloop;
 import data.processus.Operation;
 import data.processus.Processus;
 import data.variable.*;
@@ -82,7 +84,7 @@ public class Transcriptor {
 							intvariablelist.get(var).setContent(i);
 							ForLoop forloop = new ForLoop(forproc, intvariablelist.get(var) , i, limit);
 							line = procfile.readLine();
-							while(line.contains("}") == false) {
+							while(line.contains("DONE") == false) {
 								Operation loopoperation = operationfinder(line, currentline, intvariablelist, stringvariablelist);
 								//System.out.println( "loopoperation " + loopoperation);
 								forloop.getOperations().addOperation(loopoperation);
@@ -92,17 +94,53 @@ public class Transcriptor {
 						currentline++;
 						//System.out.println(forloop.getOperations().getOplist());
 						proc.addOperation(forloop);
-					}
-					else {
-						Operation error = new Print("Error on line " + currentline + " : Int variable in for loop does not exists : " + line + "\n");
-						proc.addOperation(error);
-					}
+						}
+						else {
+							Operation error = new Print("Error on line " + currentline + " : Int variable in for loop does not exists : " + line + "\n");
+							proc.addOperation(error);
+						}
 					}
 					else {
 						Operation error = new Print("Error on line " + currentline + " : Invalid number of arguments in for loop : " + line + "\n");
 						proc.addOperation(error);
 					}
+					
 				}
+				
+				// Test if the line create a Whileloop
+				
+				else if(splittedline[identifier_loop_test_function_allocate_POSITION].contains("WHILE")){
+					if(splittedline.length == 5) {
+						Processus whileproc = new Processus();
+						String nb1 = splittedline[1];
+						String comparator = splittedline[2];
+						String nb2 = splittedline[3];
+						Intvariable result = new Intvariable("result",0);
+						if((intvariablelist.containsKey(nb1)) && (intvariablelist.containsKey(nb2))) {
+							Comparaison comparaison = new Comparaison(intvariablelist.get(nb1), intvariablelist.get(nb2), result, comparator);
+							line = procfile.readLine();
+							currentline++;
+							while(!line.contains("ENDWHILE")) {
+								Operation whileoperation = operationfinder(line, currentline, intvariablelist, stringvariablelist);
+								whileproc.addOperation(whileoperation);
+								line = procfile.readLine();
+								currentline++;
+							}
+							currentline++;
+							Whileloop whloop = new Whileloop(whileproc, comparaison);
+							proc.addOperation(whloop);
+						}
+						else {
+							Operation error = new Print("Error on line " + currentline + " : Int variable in while loop does not exists : " + line + "\n");
+							proc.addOperation(error);
+						}
+					}
+					else {
+						Operation error = new Print("Error on line " + currentline + " : Invalid number of arguments in Whileloop : " + line + "\n");
+						proc.addOperation(error);
+					}
+				}
+				
 				// Test if the line create a Ifelsetest
 				else if(splittedline[identifier_loop_test_function_allocate_POSITION].contains("IF")) {
 					if(splittedline.length == 5) {
@@ -116,7 +154,7 @@ public class Transcriptor {
 							Comparaison comparaison = new Comparaison(intvariablelist.get(nb1), intvariablelist.get(nb2), result, comparator);
 							line = procfile.readLine();
 							currentline++;
-							while(!line.contains("}")) {
+							while(!line.contains("ENDIF")) {
 								Operation ifoperation = operationfinder(line, currentline, intvariablelist, stringvariablelist);
 								ifproc.addOperation(ifoperation);
 								line = procfile.readLine();
@@ -127,7 +165,7 @@ public class Transcriptor {
 							if(line.contains("ELSE")){
 								line = procfile.readLine();
 								currentline++;
-								while(!line.contains("}")) {
+								while(!line.contains("ENDELSE")) {
 									Operation elseoperation = operationfinder(line, currentline, intvariablelist, stringvariablelist);
 									elseproc.addOperation(elseoperation);
 									line = procfile.readLine();
@@ -283,6 +321,24 @@ public class Transcriptor {
 				return error;
 			}
 		}
+		
+		// test for decrement function 
+				else if(splittedline[identifier_loop_test_function_allocate_POSITION].contains("DECREMENT")) {
+					if(splittedline.length == 2) {
+						if(intvariablelist.containsKey(splittedline[1])) {
+							Decrement operation = new Decrement(intvariablelist.get(splittedline[1]));
+							return operation;
+						}
+						else {
+							Operation error = new Print("Error on line " + linenumber + " : Int variable on Increment function does not exist : " + analysedline + "\n");
+							return error;
+						}
+					}
+					else {
+						Operation error = new Print("Error on line " + linenumber + " : Increment function with an incorrect number of Parameter : " + analysedline + "\n");
+						return error;
+					}
+				}
 		/*
 		 * Tests if the line do an allocation
 		 */
@@ -336,6 +392,7 @@ public class Transcriptor {
 			Operation error = new Print("Error on line " + linenumber + " : Operation not recognized : " + analysedline + "\n");
 			return error;
 		}
+		//System.out.println("ok la c'est la merde");
 		return null;
 	}
 	

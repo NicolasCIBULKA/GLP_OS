@@ -2,6 +2,7 @@ package process.rrobin;
 
 import data.arithmeticaloperation.*;
 import data.drivers.ScreenDriver;
+import data.functions.Decrement;
 import data.functions.Increment;
 import data.functions.Print;
 import data.functions.Sleep;
@@ -62,7 +63,6 @@ public class ProcessusExec {
 							visitor.visit(subber);
 							Intvariable result = subber.getResult();
 							proc.getVarbuffer().getIntvariablelist().get(result.getName()).setContent(result.getContent());
-	
 						}
 						else if(proc.getOplist().get(i) instanceof Multiplication ) {
 							Multiplication multiplier = (Multiplication) proc.getOplist().get(i);
@@ -78,6 +78,14 @@ public class ProcessusExec {
 							Intvariable result = incrementer.getVar();
 							proc.getVarbuffer().getIntvariablelist().get(result.getName()).setContent(result.getContent());
 							//System.out.println("incrementer : " + incrementer.getVar().getContent());
+						}
+						else if(proc.getOplist().get(i) instanceof Decrement ) {
+							ArrayListVisitor<Void> visitor = new OperationVisitor();
+							Decrement decrementer = (Decrement) proc.getOplist().get(i);
+							visitor.visit(decrementer);
+							Intvariable result = decrementer.getVar();
+							proc.getVarbuffer().getIntvariablelist().get(result.getName()).setContent(result.getContent());
+							//System.out.println("decrementer : " + decrementer.getVar().getContent());
 						}
 						// Execution of the Primitives
 						
@@ -115,7 +123,7 @@ public class ProcessusExec {
 							}
 							//System.out.println(proc.getVarbuffer().getIntvariablelist());
 							//System.out.println(proc.getVarbuffer().getStringvariablelist());
-	
+							visitor.visit(printer);
 							//System.out.println(printer.getPrintop());
 							
 						}
@@ -147,6 +155,23 @@ public class ProcessusExec {
 							}
 							
 						}
+						
+						// Execution of the Whileloop
+						
+						else if(proc.getOplist().get(i) instanceof Whileloop ){
+							Whileloop whloop = (Whileloop) proc.getOplist().get(i);
+							Comparaison comp = whloop.getComparaison();
+							ArrayListVisitor<Void> visitor = new OperationVisitor();
+							visitor.visit(comp);
+							System.out.println( "comparaison" + comp.getResult().getContent() );
+							while(comp.getResult().getContent() == 0) {
+								whloop.getOperations().setVarbuffer(proc.getVarbuffer());
+								execution(whloop.getOperations());
+								proc.setVarbuffer(whloop.getOperations().getVarbuffer());
+								visitor.visit(comp);
+							}
+							
+						}
 						// Execution of the testOperation
 						else if(proc.getOplist().get(i) instanceof Ifelsetest) {
 							Ifelsetest test = (Ifelsetest) proc.getOplist().get(i);
@@ -165,6 +190,9 @@ public class ProcessusExec {
 							}
 							//System.out.println(" int : " + proc.getVarbuffer().getIntvariablelist());
 							//System.out.println("string" + proc.getVarbuffer().getStringvariablelist());
+						}
+						else if(proc.getOplist().get(i) == null) {
+							
 						}
 					}
 					else {

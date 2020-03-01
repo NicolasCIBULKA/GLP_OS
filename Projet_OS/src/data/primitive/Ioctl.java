@@ -4,7 +4,7 @@ import data.drivers.Driver;
 
 public class Ioctl{
 	/*
-	 *  This is the primitive of execution primitive
+	 *  This is the class of execution primitive
 	 *  
 	 *  @author Nicolas CIBULKA
 	 */

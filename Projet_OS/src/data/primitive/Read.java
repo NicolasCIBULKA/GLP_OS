@@ -4,7 +4,7 @@ import data.drivers.Driver;
 
 public class Read {
 	/*
-	 *  This is the primitive of the Read primitive
+	 *  This is the class of the Read primitive
 	 *  
 	 *  @author Nicolas CIBULKA
 	 */

@@ -5,6 +5,7 @@ import data.arithmeticaloperation.Comparaison;
 import data.arithmeticaloperation.Multiplication;
 import data.arithmeticaloperation.Substraction;
 import data.drivers.ScreenDriver;
+import data.functions.Decrement;
 import data.functions.Increment;
 import data.functions.Print;
 import data.functions.Sleep;
@@ -82,6 +83,12 @@ public class FunctionVisitor implements ArrayListVisitor<Integer>{
 
 	@Override
 	public Integer visit(Increment node) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Integer visit(Decrement decrement) {
 		// TODO Auto-generated method stub
 		return null;
 	}

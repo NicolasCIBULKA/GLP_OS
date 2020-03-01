@@ -40,6 +40,8 @@ public interface ArrayListVisitor<T> {
 	
 	T visit(Increment node);
 	
+	T visit(Decrement decrement);
+	
 	// --> add Decrement
 	
 	// Primitives
