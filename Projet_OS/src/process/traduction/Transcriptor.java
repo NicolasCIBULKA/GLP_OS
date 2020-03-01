@@ -15,7 +15,8 @@ import data.loop.Whileloop;
 import data.processus.Operation;
 import data.processus.Processus;
 import data.variable.*;
-import process.rrobin.ImbricationException;
+import process.exception.DivisionException;
+import process.exception.ImbricationException;
 
 public class Transcriptor {
 	/*
@@ -196,10 +197,15 @@ public class Transcriptor {
 			}
 			procfile.close();
 			//System.out.println(this.intvariablelist);
-		} catch (IOException e) {
+		} 
+		catch (IOException e) {
 			e.printStackTrace();
-		} catch (ImbricationException e) {
+		} 
+		catch (ImbricationException e) {
 			System.out.println("ERROR : Imbrication of loops or tests in the programm, please resolve the error");
+		}	
+		catch (DivisionException e) {
+			System.out.println("ERROR : Tried to divide by 0");
 		}	
 		
 	}
@@ -209,7 +215,7 @@ public class Transcriptor {
 	 * Methods that identify the Operation with the line
 	 */
 	
-	public Operation operationfinder(String analysedline, int linenumber,HashMap<String, Intvariable> intvariablelist, HashMap<String, Stringvariable> stringvariablelist) throws ImbricationException {
+	public Operation operationfinder(String analysedline, int linenumber,HashMap<String, Intvariable> intvariablelist, HashMap<String, Stringvariable> stringvariablelist) throws ImbricationException, DivisionException {
 		String[] splittedline;
 		splittedline = analysedline.split(" ");
 		// Test if the line is a commentary
@@ -245,6 +251,25 @@ public class Transcriptor {
 				else {
 					Operation error = new Print("Error on line " + linenumber + " : Substraction with an incorrect number of Parameter : " + analysedline + "\n");
 					return error;
+				}
+			}
+			
+			else if(splittedline[identifier_arithmetical_POSITION].contains("/")) {
+				String op1 = splittedline[2];
+				String op2 = splittedline[4];
+				String sol = splittedline[0];
+				if(! (op2 == "0")) {
+					if((intvariablelist.containsKey(op1)) && (intvariablelist.containsKey(op2)) && (intvariablelist.containsKey(sol))) {
+						Operation operation = new Division(intvariablelist.get(op1), intvariablelist.get(op2), intvariablelist.get(sol));
+						return operation;
+					}
+					else {
+						Operation error = new Print("Error on line " + linenumber + " : Substraction with an incorrect number of Parameter : " + analysedline + "\n");
+						return error;
+					}
+				}
+				else {
+					throw new DivisionException();
 				}
 			}
 			

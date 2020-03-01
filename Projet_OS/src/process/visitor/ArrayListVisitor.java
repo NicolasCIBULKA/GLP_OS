@@ -30,6 +30,8 @@ public interface ArrayListVisitor<T> {
 	
 	T visit(Multiplication node);
 	
+	T visit(Division node);
+	
 	// --> add Division
 	
 	// Functions

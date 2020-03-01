@@ -12,12 +12,6 @@ PRINT debut
 # Boucle for
 FOR compteur FROM 0 TO 10 ;
 	PRINT compteur
-	IF compteur > var ;
-		PRINT vrai
-	ENDIF
-	ELSE ;
-		PRINT faux
-	ENDELSE
 	SLEEP 100
 DONE
 # Test If else

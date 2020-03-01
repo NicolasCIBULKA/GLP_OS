@@ -48,6 +48,14 @@ public class OperationVisitor implements ArrayListVisitor<Void>{
 	}
 	
 	@Override
+	public Void visit(Division node) {
+		Intvariable a = node.getA();
+		Intvariable b = node.getB();
+		node.getResult().setContent(a.getContent() / b.getContent());
+		return null;
+	}
+	
+	@Override
 	public Void visit(Increment node) {
 		Intvariable varincremented = new Intvariable(node.getVar().getName(),node.getVar().getContent() + 1);
 		node.setVar(varincremented);
