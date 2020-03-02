@@ -4,15 +4,23 @@ INT compteur = 0
 INT compteur2 = 0
 STRING debut = ----------------------- COMPTEUR -----------------------
 STRING fin = --------------------- FIN COMPTEUR ---------------------
-STRING vrai = inf
-STRING faux = sup
+STRING vrai = inferieur
+STRING faux = superieur
+STRING sl = pause de 1s
 INT trois = 3
 INT var = 6
 PRINT debut
 # Boucle for
 FOR compteur FROM 0 TO 10 ;
-	SLEEP 400
 	PRINT compteur
+	IF compteur < var ;
+		PRINT vrai
+	ENDIF
+	ELSE ;
+		PRINT faux
+	ENDELSE
+	PRINT sl
+	SLEEP 1000
 DONE
 # Test If else
 IF compteur > var ;
@@ -25,7 +33,15 @@ PRINT compteur
 # Boucle While
 WHILE compteur2 < var ;
 	PRINT compteur2
+	PRINT sl
+	IF compteur2 < trois ;
+		PRINT vrai
+	ENDIF
+	ELSE ;
+		PRINT faux
+	ENDELSE
 	INCREMENT compteur2
+	PRINT sl
 	SLEEP 1000
 ENDWHILE
 PRINT fin

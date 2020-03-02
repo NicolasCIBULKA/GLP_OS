@@ -170,8 +170,52 @@ public class Transcriptor {
 							line = procfile.readLine();
 							currentline++;
 							while(!line.contains("ENDWHILE")) {
-								Operation whileoperation = operationfinder(line, currentline, intvariablelist, stringvariablelist);
-								whileproc.addOperation(whileoperation);
+								// We test the case if a ifelse test is called in the loop
+								splittedline = line.split(" ");
+								if(splittedline[identifier_loop_test_function_allocate_POSITION].contains("IF")) {
+									//System.out.println("oui");
+									if(splittedline.length == 5) {
+										Processus ifproc = new Processus();
+										Processus elseproc = new Processus();
+										String nb1_ifelse= splittedline[1];
+										String comparator_ifelse = splittedline[2];
+										String nb2_ifelse = splittedline[3];
+										Intvariable result_ifelse = new Intvariable("result",0);
+										if((intvariablelist.containsKey(nb1_ifelse)) && (intvariablelist.containsKey(nb2_ifelse))) {
+											Comparaison comparaison_ifelse = new Comparaison(intvariablelist.get(nb1_ifelse), intvariablelist.get(nb2_ifelse), result_ifelse, comparator_ifelse);
+											line = procfile.readLine();
+											currentline++;
+											while(!line.contains("ENDIF")) {
+												Operation ifoperation = operationfinder(line, currentline, intvariablelist, stringvariablelist);
+												ifproc.addOperation(ifoperation);
+												line = procfile.readLine();
+												currentline++;
+											}
+											line = procfile.readLine();
+											currentline++;
+											if(line.contains("ELSE")){
+												line = procfile.readLine();
+												currentline++;
+												while(!line.contains("ENDELSE")) {
+													Operation elseoperation = operationfinder(line, currentline, intvariablelist, stringvariablelist);
+													elseproc.addOperation(elseoperation);
+													line = procfile.readLine();
+													currentline++;
+												}
+												Ifelsetest ifelse = new Ifelsetest(ifproc, elseproc, comparaison_ifelse);
+												whileproc.addOperation(ifelse);
+											}
+										}
+										else {
+											Operation error = new Print("Error on line " + currentline + " : Else element in Elseif does not exists : " + line + "\n");
+											proc.addOperation(error);
+										}
+									}
+								}
+								else {
+									Operation whileoperation = operationfinder(line, currentline, intvariablelist, stringvariablelist);
+									whileproc.addOperation(whileoperation);
+								}
 								line = procfile.readLine();
 								currentline++;
 							}
@@ -459,7 +503,7 @@ public class Transcriptor {
 			if(splittedline[2].contentEquals("=")) {
 				String result = "";
 				for(int i = 3; i < splittedline.length; i++) {
-					result += splittedline[i]  + " -";
+					result += splittedline[i]  + " ";
 				}
 				//String finalresult = result.replaceAll(result, "\"");
 				Stringvariable operation = new Stringvariable(splittedline[1], result);
