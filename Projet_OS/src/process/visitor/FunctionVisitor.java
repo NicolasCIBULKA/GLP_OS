@@ -3,6 +3,7 @@ package process.visitor;
 import data.arithmeticaloperation.Addition;
 import data.arithmeticaloperation.Comparaison;
 import data.arithmeticaloperation.Division;
+import data.arithmeticaloperation.Modulo;
 import data.arithmeticaloperation.Multiplication;
 import data.arithmeticaloperation.Substraction;
 import data.drivers.ScreenDriver;
@@ -96,6 +97,12 @@ public class FunctionVisitor implements ArrayListVisitor<Integer>{
 
 	@Override
 	public Integer visit(Division node) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Integer visit(Modulo node) {
 		// TODO Auto-generated method stub
 		return null;
 	}

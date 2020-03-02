@@ -1,0 +1,20 @@
+PROCESSUSNAME pairimpair
+# Definition des variables
+INT value = 4384
+INT deux = 2
+INT pairimpair = 0
+INT zero = 0
+STRING debut = -------------------- DEBUT PAIR IMPAIR --------------------
+STRING fin = -------------------- DEBUT PAIR IMPAIR --------------------
+STRING pair = pair
+STRING impair = impair
+# Programme
+PRINT debut
+pairimpair = value % deux
+IF pairimpair == zero ;
+	PRINT pair
+ENDIF
+ELSE ;
+	PRINT impair
+ENDELSE
+PRINT fin

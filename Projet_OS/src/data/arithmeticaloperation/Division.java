@@ -28,8 +28,7 @@ public class Division extends Arithmeticaloperation{
 	
 	@Override
 	public <T> T accept(ArrayListVisitor<T> visitor) {
-		// TODO Auto-generated method stub
-		return null;
+		return visitor.visit(this);
 	}
 	
 	// toString

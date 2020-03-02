@@ -11,8 +11,8 @@ INT var = 6
 PRINT debut
 # Boucle for
 FOR compteur FROM 0 TO 10 ;
+	SLEEP 400
 	PRINT compteur
-	SLEEP 100
 DONE
 # Test If else
 IF compteur > var ;

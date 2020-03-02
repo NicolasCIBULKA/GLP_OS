@@ -32,6 +32,10 @@ public interface ArrayListVisitor<T> {
 	
 	T visit(Division node);
 	
+	T visit(Comparaison node);
+
+	T visit(Modulo node);
+	
 	// --> add Division
 	
 	// Functions
@@ -42,7 +46,7 @@ public interface ArrayListVisitor<T> {
 	
 	T visit(Increment node);
 	
-	T visit(Decrement decrement);
+	T visit(Decrement node);
 	
 	// --> add Decrement
 	
@@ -55,8 +59,6 @@ public interface ArrayListVisitor<T> {
 	T visit(Nice node);
 	
 	T visit(Pause node);
-
-	T visit(Comparaison node);
 
 	
 }

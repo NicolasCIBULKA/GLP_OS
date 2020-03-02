@@ -71,6 +71,21 @@ public class ProcessusExec {
 							Intvariable result = multiplier.getResult();
 							proc.getVarbuffer().getIntvariablelist().get(result.getName()).setContent(result.getContent());
 						}
+						
+						else if(proc.getOplist().get(i) instanceof Division ) {
+							Division divider = (Division) proc.getOplist().get(i);
+							ArrayListVisitor<Void> visitor = new OperationVisitor();
+							visitor.visit(divider);
+							Intvariable result = divider.getResult();
+							proc.getVarbuffer().getIntvariablelist().get(result.getName()).setContent(result.getContent());
+						}
+						else if(proc.getOplist().get(i) instanceof Modulo ) {
+							Modulo modulo = (Modulo) proc.getOplist().get(i);
+							ArrayListVisitor<Void> visitor = new OperationVisitor();
+							visitor.visit(modulo);
+							Intvariable result = modulo.getResult();
+							proc.getVarbuffer().getIntvariablelist().get(result.getName()).setContent(result.getContent());
+						}
 						else if(proc.getOplist().get(i) instanceof Increment ) {
 							ArrayListVisitor<Void> visitor = new OperationVisitor();
 							Increment incrementer = (Increment) proc.getOplist().get(i);
@@ -180,6 +195,7 @@ public class ProcessusExec {
 							ArrayListVisitor<Void> visitor = new OperationVisitor();
 							visitor.visit((Comparaison) test.getComparaison());	
 							int testresult = test.getComparaison().getResult().getContent();
+							System.out.println("testresult = " + testresult);
 							if(testresult == 0) {
 								test.getIfprocessus().setVarbuffer(proc.getVarbuffer());
 								execution(test.getIfprocessus());

@@ -85,6 +85,51 @@ public class Transcriptor {
 							ForLoop forloop = new ForLoop(forproc, intvariablelist.get(var) , i, limit);
 							line = procfile.readLine();
 							while(line.contains("DONE") == false) {
+								// We test the case if a ifelse test is called in the loop
+								/*if(splittedline[identifier_loop_test_function_allocate_POSITION].contains("IF")) {
+									System.out.println("oui");
+									if(splittedline.length == 5) {
+										Processus ifproc = new Processus();
+										Processus elseproc = new Processus();
+										String nb1 = splittedline[1];
+										String comparator = splittedline[2];
+										String nb2 = splittedline[3];
+										Intvariable result = new Intvariable("result",0);
+										if((intvariablelist.containsKey(nb1)) && (intvariablelist.containsKey(nb2))) {
+											Comparaison comparaison = new Comparaison(intvariablelist.get(nb1), intvariablelist.get(nb2), result, comparator);
+											line = procfile.readLine();
+											currentline++;
+											while(!line.contains("ENDIF")) {
+												Operation ifoperation = operationfinder(line, currentline, intvariablelist, stringvariablelist);
+												ifproc.addOperation(ifoperation);
+												line = procfile.readLine();
+												currentline++;
+											}
+											line = procfile.readLine();
+											currentline++;
+											if(line.contains("ELSE")){
+												line = procfile.readLine();
+												currentline++;
+												while(!line.contains("ENDELSE")) {
+													Operation elseoperation = operationfinder(line, currentline, intvariablelist, stringvariablelist);
+													elseproc.addOperation(elseoperation);
+													line = procfile.readLine();
+													currentline++;
+												}
+												Ifelsetest ifelse = new Ifelsetest(ifproc, elseproc, comparaison);
+												forloop.getOperations().addOperation(ifelse);
+											}
+										}
+										else {
+											Operation error = new Print("Error on line " + currentline + " : Else element in Elseif does not exists : " + line + "\n");
+											proc.addOperation(error);
+										}
+									}
+									else {
+										Operation error = new Print("Error on line " + currentline + " : Invalid number of arguments in Ifelse test : " + line + "\n");
+										proc.addOperation(error);
+									}
+								}*/
 								Operation loopoperation = operationfinder(line, currentline, intvariablelist, stringvariablelist);
 								//System.out.println( "loopoperation " + loopoperation);
 								forloop.getOperations().addOperation(loopoperation);
@@ -202,7 +247,7 @@ public class Transcriptor {
 			e.printStackTrace();
 		} 
 		catch (ImbricationException e) {
-			System.out.println("ERROR : Imbrication of loops or tests in the programm, please resolve the error");
+			System.out.println("ERROR : Imbrication of loops in the programm which is impossible, please resolve the error");
 		}	
 		catch (DivisionException e) {
 			System.out.println("ERROR : Tried to divide by 0");
@@ -253,7 +298,19 @@ public class Transcriptor {
 					return error;
 				}
 			}
-			
+			else if(splittedline[identifier_arithmetical_POSITION].contains("%")) {
+				String op1 = splittedline[2];
+				String op2 = splittedline[4];
+				String sol = splittedline[0];
+				if((intvariablelist.containsKey(op1)) && (intvariablelist.containsKey(op2)) && (intvariablelist.containsKey(sol))) {
+					Operation operation = new Modulo(intvariablelist.get(op1), intvariablelist.get(op2), intvariablelist.get(sol));
+					return operation;
+				}
+				else {
+					Operation error = new Print("Error on line " + linenumber + " : Modulo with an incorrect number of parameter : " + analysedline + "\n");
+					return error;
+				}
+			}
 			else if(splittedline[identifier_arithmetical_POSITION].contains("/")) {
 				String op1 = splittedline[2];
 				String op2 = splittedline[4];
@@ -287,9 +344,10 @@ public class Transcriptor {
 					Operation error = new Print("Error on line " + linenumber + " : Multiplication with an incorrect number of Parameter : " + analysedline + "\n");
 					return error;
 				}
-			}	
-		}
+			}
 			
+		}
+		
 		/*
 		 * Tests if the line do an function 
 		 */
@@ -409,7 +467,7 @@ public class Transcriptor {
 				return error;
 			}
 		}
-		else if(splittedline[identifier_loop_test_function_allocate_POSITION].contains("IF") || splittedline[identifier_loop_test_function_allocate_POSITION].contains("FOR") || splittedline[identifier_loop_test_function_allocate_POSITION].contains("WHILE")) {
+		else if(splittedline[identifier_loop_test_function_allocate_POSITION].contains("IF") ||splittedline[identifier_loop_test_function_allocate_POSITION].contains("FOR") || splittedline[identifier_loop_test_function_allocate_POSITION].contains("WHILE")) {
 			throw new ImbricationException();
 		}
 		/*
