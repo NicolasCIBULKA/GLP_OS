@@ -21,7 +21,6 @@ public class Stringvariable extends Variable {
 	public Stringvariable(String name, String content) {
 		super(name);
 		this.content = content;
-		
 	}
 	
 	// getters and setters

@@ -195,7 +195,7 @@ public class ProcessusExec {
 							ArrayListVisitor<Void> visitor = new OperationVisitor();
 							visitor.visit((Comparaison) test.getComparaison());	
 							int testresult = test.getComparaison().getResult().getContent();
-							System.out.println("testresult = " + testresult);
+							//System.out.println("testresult = " + testresult);
 							if(testresult == 0) {
 								test.getIfprocessus().setVarbuffer(proc.getVarbuffer());
 								execution(test.getIfprocessus());
@@ -216,7 +216,6 @@ public class ProcessusExec {
 					else {
 						// If an EXIT command has been called, end the processus
 						i = proc.getNboperation();
-						
 					}
 					i++;
 				}

@@ -86,8 +86,9 @@ public class Transcriptor {
 							line = procfile.readLine();
 							while(line.contains("DONE") == false) {
 								// We test the case if a ifelse test is called in the loop
-								/*if(splittedline[identifier_loop_test_function_allocate_POSITION].contains("IF")) {
-									System.out.println("oui");
+								splittedline = line.split(" ");
+								if(splittedline[identifier_loop_test_function_allocate_POSITION].contains("IF")) {
+									//System.out.println("oui");
 									if(splittedline.length == 5) {
 										Processus ifproc = new Processus();
 										Processus elseproc = new Processus();
@@ -129,10 +130,13 @@ public class Transcriptor {
 										Operation error = new Print("Error on line " + currentline + " : Invalid number of arguments in Ifelse test : " + line + "\n");
 										proc.addOperation(error);
 									}
-								}*/
-								Operation loopoperation = operationfinder(line, currentline, intvariablelist, stringvariablelist);
-								//System.out.println( "loopoperation " + loopoperation);
-								forloop.getOperations().addOperation(loopoperation);
+								}
+								else {
+									Operation loopoperation = operationfinder(line, currentline, intvariablelist, stringvariablelist);
+									//System.out.println( "loopoperation " + loopoperation);
+									forloop.getOperations().addOperation(loopoperation);
+									
+								}
 								line = procfile.readLine();
 								currentline++;
 							}
@@ -455,7 +459,7 @@ public class Transcriptor {
 			if(splittedline[2].contentEquals("=")) {
 				String result = "";
 				for(int i = 3; i < splittedline.length; i++) {
-					result += splittedline[i]  + " ";
+					result += splittedline[i]  + " -";
 				}
 				//String finalresult = result.replaceAll(result, "\"");
 				Stringvariable operation = new Stringvariable(splittedline[1], result);
@@ -467,7 +471,7 @@ public class Transcriptor {
 				return error;
 			}
 		}
-		else if(splittedline[identifier_loop_test_function_allocate_POSITION].contains("IF") ||splittedline[identifier_loop_test_function_allocate_POSITION].contains("FOR") || splittedline[identifier_loop_test_function_allocate_POSITION].contains("WHILE")) {
+		else if(splittedline[identifier_loop_test_function_allocate_POSITION].contains("FOR") || splittedline[identifier_loop_test_function_allocate_POSITION].contains("WHILE")) {
 			throw new ImbricationException();
 		}
 		/*
