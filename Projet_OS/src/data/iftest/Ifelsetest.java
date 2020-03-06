@@ -13,7 +13,7 @@ public class Ifelsetest extends TestOperation{
 	// --------------------------------------
 	// Attributs
 	// --------------------------------------
-
+	private boolean needcheck;
 	// --------------------------------------
 	// Methods
 	// --------------------------------------
@@ -22,6 +22,17 @@ public class Ifelsetest extends TestOperation{
 	
 	public Ifelsetest(Processus ifproc, Processus elseproc, Comparaison comparaison) {
 		super(ifproc, elseproc, comparaison);
+		this.setNeedcheck(true);
+	}
+	
+	// getters and setters
+	
+	public boolean isNeedcheck() {
+		return needcheck;
+	}
+
+	public void setNeedcheck(boolean needcheck) {
+		this.needcheck = needcheck;
 	}
 	
 }

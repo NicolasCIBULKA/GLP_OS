@@ -17,6 +17,7 @@ public class Processus {
 	// Attributs
 	// --------------------------------------
 	private ArrayList<Operation> operationlist;
+	private int alreadydoneoperation;
 	private int priority;
 	private int pid;
 	private Variablebuffer varbuffer;
@@ -38,6 +39,7 @@ public class Processus {
 	public Processus(String processusname,int pid, int aT, int cpub) {
 		this.operationlist = new ArrayList<Operation>();
 		this.processusname = processusname;
+		this.setAlreadydoneoperation(0);
 		this.setAblerun(true);
 		this.setExiting(false);
 		setarrivalTime(aT);
@@ -51,6 +53,7 @@ public class Processus {
 		varbuffer = new Variablebuffer();
 		this.setAblerun(true);
 		this.setExiting(false);
+		this.setAlreadydoneoperation(0);
 	}
 	
 	// Getters and setters
@@ -168,6 +171,14 @@ public class Processus {
 
 	public void setVarbuffer(Variablebuffer varbuffer) {
 		this.varbuffer = varbuffer;
+	}
+
+	public int getAlreadydoneoperation() {
+		return alreadydoneoperation;
+	}
+
+	public void setAlreadydoneoperation(int alreadydoneoperation) {
+		this.alreadydoneoperation = alreadydoneoperation;
 	}
 	
 		

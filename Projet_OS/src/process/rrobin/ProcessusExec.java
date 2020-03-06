@@ -54,8 +54,6 @@ public class ProcessusExec {
 							visitor.visit(additionner);
 							Intvariable result = additionner.getResult();
 							proc.getVarbuffer().getIntvariablelist().get(result.getName()).setContent(result.getContent());
-							//System.out.println("res : " + additionner.getResult().getContent());
-							//System.out.println(proc.getVarbuffer().getIntvariablelist());
 						}
 						else if(proc.getOplist().get(i) instanceof Substraction ) {
 							Substraction subber = (Substraction) proc.getOplist().get(i);
@@ -92,7 +90,6 @@ public class ProcessusExec {
 							visitor.visit(incrementer);
 							Intvariable result = incrementer.getVar();
 							proc.getVarbuffer().getIntvariablelist().get(result.getName()).setContent(result.getContent());
-							//System.out.println("incrementer : " + incrementer.getVar().getContent());
 						}
 						else if(proc.getOplist().get(i) instanceof Decrement ) {
 							ArrayListVisitor<Void> visitor = new OperationVisitor();
@@ -100,9 +97,8 @@ public class ProcessusExec {
 							visitor.visit(decrementer);
 							Intvariable result = decrementer.getVar();
 							proc.getVarbuffer().getIntvariablelist().get(result.getName()).setContent(result.getContent());
-							//System.out.println("decrementer : " + decrementer.getVar().getContent());
 						}
-						// Execution of the Primitives
+
 						
 						// Execution of sleep
 						else if(proc.getOplist().get(i) instanceof Sleep ) {
@@ -150,24 +146,13 @@ public class ProcessusExec {
 							int iterstart = floop.getIterstart();
 							int iternumber = floop.getIternumber();
 							floop.getVariable().setContent(iterstart);
-							//System.out.println("Stringbuffer du proc superieur" + proc.getVarbuffer().getStringvariablelist());
 							floop.getOperations().setVarbuffer(proc.getVarbuffer());
-							//Variablebuffer varbuff = new Variablebuffer();
-							//System.out.println(floop);
-							//proc.getVarbuffer().getIntvariablelist().get(floop.getVariable().getName()).setContent(floop.getVariable().getContent());
 							for(int j = iterstart; j < iternumber; j++) {
-								//floop.setIterstart(iterstart);
-								//floop.getVariable().setContent(j);
-								//proc.getVarbuffer().getIntvariablelist().get(floop.getVariable().getName()).setContent(floop.getVariable().getContent());
-								//System.out.println("floop buffer" + floop.getOperations().getVarbuffer().getStringvariablelist());
 								proc.setVarbuffer( floop.getOperations().getVarbuffer());
-								//System.out.println("buffer varbuffer: " +  varbuff.getStringvariablelist());
 								execution(floop.getOperations());
-								//System.out.println("buffer varbuffer: " +  varbuff.getStringvariablelist());
 								proc.getVarbuffer().getIntvariablelist().get(floop.getVariable().getName()).setContent(floop.getVariable().getContent() + 1);
 								proc.setVarbuffer(floop.getOperations().getVarbuffer());
-								//System.out.println(floop.getVariable().getContent());
-							}
+								}
 							proc.getVarbuffer().getIntvariablelist().get(floop.getVariable().getName()).setContent(floop.getVariable().getContent()-1);
 
 							
@@ -175,8 +160,8 @@ public class ProcessusExec {
 						
 						// Execution of the Whileloop
 						
-						else if(proc.getOplist().get(i) instanceof Whileloop ){
-							Whileloop whloop = (Whileloop) proc.getOplist().get(i);
+						else if(proc.getOplist().get(i) instanceof WhileLoop ){
+							WhileLoop whloop = (WhileLoop) proc.getOplist().get(i);
 							Comparaison comp = whloop.getComparaison();
 							ArrayListVisitor<Void> visitor = new OperationVisitor();
 							visitor.visit(comp);
@@ -187,15 +172,15 @@ public class ProcessusExec {
 								proc.setVarbuffer(whloop.getOperations().getVarbuffer());
 								visitor.visit(comp);
 							}
-							
 						}
+						
 						// Execution of the testOperation
+						
 						else if(proc.getOplist().get(i) instanceof Ifelsetest) {
 							Ifelsetest test = (Ifelsetest) proc.getOplist().get(i);
 							ArrayListVisitor<Void> visitor = new OperationVisitor();
 							visitor.visit((Comparaison) test.getComparaison());	
 							int testresult = test.getComparaison().getResult().getContent();
-							//System.out.println("testresult = " + testresult);
 							if(testresult == 0) {
 								test.getIfprocessus().setVarbuffer(proc.getVarbuffer());
 								execution(test.getIfprocessus());
@@ -206,8 +191,6 @@ public class ProcessusExec {
 								execution(test.getElseprocessus());
 								proc.setVarbuffer(test.getElseprocessus().getVarbuffer());
 							}
-							//System.out.println(" int : " + proc.getVarbuffer().getIntvariablelist());
-							//System.out.println("string" + proc.getVarbuffer().getStringvariablelist());
 						}
 						else if(proc.getOplist().get(i) == null) {
 							
@@ -224,7 +207,6 @@ public class ProcessusExec {
 				scdriver.addStringScreen("ERROR in program " + proc.getProcessusname());
 			}
 			catch(NumberFormatException e) {
-				//System.out.println("Error in variable allocation");
 				scdriver.addStringScreen("Error in variable allocation");
 			}
 		}
@@ -237,7 +219,7 @@ public class ProcessusExec {
 					try {
 						Thread.sleep(1000);
 					} catch (InterruptedException e) {
-						// TODO Auto-generated catch block
+						// To be continued ...
 						e.printStackTrace();
 					}
 				}

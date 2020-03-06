@@ -1,20 +1,23 @@
 PROCESSUSNAME pairimpair
 # Definition des variables
-INT value = 4384
-INT deux = 2
-INT pairimpair = 0
-INT zero = 0
 STRING debut = -------------------- DEBUT PAIR IMPAIR --------------------
-STRING fin = -------------------- DEBUT PAIR IMPAIR --------------------
-STRING pair = pair
-STRING impair = impair
+STRING fin = -------------------- FIN PAIR IMPAIR --------------------
+INT value = 4
+INT deux = 2
+STRING vrai = vrai
+STRING faux = faux
 # Programme
 PRINT debut
-pairimpair = value % deux
-IF pairimpair == zero ;
-	PRINT pair
+SLEEP 1000
+IF value < deux ;
+	PRINT vrai
+	SLEEP 2000
+	PRINT value
 ENDIF
 ELSE ;
-	PRINT impair
+	PRINT faux
+	SLEEP 3000
+	PRINT value
 ENDELSE
+SLEEP 1000
 PRINT fin

@@ -11,7 +11,7 @@ import data.functions.Print;
 import data.functions.Sleep;
 import data.iftest.Ifelsetest;
 import data.loop.ForLoop;
-import data.loop.Whileloop;
+import data.loop.WhileLoop;
 import data.processus.Operation;
 import data.processus.Processus;
 import data.variable.*;
@@ -220,7 +220,7 @@ public class Transcriptor {
 								currentline++;
 							}
 							currentline++;
-							Whileloop whloop = new Whileloop(whileproc, comparaison);
+							WhileLoop whloop = new WhileLoop(whileproc, comparaison);
 							proc.addOperation(whloop);
 						}
 						else {

@@ -3,7 +3,7 @@ package data.loop;
 import data.arithmeticaloperation.Comparaison;
 import data.processus.Processus;
 
-public class Whileloop extends LoopOperation{
+public class WhileLoop extends LoopOperation{
 	/*
 	 * This is the abstract class of all the loop Operations, such
 	 * 
@@ -18,14 +18,15 @@ public class Whileloop extends LoopOperation{
 	// --------------------------------------
 
 	private Comparaison comparaison;
-	
+	private boolean needcheck;
 	// --------------------------------------
 	// Methods
 	// --------------------------------------
 	
-	public Whileloop(Processus proc, Comparaison comparaison) {
+	public WhileLoop(Processus proc, Comparaison comparaison) {
 		super(proc);
 		this.setComparaison(comparaison);
+		this.setNeedcheck(true);
 	}
 	
 	// getters and setters
@@ -36,6 +37,14 @@ public class Whileloop extends LoopOperation{
 
 	public void setComparaison(Comparaison comparaison) {
 		this.comparaison = comparaison;
+	}
+
+	public boolean isNeedcheck() {
+		return needcheck;
+	}
+
+	public void setNeedcheck(boolean needcheck) {
+		this.needcheck = needcheck;
 	}
 
 	

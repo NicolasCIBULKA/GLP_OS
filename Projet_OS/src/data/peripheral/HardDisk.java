@@ -22,11 +22,11 @@ public class HardDisk extends Peripheral {
 		canAddContent = true;
 		maxSlot++;
 	}
-	public void addSlot(int size,Processus processus) throws FullHDException{
+	public void addSlot(int size) throws FullHDException{
 		if(maxSlot == 5) {
 			throw new FullHDException();
 		}
-		Slot slot = new Slot(size,processus);
+		Slot slot = new Slot(size);
 		slotlist.put(slotnumber, slot);
 		slotnumber++;
 	}

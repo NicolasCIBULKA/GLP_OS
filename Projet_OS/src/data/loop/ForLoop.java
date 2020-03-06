@@ -10,7 +10,9 @@ public class ForLoop extends LoopOperation{
 	
 	private int iternumber;
 	private int iterstart;
+	private int iterposition;
 	private Intvariable variable;
+	private boolean needcheck;
 	// --------------------------------------
 	// Methods
 	// --------------------------------------
@@ -20,11 +22,11 @@ public class ForLoop extends LoopOperation{
 		super(proc);
 		this.setIternumber(iternumber);
 		this.setVariable(variable);
+		this.setIterposition(iterstart);
+		this.setNeedcheck(true);
 	}
 	
 	// getters and setters
-
-
 
 	public int getIternumber() {
 		return iternumber;
@@ -43,6 +45,14 @@ public class ForLoop extends LoopOperation{
 		this.iterstart = iterstart;
 	}
 	
+	public int getIterposition() {
+		return iterposition;
+	}
+
+	public void setIterposition(int iterposition) {
+		this.iterposition = iterposition;
+	}
+
 	public Intvariable getVariable() {
 		return variable;
 	}
@@ -53,6 +63,14 @@ public class ForLoop extends LoopOperation{
 
 	
 	// toString
+
+	public boolean isNeedcheck() {
+		return needcheck;
+	}
+
+	public void setNeedcheck(boolean needcheck) {
+		this.needcheck = needcheck;
+	}
 
 	public String toString() {
 		return this.getIterstart() + " / " + this.getIternumber()  ;
