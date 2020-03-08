@@ -49,7 +49,7 @@ public class RoundRobin2 extends Scheduler {
 		System.out.println("=========================================================");
 	}
 	
-	public void roundRobin(ArrayList<Processus> processus, int tq){
+	public void roundRobin(ArrayList<Processus> processus, int quantum){
 		int totalProcesses = processus.size(); //will store the number of distinct processes that will be allocated the cpu
 		int process=0; //first process to arrive
 		Processus currProcess;
@@ -73,7 +73,7 @@ public class RoundRobin2 extends Scheduler {
 		//outer while loop will keep looping until a condition is met (all processes have completed their cpu burst)
 		while(true){
 			//this loop will check if the Ready Queue is empty BUT there are still processes 
-			//in the job pool that still need to arrive to be placed in the ReadyQueue
+			//in the process pool that still need to arrive to be placed in the ReadyQueue
 			while((process != totalProcesses) && super.readyQueueEmpty()){
 				if(processus.get(process).getarrivalTime() == systemCount){
 					super.addProcess(processus.get(process)); //add the process to the Ready Queue 
@@ -89,9 +89,11 @@ public class RoundRobin2 extends Scheduler {
 					systemCount++;
 				}
 			}
-			//for loop will depend on the Time Quantum (tq)
-			for(int i=0; i<tq; i++){	
+			//for loop will depend on the Time Quantum 
+			for(int i=0; i<quantum; i++){	
 				//if the process has not completed it cpu burst, it should run
+				currProcess = SRTF(currProcess);//Shorstest remaining time first
+				//currProcess = LRTF(currProcess); //Longest remaining time first
 				if(currProcess.getCPUBurstLeft() != 0){
 					System.out.println("<system time   " + systemCount + "> process    " + currProcess.getpid() +" is running" );
 					systemCount++;
@@ -109,13 +111,13 @@ public class RoundRobin2 extends Scheduler {
 						currProcess.setturnaroundTime(currProcess.getcompletionTime() - currProcess.getarrivalTime()); //set turnaround time
 						currProcess.setWaitTime(currProcess.getcompletionTime() - (currProcess.getarrivalTime() + currProcess.getcpuBurst())); //set wait time
 						System.out.println("<system time   " + systemCount + "> process    " + currProcess.getpid() +" is finished....." );
-						break; //break from for loop since process does not need to complete tq
+						break; //break from for loop since process does not need to complete quantum
 					}
 				}
 			}// end for loop
 			
 			if(!super.readyQueueEmpty()){
-				//if there are multiple processes in the readyQueue, when the tq is completed, one process switches to another
+				//if there are multiple processes in the readyQueue, when the quantum is completed, one process switches to another
 				//this would inform when the switch occurs and with which processes
 				if(super.readyQueueSize() > 1){
 					System.out.println("<system time   " + systemCount + "> switching from process " + currProcess.getpid() + " to process " +super.getProcess(1).getpid());
@@ -186,6 +188,68 @@ public class RoundRobin2 extends Scheduler {
 		avgTT = (double)sum / processus.size();
 		return avgTT;
 	}
+
+
+
+	
+	
+	public Processus SRTF(Processus currProcess){
+		Processus shortestProcess = currProcess; //set the shortest process as the current process
+		
+		//if the RQ is of size 1, the shortest process will be at the head of the RQ
+		if(super.readyQueueSize() == 1){
+			
+			//if this is the first time the process is allocated the CPU, set the response time
+			if(shortestProcess.getCPUBurstLeft() == shortestProcess.getcpuBurst()){
+				shortestProcess.setResponseTime(systemCount - shortestProcess.getarrivalTime());
+			}
+		}
+		
+		else{ 
+			//if the RQ size is >1, loop through all the processes currently in the RQ and find the process
+			//with the smallest CPU Burst. Set that process as the shortest process and set the response time for that process
+			for(int i=0; i<super.readyQueueSize(); i++){
+				if(super.getProcess(i).getCPUBurstLeft() < shortestProcess.getCPUBurstLeft()){
+					shortestProcess = super.getProcess(i);
+					//find the position in the RQ of the shortest process
+					
+					if(shortestProcess.getCPUBurstLeft() == shortestProcess.getcpuBurst()){
+						shortestProcess.setResponseTime(systemCount - shortestProcess.getarrivalTime());
+					}							
+				}
+			 }//end for loop
+		}//end else
+		return shortestProcess;
 }
+	public Processus LRTF(Processus currProcess){
+		Processus longestProcess = currProcess; //set the longest process as the current process
+		
+		//if the RQ is of size 1, the longest process will be at the head of the RQ
+		if(super.readyQueueSize() == 1){
+			
+			//if this is the first time the process is allocated the CPU, set the response time
+			if(longestProcess.getCPUBurstLeft() == longestProcess.getcpuBurst()){
+				longestProcess.setResponseTime(systemCount - longestProcess.getarrivalTime());
+			}
+		}
+		
+		else{ 
+			//if the RQ size is >1, loop through all the processes currently in the RQ and find the process
+			//with the longuest CPU Burst. Set that process as the longuest process and set the response time for that process
+			for(int i=0; i<super.readyQueueSize(); i++){
+				if(super.getProcess(i).getCPUBurstLeft() > longestProcess.getCPUBurstLeft()){
+					longestProcess = super.getProcess(i);
+					//find the position in the RQ of the longuest process
+					
+					if(longestProcess.getCPUBurstLeft() == longestProcess.getcpuBurst()){
+						longestProcess.setResponseTime(systemCount - longestProcess.getarrivalTime());
+					}							
+				}
+			 }//end for loop
+		}//end else
+		return longestProcess;
+}
+}
+
 
 
