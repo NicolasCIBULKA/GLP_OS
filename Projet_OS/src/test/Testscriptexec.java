@@ -1,11 +1,12 @@
 package test;
 
+import java.util.ArrayList;
+
 import data.drivers.Interaction;
 import data.drivers.ScreenDriver;
 import data.peripheral.Screen;
 import data.processus.Processus;
-import process.rrobin.OperationExec;
-import process.rrobin.ProcessusExec;
+import process.rrobin.*;
 import process.traduction.Transcriptor;
 
 public class Testscriptexec {
@@ -14,6 +15,10 @@ public class Testscriptexec {
 		// traducteur
 		
 		Transcriptor transcriptor = new Transcriptor();
+		
+		// RR
+		RoundRobin2 rr = new RoundRobin2();
+		ArrayList<Processus> oplist = new ArrayList<Processus>();
 		
 		// Necessaire a l'utilisation de lecran
 		
@@ -31,7 +36,10 @@ public class Testscriptexec {
 		// traduction du langage interpreté en un code utilisable
 		
 		transcriptor.transcription(proc, filename);
-		
+		oplist.add(proc);
+		rr.addProcess(proc);
+		rr.addProcess(proc);
+		rr.runRR(oplist, 10);
 		// execution du code via processusexec
 		//System.out.println("==================== Execution via Processusexec ====================\n");
 		//procexec.execution(proc);

@@ -1,6 +1,7 @@
 package data.primitive;
 
 import data.drivers.Driver;
+import process.visitor.OSPrimitiveVisitor;
 
 public class Ioctl{
 	/*
@@ -31,4 +32,10 @@ public class Ioctl{
 	public void setDriver(Driver driver) {
 		this.driver = driver;
 	}
+	
+	// primitive visitor
+	
+		public <T> T accept(OSPrimitiveVisitor<T> visitor) {
+			return visitor.visit(this);
+		}
 }

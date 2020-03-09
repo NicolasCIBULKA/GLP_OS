@@ -22,8 +22,6 @@ public class Processus {
 	private int pid;
 	private Variablebuffer varbuffer;
 	private String processusname;
-	private boolean ablerun;
-	private boolean exiting;
 	private int arrivalTime;
 	private int completionTime;
 	private int cpuBurst;
@@ -40,8 +38,6 @@ public class Processus {
 		this.operationlist = new ArrayList<Operation>();
 		this.processusname = processusname;
 		this.setAlreadydoneoperation(0);
-		this.setAblerun(true);
-		this.setExiting(false);
 		setarrivalTime(aT);
 		setpid(pid);
 		setcpuBurst(cpub);
@@ -51,28 +47,10 @@ public class Processus {
 	public Processus() {
 		this.operationlist = new ArrayList<Operation>();
 		varbuffer = new Variablebuffer();
-		this.setAblerun(true);
-		this.setExiting(false);
 		this.setAlreadydoneoperation(0);
 	}
 	
 	// Getters and setters
-
-	public boolean isExiting() {
-		return exiting;
-	}
-
-	public void setExiting(boolean exiting) {
-		this.exiting = exiting;
-	}
-
-	public boolean isAblerun() {
-		return ablerun;
-	}
-
-	public void setAblerun(boolean ablerun) {
-		this.ablerun = ablerun;
-	}
 
 	public ArrayList<Operation> getOplist() {
 		return operationlist;

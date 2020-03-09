@@ -2,6 +2,7 @@ package data.primitive;
 
 import data.processus.Processus;
 import process.visitor.ArrayListVisitor;
+import process.visitor.OSPrimitiveVisitor;
 
 public class Kill extends Primitive {
 
@@ -45,7 +46,14 @@ public class Kill extends Primitive {
 	
 	public String toString() {
 		return "Processus : " + this.getProcessus().getProcessusname() + " -  PID : " + this.getProcessus().getpid() + " has been stopped";
-
 	}
+	
+	
+	
+	// primitive visitor
+	
+		public <T> T accept(OSPrimitiveVisitor<T> visitor) {
+			return visitor.visit(this);
+		}
 	
 }

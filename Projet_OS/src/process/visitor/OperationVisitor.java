@@ -15,7 +15,7 @@ import data.variable.Intvariable;
 
 public class OperationVisitor implements ArrayListVisitor<Void>{
 	/*
-	 * This class can execute all the arithmetical operations 
+	 * This class can execute all the operations 
 	 * 
 	 * @author Nicolas CIBULKA
 	 */

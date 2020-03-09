@@ -2,28 +2,40 @@ package data.peripheral;
 
 public class Slot {
 
-	private int size = 2000; // 2000 characters
-	private String content;
-		
+	// --------------------------------------
+	// Attributs
+	// --------------------------------------
 	
-	public Slot(int size) {
-		this.size = size;
+	private String slotposition;
+	private int size;
+	
+	private static String fileposition = "../harddisks";
+	
+	// --------------------------------------
+	// Methods
+	// --------------------------------------
+	
+	public Slot(String name) {
+		this.setSize(0);
+		this.setSlotposition(fileposition + name);
+	}
+	
+	// getters and setters
+	
+	public String getSlotposition() {
+		return slotposition;
+	}
+	
+	public void setSlotposition(String slotposition) {
+		this.slotposition = slotposition;
 	}
 	
 	public int getSize() {
 		return size;
 	}
+	
 	public void setSize(int size) {
 		this.size = size;
 	}
 	
-	public String getContent() {
-		return content;
-	}
-
-	public void setContent(String content) {
-		this.content = content;
-	}
-	
-
 }

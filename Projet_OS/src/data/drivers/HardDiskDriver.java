@@ -23,8 +23,7 @@ public class HardDiskDriver extends Driver{
 		int sizeText = text.length();
 		slot.setSize(sizeSlot - sizeText );
 		slot.setContent(text);
-		
-		
+	
 	}
 	
 	public void hardDiskRead(int slotnumber) {

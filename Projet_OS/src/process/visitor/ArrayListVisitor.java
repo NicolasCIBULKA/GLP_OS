@@ -48,8 +48,6 @@ public interface ArrayListVisitor<T> {
 	
 	T visit(Decrement node);
 	
-	// --> add Decrement
-	
 	// Primitives
 	
 	T visit(Exit node);

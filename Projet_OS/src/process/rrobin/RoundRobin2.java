@@ -1,7 +1,6 @@
 package process.rrobin;
 
 import java.util.ArrayList;
-
 import data.processus.*;
 
 public class RoundRobin2 extends Scheduler {
@@ -69,7 +68,7 @@ public class RoundRobin2 extends Scheduler {
 		while((process != totalProcesses) && (processus.get(process).getarrivalTime() == systemCount)){ 
 			super.addProcess(processus.get(process)); //add process to the ReadyQueue
 			process++; //increment to next job that will arrive
-	}
+		}
 		//outer while loop will keep looping until a condition is met (all processes have completed their cpu burst)
 		while(true){
 			//this loop will check if the Ready Queue is empty BUT there are still processes 
@@ -92,7 +91,7 @@ public class RoundRobin2 extends Scheduler {
 			//for loop will depend on the Time Quantum 
 			for(int i=0; i<quantum; i++){	
 				//if the process has not completed it cpu burst, it should run
-				currProcess = SRTF(currProcess);//Shorstest remaining time first
+				currProcess = SRTF(currProcess);//Shortest remaining time first
 				//currProcess = LRTF(currProcess); //Longest remaining time first
 				if(currProcess.getCPUBurstLeft() != 0){
 					System.out.println("<system time   " + systemCount + "> process    " + currProcess.getpid() +" is running" );
