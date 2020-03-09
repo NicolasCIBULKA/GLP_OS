@@ -37,5 +37,15 @@ public class Slot {
 	public void setSize(int size) {
 		this.size = size;
 	}
+
+	public void setContent(String text) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void getContent() {
+		// TODO Auto-generated method stub
+		
+	}
 	
 }

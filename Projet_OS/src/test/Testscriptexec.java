@@ -39,7 +39,7 @@ public class Testscriptexec {
 		oplist.add(proc);
 		rr.addProcess(proc);
 		rr.addProcess(proc);
-		rr.runRR(oplist, 10);
+		rr.runRR(oplist, 10, scdriver);
 		// execution du code via processusexec
 		//System.out.println("==================== Execution via Processusexec ====================\n");
 		//procexec.execution(proc);

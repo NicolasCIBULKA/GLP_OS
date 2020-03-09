@@ -76,14 +76,7 @@ public class OperationVisitor implements ArrayListVisitor<Void>{
 		node.setVar(varincremented);
 		return null;
 	}
-
-	// Primitives
 	
-	@Override
-	public Void visit(Exit node) {
-		node.getProcessus().setExiting(true);
-		return null;
-	}
 
 	@Override
 	public Void visit(Sleep node) {
@@ -96,26 +89,7 @@ public class OperationVisitor implements ArrayListVisitor<Void>{
 		return null;
 	}
 
-	@Override
-	public Void visit(Kill node) {
-		if(node.getKilloption() == "PAUSE") {
-			node.getProcessus().setAblerun(false);
-		}
-		else if(node.getKilloption() == "EXIT") {
-			node.getProcessus().setExiting(true);
-		}
-		else if(node.getKilloption() == "TOP-PRIORITY") {
-			node.getProcessus().setPriority(20);
-		}
-		else if(node.getKilloption() == "BOTTOM-PRIORITY") {
-			node.getProcessus().setPriority(1);
-		}
-		else if(node.getKilloption() == "RUN") {
-			node.getProcessus().setAblerun(true);
-		}
-		
-		return null;
-	}
+
 
 	@Override
 	public Void visit(Nice node) {
@@ -124,12 +98,6 @@ public class OperationVisitor implements ArrayListVisitor<Void>{
 		return null;
 	}
 
-	@Override
-	public Void visit(Pause node) {
-		Processus proc = node.getProcessus();
-		proc.setAblerun(false);
-		return null;
-	}
 	
 	// Comparaison
 
@@ -189,6 +157,24 @@ public class OperationVisitor implements ArrayListVisitor<Void>{
 	public Void visit(Print node) {
 		// Need to be modified to write on the Screen
 		System.out.println(node.print());
+		return null;
+	}
+
+	@Override
+	public Void visit(Exit node) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Void visit(Kill node) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Void visit(Pause node) {
+		// TODO Auto-generated method stub
 		return null;
 	}
 
