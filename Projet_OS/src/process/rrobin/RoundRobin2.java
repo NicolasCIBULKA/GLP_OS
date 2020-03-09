@@ -2,6 +2,7 @@ package process.rrobin;
 
 import java.util.ArrayList;
 
+import data.drivers.ScreenDriver;
 import data.processus.*;
 
 public class RoundRobin2 extends Scheduler {
@@ -15,7 +16,7 @@ public class RoundRobin2 extends Scheduler {
 	}
 	
 	
-	public void runRR(ArrayList<Processus> processus, int Quantum){
+	public void runRR(ArrayList<Processus> processus, int Quantum, ScreenDriver scdriver){
 		double avgCPUU;
 		double avgWT;
 		double avgRT;
@@ -24,7 +25,7 @@ public class RoundRobin2 extends Scheduler {
 		System.out.println("Scheduling Algorithm: Round Robin");
 		System.out.println("=========================================================");
 		
-		roundRobin(processus, Quantum); //runs the round robin algorithm
+		roundRobin(processus, Quantum, scdriver); //runs the round robin algorithm
 		
 		//calculate averages
 		avgCPUU = averageCPUUsage(); //calculates average CPU Usage
@@ -49,87 +50,75 @@ public class RoundRobin2 extends Scheduler {
 		System.out.println("=========================================================");
 	}
 	
-	public void roundRobin(ArrayList<Processus> processus, int quantum){
+	public void roundRobin(ArrayList<Processus> processus, int quantum, ScreenDriver scdriver){
 		int totalProcesses = processus.size(); //will store the number of distinct processes that will be allocated the cpu
 		int process=0; //first process to arrive
 		Processus currProcess;
 		
-		//loop will continue if the first process that will be put in the Ready Queue arrives at a time later than 0
-		while(processus.get(process).getarrivalTime() != systemCount){
-			System.out.println("<system time   " + systemCount + "> idle");
-			idleCount++;
-			systemCount++;
-		}
+		
 		
 		super.addProcess(processus.get(process)); //add the process to the Ready Queue
 		process++; //increment to next job that will arrive
 		currProcess = super.getProcess(0); //set current process to the first process in the ReadyQueue
-		currProcess.setResponseTime(systemCount - currProcess.getarrivalTime()); //set the ResponseTime
+		
 		// while loop to check if multiple processes have the same arrival time
-		while((process != totalProcesses) && (processus.get(process).getarrivalTime() == systemCount)){ 
+		while((process != totalProcesses)){ 
 			super.addProcess(processus.get(process)); //add process to the ReadyQueue
 			process++; //increment to next job that will arrive
 	}
 		//outer while loop will keep looping until a condition is met (all processes have completed their cpu burst)
 		while(true){
+			//currProcess = SRTF(currProcess);//Shorstest remaining time first
 			//this loop will check if the Ready Queue is empty BUT there are still processes 
 			//in the process pool that still need to arrive to be placed in the ReadyQueue
 			while((process != totalProcesses) && super.readyQueueEmpty()){
-				if(processus.get(process).getarrivalTime() == systemCount){
+				
 					super.addProcess(processus.get(process)); //add the process to the Ready Queue 
 					currProcess = super.getProcess(0); //since the RQ was empty, this is now the process at the head of the RQ
-					currProcess.setResponseTime(systemCount - currProcess.getarrivalTime());
+					//currProcess.setResponseTime(systemCount);
 					process++;
-					break; 
-				}
-				else{
-					//if no process arrives, cpu is in idle
-					System.out.println("<system time   " + systemCount + "> idle");
-					idleCount++;
-					systemCount++;
-				}
+					
+				
+				
 			}
 			//for loop will depend on the Time Quantum 
 			for(int i=0; i<quantum; i++){	
 				//if the process has not completed it cpu burst, it should run
-				currProcess = SRTF(currProcess);//Shorstest remaining time first
+				
 				//currProcess = LRTF(currProcess); //Longest remaining time first
-				if(currProcess.getCPUBurstLeft() != 0){
-					System.out.println("<system time   " + systemCount + "> process    " + currProcess.getpid() +" is running" );
-					systemCount++;
-					//update the amount of cpu burst is left for the process
-					currProcess.setCPUBurstLeft(currProcess.getCPUBurstLeft()-1);
+				if(currProcess.getNboperation() != currProcess.getAlreadydoneoperation()){
+					System.out.println(currProcess.getpid() +" is running" );
+					OperationExec ope = new OperationExec();
+					ope.operationexecution(currProcess, currProcess.getOplist().get(i),scdriver );
+					//System.out.println(scdriver.getScreencontent());
 					
-					// while loop to check if multiple processes have the same arrival time, check for any new processes
-					while((process != totalProcesses) && (processus.get(process).getarrivalTime() == systemCount)){
-						super.addProcess(processus.get(process));
-						process++;
-					}
+					
+				}
 					//if process has completed its cpu burst
-					if(currProcess.getCPUBurstLeft() == 0){
+					if(currProcess.getNboperation() == currProcess.getAlreadydoneoperation()){
 						currProcess.setcompletionTime(systemCount); //set complete time of process
-						currProcess.setturnaroundTime(currProcess.getcompletionTime() - currProcess.getarrivalTime()); //set turnaround time
-						currProcess.setWaitTime(currProcess.getcompletionTime() - (currProcess.getarrivalTime() + currProcess.getcpuBurst())); //set wait time
-						System.out.println("<system time   " + systemCount + "> process    " + currProcess.getpid() +" is finished....." );
+						currProcess.setturnaroundTime(currProcess.getcompletionTime() ); //set turnaround time
+						currProcess.setWaitTime(currProcess.getcompletionTime() -  currProcess.getcpuBurst()); //set wait time
+						System.out.println(" process    " + currProcess.getProcessusname() +" is finished....." );
 						break; //break from for loop since process does not need to complete quantum
 					}
-				}
+				
 			}// end for loop
 			
 			if(!super.readyQueueEmpty()){
 				//if there are multiple processes in the readyQueue, when the quantum is completed, one process switches to another
 				//this would inform when the switch occurs and with which processes
 				if(super.readyQueueSize() > 1){
-					System.out.println("<system time   " + systemCount + "> switching from process " + currProcess.getpid() + " to process " +super.getProcess(1).getpid());
+					System.out.println("<system time   " + systemCount + "> switching from process " + currProcess.getProcessusname() + " to process " +super.getProcess(1).getProcessusname());
 				}
-				//if current process if complete, remove the process from the RQ
-				if(currProcess.getCPUBurstLeft() == 0){
+				//if current process is complete, remove the process from the RQ
+				if(currProcess.getNboperation() == currProcess.getAlreadydoneoperation()){
 					super.removeProcess(0);
 					//if RQ is not empty, get the next process currently at the head of the Q
 					if(!super.readyQueueEmpty()){
 						currProcess = super.getProcess(0);
 						if(currProcess.getCPUBurstLeft() == currProcess.getcpuBurst()){
-							currProcess.setResponseTime(systemCount - currProcess.getarrivalTime());
+							currProcess.setResponseTime(systemCount);
 						}
 					}
 				}
@@ -139,7 +128,7 @@ public class RoundRobin2 extends Scheduler {
 					currProcess = super.getProcess(0);
 					//if this is the first time this process is running, set the response time for that process
 					if(currProcess.getCPUBurstLeft() == currProcess.getcpuBurst()){
-						currProcess.setResponseTime(systemCount - currProcess.getarrivalTime());
+						currProcess.setResponseTime(systemCount );
 					}
 				}					
 			}
@@ -200,7 +189,7 @@ public class RoundRobin2 extends Scheduler {
 		if(super.readyQueueSize() == 1){
 			
 			//if this is the first time the process is allocated the CPU, set the response time
-			if(shortestProcess.getCPUBurstLeft() == shortestProcess.getcpuBurst()){
+			if(shortestProcess.getCPUBurstLeft() == shortestProcess.getNboperation()){
 				shortestProcess.setResponseTime(systemCount - shortestProcess.getarrivalTime());
 			}
 		}
@@ -214,7 +203,7 @@ public class RoundRobin2 extends Scheduler {
 					//find the position in the RQ of the shortest process
 					
 					if(shortestProcess.getCPUBurstLeft() == shortestProcess.getcpuBurst()){
-						shortestProcess.setResponseTime(systemCount - shortestProcess.getarrivalTime());
+						shortestProcess.setResponseTime(systemCount );
 					}							
 				}
 			 }//end for loop

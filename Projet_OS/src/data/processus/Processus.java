@@ -26,11 +26,11 @@ public class Processus {
 	private boolean exiting;
 	private int arrivalTime;
 	private int completionTime;
-	private int cpuBurst;
+	private int cpuBurst ;
 	private int waitTime;
 	private int responseTime;
 	private int turnaroundTime;
-	private int cpuBurstLeft;
+	private int cpuBurstLeft ;
 	// --------------------------------------
 	// Methods
 	// --------------------------------------
@@ -48,14 +48,15 @@ public class Processus {
 		varbuffer = new Variablebuffer();
 	}
 	
+	
 	public Processus() {
 		this.operationlist = new ArrayList<Operation>();
 		varbuffer = new Variablebuffer();
 		this.setAblerun(true);
 		this.setExiting(false);
 		this.setAlreadydoneoperation(0);
+		
 	}
-	
 	// Getters and setters
 
 	public boolean isExiting() {
@@ -103,6 +104,7 @@ public class Processus {
 	}
 
 	public int getNboperation() {
+		cpuBurstLeft = operationlist.size();
 		return operationlist.size();
 	}
 	
@@ -179,6 +181,9 @@ public class Processus {
 
 	public void setAlreadydoneoperation(int alreadydoneoperation) {
 		this.alreadydoneoperation = alreadydoneoperation;
+	}
+	public void incrementADO() {
+		this.alreadydoneoperation++;
 	}
 	
 		

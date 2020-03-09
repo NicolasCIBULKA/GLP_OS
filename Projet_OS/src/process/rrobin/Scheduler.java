@@ -8,6 +8,14 @@ public class Scheduler {
 	private List<Processus> readyQueue;
 
 	
+	public List<Processus> getReadyQueue() {
+		return readyQueue;
+	}
+
+	public void setReadyQueue(List<Processus> readyQueue) {
+		this.readyQueue = readyQueue;
+	}
+
 	public Scheduler() {
 		readyQueue = new ArrayList<Processus>();
 	}
