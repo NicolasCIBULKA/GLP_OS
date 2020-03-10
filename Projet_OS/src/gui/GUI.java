@@ -1,12 +1,15 @@
 package gui;
 
+
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.GridLayout;
 import java.awt.Insets;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Container;
 import java.awt.Dimension;
+import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -38,22 +41,26 @@ public class GUI extends JFrame {
 	
 	//five major parts
 	private JPanel panel = new JPanel();
-	private JPanel pankeybrd = new JPanel();
 	private JPanel panprocess = new JPanel();
 	private JPanel pandisk = new JPanel();
 	private JPanel panmouse = new JPanel();
+	private KeyboardGUI keyboard =new KeyboardGUI();
 	
-	//elements to display info on screen and for processes display (top of the gridlayout)
+	//elements to display info on screen and for processes/hdd display (top of the gridlayout)
 	
 	private JTextArea affichécran = new JTextArea();
+	private JTextArea invitecomm = new JTextArea();
 	private JTextArea affichprocess= new JTextArea();
 	private JTextArea affichdisk= new JTextArea();
+	
 	//scroll for the process display
 	private JScrollPane scrollprocess = new JScrollPane(affichprocess,JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
 	//scroll for the disk
 	private JScrollPane scrolldisk = new JScrollPane(affichdisk,JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
 	//scroll for the screen
 	private JScrollPane scroll = new JScrollPane(affichécran,JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
+	//scroll invite cmd
+	private JScrollPane scrollcmd = new JScrollPane(invitecomm,JScrollPane.VERTICAL_SCROLLBAR_NEVER, JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
 	
 
 
@@ -65,6 +72,11 @@ public class GUI extends JFrame {
 		this.setTitle("OS Simulation");
 		init();
 	}
+	
+	
+	//-------------
+	//init method 
+	//-----------
 	public void init() {
 		
 		// Main window
@@ -111,7 +123,7 @@ public class GUI extends JFrame {
 		gridcons.gridy=4;
 		gridcons.gridheight=2;
 		gridcons.gridwidth=2;
-		contentPane.add(pankeybrd, gridcons);
+		contentPane.add(keyboard.getPankeybrd(), gridcons);
 		
 		//mouse
 		gridcons.gridx=3;
@@ -126,15 +138,33 @@ public class GUI extends JFrame {
 		//adjusting the panels of each five parts:
 		
 		//screen
-		
-		panel.add(scroll, BorderLayout.CENTER);
-		panel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
-		panel.setPreferredSize(new Dimension(900,900));
-		scroll.setPreferredSize(new Dimension(900,900));
-		panel.setLayout(new GridLayout(1,1));
-		scroll.setBorder(BorderFactory.createTitledBorder("Screen"));
-		
+		affichécran.setEditable(false);
+		scroll.setAutoscrolls(true);
 
+		
+		panel.setLayout(new GridBagLayout());
+		GridBagConstraints gcscreen= new GridBagConstraints();
+		
+		
+		panel.setBorder(BorderFactory.createTitledBorder("Screen"));
+		invitecomm.setBorder(BorderFactory.createTitledBorder("type here"));
+
+		gcscreen.fill=GridBagConstraints.BOTH;
+		gcscreen.gridx=0;
+		gcscreen.gridy=0;
+		gcscreen.weighty=1;
+		gcscreen.weightx=1;
+		gcscreen.gridheight=10;
+		gcscreen.gridwidth=10;
+		panel.add(scroll, gcscreen);
+		gcscreen.weighty=0;
+		gcscreen.gridx=0;
+		gcscreen.gridy=10;
+		gcscreen.gridheight=GridBagConstraints.REMAINDER;
+		gcscreen.gridwidth=10;
+		panel.add(invitecomm, gcscreen);
+		
+		
 		//pan process
 		
 		affichprocess.setEditable(false);
@@ -153,59 +183,11 @@ public class GUI extends JFrame {
 		//pan keyboard
 		//version 2, use of gridbaglayout
 		
+		//now managed in keyboardgui class
 		
-		pankeybrd.setPreferredSize(new Dimension(800,400));
-		pankeybrd.setBorder(BorderFactory.createTitledBorder("keyboard"));
-		GridBagLayout gridkey = new GridBagLayout();
-		GridBagConstraints keyConstraint = new GridBagConstraints();
-		pankeybrd.setLayout(gridkey);
-		keyConstraint.fill=GridBagConstraints.BOTH;
+		
 			
-		//regular keys
-		String row1="1234567890";
-		String row2="azertyuiop";
-		String row3="qsdfghjklm";
-		String row4="wxcvbn,;:!";
-		String[]rows= {row1,row2,row3,row4};
 		
-		for(int i=0;i<rows.length;i++) {
-		
-			char[]keys=rows[i].toCharArray();
-				for(int j=0; j<keys.length;j++) {
-					keyConstraint.gridwidth=1;
-					keyConstraint.gridheight=1;
-					keyConstraint.weightx=1;
-					keyConstraint.weighty=1;
-					keyConstraint.gridx=j;
-					keyConstraint.gridy=i;
-					pankeybrd.add(new JButton(Character.toString(keys[j])),keyConstraint);
-				}
-		}
-		//we can add others keys (change size ? +grid layout pb ?)
-		keyConstraint.gridy=5;
-				
-		keyConstraint.gridx=0;
-		pankeybrd.add(new JButton("ctrl"),keyConstraint);
-		keyConstraint.gridx=1;
-		pankeybrd.add(new JButton("alt"),keyConstraint);
-		keyConstraint.gridx=2;
-		keyConstraint.gridwidth=4;
-		keyConstraint.weightx=1;
-		pankeybrd.add(new JButton("space"),keyConstraint);
-		keyConstraint.gridwidth=1;
-		keyConstraint.gridx=4;
-		keyConstraint.weightx=0;
-		pankeybrd.add(new JButton("shift"),keyConstraint);
-		keyConstraint.gridx=5;
-		pankeybrd.add(new JButton("+"),keyConstraint);
-		keyConstraint.gridx=6;
-		pankeybrd.add(new JButton("="),keyConstraint);
-		keyConstraint.gridx=7;
-		pankeybrd.add(new JButton("*"),keyConstraint);
-		keyConstraint.gridwidth=2;
-		keyConstraint.gridx=8;
-		keyConstraint.weightx=1;
-		pankeybrd.add(new JButton("Enter"),keyConstraint);
 				
 		//pan Mouse
 		
@@ -247,6 +229,10 @@ public class GUI extends JFrame {
 		gcmouse.gridy=3;
 		panmouse.add(new JButton("\\/"), gcmouse);
 		
+		//action listeners
+		
+		keyboard.getEnter().addActionListener(new EnterAction());
+		
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
@@ -254,5 +240,31 @@ public class GUI extends JFrame {
 		setVisible(true);
 	}
 	
+	
+	private class EnterAction implements ActionListener {
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			affichécran.setText(affichécran.getText() + "\n" + invitecomm.getText());
+			invitecomm.setText(null);
+		}
+	}
+
+	private class KeyLetter implements ActionListener {
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			affichécran.setText(affichécran.getText() + "\n" + invitecomm.getText());
+			invitecomm.setText(null);
+		}
+	}
+	
+	//idée pour souris//
+	public void paintComponent(Graphics g) {
+		super.paintComponents(g);
+		
+		g.setColor(Color.BLUE);
+		g.fillOval(10, 10, 10, 10);
+	}
+	
 
 }
+
