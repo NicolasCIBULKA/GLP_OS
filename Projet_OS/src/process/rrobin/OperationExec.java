@@ -119,11 +119,11 @@ public class OperationExec {
 			Print printer = (Print) operation;
 			if(printer.getPrintop() instanceof Intvariable) {
 				Intvariable var = proc.getVarbuffer().getIntvariablelist().get(printer.getPrintop().getName());
-				scdriver.addStringScreen(var.toString());
+				scdriver.addStringScreen(proc.getProcessusname()+" >> " + var.toString());
 			}
 			else if(printer.getPrintop() instanceof Stringvariable) {
 				Stringvariable var = proc.getVarbuffer().getStringvariablelist().get(printer.getPrintop().getName());
-				scdriver.addStringScreen(var.toString());
+				scdriver.addStringScreen(proc.getProcessusname()+" >> "+var.toString());
 			}
 			visitor.visit(printer);
 			proc.setAlreadydoneoperation(proc.getAlreadydoneoperation() + 1);
@@ -137,6 +137,8 @@ public class OperationExec {
 		// Execution of for loop
 		else if(operation instanceof ForLoop ) {
 			ForLoop floop = (ForLoop) operation;
+			String pname = proc.getProcessusname();
+			floop.getOperations().setProcessusname(pname);
 			int doneop = proc.getAlreadydoneoperation();
 			// Test if we have to check the condition
 			if(floop.isNeedcheck()) {
@@ -161,8 +163,9 @@ public class OperationExec {
 					floop.getOperations().setAlreadydoneoperation(currentop + 1);
 				}
 				else {
-					floop.setNeedcheck(true);
+					proc.setVarbuffer(floop.getOperations().getVarbuffer());
 					floop.getOperations().setAlreadydoneoperation(0);
+					floop.setNeedcheck(true);
 				}
 			}
 		}
@@ -171,6 +174,8 @@ public class OperationExec {
 		
 		else if(operation instanceof WhileLoop ) {
 			WhileLoop whloop = (WhileLoop) operation;
+			String pname = proc.getProcessusname();
+			whloop.getOperations().setProcessusname(pname);
 			whloop.getOperations().setVarbuffer( proc.getVarbuffer());
 			if(whloop.isNeedcheck() == true) {
 				Comparaison comp = whloop.getComparaison();
@@ -204,6 +209,9 @@ public class OperationExec {
 		
 		else if(operation instanceof Ifelsetest ) {
 			Ifelsetest test = (Ifelsetest) operation;
+			String pname = proc.getProcessusname();
+			test.getIfprocessus().setProcessusname(pname);
+			test.getElseprocessus().setProcessusname(pname);
 			// System.out.println(test.isNeedcheck());
 			if(test.isNeedcheck() == true) {
 				Comparaison comp = test.getComparaison();
