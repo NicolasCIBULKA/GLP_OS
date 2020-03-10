@@ -30,25 +30,33 @@ public class Testscriptexec {
 		// Executeur de processus qui enverra les resultats sur le driver de l'ecran
 		
 		//ProcessusExec procexec = new ProcessusExec(scdriver);
-		String filename = "/home/nico/Bureau/Fac/L2/S2/GLP/GLP_OS/GLP_OS/Projet_OS/src/scripts/convertit_binaire.txt" ;
+		String filenamebin = "/home/nico/Bureau/Fac/L2/S2/GLP/GLP_OS/GLP_OS/Projet_OS/src/scripts/convertit_binaire.txt" ;
+		String filenamecompteur = "/home/nico/Bureau/Fac/L2/S2/GLP/GLP_OS/GLP_OS/Projet_OS/src/scripts/chrono.txt";
 		Processus proc = new Processus();
-		
+		Processus proc2 = new Processus();
 		// traduction du langage interpreté en un code utilisable
 		
-		transcriptor.transcription(proc, filename);
+		transcriptor.transcription(proc, filenamebin);
+		transcriptor.transcription(proc2, filenamecompteur);
+		/*
 		oplist.add(proc);
+		oplist.add(proc2);
 		rr.addProcess(proc);
-		rr.addProcess(proc);
+		rr.addProcess(proc2);
 		rr.runRR(oplist, 10, scdriver);
+		*/
 		// execution du code via processusexec
 		//System.out.println("==================== Execution via Processusexec ====================\n");
 		//procexec.execution(proc);
 		
 		// execution du code via operationexec
+		
 		OperationExec opexec = new OperationExec();
+		
 		System.out.println("==================== Execution via Operationexec ====================\n");
-		while(proc.getAlreadydoneoperation() < proc.getNboperation()) {
-			opexec.operationexecution(proc, proc.getOplist().get(proc.getAlreadydoneoperation()), scdriver);
+		while(proc2.getAlreadydoneoperation() < proc2.getProcessussize()) {
+			opexec.operationexecution(proc2, proc2.getOplist().get(proc2.getAlreadydoneoperation()), scdriver);
+			//System.out.println("oui");
 			//System.out.println(proc.getAlreadydoneoperation() + " < " + proc.getNboperation());
 			//System.out.println(scdriver.toString());
 						

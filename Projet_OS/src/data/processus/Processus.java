@@ -2,6 +2,9 @@ package data.processus;
 
 import java.util.ArrayList;
 
+import data.iftest.Ifelsetest;
+import data.loop.ForLoop;
+import data.loop.WhileLoop;
 import process.rrobin.Variablebuffer;
 
 public class Processus {
@@ -82,7 +85,33 @@ public class Processus {
 	}
 
 	public int getNboperation() {
+		// estimation of operation that left
+		int result = 0;
+		for(int i = 0 ; i < this.getOplist().size(); i++) {
+			if(this.getOplist().get(i) instanceof ForLoop) {
+				ForLoop floop = (ForLoop) this.getOplist().get(i);
+				result += floop.getOperations().getProcessussize() * floop.getIternumber();
+			}
+			else if(this.getOplist().get(i) instanceof WhileLoop ) {
+				WhileLoop whloop = (WhileLoop) this.getOplist().get(i);
+				result += whloop.getOperations().getProcessussize()*(whloop.getComparaison().getA().getContent()/whloop.getComparaison().getB().getContent());
+			}
+			else if(this.getOplist().get(i) instanceof Ifelsetest) {
+				Ifelsetest ifelsetest = (Ifelsetest) this.getOplist().get(i);
+				result += (ifelsetest.getIfprocessus().getProcessussize() + ifelsetest.getElseprocessus().getProcessussize())/2;
+			}
+			else if(this.getOplist().get(i) instanceof Operation ) {
+				result++;
+			}
+		}
+		return result;
+		/*
 		cpuBurstLeft = operationlist.size();
+		return operationlist.size();
+		*/
+	}
+	
+	public int getProcessussize() {
 		return operationlist.size();
 	}
 	
@@ -160,6 +189,7 @@ public class Processus {
 	public void setAlreadydoneoperation(int alreadydoneoperation) {
 		this.alreadydoneoperation = alreadydoneoperation;
 	}
+	
 	public void incrementADO() {
 		this.alreadydoneoperation++;
 	}
