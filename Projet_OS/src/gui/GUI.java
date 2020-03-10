@@ -12,8 +12,12 @@ import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseListener;
 
 import javax.swing.*;
+
+import data.peripheral.*;
+import data.drivers.*;
 
 
 /**
@@ -39,12 +43,34 @@ public class GUI extends JFrame {
 	
 	private static final long serialVersionUID = 1L;
 	
-	//five major parts
+	//----------------------
+	//peripherals and drivers
+	//----------------------
+	//keyboard
+	private Interaction authKbd = new Interaction();
+	private Keyboard keyboard = new Keyboard("kbd1");
+	private KeyboardDriver keyboardDriver = new KeyboardDriver("kbdDriver", authKbd, keyboard);
+	
+	//mouse
+	private Interaction authMouse = new Interaction();
+	private Mouse mouse = new Mouse();
+	MouseDriver mouseDriver = new MouseDriver("mouseDriver", authMouse, mouse);
+	
+	//Screen
+	private Interaction authScreen = new Interaction();
+	private Screen screen= new Screen("screen");
+	private ScreenDriver screenDriver = new ScreenDriver("screenDriver", authScreen, screen);
+	
+	
+	
+	//-------------------------
+	//five major parts of the GUI
+	//--------------------------
 	private JPanel panel = new JPanel();
 	private JPanel panprocess = new JPanel();
 	private JPanel pandisk = new JPanel();
 	private JPanel panmouse = new JPanel();
-	private KeyboardGUI keyboard =new KeyboardGUI();
+	private KeyboardGUI keyboardgui =new KeyboardGUI();
 	
 	//elements to display info on screen and for processes/hdd display (top of the gridlayout)
 	
@@ -77,6 +103,7 @@ public class GUI extends JFrame {
 	//-------------
 	//init method 
 	//-----------
+	
 	public void init() {
 		
 		// Main window
@@ -123,7 +150,7 @@ public class GUI extends JFrame {
 		gridcons.gridy=4;
 		gridcons.gridheight=2;
 		gridcons.gridwidth=2;
-		contentPane.add(keyboard.getPankeybrd(), gridcons);
+		contentPane.add(keyboardgui.getPankeybrd(), gridcons);
 		
 		//mouse
 		gridcons.gridx=3;
@@ -183,7 +210,7 @@ public class GUI extends JFrame {
 		//pan keyboard
 		//version 2, use of gridbaglayout
 		
-		//now managed in keyboardgui class
+		//now handled in keyboardgui class
 		
 		
 			
@@ -231,8 +258,12 @@ public class GUI extends JFrame {
 		
 		//action listeners
 		
-		keyboard.getEnter().addActionListener(new EnterAction());
-		
+		keyboardgui.getEnter().addActionListener(new EnterAction());
+		for(int i=0; i<4;i++) {
+			for(int j=0; j<10;j++) {
+				JButtonKey[][] temp = keyboardgui.getRows();
+				temp[i][j].addActionListener(new KeyLetter());
+			}
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
@@ -240,11 +271,12 @@ public class GUI extends JFrame {
 		setVisible(true);
 	}
 	
-	
+	}
 	private class EnterAction implements ActionListener {
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			affichécran.setText(affichécran.getText() + "\n" + invitecomm.getText());
+			keyboard.resetContent();
 			invitecomm.setText(null);
 		}
 	}
@@ -252,8 +284,10 @@ public class GUI extends JFrame {
 	private class KeyLetter implements ActionListener {
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			affichécran.setText(affichécran.getText() + "\n" + invitecomm.getText());
-			invitecomm.setText(null);
+			String tmp =((JButtonKey)e.getSource()).getNum();
+			keyboard.keyinput(tmp);
+			invitecomm.setText(keyboardDriver.translate());
+			
 		}
 	}
 	

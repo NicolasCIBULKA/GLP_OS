@@ -36,6 +36,10 @@ public class Keyboard extends Peripheral {
 		}
 	}
 	
+	public void resetContent() {
+		content="";
+	}
+	
 	public String toString() {
 		return content;
 	}

@@ -17,55 +17,67 @@ public class KeyboardGUI {
 
 	/**
 	 * Class for the keyboard part of the gui
-	 * there is the inner class of the action listener
+	 * 
 	 * 
 	 * @author redouane
 	 * 
 	 */
 	private JPanel pankeybrd = new JPanel();
 
-	private JButton button0 = new JButton("0");
-	private JButton button1= new JButton("1");
-	private JButton button2= new JButton("2");
-	private JButton button3= new JButton("3");
-	private JButton button4= new JButton("4");
-	private JButton button5= new JButton("5");
-	private JButton button6= new JButton("6");
-	private JButton button7= new JButton("7");
-	private JButton button8= new JButton("8");
-	private JButton button9 = new JButton("9");
-	private JButton a = new JButton("a");
-	private JButton z = new JButton("z");
-	private JButton e= new JButton("e");
-	private JButton r= new JButton("r");
-	private JButton t= new JButton("t");
-	private JButton y= new JButton("y");
-	private JButton u= new JButton("u");
-	private JButton i= new JButton("i");
-	private JButton o= new JButton("o");
-	private JButton p= new JButton("p");
-	private JButton q= new JButton("q");
-	private JButton s= new JButton("s");
-	private JButton d= new JButton("d");
-	private JButton f= new JButton("f");
-	private JButton g= new JButton("g");
-	private JButton h= new JButton("h");
-	private JButton j= new JButton("j");
-	private JButton k= new JButton("k");
-	private JButton l= new JButton("l");
-	private JButton m= new JButton("m");
-	private JButton w= new JButton("w");
-	private JButton x= new JButton("x");
-	private JButton c= new JButton("c");
-	private JButton v= new JButton("v");
-	private JButton b= new JButton("b");
-	private JButton n= new JButton("n");
-	private JButton coma= new JButton(",");
-	private JButton semicolon = new JButton(";");
-	private JButton colon= new JButton(":");
-	private JButton exclapoint= new JButton("!");
-	private JButton space= new JButton("space");
-	private JButton enter= new JButton("enter");
+	private JButtonKey button0 = new JButtonKey("48","0");
+	private JButtonKey button1= new JButtonKey("49","1");
+	private JButtonKey button2= new JButtonKey("50","2");
+	private JButtonKey button3= new JButtonKey("51","3");
+	private JButtonKey button4= new JButtonKey("52","4");
+	private JButtonKey button5= new JButtonKey("53","5");
+	private JButtonKey button6= new JButtonKey("54","6");
+	private JButtonKey button7= new JButtonKey("55","7");
+	private JButtonKey button8= new JButtonKey("56","8");
+	private JButtonKey button9 = new JButtonKey("57","9");
+	private JButtonKey a = new JButtonKey("97","a");
+	private JButtonKey z = new JButtonKey("122","z");
+	private JButtonKey e= new JButtonKey("101","e");
+	private JButtonKey r= new JButtonKey("114","r");
+	private JButtonKey t= new JButtonKey("116","t");
+	private JButtonKey y= new JButtonKey("121","y");
+	private JButtonKey u= new JButtonKey("117","u");
+	private JButtonKey i= new JButtonKey("105","i");
+	private JButtonKey o= new JButtonKey("111","o");
+	private JButtonKey p= new JButtonKey("112","p");
+	private JButtonKey q= new JButtonKey("113","q");
+	private JButtonKey s= new JButtonKey("115","s");
+	private JButtonKey d= new JButtonKey("100","d");
+	private JButtonKey f= new JButtonKey("102","f");
+	private JButtonKey g= new JButtonKey("103","g");
+	private JButtonKey h= new JButtonKey("104","h");
+	private JButtonKey j= new JButtonKey("106","j");
+	private JButtonKey k= new JButtonKey("107","k");
+	private JButtonKey l= new JButtonKey("108","l");
+	private JButtonKey m= new JButtonKey("109","m");
+	private JButtonKey w= new JButtonKey("119","w");
+	private JButtonKey x= new JButtonKey("120","x");
+	private JButtonKey c= new JButtonKey("99","c");
+	private JButtonKey v= new JButtonKey("118","v");
+	private JButtonKey b= new JButtonKey("98","b");
+	private JButtonKey n= new JButtonKey("110","n");
+	private JButtonKey coma= new JButtonKey("44",",");
+	private JButtonKey semicolon = new JButtonKey("59",";");
+	private JButtonKey colon= new JButtonKey("58",":");
+	private JButtonKey exclapoint= new JButtonKey("33","!");
+	private JButtonKey space= new JButtonKey("32","space");
+	private JButtonKey enter = new JButtonKey("enterKey","Enter");
+	
+	//used to position the key and add the action listeners via a loop
+	private JButtonKey[] row1= {button0,button1,button2,button3,button4,button5,button6,button7,button8,button9};
+	private JButtonKey[] row2= {a,z,e,r,t,y,u,i,o,p};
+	private JButtonKey[] row3= {q,s,d,f,g,h,j,k,l,m};
+	private JButtonKey[] row4= {w,x,c,v,b,n,coma, semicolon,colon, exclapoint};
+	private JButtonKey[][]rows= {row1,row2,row3,row4};
+	
+	
+	//--------------------------------------
+	//methods
+	//--------------------------------------
 	
 	public KeyboardGUI() {
 		pankeybrd.setPreferredSize(new Dimension(800,400));
@@ -76,11 +88,8 @@ public class KeyboardGUI {
 		keyConstraint.fill=GridBagConstraints.BOTH;
 			
 		//regular keys
-		JButton[] row1= {button0,button1,button2,button3,button4,button5,button6,button7,button8,button9};
-		JButton[] row2= {a,z,e,r,t,y,u,i,o,p};
-		JButton[] row3= {q,s,d,f,g,h,j,k,l,m};
-		JButton[] row4= {w,x,c,v,b,n,coma, semicolon,colon, exclapoint};
-		JButton[][]rows= {row1,row2,row3,row4};
+		
+		
 		
 		for(int i=0; i<4;i++) {
 			for(int j=0; j<10;j++) {
@@ -101,9 +110,9 @@ public class KeyboardGUI {
 		keyConstraint.gridy=5;
 				
 		keyConstraint.gridx=0;
-		pankeybrd.add(new JButton("ctrl"),keyConstraint);
+		pankeybrd.add(new JButtonKey("substractKey","-"),keyConstraint);
 		keyConstraint.gridx=1;
-		pankeybrd.add(new JButton("alt"),keyConstraint);
+		pankeybrd.add(new JButtonKey("divideKey","/"),keyConstraint);
 		keyConstraint.gridx=2;
 		keyConstraint.gridwidth=3;
 		keyConstraint.weightx=1;
@@ -111,238 +120,312 @@ public class KeyboardGUI {
 		keyConstraint.gridwidth=1;
 		keyConstraint.weightx=0;
 		keyConstraint.gridx=5;
-		pankeybrd.add(new JButton("+"),keyConstraint);
+		pankeybrd.add(new JButtonKey("addKey","+"),keyConstraint);
 		keyConstraint.gridx=6;
-		pankeybrd.add(new JButton("="),keyConstraint);
+		pankeybrd.add(new JButtonKey("equalSign","="),keyConstraint);
 		keyConstraint.gridx=7;
-		pankeybrd.add(new JButton("*"),keyConstraint);
+		pankeybrd.add(new JButtonKey("multiplyKey","*"),keyConstraint);
 		keyConstraint.gridwidth=2;
 		keyConstraint.gridx=8;
 		keyConstraint.weightx=1;
-		pankeybrd.add(enter,keyConstraint);
+		pankeybrd.add(enter ,keyConstraint);
 	}
 	
 	
 	
 	//getters
 	
-	public JPanel getPankeybrd() {
-		return pankeybrd;
-	}
 
-
-	public JButton getButton0() {
-		return button0;
-	}
-
-
-	public JButton getButton1() {
-		return button1;
-	}
-
-
-	public JButton getButton2() {
-		return button2;
-	}
-
-
-	public JButton getButton3() {
-		return button3;
-	}
-
-
-	public JButton getButton4() {
-		return button4;
-	}
-
-
-	public JButton getButton5() {
-		return button5;
-	}
-
-
-	public JButton getButton6() {
-		return button6;
-	}
-
-
-	public JButton getButton7() {
-		return button7;
-	}
-
-
-	public JButton getButton8() {
-		return button8;
-	}
-
-
-	public JButton getButton9() {
-		return button9;
-	}
-
-
-	public JButton getA() {
-		return a;
-	}
-
-
-	public JButton getZ() {
-		return z;
-	}
-
-
-	public JButton getE() {
-		return e;
-	}
-
-
-	public JButton getR() {
-		return r;
-	}
-
-
-	public JButton getT() {
-		return t;
-	}
-
-
-	public JButton getY() {
-		return y;
-	}
-
-
-	public JButton getU() {
-		return u;
-	}
-
-
-	public JButton getI() {
-		return i;
-	}
-
-
-	public JButton getO() {
-		return o;
-	}
-
-
-	public JButton getP() {
-		return p;
-	}
-
-
-	public JButton getQ() {
-		return q;
-	}
-
-
-	public JButton getS() {
-		return s;
-	}
-
-
-	public JButton getD() {
-		return d;
-	}
-
-
-	public JButton getF() {
-		return f;
-	}
-
-
-	public JButton getG() {
-		return g;
-	}
-
-
-	public JButton getH() {
-		return h;
-	}
-
-
-	public JButton getJ() {
-		return j;
-	}
-
-
-	public JButton getK() {
-		return k;
-	}
-
-
-	public JButton getL() {
-		return l;
-	}
-
-
-	public JButton getM() {
-		return m;
-	}
-
-
-	public JButton getW() {
-		return w;
-	}
-
-
-	public JButton getX() {
-		return x;
-	}
-
-
-	public JButton getC() {
-		return c;
-	}
-
-
-	public JButton getV() {
-		return v;
-	}
-
-
-	public JButton getB() {
-		return b;
-	}
-
-
-	public JButton getN() {
-		return n;
-	}
-
-
-	public JButton getComa() {
-		return coma;
-	}
-
-
-	public JButton getSemicolon() {
-		return semicolon;
-	}
-
-
-	public JButton getColon() {
-		return colon;
-	}
-
-
-	public JButton getExclapoint() {
-		return exclapoint;
-	}
-
-
-	public JButton getSpace() {
-		return space;
-	}
-
-
-	public JButton getEnter() {
-		return enter;
-	}
 
 
 	public JPanel getPanel() {
 		return pankeybrd;
 	}
+
+
+
+	public JPanel getPankeybrd() {
+		return pankeybrd;
+	}
+
+
+
+	public JButtonKey getButton0() {
+		return button0;
+	}
+
+
+
+	public JButtonKey getButton1() {
+		return button1;
+	}
+
+
+
+	public JButtonKey getButton2() {
+		return button2;
+	}
+
+
+
+	public JButtonKey getButton3() {
+		return button3;
+	}
+
+
+
+	public JButtonKey getButton4() {
+		return button4;
+	}
+
+
+
+	public JButtonKey getButton5() {
+		return button5;
+	}
+
+
+
+	public JButtonKey getButton6() {
+		return button6;
+	}
+
+
+
+	public JButtonKey getButton7() {
+		return button7;
+	}
+
+
+
+	public JButtonKey getButton8() {
+		return button8;
+	}
+
+
+
+	public JButtonKey getButton9() {
+		return button9;
+	}
+
+
+
+	public JButtonKey getA() {
+		return a;
+	}
+
+
+
+	public JButtonKey getZ() {
+		return z;
+	}
+
+
+
+	public JButtonKey getE() {
+		return e;
+	}
+
+
+
+	public JButtonKey getR() {
+		return r;
+	}
+
+
+
+	public JButtonKey getT() {
+		return t;
+	}
+
+
+
+	public JButtonKey getY() {
+		return y;
+	}
+
+
+
+	public JButtonKey getU() {
+		return u;
+	}
+
+
+
+	public JButtonKey getI() {
+		return i;
+	}
+
+
+
+	public JButtonKey getO() {
+		return o;
+	}
+
+
+
+	public JButtonKey getP() {
+		return p;
+	}
+
+
+
+	public JButtonKey getQ() {
+		return q;
+	}
+
+
+
+	public JButtonKey getS() {
+		return s;
+	}
+
+
+
+	public JButtonKey getD() {
+		return d;
+	}
+
+
+
+	public JButtonKey getF() {
+		return f;
+	}
+
+
+
+	public JButtonKey getG() {
+		return g;
+	}
+
+
+
+	public JButtonKey getH() {
+		return h;
+	}
+
+
+
+	public JButtonKey getJ() {
+		return j;
+	}
+
+
+
+	public JButtonKey getK() {
+		return k;
+	}
+
+
+
+	public JButtonKey getL() {
+		return l;
+	}
+
+
+
+	public JButtonKey getM() {
+		return m;
+	}
+
+
+
+	public JButtonKey getW() {
+		return w;
+	}
+
+
+
+	public JButtonKey getX() {
+		return x;
+	}
+
+
+
+	public JButtonKey getC() {
+		return c;
+	}
+
+
+
+	public JButtonKey getV() {
+		return v;
+	}
+
+
+
+	public JButtonKey getB() {
+		return b;
+	}
+
+
+
+	public JButtonKey getN() {
+		return n;
+	}
+
+
+
+	public JButtonKey getComa() {
+		return coma;
+	}
+
+
+
+	public JButtonKey getSemicolon() {
+		return semicolon;
+	}
+
+
+
+	public JButtonKey getColon() {
+		return colon;
+	}
+
+
+
+	public JButtonKey getExclapoint() {
+		return exclapoint;
+	}
+
+
+
+	public JButtonKey getSpace() {
+		return space;
+	}
+	public JButtonKey getEnter() {
+		return enter;
+	}
+
+
+
+	public JButtonKey[] getRow1() {
+		return row1;
+	}
+
+
+
+	public JButtonKey[] getRow2() {
+		return row2;
+	}
+
+
+
+	public JButtonKey[] getRow3() {
+		return row3;
+	}
+
+
+
+	public JButtonKey[] getRow4() {
+		return row4;
+	}
+
+
+
+	public JButtonKey[][] getRows() {
+		return rows;
+	}
+	
 }
 
