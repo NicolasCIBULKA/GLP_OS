@@ -2,6 +2,7 @@ package data.primitive;
 
 import data.processus.Processus;
 import process.visitor.ArrayListVisitor;
+import process.visitor.OSPrimitiveVisitor;
 
 public class Pause extends Primitive{
 	/*
@@ -39,8 +40,10 @@ public class Pause extends Primitive{
 		return "Processus : " + this.getProcessus().getProcessusname() + " -  PID : " + this.getProcessus().getpid() + " - has been paused for " + this.getTime() ;
 	}
 	
-	public <T> T accept(ArrayListVisitor<T> visitor) {
-		return visitor.visit(this);
-	}
+	// primitive visitor
+	
+		public <T> T accept(OSPrimitiveVisitor<T> visitor) {
+			return visitor.visit(this);
+		}
 	
 }

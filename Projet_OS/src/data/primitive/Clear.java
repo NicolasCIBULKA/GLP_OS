@@ -1,6 +1,8 @@
 package data.primitive;
 
 import data.drivers.Driver;
+import process.visitor.OSPrimitiveVisitor;
+import process.visitor.PrimitiveVisitor;
 
 public class Clear {
 	/*
@@ -32,5 +34,12 @@ public class Clear {
 	public void setDriver(Driver driver) {
 		this.driver = driver;
 	}
+	
+	// primitive visitor
+	
+	public <T> T accept(OSPrimitiveVisitor<T> visitor) {
+		return visitor.visit(this);
+	}
+	
 	
 }

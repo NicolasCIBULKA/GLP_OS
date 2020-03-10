@@ -1,6 +1,7 @@
 package data.primitive;
 
 import data.drivers.Driver;
+import process.visitor.OSPrimitiveVisitor;
 
 public class Read {
 	/*
@@ -31,5 +32,12 @@ public class Read {
 	public void setDriver(Driver driver) {
 		this.driver = driver;
 	}
+	
+	
+	// primitive visitor
+	
+		public <T> T accept(OSPrimitiveVisitor<T> visitor) {
+			return visitor.visit(this);
+		}
 	
 }
