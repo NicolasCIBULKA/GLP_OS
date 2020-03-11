@@ -3,7 +3,17 @@ package gui;
 import javax.swing.*;
 
 @SuppressWarnings("serial")
-
+/**
+ * this class is used in the GUI
+ * 
+ * the number is the ascii for the character of
+ * 
+ * the label of the button
+ * 
+ * 
+ * @author redouane
+ *
+ */
 public class JButtonKey extends JButton{
 	
 	private String num;

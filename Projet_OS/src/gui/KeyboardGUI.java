@@ -66,6 +66,13 @@ public class KeyboardGUI {
 	private JButtonKey exclapoint= new JButtonKey("33","!");
 	private JButtonKey space= new JButtonKey("32","space");
 	private JButtonKey enter = new JButtonKey("enterKey","Enter");
+	private JButtonKey substractKey = new JButtonKey("45","-");
+	private JButtonKey divideKey = new JButtonKey("47","/");
+	private JButtonKey addKey = new JButtonKey("43","+");
+	private JButtonKey equalSign = new JButtonKey("61","=");
+	private JButtonKey multiplyKey = new JButtonKey("42","*");
+	
+	
 	
 	//used to position the key and add the action listeners via a loop
 	private JButtonKey[] row1= {button0,button1,button2,button3,button4,button5,button6,button7,button8,button9};
@@ -106,13 +113,12 @@ public class KeyboardGUI {
 				}
 		}
 		
-		//to be modified
+		//last row of the keyboard, not handled in the loop because of the spacebar and enter key 
 		keyConstraint.gridy=5;
-				
 		keyConstraint.gridx=0;
-		pankeybrd.add(new JButtonKey("substractKey","-"),keyConstraint);
+		pankeybrd.add(substractKey,keyConstraint);
 		keyConstraint.gridx=1;
-		pankeybrd.add(new JButtonKey("divideKey","/"),keyConstraint);
+		pankeybrd.add(divideKey,keyConstraint);
 		keyConstraint.gridx=2;
 		keyConstraint.gridwidth=3;
 		keyConstraint.weightx=1;
@@ -120,11 +126,11 @@ public class KeyboardGUI {
 		keyConstraint.gridwidth=1;
 		keyConstraint.weightx=0;
 		keyConstraint.gridx=5;
-		pankeybrd.add(new JButtonKey("addKey","+"),keyConstraint);
+		pankeybrd.add(addKey,keyConstraint);
 		keyConstraint.gridx=6;
-		pankeybrd.add(new JButtonKey("equalSign","="),keyConstraint);
+		pankeybrd.add(equalSign,keyConstraint);
 		keyConstraint.gridx=7;
-		pankeybrd.add(new JButtonKey("multiplyKey","*"),keyConstraint);
+		pankeybrd.add(multiplyKey,keyConstraint);
 		keyConstraint.gridwidth=2;
 		keyConstraint.gridx=8;
 		keyConstraint.weightx=1;
@@ -140,6 +146,36 @@ public class KeyboardGUI {
 
 	public JPanel getPanel() {
 		return pankeybrd;
+	}
+
+
+
+	public JButtonKey getSubstractKey() {
+		return substractKey;
+	}
+
+
+
+	public JButtonKey getDivideKey() {
+		return divideKey;
+	}
+
+
+
+	public JButtonKey getAddKey() {
+		return addKey;
+	}
+
+
+
+	public JButtonKey getEqualSign() {
+		return equalSign;
+	}
+
+
+
+	public JButtonKey getMultiplyKey() {
+		return multiplyKey;
 	}
 
 

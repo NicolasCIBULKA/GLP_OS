@@ -1,18 +1,18 @@
 package gui;
 
 
-import java.awt.BorderLayout;
+
 import java.awt.Color;
 import java.awt.GridLayout;
 import java.awt.Insets;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Container;
-import java.awt.Dimension;
+
 import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.MouseListener;
+
 
 import javax.swing.*;
 
@@ -86,7 +86,6 @@ public class GUI extends JFrame {
 	//scroll for the screen
 	private JScrollPane scroll = new JScrollPane(affichécran,JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
 	//scroll invite cmd
-	private JScrollPane scrollcmd = new JScrollPane(invitecomm,JScrollPane.VERTICAL_SCROLLBAR_NEVER, JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
 	
 
 
@@ -259,6 +258,13 @@ public class GUI extends JFrame {
 		//action listeners
 		
 		keyboardgui.getEnter().addActionListener(new EnterAction());
+		keyboardgui.getSpace().addActionListener(new KeyLetter());
+		keyboardgui.getMultiplyKey().addActionListener(new KeyLetter());
+		keyboardgui.getAddKey().addActionListener(new KeyLetter());
+		keyboardgui.getSubstractKey().addActionListener(new KeyLetter());
+		keyboardgui.getDivideKey().addActionListener(new KeyLetter());
+		keyboardgui.getEqualSign().addActionListener(new KeyLetter());
+		
 		for(int i=0; i<4;i++) {
 			for(int j=0; j<10;j++) {
 				JButtonKey[][] temp = keyboardgui.getRows();
