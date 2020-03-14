@@ -69,7 +69,7 @@ public class GUI extends JFrame {
 	private JPanel panel = new JPanel();
 	private JPanel panprocess = new JPanel();
 	private JPanel pandisk = new JPanel();
-	private JPanel panmouse = new JPanel();
+	private MouseGUI mousegui = new MouseGUI();
 	private KeyboardGUI keyboardgui =new KeyboardGUI();
 	
 	//elements to display info on screen and for processes/hdd display (top of the gridlayout)
@@ -85,7 +85,7 @@ public class GUI extends JFrame {
 	private JScrollPane scrolldisk = new JScrollPane(affichdisk,JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
 	//scroll for the screen
 	private JScrollPane scroll = new JScrollPane(affichécran,JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
-	//scroll invite cmd
+	
 	
 
 
@@ -158,7 +158,7 @@ public class GUI extends JFrame {
 		gridcons.gridwidth=2;
 		gridcons.weightx=2;
 		gridcons.weighty=0;
-		contentPane.add(panmouse, gridcons);
+		contentPane.add(mousegui.getPanel(), gridcons);
 		
 		
 		//adjusting the panels of each five parts:
@@ -190,6 +190,9 @@ public class GUI extends JFrame {
 		gcscreen.gridwidth=10;
 		panel.add(invitecomm, gcscreen);
 		
+		panel.setBackground(Color.BLACK);
+		scroll.setVisible(false);
+		invitecomm.setVisible(false);
 		
 		//pan process
 		
@@ -206,57 +209,16 @@ public class GUI extends JFrame {
 		pandisk.setLayout(new GridLayout(1,1));
 		
 		
-		//pan keyboard
-		//version 2, use of gridbaglayout
-		
-		//now handled in keyboardgui class
+		//pan keyboard (version 2, uses gridbaglayout)
+		//and pan Mouse are now handled in keyboardgui class
 		
 		
-			
+
 		
-				
-		//pan Mouse
 		
-		panmouse.setSize(400, 400);
-		panmouse.setBorder(BorderFactory.createTitledBorder("Mouse"));
-		
-		//gridbaglayout to get the display i wanted
-		panmouse.setLayout(new GridBagLayout());
-		GridBagConstraints gcmouse= new GridBagConstraints();
-		gcmouse.gridheight=1;
-		gcmouse.gridwidth=1;
-		gcmouse.fill=GridBagConstraints.BOTH;
-		
-		//adding the buttons: arrows + click
-		
-		gcmouse.weightx=1;
-		gcmouse.weighty=1;
-		gcmouse.gridx=1;
-		gcmouse.gridy=0;
-		gcmouse.gridwidth=2;
-		gcmouse.gridheight=1;
-		panmouse.add(new JButton("/\\"), gcmouse);
-		gcmouse.gridwidth=1;
-		gcmouse.gridheight=2;
-		gcmouse.gridx=0;
-		gcmouse.gridy=1;
-		panmouse.add(new JButton("<"), gcmouse);
-		gcmouse.gridwidth=2;
-		gcmouse.gridx=1;
-		gcmouse.gridy=1;
-		panmouse.add(new JButton("click"), gcmouse);
-		gcmouse.gridwidth=1;
-		gcmouse.gridx=3;
-		gcmouse.gridy=1;
-		panmouse.add(new JButton(">"), gcmouse);
-		gcmouse.gridwidth=2;
-		gcmouse.gridheight=1;
-		gcmouse.gridx=1;
-		gcmouse.gridy=3;
-		panmouse.add(new JButton("\\/"), gcmouse);
 		
 		//action listeners
-		
+		//for the keyboard
 		keyboardgui.getEnter().addActionListener(new EnterAction());
 		keyboardgui.getSpace().addActionListener(new KeyLetter());
 		keyboardgui.getMultiplyKey().addActionListener(new KeyLetter());
@@ -271,11 +233,18 @@ public class GUI extends JFrame {
 				temp[i][j].addActionListener(new KeyLetter());
 			}
 		
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
+		
+		//for the mouse and the turn on button of the screen
+		mousegui.getStartstop().addActionListener(new StartandStopAction());
+		
+		
+		
+		
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		pack();
 		setVisible(true);
-	}
+		}
 	
 	}
 	private class EnterAction implements ActionListener {
@@ -294,6 +263,31 @@ public class GUI extends JFrame {
 			keyboard.keyinput(tmp);
 			invitecomm.setText(keyboardDriver.translate());
 			
+		}
+	}
+	
+	private class StartandStopAction implements ActionListener {
+		private boolean status = screen.getState();
+		
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			
+			if (!status) {
+				mousegui.getStartstop().setText("Stop");
+				panel.setBackground(Color.WHITE);
+				scroll.setVisible(true);
+				invitecomm.setVisible(true);
+				
+			}else {
+				
+				mousegui.getStartstop().setText("Start");
+				panel.setBackground(Color.BLACK);
+				scroll.setVisible(false);
+				invitecomm.setVisible(false);
+				
+			}
+			screen.setState(!screen.getState());
+			status=!status;
 		}
 	}
 	

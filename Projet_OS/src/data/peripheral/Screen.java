@@ -39,7 +39,7 @@ public class Screen extends Peripheral{
 		this.screencontent = screencontent;
 	}
 
-	public boolean isState() {
+	public boolean getState() {
 		return state;
 	}
 
