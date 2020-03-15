@@ -151,8 +151,8 @@ public class GUI extends JFrame {
 		contentPane.add(panprocess, gridcons);
 		
 		//keyboard
-		gridcons.weightx=2;
-		gridcons.weighty=1;
+		gridcons.weightx=0;
+		gridcons.weighty=0;
 		gridcons.gridx=0;
 		gridcons.gridy=4;
 		gridcons.gridheight=2;
@@ -164,7 +164,7 @@ public class GUI extends JFrame {
 		gridcons.gridy=4;
 		gridcons.gridheight=2;
 		gridcons.gridwidth=2;
-		gridcons.weightx=2;
+		gridcons.weightx=0;
 		gridcons.weighty=0;
 		contentPane.add(mousegui.getPanel(), gridcons);
 		
@@ -174,7 +174,8 @@ public class GUI extends JFrame {
 		//screen
 		affichecran.setEditable(false);
 		scroll.setAutoscrolls(true);
-
+		
+		
 		
 		panel.setLayout(new GridBagLayout());
 		GridBagConstraints gcscreen= new GridBagConstraints();
