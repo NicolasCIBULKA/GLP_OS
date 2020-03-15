@@ -36,7 +36,7 @@ public class Rrobin {
 	public void Roundrobin() {
 		OperationExec executor = new OperationExec();
 		// while there is something in the Processuslist
-		while(this.getPlist().getProcessuslist().size() > 0) {
+		do{
 			//int indice = 0;
 			// We add the possible processus that we launched during a RR tour
 			if(this.getBuffer().getProcessuslist().size() > 0) {
@@ -86,7 +86,7 @@ public class Rrobin {
 					plist.getProcessuslist().remove(activeproc);
 				}
 			}
-		}
+		} while(this.getPlist().getProcessuslist().size() > 0);
 	}
 	
 	// Getters and setters	
@@ -112,7 +112,7 @@ public class Rrobin {
 	}
 	
 	public void removeProcRR(Processus proc) {
-		this.getPlist().getProcessuslist().remove(proc);
+		this.getBuffer().getProcessuslist().remove(proc);
 	}
 
 	public Processuslist getBuffer() {

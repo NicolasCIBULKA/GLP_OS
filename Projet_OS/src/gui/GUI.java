@@ -17,8 +17,10 @@ import java.awt.event.ActionListener;
 import javax.swing.*;
 
 import data.peripheral.*;
+import data.processus.Processuslist;
 import data.drivers.*;
-
+import process.rrobin.Rrobin;
+import process.traduction.*;
 
 /**
  * work in progress:
@@ -61,7 +63,13 @@ public class GUI extends JFrame {
 	private Screen screen= new Screen("screen");
 	private ScreenDriver screenDriver = new ScreenDriver("screenDriver", authScreen, screen);
 	
+	// Arraylist of Processus
+	Processuslist plist = new Processuslist();
+	// Round robin
+	Rrobin roundrobin = new Rrobin(plist, screenDriver);
 	
+	// Transcriptor for keyboard imput 
+	Primitivetranscriptor traductor = new Primitivetranscriptor( roundrobin);
 	
 	//-------------------------
 	//five major parts of the GUI
@@ -74,7 +82,7 @@ public class GUI extends JFrame {
 	
 	//elements to display info on screen and for processes/hdd display (top of the gridlayout)
 	
-	private JTextArea affichécran = new JTextArea();
+	private JTextArea affichecran = new JTextArea();
 	private JTextArea invitecomm = new JTextArea();
 	private JTextArea affichprocess= new JTextArea();
 	private JTextArea affichdisk= new JTextArea();
@@ -84,7 +92,7 @@ public class GUI extends JFrame {
 	//scroll for the disk
 	private JScrollPane scrolldisk = new JScrollPane(affichdisk,JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
 	//scroll for the screen
-	private JScrollPane scroll = new JScrollPane(affichécran,JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
+	private JScrollPane scroll = new JScrollPane(affichecran,JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
 	
 	
 
@@ -99,9 +107,9 @@ public class GUI extends JFrame {
 	}
 	
 	
-	//-------------
-	//init method 
-	//-----------
+	// -------------
+	// init method 
+	// -----------
 	
 	public void init() {
 		
@@ -164,7 +172,7 @@ public class GUI extends JFrame {
 		//adjusting the panels of each five parts:
 		
 		//screen
-		affichécran.setEditable(false);
+		affichecran.setEditable(false);
 		scroll.setAutoscrolls(true);
 
 		
@@ -250,9 +258,16 @@ public class GUI extends JFrame {
 	private class EnterAction implements ActionListener {
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			affichécran.setText(affichécran.getText() + "\n" + invitecomm.getText());
+			
+			//affichecran.setText(affichecran.getText() + "\n" + invitecomm.getText());
+			//System.out.println(invitecomm.getText());
+			
+			//screenDriver.resetScreen();
+			traductor.transcriptor(invitecomm.getText(), screenDriver);
 			keyboard.resetContent();
 			invitecomm.setText(null);
+			affichecran.setText(" ");
+			affichecran.setText(screenDriver.toString());
 		}
 	}
 

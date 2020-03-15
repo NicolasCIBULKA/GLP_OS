@@ -48,7 +48,10 @@ public class ScreenDriver extends Driver{
 	
 	public void addStringScreen(String input) {
 		//screen.setScreencontent("\nuser-input: " + screen.getScreencontent() + input);
-		screen.setScreencontent(screen.getScreencontent() + ";" + input);
+		String content;
+		content = screen.getScreencontent();
+		screen.setScreencontent("");
+		screen.setScreencontent(content + ";" + input);
 	}
 	
 	public void resetScreen() {
@@ -61,7 +64,7 @@ public class ScreenDriver extends Driver{
 	public String toString() {
 		String[] screentab = this.getScreencontent().split(";");
 		for(int i = 0; i < screentab.length; i++) {
-			this.setTranslatedscreen(this.getTranslatedscreen() + screentab[i] + "\n");
+			this.setTranslatedscreen(this.getTranslatedscreen() + screentab[i]);
 		}
 		return this.translatedscreen;
 	}
