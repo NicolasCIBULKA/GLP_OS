@@ -1,8 +1,11 @@
 package process.traduction;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 
 import data.drivers.*;
@@ -57,6 +60,9 @@ public class Primitivetranscriptor {
 				proctr.transcription(proc, slotadress);
 				// we add the processus to the bufferarray, to execute it a the next round robin iteration
 				roundrobin.addProcRR(proc);
+				if(roundrobin.getBuffer().getProcessuslist().size() != 0) {
+					roundrobin.Roundrobin();
+				}
 			}
 			
 			// else if the primitive is read
@@ -71,17 +77,18 @@ public class Primitivetranscriptor {
 					}
 					read.close();
 					result += "\n-------------------- end " + slotname+ " --------------------\n";
-					this.dynamicScreenadd(scdriver, result);
+					scdriver.dynamicScreenadd( result);
 				}
 				catch (FileNotFoundException e) {
-					this.dynamicScreenadd(scdriver, "slot" + slotname +" not found, please retry\n");
+					scdriver.dynamicScreenadd( "slot" + slotname +" not found, please retry\n");
 				}
 				catch (IOException e) {
-					this.dynamicScreenadd(scdriver, "Error in the reading of the slot" + slotname +" , please retry\n");
+					scdriver.dynamicScreenadd( "Error in the reading of the slot" + slotname +" , please retry\n");
 				}
 			}
 			// else if the primitive is write
 			else if(tabinput[primitive_identifier].contains("write")) {
+				String slotname = tabinput[2];
 				
 			}
 		}
@@ -96,6 +103,7 @@ public class Primitivetranscriptor {
 			// if the primitive is a wipe
 			if(tabinput[primitive_identifier].contains("wipe")) {
 				String slotname = tabinput[2];
+				
 			}
 			// else if the primitive is a addlost primitive
 			else if(tabinput[primitive_identifier].contains("addslost")) {
@@ -103,6 +111,17 @@ public class Primitivetranscriptor {
 			}
 			// else if the primitive is a delslot primitive
 			else if(tabinput[primitive_identifier].contains("delslot")) {
+				String slotname = tabinput[2];
+				String fileposition =  HardDisks_position + slotname + ".txt";
+				File file = new File(fileposition);
+				if(file.exists()) {
+					file.delete();
+					// A COMPLETER - SUPPRIMER LIEN DANS LE DD
+					scdriver.dynamicScreenadd("Slot " + slotname +" has been sucessfully wiped");
+				}
+				else {
+					scdriver.dynamicScreenadd("ERROR : slot " + slotname + " does not exists");
+				}
 				
 			}
 			// else if the primitive is a nice primitive
@@ -110,17 +129,9 @@ public class Primitivetranscriptor {
 				
 			}
 		}
-		else if(tabinput.length == 4) {
-			if(tabinput[primitive_identifier].contains("read")) {
-				
-			}
-		}
-		else if(tabinput[primitive_identifier].contains("write")) {
-			
-		}
 		// else the primitive hasn't been recognized
 		else {
-			this.dynamicScreenadd(scdriver, "Primitive written isn't recognized, please correct it and retry\n");
+			scdriver.dynamicScreenadd( "Primitive written isn't recognized, please correct it and retry\n");
 		}
 	}
 	
@@ -142,11 +153,14 @@ public class Primitivetranscriptor {
 		this.roundrobin = roundrobin;
 	}
 	
+	
+	/*
 	public void dynamicScreenadd(ScreenDriver scdriver, String scadd) {
 		String content;
 		content = scdriver.getScreencontent();
 		scdriver.resetScreen();
 		scdriver.addStringScreen(content + scadd);
 	}
+	*/
 	
 }

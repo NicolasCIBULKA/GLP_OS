@@ -40,9 +40,15 @@ public class ScreenDriver extends Driver{
 	public String getTranslatedscreen() {
 		return translatedscreen;
 	}
+	
 	public void setTranslatedscreen(String translatedscreen) {
 		this.translatedscreen = translatedscreen;
 	}
+	
+	public Screen getScreen(){
+		return screen;
+	}
+	
 	
 	// Adding a String in the Screen to be seen by user
 	
@@ -57,6 +63,13 @@ public class ScreenDriver extends Driver{
 	public void resetScreen() {
 		this.setScreencontent("");
 		this.setTranslatedscreen(">> OS_SIMULATION : \n");
+	}
+	
+	public void dynamicScreenadd(String scadd) {
+		String content;
+		content = screen.getScreencontent();
+		this.resetScreen();
+		screen.setScreencontent(content + scadd);
 	}
 	
 	// toString

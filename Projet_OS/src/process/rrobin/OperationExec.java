@@ -119,11 +119,11 @@ public class OperationExec {
 			Print printer = (Print) operation;
 			if(printer.getPrintop() instanceof Intvariable) {
 				Intvariable var = proc.getVarbuffer().getIntvariablelist().get(printer.getPrintop().getName());
-				scdriver.addStringScreen(proc.getProcessusname()+" >> " + var.toString());
+				scdriver.dynamicScreenadd(proc.getProcessusname()+" >> " + var.toString() + "\n");
 			}
 			else if(printer.getPrintop() instanceof Stringvariable) {
 				Stringvariable var = proc.getVarbuffer().getStringvariablelist().get(printer.getPrintop().getName());
-				scdriver.addStringScreen(proc.getProcessusname()+" >> "+var.toString());
+				scdriver.dynamicScreenadd(proc.getProcessusname()+" >> "+var.toString() + "\n");
 			}
 			visitor.visit(printer);
 			proc.setAlreadydoneoperation(proc.getAlreadydoneoperation() + 1);

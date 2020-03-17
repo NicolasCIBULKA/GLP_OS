@@ -3,7 +3,7 @@ package process.rrobin;
 import data.drivers.ScreenDriver;
 import data.processus.*;
 
-public class Rrobin {
+public class Rrobin extends Thread{
 	/*
 	 * This class implement Round Robin algorithm, to simulate the Processor
 	 * 
@@ -20,7 +20,8 @@ public class Rrobin {
 	private int bursttime = 1;
 	private Processuslist buffer;
 	private ScreenDriver scdriver;
-	
+	private OperationExec executor;
+	private Processus activeproc;
 	// --------------------------------------
 	// Methods
 	// --------------------------------------
@@ -30,6 +31,61 @@ public class Rrobin {
 		this.setPlist(plist);
 		buffer = new Processuslist();
 		this.setScdriver(scdriver);
+		this.executor = new OperationExec();
+		this.activeproc = new Processus();
+	}
+	
+	@Override
+	public void run() {
+		//int indice = 0;
+		// We add the possible processus that we launched during a RR tour
+		if(this.getBuffer().getProcessuslist().size() > 0) {
+			for(int i = 0; i < buffer.getProcessuslist().size(); i++) {
+				this.getPlist().getProcessuslist().add(this.getBuffer().getProcessuslist().get(i));
+			}
+			// we clear the buffer
+			this.getBuffer().getProcessuslist().clear();
+		}
+		// Starting the loop to execute a part of all processus in the plist
+		for(int processusindice = 0; processusindice < this.getPlist().getProcessuslist().size(); processusindice++) {
+			// taking a processus
+			this.activeproc = this.getPlist().getProcessuslist().get(processusindice);
+			//System.out.println(activeproc.getProcessusname());
+			// Testing if the processus is almost finished
+			
+			if(activeproc.getAlreadydoneoperation() + this.bursttime < activeproc.getProcessussize()) {
+				// if not, executing only the number of operation that the quantum define
+				// executing the number of operation that the quantum has defined
+				int indice = 0;
+				while(indice < this.bursttime){
+					//System.out.println("oui");
+					int opindice = activeproc.getAlreadydoneoperation();
+					executor.operationexecution(activeproc, activeproc.getOplist().get(opindice), scdriver);
+					// Sleep until a new clock iteration
+					try {
+						Thread.sleep(quantum);
+					} catch (InterruptedException e) {
+						e.printStackTrace();
+					}
+					indice++;
+				}
+			}
+			else {
+				// if the processus is almost finished, do all the operation that last
+				while(activeproc.getAlreadydoneoperation() < activeproc.getProcessussize()) {
+					executor.operationexecution(activeproc, activeproc.getOplist().get(activeproc.getAlreadydoneoperation()), scdriver);
+					// Sleep until a new clock iteration
+					try {
+						Thread.sleep(quantum);
+					} catch (InterruptedException e) {
+						e.printStackTrace();
+					}
+				}
+			}
+			if(activeproc.getAlreadydoneoperation() == activeproc.getProcessussize()) {
+				plist.getProcessuslist().remove(activeproc);
+			}
+		}
 	}
 	
 	// Round robin algorithm
@@ -108,7 +164,7 @@ public class Rrobin {
 	}
 	
 	public void addProcRR(Processus proc) {
-		this.getPlist().getProcessuslist().add(proc);
+		this.getBuffer().getProcessuslist().add(proc);
 	}
 	
 	public void removeProcRR(Processus proc) {
