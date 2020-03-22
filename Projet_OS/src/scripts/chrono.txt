@@ -12,7 +12,7 @@ PRINT explication
 WHILE value < max ;
 	PRINT str
 	PRINT value
-	SLEEP 100
+	SLEEP 1000
 	INCREMENT value
 ENDWHILE
 PRINT fin
