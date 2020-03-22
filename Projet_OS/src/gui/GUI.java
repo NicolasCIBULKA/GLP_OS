@@ -2,13 +2,15 @@ package gui;
 
 
 
+import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.GridLayout;
 import java.awt.Insets;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Container;
-
+import java.awt.Dimension;
+import java.awt.FlowLayout;
 import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -117,7 +119,21 @@ public class GUI extends JFrame {
 		
 		
 		Container contentPane = getContentPane();
-		contentPane.setLayout(new GridBagLayout());
+		contentPane.setLayout(new FlowLayout(FlowLayout.CENTER, 10, 10));
+		contentPane.add(panel );
+		panel.setPreferredSize(new Dimension(800,450));
+		contentPane.add(pandisk);
+		pandisk.setPreferredSize(new Dimension(200,450));
+		contentPane.add(panprocess);
+		panprocess.setPreferredSize(new Dimension(200,450));
+		
+		keyboardgui.getPankeybrd().setPreferredSize(new Dimension(800, 200));
+		contentPane.add(keyboardgui.getPankeybrd());
+		
+		mousegui.getPanel().setPreferredSize(new Dimension(400, 200));
+		contentPane.add(mousegui.getPanel());
+		
+		/*contentPane.setLayout(new GridBagLayout());
 		GridBagConstraints gridcons = new GridBagConstraints();
 		gridcons.fill=GridBagConstraints.BOTH;
 		gridcons.insets = new Insets(5, 5, 5, 5);
@@ -167,7 +183,7 @@ public class GUI extends JFrame {
 		gridcons.weightx=0;
 		gridcons.weighty=0;
 		contentPane.add(mousegui.getPanel(), gridcons);
-		
+		*/
 		
 		//adjusting the panels of each five parts:
 		
