@@ -15,10 +15,13 @@ import java.awt.event.ActionListener;
 
 
 import javax.swing.*;
+import javax.swing.text.DefaultCaret;
 
 import data.peripheral.*;
+import data.processus.Processus;
 import data.processus.Processuslist;
 import data.drivers.*;
+import process.rrobin.OperationExec;
 import process.rrobin.Rrobin;
 import process.traduction.*;
 
@@ -36,7 +39,7 @@ import process.traduction.*;
  *@version 2.1
  */
 
-public class GUI extends JFrame {
+public class GUI extends JFrame implements Runnable{
 
 	/*
 	 * attributes
@@ -48,6 +51,10 @@ public class GUI extends JFrame {
 	//----------------------
 	//peripherals and drivers
 	//----------------------
+	
+	// Instance of the GUI 
+	private GUI instance = this;
+	
 	//keyboard
 	private Interaction authKbd = new Interaction();
 	private Keyboard keyboard = new Keyboard("kbd1");
@@ -217,6 +224,8 @@ public class GUI extends JFrame {
 		pandisk.setBorder(BorderFactory.createTitledBorder("HDD/memory"));
 		pandisk.setLayout(new GridLayout(1,1));
 		
+		DefaultCaret caret = (DefaultCaret)affichecran.getCaret();
+		caret.setUpdatePolicy(DefaultCaret.ALWAYS_UPDATE);
 		
 		//pan keyboard (version 2, uses gridbaglayout)
 		//and pan Mouse are now handled in keyboardgui class
@@ -256,6 +265,23 @@ public class GUI extends JFrame {
 		}
 	
 	}
+	
+	
+	public void Updatevalues() {
+		affichecran.setText(" ");
+		affichecran.setText(screenDriver.toString());
+		
+	}
+	
+	@Override
+	public void run() {
+		do {
+			roundrobin.RrobinUnit();
+			Updatevalues();
+		}while(roundrobin.getPlist().getProcessuslist().size() > 0);
+	}
+	
+	
 	private class EnterAction implements ActionListener {
 		@Override
 		public void actionPerformed(ActionEvent e) {
@@ -264,11 +290,28 @@ public class GUI extends JFrame {
 			//System.out.println(invitecomm.getText());
 			
 			//screenDriver.resetScreen();
+			
 			traductor.transcriptor(invitecomm.getText(), screenDriver);
+			keyboard.resetContent();
+			invitecomm.setText(null);
+
+			if(roundrobin.getBuffer().getProcessuslist().size() > 0) {
+				Thread th = new Thread(instance);
+				if(!th.isAlive()) {
+					th.start();
+				}
+			}
+			else {
+				Updatevalues();
+			}
+			
+			/*
 			keyboard.resetContent();
 			invitecomm.setText(null);
 			affichecran.setText(" ");
 			affichecran.setText(screenDriver.toString());
+			*/
+			
 		}
 	}
 
@@ -314,6 +357,9 @@ public class GUI extends JFrame {
 		g.setColor(Color.BLUE);
 		g.fillOval(10, 10, 10, 10);
 	}
+
+
+
 	
 
 }

@@ -3,7 +3,7 @@ package process.rrobin;
 import data.drivers.ScreenDriver;
 import data.processus.*;
 
-public class Rrobin extends Thread{
+public class Rrobin extends Thread implements Runnable{
 	/*
 	 * This class implement Round Robin algorithm, to simulate the Processor
 	 * 
@@ -16,12 +16,15 @@ public class Rrobin extends Thread{
 	
 	private static int quantum = 10; // Define the period of the inner clock
 	
+	
 	private Processuslist plist;
 	private int bursttime = 1;
 	private Processuslist buffer;
 	private ScreenDriver scdriver;
 	private OperationExec executor;
 	private Processus activeproc;
+	
+	
 	// --------------------------------------
 	// Methods
 	// --------------------------------------
@@ -37,8 +40,14 @@ public class Rrobin extends Thread{
 	
 	@Override
 	public void run() {
-		//int indice = 0;
-		// We add the possible processus that we launched during a RR tour
+		do {
+			this.RrobinUnit();
+			
+		}while(this.getPlist().getProcessuslist().size() > 0);
+	}
+	
+	// Round robin unit that will be in the thread, and executed before actualising the screen content
+	public void RrobinUnit() {
 		if(this.getBuffer().getProcessuslist().size() > 0) {
 			for(int i = 0; i < buffer.getProcessuslist().size(); i++) {
 				this.getPlist().getProcessuslist().add(this.getBuffer().getProcessuslist().get(i));
@@ -49,7 +58,7 @@ public class Rrobin extends Thread{
 		// Starting the loop to execute a part of all processus in the plist
 		for(int processusindice = 0; processusindice < this.getPlist().getProcessuslist().size(); processusindice++) {
 			// taking a processus
-			this.activeproc = this.getPlist().getProcessuslist().get(processusindice);
+			Processus activeproc = this.getPlist().getProcessuslist().get(processusindice);
 			//System.out.println(activeproc.getProcessusname());
 			// Testing if the processus is almost finished
 			
@@ -87,7 +96,6 @@ public class Rrobin extends Thread{
 			}
 		}
 	}
-	
 	// Round robin algorithm
 	public void Roundrobin() {
 		OperationExec executor = new OperationExec();

@@ -30,10 +30,6 @@ public class Print extends Operation{
 		printop = new Stringvariable(line);
 	}
 
-	public Print() {
-		
-	}
-
 
 	public Variable getPrintop() {
 		return printop;
