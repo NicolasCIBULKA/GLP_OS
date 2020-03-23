@@ -115,7 +115,7 @@ public class OperationExec {
 		
 		// Execution of print
 		else if(operation instanceof Print) {
-			ArrayListVisitor<Void> visitor = new OperationVisitor();
+			//ArrayListVisitor<Void> visitor = new OperationVisitor();
 			Print printer = (Print) operation;
 			if(printer.getPrintop() instanceof Intvariable) {
 				Intvariable var = proc.getVarbuffer().getIntvariablelist().get(printer.getPrintop().getName());
@@ -125,7 +125,7 @@ public class OperationExec {
 				Stringvariable var = proc.getVarbuffer().getStringvariablelist().get(printer.getPrintop().getName());
 				scdriver.dynamicScreenadd(proc.getProcessusname()+" >> "+var.toString() + "\n");
 			}
-			visitor.visit(printer);
+			//visitor.visit(printer);
 			proc.setAlreadydoneoperation(proc.getAlreadydoneoperation() + 1);
 		}
 		// skip if we are in instance of a variable

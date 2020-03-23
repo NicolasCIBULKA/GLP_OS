@@ -9,10 +9,11 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 import data.drivers.*;
+import data.primitive.Primitive;
 import data.processus.Processus;
 import process.rrobin.Rrobin;
 
-public class Primitivetranscriptor {
+public class Primitivetranscriptor extends Thread{
 	
 	/*
 	 *  This is the class that will translate a primitive that come from the keyboard to a program to do
@@ -38,7 +39,7 @@ public class Primitivetranscriptor {
 	// Methods
 	// --------------------------------------
 	
-	public Primitivetranscriptor( Rrobin roundrobin) {
+	public Primitivetranscriptor(Rrobin roundrobin) {
 		//this.setScdriver(scdriver);
 		this.setRoundrobin(roundrobin);
 	}
@@ -60,9 +61,7 @@ public class Primitivetranscriptor {
 				proctr.transcription(proc, slotadress);
 				// we add the processus to the bufferarray, to execute it a the next round robin iteration
 				roundrobin.addProcRR(proc);
-				if(roundrobin.getBuffer().getProcessuslist().size() != 0) {
-					roundrobin.Roundrobin();
-				}
+				
 			}
 			
 			// else if the primitive is read

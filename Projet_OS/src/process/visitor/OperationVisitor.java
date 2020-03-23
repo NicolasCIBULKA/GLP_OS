@@ -156,7 +156,7 @@ public class OperationVisitor implements ArrayListVisitor<Void>{
 	@Override
 	public Void visit(Print node) {
 		// Need to be modified to write on the Screen
-		System.out.println(node.print());
+		
 		return null;
 	}
 
