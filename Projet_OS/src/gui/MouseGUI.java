@@ -18,9 +18,11 @@ public class MouseGUI {
 	private JButton click =new JButton("click");
 	private JButton right =new JButton(">");
 	private JButton down =new JButton("\\/");
+	private JButton enter =new JButton("Enter");
+	
 	
 	public MouseGUI() {
-		panmouse.setBorder(BorderFactory.createTitledBorder("Mouse"));
+		panmouse.setBorder(BorderFactory.createTitledBorder("Screen turn On/Off Mouse and Enter key"));
 		
 		//gridbaglayout to get the display i wanted
 		panmouse.setLayout(new GridBagLayout());
@@ -36,6 +38,9 @@ public class MouseGUI {
 		gcmouse.gridx=0;
 		gcmouse.gridy=0;
 		panmouse.add(startstop, gcmouse);
+		gcmouse.gridx=0;
+		gcmouse.gridy=3;
+		panmouse.add(enter, gcmouse);
 		gcmouse.gridx=1;
 		gcmouse.gridy=0;
 		gcmouse.gridwidth=2;
@@ -90,5 +95,9 @@ public class MouseGUI {
 		return startstop;
 	}
 	
+	
+	public JButton getEnter() {
+		return enter;
+	}
 	
 }

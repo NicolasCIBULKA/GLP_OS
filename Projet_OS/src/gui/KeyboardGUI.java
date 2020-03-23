@@ -65,12 +65,13 @@ public class KeyboardGUI {
 	private JButtonKey colon= new JButtonKey("58",":");
 	private JButtonKey exclapoint= new JButtonKey("33","!");
 	private JButtonKey space= new JButtonKey("32","space");
-	private JButtonKey enter = new JButtonKey("enterKey","Enter");
 	private JButtonKey substractKey = new JButtonKey("45","-");
 	private JButtonKey divideKey = new JButtonKey("47","/");
 	private JButtonKey addKey = new JButtonKey("43","+");
 	private JButtonKey equalSign = new JButtonKey("61","=");
 	private JButtonKey multiplyKey = new JButtonKey("42","*");
+	private JButtonKey parenthesisOpen = new JButtonKey("40", "(");
+	private JButtonKey parenthesisClose = new JButtonKey("41",")");
 	
 	
 	
@@ -131,10 +132,10 @@ public class KeyboardGUI {
 		pankeybrd.add(equalSign,keyConstraint);
 		keyConstraint.gridx=7;
 		pankeybrd.add(multiplyKey,keyConstraint);
-		keyConstraint.gridwidth=2;
 		keyConstraint.gridx=8;
-		keyConstraint.weightx=1;
-		pankeybrd.add(enter ,keyConstraint);
+		pankeybrd.add(parenthesisOpen ,keyConstraint);
+		keyConstraint.gridx=9;
+		pankeybrd.add(parenthesisClose ,keyConstraint);
 	}
 	
 	
@@ -429,8 +430,18 @@ public class KeyboardGUI {
 	public JButtonKey getSpace() {
 		return space;
 	}
-	public JButtonKey getEnter() {
-		return enter;
+	
+
+
+
+	public JButtonKey getParenthesisOpen() {
+		return parenthesisOpen;
+	}
+
+
+
+	public JButtonKey getParenthesisClose() {
+		return parenthesisClose;
 	}
 
 

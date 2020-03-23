@@ -244,13 +244,16 @@ public class GUI extends JFrame {
 		
 		//action listeners
 		//for the keyboard
-		keyboardgui.getEnter().addActionListener(new EnterAction());
+		mousegui.getEnter().addActionListener(new EnterAction());
 		keyboardgui.getSpace().addActionListener(new KeyLetter());
 		keyboardgui.getMultiplyKey().addActionListener(new KeyLetter());
 		keyboardgui.getAddKey().addActionListener(new KeyLetter());
 		keyboardgui.getSubstractKey().addActionListener(new KeyLetter());
 		keyboardgui.getDivideKey().addActionListener(new KeyLetter());
 		keyboardgui.getEqualSign().addActionListener(new KeyLetter());
+		keyboardgui.getParenthesisOpen().addActionListener(new KeyLetter());
+		keyboardgui.getParenthesisClose().addActionListener(new KeyLetter());
+		
 		
 		for(int i=0; i<4;i++) {
 			for(int j=0; j<10;j++) {
