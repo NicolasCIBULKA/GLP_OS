@@ -10,6 +10,15 @@ import org.jfree.data.xy.XYSeriesCollection;
 
 import data.processus.Processus;
 
+//----------------------------------------
+//work in progress
+//----------------------------------------
+/**
+ * this class manages the line chart of running programs
+ * 
+ * @author redouane
+ *
+ */
 public class Charts {
 
 	private ArrayList<Processus> listchart = new ArrayList<Processus>();
