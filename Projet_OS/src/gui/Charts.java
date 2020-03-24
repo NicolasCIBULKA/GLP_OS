@@ -33,6 +33,6 @@ public class Charts {
 		XYSeriesCollection dataset = new XYSeriesCollection();
 		dataset.addSeries(serie);
 
-		return ChartFactory.createXYLineChart("", "Time", "Number of programs running", dataset, PlotOrientation.VERTICAL, true, true, false);
+		return ChartFactory.createXYLineChart("Processus", "Time", "Number of programs running", dataset, PlotOrientation.VERTICAL, true, true, false);
 	}
 }
