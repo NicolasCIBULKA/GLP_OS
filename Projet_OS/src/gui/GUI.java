@@ -237,7 +237,7 @@ public class GUI extends JFrame implements Runnable{
 		
 		affichdisk.setEditable(false);
 		pandisk.add(scrolldisk);
-		pandisk.setBorder(BorderFactory.createTitledBorder("HDD/memory"));
+		pandisk.setBorder(BorderFactory.createTitledBorder("HDD"));
 		pandisk.setLayout(new GridLayout(1,1));
 		
 		DefaultCaret caret = (DefaultCaret)affichecran.getCaret();
@@ -363,14 +363,6 @@ public class GUI extends JFrame implements Runnable{
 			screen.setState(!screen.getState());
 			status=!status;
 		}
-	}
-	
-	//idée pour souris//
-	public void paintComponent(Graphics g) {
-		super.paintComponents(g);
-		
-		g.setColor(Color.BLUE);
-		g.fillOval(10, 10, 10, 10);
 	}
 
 
