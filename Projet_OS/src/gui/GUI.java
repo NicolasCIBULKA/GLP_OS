@@ -247,10 +247,6 @@ public class GUI extends JFrame implements Runnable{
 		//and pan Mouse are now handled in keyboardgui class
 		
 		
-
-		
-		
-		
 		//action listeners
 		//for the keyboard
 		mousegui.getEnter().addActionListener(new EnterAction());
@@ -263,7 +259,7 @@ public class GUI extends JFrame implements Runnable{
 		keyboardgui.getParenthesisOpen().addActionListener(new KeyLetter());
 		keyboardgui.getParenthesisClose().addActionListener(new KeyLetter());
 		
-		//blabla poubelle
+		
 		for(int i=0; i<4;i++) {
 			for(int j=0; j<10;j++) {
 				JButtonKey[][] temp = keyboardgui.getRows();
