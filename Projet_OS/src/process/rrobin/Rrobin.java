@@ -1,5 +1,7 @@
 package process.rrobin;
 
+import java.util.ArrayList;
+
 import data.drivers.ScreenDriver;
 import data.processus.*;
 
@@ -152,6 +154,40 @@ public class Rrobin extends Thread implements Runnable{
 			}
 		} while(this.getPlist().getProcessuslist().size() > 0);
 	}
+	public void SRTF(){
+		//set the shortest process as the current process
+		Processuslist srtf = new Processuslist();
+		//if the RQ is of size 1, the shortest process will be at the head of the RQ
+		
+		
+		{
+			int j = this.getPlist().getProcessuslist().size();
+			for(int v=0;v<j;v++) {
+			Processus shortestProcess = this.getPlist().getProcessuslist().get(0) ;
+			//if the RQ size is >1, loop through all the processes currently in the RQ and find the process
+			//with the smallest CPU Burst. Set that process as the shortest process and set the response time for that process
+			for(int i=0; i<this.getPlist().getProcessuslist().size(); i++){
+				
+				if(this.getPlist().getProcessuslist().size() == 1){
+					break;
+				}
+				if(this.getPlist().getProcessuslist().get(i).getCPUBurstLeft() < shortestProcess.getCPUBurstLeft()){
+					shortestProcess = this.getPlist().getProcessuslist().get(i);
+					
+					//find the position in the RQ of the shortest proces
+											
+				}
+				
+				
+			 }//end for loop
+			srtf.getProcessuslist().add(shortestProcess);
+			this.getPlist().getProcessuslist().remove(0);
+			
+			}
+			this.setPlist(srtf);
+		//end else
+		}
+}
 	
 	// Getters and setters	
 	
