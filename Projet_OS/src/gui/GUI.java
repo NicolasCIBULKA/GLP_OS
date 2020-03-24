@@ -247,10 +247,6 @@ public class GUI extends JFrame implements Runnable{
 		//and pan Mouse are now handled in keyboardgui class
 		
 		
-
-		
-		
-		
 		//action listeners
 		//for the keyboard
 		mousegui.getEnter().addActionListener(new EnterAction());
