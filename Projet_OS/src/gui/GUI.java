@@ -6,6 +6,7 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.GridLayout;
 import java.awt.Insets;
+import java.awt.Window;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Container;
@@ -14,10 +15,12 @@ import java.awt.FlowLayout;
 import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
+import java.io.IOException;
 
 import javax.swing.*;
+import javax.swing.table.JTableHeader;
 import javax.swing.text.DefaultCaret;
+import javax.swing.text.Document;
 
 import data.peripheral.*;
 import data.processus.Processus;
@@ -87,15 +90,15 @@ public class GUI extends JFrame implements Runnable{
 	private JPanel panprocess = new JPanel();
 	private JPanel pandisk = new JPanel();
 	private MouseGUI mousegui = new MouseGUI();
-	private KeyboardGUI keyboardgui =new KeyboardGUI();
+	private KeyboardGUI keyboardgui = new KeyboardGUI();
 	
 	//elements to display info on screen and for processes/hdd display (top of the gridlayout)
 	
 	private JTextArea affichecran = new JTextArea();
 	private JTextArea invitecomm = new JTextArea();
-	private JTextArea affichprocess= new JTextArea();
+	private JEditorPane affichprocess= new JEditorPane();
 	private JTextArea affichdisk= new JTextArea();
-	
+
 	//scroll for the process display
 	private JScrollPane scrollprocess = new JScrollPane(affichprocess,JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
 	//scroll for the disk
@@ -103,7 +106,8 @@ public class GUI extends JFrame implements Runnable{
 	//scroll for the screen
 	private JScrollPane scroll = new JScrollPane(affichecran,JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
 	
-	
+	// HTML generator for the processus table
+	ProcTable ptable = new ProcTable();
 
 
 	/*
@@ -124,7 +128,6 @@ public class GUI extends JFrame implements Runnable{
 		
 		// Main window
 		
-		
 		Container contentPane = getContentPane();
 		contentPane.setLayout(new FlowLayout(FlowLayout.CENTER, 10, 10));
 		contentPane.add(panel );
@@ -133,12 +136,16 @@ public class GUI extends JFrame implements Runnable{
 		pandisk.setPreferredSize(new Dimension(200,450));
 		contentPane.add(panprocess);
 		panprocess.setPreferredSize(new Dimension(200,450));
-		
+		affichprocess.setContentType("text/html"); ;  
+
 		keyboardgui.getPankeybrd().setPreferredSize(new Dimension(800, 200));
 		contentPane.add(keyboardgui.getPankeybrd());
 		
 		mousegui.getPanel().setPreferredSize(new Dimension(400, 200));
 		contentPane.add(mousegui.getPanel());
+		
+	
+		
 		
 		/*contentPane.setLayout(new GridBagLayout());
 		GridBagConstraints gridcons = new GridBagConstraints();
@@ -196,6 +203,7 @@ public class GUI extends JFrame implements Runnable{
 		
 		//screen
 		affichecran.setEditable(false);
+		//affichprocess.setEditable(false);
 		scroll.setAutoscrolls(true);
 		
 		
@@ -228,7 +236,7 @@ public class GUI extends JFrame implements Runnable{
 		
 		//pan process
 		
-		affichprocess.setEditable(false);
+		//affichprocess.setEditable(false);
 		panprocess.add(scrollprocess);
 		panprocess.setBorder(BorderFactory.createTitledBorder("Processus"));
 		panprocess.setLayout(new GridLayout(1,1));
@@ -268,16 +276,15 @@ public class GUI extends JFrame implements Runnable{
 		
 		
 		
-		//for the mouse and the turn on button of the screen
-		mousegui.getStartstop().addActionListener(new StartandStopAction());
-		
-		
-		
-		
+			//for the mouse and the turn on button of the screen
+			mousegui.getStartstop().addActionListener(new StartandStopAction());
+			
+			
+		}
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		pack();
+		Updatevalues();
 		setVisible(true);
-		}
 	
 	}
 	
@@ -285,7 +292,17 @@ public class GUI extends JFrame implements Runnable{
 	public void Updatevalues() {
 		affichecran.setText(" ");
 		affichecran.setText(screenDriver.toString());
-		
+		int activeprocposition = roundrobin.getActiveprocposition();
+		Processuslist plist = roundrobin.getPlist();
+		ptable.refreshProcTable(plist , activeprocposition);
+		try {
+			affichprocess.setPage("file:./tab.html");
+			Document doc = affichprocess.getDocument();
+			doc.putProperty(Document.StreamDescriptionProperty, null);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	@Override

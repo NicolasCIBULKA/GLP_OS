@@ -152,14 +152,4 @@ public class Primitivetranscriptor extends Thread{
 		this.roundrobin = roundrobin;
 	}
 	
-	
-	/*
-	public void dynamicScreenadd(ScreenDriver scdriver, String scadd) {
-		String content;
-		content = scdriver.getScreencontent();
-		scdriver.resetScreen();
-		scdriver.addStringScreen(content + scadd);
-	}
-	*/
-	
 }

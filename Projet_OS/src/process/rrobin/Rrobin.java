@@ -24,7 +24,7 @@ public class Rrobin extends Thread implements Runnable{
 	private Processuslist buffer;
 	private ScreenDriver scdriver;
 	private OperationExec executor;
-	private Processus activeproc;
+	private int activeprocposition;
 	
 	
 	// --------------------------------------
@@ -37,7 +37,6 @@ public class Rrobin extends Thread implements Runnable{
 		buffer = new Processuslist();
 		this.setScdriver(scdriver);
 		this.executor = new OperationExec();
-		this.activeproc = new Processus();
 	}
 	
 	@Override
@@ -61,6 +60,7 @@ public class Rrobin extends Thread implements Runnable{
 		for(int processusindice = 0; processusindice < this.getPlist().getProcessuslist().size(); processusindice++) {
 			// taking a processus
 			Processus activeproc = this.getPlist().getProcessuslist().get(processusindice);
+			setActiveprocposition(processusindice);
 			//System.out.println(activeproc.getProcessusname());
 			// Testing if the processus is almost finished
 			
@@ -74,7 +74,7 @@ public class Rrobin extends Thread implements Runnable{
 					executor.operationexecution(activeproc, activeproc.getOplist().get(opindice), scdriver);
 					// Sleep until a new clock iteration
 					try {
-						Thread.sleep(quantum);
+						Thread.sleep(1);
 					} catch (InterruptedException e) {
 						e.printStackTrace();
 					}
@@ -229,6 +229,14 @@ public class Rrobin extends Thread implements Runnable{
 
 	public void setScdriver(ScreenDriver scdriver) {
 		this.scdriver = scdriver;
+	}
+
+	public int getActiveprocposition() {
+		return activeprocposition;
+	}
+
+	public void setActiveprocposition(int activeprocposition) {
+		this.activeprocposition = activeprocposition;
 	}
 	
 	
