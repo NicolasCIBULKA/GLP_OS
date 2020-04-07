@@ -1,0 +1,9 @@
+PROCESSUSNAME JUnittest
+# Definition des variables
+STRING debut = debut du programme
+INT nombre = 0
+INT un = 1
+PRINT debut
+nombre = nombre + un
+SLEEP 1000
+
