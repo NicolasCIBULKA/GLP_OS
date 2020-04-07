@@ -4,6 +4,9 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.HashMap;
+
+import org.apache.log4j.Logger;
+
 import data.arithmeticaloperation.*;
 import data.functions.Decrement;
 import data.functions.Increment;
@@ -15,6 +18,7 @@ import data.loop.WhileLoop;
 import data.processus.Operation;
 import data.processus.Processus;
 import data.variable.*;
+import logs.LoggerUtility;
 import process.exception.DivisionException;
 import process.exception.ImbricationException;
 
@@ -29,6 +33,8 @@ public class Transcriptor {
 	// --------------------------------------
 	// Constants
 	// --------------------------------------
+	private static Logger logger = LoggerUtility.getLogger(Transcriptor.class, "text");
+
 	
 	private static int identifier_loop_test_function_allocate_POSITION = 0;
 	private static int identifier_arithmetical_POSITION = 3;
@@ -61,7 +67,7 @@ public class Transcriptor {
 			String line;
 			String[] splittedline;
 			int currentline = 1;
-
+			logger.info("Transcriptor - Starting transcription of a new Processus");
 			/*
 			 * Traduction
 			 */
@@ -72,9 +78,11 @@ public class Transcriptor {
 				// Test of the first line to set the processusname
 				if(splittedline[identifier_loop_test_function_allocate_POSITION].contains("PROCESSUSNAME")) {
 					proc.setProcessusname(splittedline[1]);
+					logger.info("Transcriptor - Setting processusname to " + proc.getProcessusname());
 				}
 				// Test if the line create a Forloop Processus
 				else if(splittedline[identifier_loop_test_function_allocate_POSITION].contains("FOR") ) {
+					logger.info("Transcriptor - Transcripting a ForLoop in Processus "+ proc.getProcessusname() );
 					Processus forproc = new Processus();
 					String var = splittedline[1];
 					if(intvariablelist.containsKey(var)) {
@@ -89,6 +97,7 @@ public class Transcriptor {
 								splittedline = line.split(" ");
 								if(splittedline[identifier_loop_test_function_allocate_POSITION].contains("IF")) {
 									//System.out.println("oui");
+									logger.info("Transcriptor - Transcripting a ForLoop in IFELSE test in Processus "+ proc.getProcessusname() );
 									if(splittedline.length == 5) {
 										Processus ifproc = new Processus();
 										Processus elseproc = new Processus();
@@ -123,11 +132,13 @@ public class Transcriptor {
 										}
 										else {
 											Operation error = new Print("Error on line " + currentline + " : Else element in Elseif does not exists : " + line + "\n");
+											logger.info("Transcriptor - ERROR : Else element in Elseif does not exists");
 											proc.addOperation(error);
 										}
 									}
 									else {
 										Operation error = new Print("Error on line " + currentline + " : Invalid number of arguments in Ifelse test : " + line + "\n");
+										logger.info("Transcriptor - ERROR : Invalid number of arguments in Ifelse test");
 										proc.addOperation(error);
 									}
 								}
@@ -146,11 +157,13 @@ public class Transcriptor {
 						}
 						else {
 							Operation error = new Print("Error on line " + currentline + " : Int variable in for loop does not exists : " + line + "\n");
+							logger.info("Transcriptor - ERROR : Int variable in for loop does not exists");
 							proc.addOperation(error);
 						}
 					}
 					else {
 						Operation error = new Print("Error on line " + currentline + " : Invalid number of arguments in for loop : " + line + "\n");
+						logger.info("Transcriptor - ERROR : nvalid number of arguments in for loop");
 						proc.addOperation(error);
 					}
 					
@@ -160,6 +173,7 @@ public class Transcriptor {
 				
 				else if(splittedline[identifier_loop_test_function_allocate_POSITION].contains("WHILE")){
 					if(splittedline.length == 5) {
+						logger.info("Transcriptor - Transcripting a Whileloop in Processus "+ proc.getProcessusname() );
 						Processus whileproc = new Processus();
 						String nb1 = splittedline[1];
 						String comparator = splittedline[2];
@@ -175,6 +189,7 @@ public class Transcriptor {
 								if(splittedline[identifier_loop_test_function_allocate_POSITION].contains("IF")) {
 									//System.out.println("oui");
 									if(splittedline.length == 5) {
+										logger.info("Transcriptor - Transcripting a IFELSE test in Whileloop in Processus "+ proc.getProcessusname() );
 										Processus ifproc = new Processus();
 										Processus elseproc = new Processus();
 										String nb1_ifelse= splittedline[1];
@@ -208,6 +223,7 @@ public class Transcriptor {
 										}
 										else {
 											Operation error = new Print("Error on line " + currentline + " : Else element in Elseif does not exists : " + line + "\n");
+											logger.info("Transcriptor - ERROR : Else element in Elseif does not exists");
 											proc.addOperation(error);
 										}
 									}
@@ -225,11 +241,13 @@ public class Transcriptor {
 						}
 						else {
 							Operation error = new Print("Error on line " + currentline + " : Int variable in while loop does not exists : " + line + "\n");
+							logger.info("Transcriptor - ERROR : Int variable in while loop does not exists");
 							proc.addOperation(error);
 						}
 					}
 					else {
 						Operation error = new Print("Error on line " + currentline + " : Invalid number of arguments in Whileloop : " + line + "\n");
+						logger.info("Transcriptor - ERROR : Invalid number of arguments in Whileloop");
 						proc.addOperation(error);
 					}
 				}
@@ -237,6 +255,7 @@ public class Transcriptor {
 				// Test if the line create a Ifelsetest
 				else if(splittedline[identifier_loop_test_function_allocate_POSITION].contains("IF")) {
 					if(splittedline.length == 5) {
+						logger.info("Transcriptor - Transcripting a IfelseTest in Processus "+ proc.getProcessusname() );
 						Processus ifproc = new Processus();
 						Processus elseproc = new Processus();
 						String nb1 = splittedline[1];
@@ -270,11 +289,13 @@ public class Transcriptor {
 						}
 						else {
 							Operation error = new Print("Error on line " + currentline + " : Else element in Elseif does not exists : " + line + "\n");
+							logger.info("Transcriptor - ERROR : Else element in Elseif does not exists");
 							proc.addOperation(error);
 						}
 					}
 					else {
 						Operation error = new Print("Error on line " + currentline + " : Invalid number of arguments in Ifelse test : " + line + "\n");
+						logger.info("Transcriptor - ERROR : Invalid number of arguments in Ifelse test");
 						proc.addOperation(error);
 					}
 				}
@@ -296,9 +317,11 @@ public class Transcriptor {
 		} 
 		catch (ImbricationException e) {
 			System.out.println("ERROR : Imbrication of loops in the programm which is impossible, please resolve the error");
+			logger.info("Transcriptor - ERROR : Imbrication of loops in the programm which is impossible, please resolve the error");
 		}	
 		catch (DivisionException e) {
 			System.out.println("ERROR : Tried to divide by 0");
+			logger.info("Transcriptor - ERROR : Tried to divide by 0");
 		}	
 		
 	}
@@ -313,12 +336,14 @@ public class Transcriptor {
 		splittedline = analysedline.split(" ");
 		// Test if the line is a commentary
 		if(splittedline[0].contains("#")) {
+			logger.info("Transcriptor - Commentary found ");
 			return null;
 		}
 		// Operation haven't been recognized
 		else if(splittedline.length == 5) {
 			//System.out.println("addition" + splittedline[3]);
 			if(splittedline[identifier_arithmetical_POSITION].contains("+")) {
+				logger.info("Transcriptor - Addition found ");
 				//System.out.println("addition" + linenumber);
 				String op1 = splittedline[2];
 				String op2 = splittedline[4];
@@ -334,6 +359,7 @@ public class Transcriptor {
 				}
 			}	
 			else if(splittedline[identifier_arithmetical_POSITION].contains("-")) {
+				logger.info("Transcriptor - Substraction found ");
 				String op1 = splittedline[2];
 				String op2 = splittedline[4];
 				String sol = splittedline[0];
@@ -347,6 +373,7 @@ public class Transcriptor {
 				}
 			}
 			else if(splittedline[identifier_arithmetical_POSITION].contains("%")) {
+				logger.info("Transcriptor - Modulo found ");
 				String op1 = splittedline[2];
 				String op2 = splittedline[4];
 				String sol = splittedline[0];
@@ -360,6 +387,7 @@ public class Transcriptor {
 				}
 			}
 			else if(splittedline[identifier_arithmetical_POSITION].contains("/")) {
+				logger.info("Transcriptor - Division found ");
 				String op1 = splittedline[2];
 				String op2 = splittedline[4];
 				String sol = splittedline[0];
@@ -380,6 +408,7 @@ public class Transcriptor {
 			
 			else if(splittedline[identifier_arithmetical_POSITION].contains("*")) {
 				if(splittedline.length == 5) {
+					logger.info("Transcriptor - Multiplication found ");
 					String op1 = splittedline[2];
 					String op2 = splittedline[4];
 					String sol = splittedline[0];
@@ -403,6 +432,7 @@ public class Transcriptor {
 		// test of the Sleep function
 		else if(splittedline[identifier_loop_test_function_allocate_POSITION].contains("SLEEP")) {
 			if(splittedline.length == 2) {
+				logger.info("Transcriptor - Sleep found ");
 				int time = Integer.parseInt(splittedline[1]);
 				Sleep operation = new Sleep(time);
 				return operation;
@@ -415,6 +445,7 @@ public class Transcriptor {
 		// Test of the Print function
 		else if(splittedline[identifier_loop_test_function_allocate_POSITION].contains("PRINT")) {
 			if(splittedline.length == 2) {
+				logger.info("Transcriptor - Print found ");
 				if(stringvariablelist.containsKey(splittedline[1])) {
 					//System.out.println(splittedline[1]);
 					Print operation = new Print(stringvariablelist.get(splittedline[1]));
@@ -438,6 +469,7 @@ public class Transcriptor {
 		// test for increment function 
 		else if(splittedline[identifier_loop_test_function_allocate_POSITION].contains("INCREMENT")) {
 			if(splittedline.length == 2) {
+				logger.info("Transcriptor - Increment found ");
 				if(intvariablelist.containsKey(splittedline[1])) {
 					Increment operation = new Increment(intvariablelist.get(splittedline[1]));
 					return operation;
@@ -456,6 +488,7 @@ public class Transcriptor {
 		// test for decrement function 
 				else if(splittedline[identifier_loop_test_function_allocate_POSITION].contains("DECREMENT")) {
 					if(splittedline.length == 2) {
+						logger.info("Transcriptor - Decrement found ");
 						if(intvariablelist.containsKey(splittedline[1])) {
 							Decrement operation = new Decrement(intvariablelist.get(splittedline[1]));
 							return operation;
@@ -477,6 +510,7 @@ public class Transcriptor {
 		// Test for a int allocation
 		else if(splittedline[identifier_loop_test_function_allocate_POSITION].contains("INT")) {
 			if(splittedline.length == 4) {
+				logger.info("Transcriptor - Intvariable creation found ");
 				if(stringvariablelist.containsKey(splittedline[1])) {
 					Operation error = new Print("Error on line " + linenumber + " : Int variable allocation already exists as a String variable : " + analysedline + "\n");
 					return error;
@@ -501,6 +535,7 @@ public class Transcriptor {
 		
 		else if(splittedline[identifier_loop_test_function_allocate_POSITION].contains("STRING")) {
 			if(splittedline[2].contentEquals("=")) {
+				logger.info("Transcriptor - Stringvariable creation found ");
 				String result = "";
 				for(int i = 3; i < splittedline.length; i++) {
 					result += splittedline[i]  + " ";

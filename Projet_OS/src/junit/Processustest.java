@@ -2,12 +2,15 @@ package junit;
 
 import data.*;
 import process.*;
+import process.traduction.Transcriptor;
 import process.visitor.OperationVisitor;
 import org.junit.*;
 import junit.framework.TestCase;
 import data.arithmeticaloperation.*;
 import data.functions.*;
+import data.processus.Processus;
 import data.variable.Intvariable;
+import data.variable.Stringvariable;
 
 public class Processustest extends TestCase{
 	
@@ -105,7 +108,19 @@ public class Processustest extends TestCase{
 		fail(); // TODO
 	}
 	
-	
+	@Test
+	public void testTraduction() {
+		Transcriptor transcriptor = new Transcriptor();
+		Processus proc = new Processus();
+		String filename ="/home/nico/Bureau/Fac/L2/S2/GLP/GLP_OS/GLP_OS/Projet_OS/src/scripts/JUnittest.txt" ;
+		transcriptor.transcription(proc, filename);
+		assertEquals(proc.getProcessusname(), "JUnittest");
+		assertTrue(proc.getOplist().get(1) instanceof Intvariable);
+		assertTrue(proc.getOplist().get(0) instanceof Stringvariable);
+		assertTrue(proc.getOplist().get(3) instanceof Print);
+		assertTrue(proc.getOplist().get(4) instanceof Addition);
+		assertTrue(proc.getOplist().get(5) instanceof Sleep);
+	}
 	
 	
 	

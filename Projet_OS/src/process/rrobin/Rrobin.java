@@ -2,8 +2,11 @@ package process.rrobin;
 
 import java.util.ArrayList;
 
+
 import data.drivers.ScreenDriver;
 import data.processus.*;
+import org.apache.log4j.Logger;
+import logs.LoggerUtility;
 
 public class Rrobin extends Thread implements Runnable{
 	/*
@@ -18,7 +21,8 @@ public class Rrobin extends Thread implements Runnable{
 	
 	private static int quantum = 10; // Define the period of the inner clock
 	
-	
+	private static Logger logger = LoggerUtility.getLogger(Rrobin.class, "text");
+
 	private Processuslist plist;
 	private int bursttime = 1;
 	private Processuslist buffer;
@@ -59,6 +63,7 @@ public class Rrobin extends Thread implements Runnable{
 		// Starting the loop to execute a part of all processus in the plist
 		for(int processusindice = 0; processusindice < this.getPlist().getProcessuslist().size(); processusindice++) {
 			// taking a processus
+			logger.info("Round robin  - Processus " + processusindice + " on " + this.getPlist().getProcessuslist().size());
 			Processus activeproc = this.getPlist().getProcessuslist().get(processusindice);
 			setActiveprocposition(processusindice);
 			//System.out.println(activeproc.getProcessusname());

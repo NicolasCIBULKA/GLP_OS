@@ -1,5 +1,7 @@
 package process.rrobin;
 
+import org.apache.log4j.Logger;
+
 import data.arithmeticaloperation.*;
 import data.drivers.ScreenDriver;
 import data.functions.Decrement;
@@ -13,6 +15,7 @@ import data.processus.Operation;
 import data.processus.Processus;
 import data.variable.Intvariable;
 import data.variable.Stringvariable;
+import logs.LoggerUtility;
 import process.visitor.*;
 
 public class OperationExec {
@@ -25,7 +28,7 @@ public class OperationExec {
 	// --------------------------------------
 	// Attributs
 	// --------------------------------------
-
+	private static Logger logger = LoggerUtility.getLogger(OperationExec.class, "text");
 	// --------------------------------------
 	// Methods
 	// --------------------------------------
@@ -43,6 +46,7 @@ public class OperationExec {
 		// Execution of the arithmeticalOperation
 		
 		if(operation instanceof Addition ) {
+			logger.info("Executed an Addition in Processus : " + proc.getProcessusname());
 			Addition additionner = (Addition) operation;
 			ArrayListVisitor<Void> visitor = new OperationVisitor();
 			visitor.visit(additionner);
@@ -51,6 +55,7 @@ public class OperationExec {
 			proc.setAlreadydoneoperation(proc.getAlreadydoneoperation() + 1);
 		}
 		else if(operation instanceof Substraction ) {
+			logger.info("Executed a Substraction in Processus : " + proc.getProcessusname());
 			Substraction subber = (Substraction) operation;
 			ArrayListVisitor<Void> visitor = new OperationVisitor();
 			visitor.visit(subber);
@@ -59,6 +64,7 @@ public class OperationExec {
 			proc.setAlreadydoneoperation(proc.getAlreadydoneoperation() + 1);
 		}
 		else if(operation instanceof Multiplication ) {
+			logger.info("Executed an Multiplication in Processus : " + proc.getProcessusname());
 			Multiplication multiplier = (Multiplication) operation;
 			ArrayListVisitor<Void> visitor = new OperationVisitor();
 			visitor.visit(multiplier);
@@ -68,6 +74,7 @@ public class OperationExec {
 		}
 		
 		else if(operation instanceof Division ) {
+			logger.info("Executed an Division in Processus : " + proc.getProcessusname());
 			Division divider = (Division) operation;
 			ArrayListVisitor<Void> visitor = new OperationVisitor();
 			visitor.visit(divider);
@@ -76,6 +83,7 @@ public class OperationExec {
 			proc.setAlreadydoneoperation(proc.getAlreadydoneoperation() + 1);
 		}
 		else if(operation instanceof Modulo ) {
+			logger.info("Executed a Modulo in Processus : " + proc.getProcessusname());
 			Modulo modulo = (Modulo) operation;
 			ArrayListVisitor<Void> visitor = new OperationVisitor();
 			visitor.visit(modulo);
@@ -84,6 +92,7 @@ public class OperationExec {
 			proc.setAlreadydoneoperation(proc.getAlreadydoneoperation() + 1);
 		}
 		else if(operation instanceof Increment ) {
+			logger.info("Executed an Increment in Processus : " + proc.getProcessusname());
 			ArrayListVisitor<Void> visitor = new OperationVisitor();
 			Increment incrementer = (Increment) operation;
 			visitor.visit(incrementer);
@@ -92,6 +101,7 @@ public class OperationExec {
 			proc.setAlreadydoneoperation(proc.getAlreadydoneoperation() + 1);
 		}
 		else if(operation instanceof Decrement ) {
+			logger.info("Executed an Decrement in Processus : " + proc.getProcessusname());
 			ArrayListVisitor<Void> visitor = new OperationVisitor();
 			Decrement decrementer = (Decrement) operation;
 			visitor.visit(decrementer);
@@ -102,19 +112,15 @@ public class OperationExec {
 		
 		// Execution of sleep
 		else if(operation instanceof Sleep ) {
+			logger.info("Executed an Sleep in Processus : " + proc.getProcessusname());
 			ArrayListVisitor<Void> visitor = new OperationVisitor();
 			visitor.visit((Sleep) operation);
-			proc.setAlreadydoneoperation(proc.getAlreadydoneoperation() + 1);
-		}
-		// Execution of Kill method
-		else if(operation instanceof Kill ) {
-			ArrayListVisitor<Void> visitor = new OperationVisitor();
-			visitor.visit((Kill) operation);
 			proc.setAlreadydoneoperation(proc.getAlreadydoneoperation() + 1);
 		}
 		
 		// Execution of print
 		else if(operation instanceof Print) {
+			logger.info("Executed a Print in Processus : " + proc.getProcessusname());
 			//ArrayListVisitor<Void> visitor = new OperationVisitor();
 			Print printer = (Print) operation;
 			if(printer.getPrintop() instanceof Intvariable) {
@@ -122,6 +128,7 @@ public class OperationExec {
 				scdriver.dynamicScreenadd(proc.getProcessusname()+" >> " + var.toString() + "\n");
 			}
 			else if(printer.getPrintop() instanceof Stringvariable) {
+				logger.info("Created a Stringvariable in Processus : " + proc.getProcessusname());
 				Stringvariable var = proc.getVarbuffer().getStringvariablelist().get(printer.getPrintop().getName());
 				scdriver.dynamicScreenadd(proc.getProcessusname()+" >> "+var.toString() + "\n");
 			}
@@ -136,6 +143,7 @@ public class OperationExec {
 		
 		// Execution of for loop
 		else if(operation instanceof ForLoop ) {
+			logger.info("Execution of a ForLoop in Processus : " + proc.getProcessusname());
 			ForLoop floop = (ForLoop) operation;
 			String pname = proc.getProcessusname();
 			floop.getOperations().setProcessusname(pname);
@@ -173,6 +181,7 @@ public class OperationExec {
 		// execution of While
 		
 		else if(operation instanceof WhileLoop ) {
+			logger.info("Execution of a Whileloop in Processus : " + proc.getProcessusname());
 			WhileLoop whloop = (WhileLoop) operation;
 			String pname = proc.getProcessusname();
 			whloop.getOperations().setProcessusname(pname);
@@ -208,6 +217,7 @@ public class OperationExec {
 		// Execution of if else
 		
 		else if(operation instanceof Ifelsetest ) {
+			logger.info("Executing an Ifelse test in Processus : " + proc.getProcessusname());
 			Ifelsetest test = (Ifelsetest) operation;
 			String pname = proc.getProcessusname();
 			test.getIfprocessus().setProcessusname(pname);
