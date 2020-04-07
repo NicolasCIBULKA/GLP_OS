@@ -15,6 +15,8 @@ import java.awt.FlowLayout;
 import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.io.IOException;
 
 import javax.swing.*;
@@ -256,6 +258,8 @@ public class GUI extends JFrame implements Runnable{
 		
 		
 		//action listeners
+		invitecomm.addKeyListener(new EnterKeyAction());
+		
 		//for the keyboard
 		mousegui.getEnter().addActionListener(new EnterAction());
 		keyboardgui.getSpace().addActionListener(new KeyLetter());
@@ -281,6 +285,7 @@ public class GUI extends JFrame implements Runnable{
 			
 			
 		}
+		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		pack();
 		Updatevalues();
@@ -382,7 +387,38 @@ public class GUI extends JFrame implements Runnable{
 		}
 	}
 
+	private class EnterKeyAction implements KeyListener{
+		@Override
+		public void keyPressed(KeyEvent e) {
+		    if (e.getKeyCode()==KeyEvent.VK_ENTER){
+		    	traductor.transcriptor(invitecomm.getText(), screenDriver);
+				keyboard.resetContent();
+				invitecomm.setText(null);
 
+				if(roundrobin.getBuffer().getProcessuslist().size() > 0) {
+					Thread th = new Thread(instance);
+					if(!th.isAlive()) {
+						th.start();
+					}
+				}
+				else {
+					Updatevalues();
+				}
+		    }
+
+		}
+
+		@Override
+		public void keyReleased(KeyEvent arg0) {
+
+		}
+
+		@Override
+		public void keyTyped(KeyEvent arg0) {
+
+		}
+	}
+	
 
 	
 
