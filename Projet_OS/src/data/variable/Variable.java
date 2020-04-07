@@ -20,6 +20,7 @@ public class Variable extends Operation{
 	
 	public Variable(String name) {
 		this.setName(name);
+		this.setCpuusing(17);
 	}
 
 	public Variable() {

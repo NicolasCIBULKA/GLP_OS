@@ -15,6 +15,7 @@ public abstract class Operation {
 	// Attributs
 	// --------------------------------------
 	private int operationpriority;
+	private int cpuusing; // Number between 1 and 100 that determin the % of CPU that is used to execute the operation
 	// --------------------------------------
 	// Methods
 	// --------------------------------------
@@ -33,6 +34,14 @@ public abstract class Operation {
 		this.operationpriority = operationpriority;
 	}
 	
+	public int getCpuusing() {
+		return cpuusing;
+	}
+
+	public void setCpuusing(int cpuusing) {
+		this.cpuusing = cpuusing;
+	}
+
 	public String toString() {
 		return "";
 	}

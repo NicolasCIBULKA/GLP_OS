@@ -22,6 +22,7 @@ public class Increment extends Operation{
 	
 	public Increment(Intvariable var) {
 		this.setVar(var);
+		this.setCpuusing(45);
 	}
 	
 	// getters and setters

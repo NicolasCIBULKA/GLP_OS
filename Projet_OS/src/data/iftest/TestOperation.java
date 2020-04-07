@@ -26,7 +26,8 @@ public abstract class TestOperation extends Operation{
 	public TestOperation(Processus ifproc,Processus elseproc, Comparaison comparaison) {
 		this.setIfprocessus(ifproc);
 		this.setElseprocessus(elseproc);
-		this.setComparaison(comparaison);		
+		this.setComparaison(comparaison);	
+		this.setCpuusing(70);
 	}
 	
 	//getters and setters

@@ -22,6 +22,7 @@ public class Sleep extends Operation{
 	public Sleep(int time) {
 		// super(processus);
 		this.setTime(time);
+		this.setCpuusing(41);
 	}
 	/*
 	public Sleep(Processus processus) {

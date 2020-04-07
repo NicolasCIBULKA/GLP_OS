@@ -26,6 +26,7 @@ public abstract class LoopOperation extends Operation{
 	// This is the constructors of the LoopOperation 
 	public LoopOperation(Processus proc) {
 		this.setProcessus(proc);
+		this.setCpuusing(77);
 	}
 	
 	

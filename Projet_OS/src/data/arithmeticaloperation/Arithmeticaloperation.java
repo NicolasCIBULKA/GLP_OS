@@ -24,6 +24,7 @@ public abstract class Arithmeticaloperation extends Operation{
 		this.setA(a);
 		this.setB(b);
 		this.setResult(result);
+		this.setCpuusing(28);
 	}
 	
 	// getters and setters
