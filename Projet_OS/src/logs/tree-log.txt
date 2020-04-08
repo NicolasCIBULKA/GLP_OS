@@ -4527,3 +4527,1626 @@ INFO Thread-2 process.rrobin.OperationExec - Execution of a Whileloop in Process
 INFO Thread-2 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
 INFO Thread-2 process.rrobin.OperationExec - Executed a Print in Processus : chrono
 INFO Thread-2 process.rrobin.OperationExec - Created a Stringvariable in Processus : chrono
+INFO main process.traduction.Transcriptor - Transcriptor - Starting transcription of a new Processus
+INFO main process.traduction.Transcriptor - Transcriptor - Setting processusname to JUnittest
+INFO main process.traduction.Transcriptor - Transcriptor - Commentary found 
+INFO main process.traduction.Transcriptor - Transcriptor - Stringvariable creation found 
+INFO main process.traduction.Transcriptor - Transcriptor - Intvariable creation found 
+INFO main process.traduction.Transcriptor - Transcriptor - Intvariable creation found 
+INFO main process.traduction.Transcriptor - Transcriptor - Print found 
+INFO main process.traduction.Transcriptor - Transcriptor - Addition found 
+INFO main process.traduction.Transcriptor - Transcriptor - Sleep found 
+INFO main process.traduction.Transcriptor - Transcriptor - Starting transcription of a new Processus
+INFO main process.traduction.Transcriptor - Transcriptor - Setting processusname to JUnittest
+INFO main process.traduction.Transcriptor - Transcriptor - Commentary found 
+INFO main process.traduction.Transcriptor - Transcriptor - Stringvariable creation found 
+INFO main process.traduction.Transcriptor - Transcriptor - Intvariable creation found 
+INFO main process.traduction.Transcriptor - Transcriptor - Intvariable creation found 
+INFO main process.traduction.Transcriptor - Transcriptor - Print found 
+INFO main process.traduction.Transcriptor - Transcriptor - Addition found 
+INFO main process.traduction.Transcriptor - Transcriptor - Sleep found 
+INFO main process.traduction.Transcriptor - Transcriptor - Starting transcription of a new Processus
+INFO main process.traduction.Transcriptor - Transcriptor - Setting processusname to JUnittest
+INFO main process.traduction.Transcriptor - Transcriptor - Commentary found 
+INFO main process.traduction.Transcriptor - Transcriptor - Stringvariable creation found 
+INFO main process.traduction.Transcriptor - Transcriptor - Intvariable creation found 
+INFO main process.traduction.Transcriptor - Transcriptor - Intvariable creation found 
+INFO main process.traduction.Transcriptor - Transcriptor - Print found 
+INFO main process.traduction.Transcriptor - Transcriptor - Addition found 
+INFO main process.traduction.Transcriptor - Transcriptor - Sleep found 
+INFO main process.traduction.Transcriptor - Transcriptor - Starting transcription of a new Processus
+INFO main process.traduction.Transcriptor - Transcriptor - Setting processusname to JUnittest
+INFO main process.traduction.Transcriptor - Transcriptor - Commentary found 
+INFO main process.traduction.Transcriptor - Transcriptor - Stringvariable creation found 
+INFO main process.traduction.Transcriptor - Transcriptor - Intvariable creation found 
+INFO main process.traduction.Transcriptor - Transcriptor - Intvariable creation found 
+INFO main process.traduction.Transcriptor - Transcriptor - Print found 
+INFO main process.traduction.Transcriptor - Transcriptor - Addition found 
+INFO main process.traduction.Transcriptor - Transcriptor - Sleep found 
+INFO AWT-EventQueue-0 process.traduction.Transcriptor - Transcriptor - Starting transcription of a new Processus
+INFO AWT-EventQueue-0 process.traduction.Transcriptor - Transcriptor - Setting processusname to proctest
+INFO AWT-EventQueue-0 process.traduction.Transcriptor - Transcriptor - Commentary found 
+INFO AWT-EventQueue-0 process.traduction.Transcriptor - Transcriptor - Intvariable creation found 
+INFO AWT-EventQueue-0 process.traduction.Transcriptor - Transcriptor - Intvariable creation found 
+INFO AWT-EventQueue-0 process.traduction.Transcriptor - Transcriptor - Stringvariable creation found 
+INFO AWT-EventQueue-0 process.traduction.Transcriptor - Transcriptor - Stringvariable creation found 
+INFO AWT-EventQueue-0 process.traduction.Transcriptor - Transcriptor - Stringvariable creation found 
+INFO AWT-EventQueue-0 process.traduction.Transcriptor - Transcriptor - Stringvariable creation found 
+INFO AWT-EventQueue-0 process.traduction.Transcriptor - Transcriptor - Stringvariable creation found 
+INFO AWT-EventQueue-0 process.traduction.Transcriptor - Transcriptor - Intvariable creation found 
+INFO AWT-EventQueue-0 process.traduction.Transcriptor - Transcriptor - Intvariable creation found 
+INFO AWT-EventQueue-0 process.traduction.Transcriptor - Transcriptor - Print found 
+INFO AWT-EventQueue-0 process.traduction.Transcriptor - Transcriptor - Commentary found 
+INFO AWT-EventQueue-0 process.traduction.Transcriptor - Transcriptor - Transcripting a ForLoop in Processus proctest
+INFO AWT-EventQueue-0 process.traduction.Transcriptor - Transcriptor - Print found 
+INFO AWT-EventQueue-0 process.traduction.Transcriptor - Transcriptor - Transcripting a ForLoop in IFELSE test in Processus proctest
+INFO AWT-EventQueue-0 process.traduction.Transcriptor - Transcriptor - Print found 
+INFO AWT-EventQueue-0 process.traduction.Transcriptor - Transcriptor - Print found 
+INFO AWT-EventQueue-0 process.traduction.Transcriptor - Transcriptor - Print found 
+INFO AWT-EventQueue-0 process.traduction.Transcriptor - Transcriptor - Sleep found 
+INFO AWT-EventQueue-0 process.traduction.Transcriptor - Transcriptor - Commentary found 
+INFO AWT-EventQueue-0 process.traduction.Transcriptor - Transcriptor - Transcripting a IfelseTest in Processus proctest
+INFO AWT-EventQueue-0 process.traduction.Transcriptor - Transcriptor - Print found 
+INFO AWT-EventQueue-0 process.traduction.Transcriptor - Transcriptor - Print found 
+INFO AWT-EventQueue-0 process.traduction.Transcriptor - Transcriptor - Print found 
+INFO AWT-EventQueue-0 process.traduction.Transcriptor - Transcriptor - Commentary found 
+INFO AWT-EventQueue-0 process.traduction.Transcriptor - Transcriptor - Transcripting a Whileloop in Processus proctest
+INFO AWT-EventQueue-0 process.traduction.Transcriptor - Transcriptor - Print found 
+INFO AWT-EventQueue-0 process.traduction.Transcriptor - Transcriptor - Print found 
+INFO AWT-EventQueue-0 process.traduction.Transcriptor - Transcriptor - Transcripting a IFELSE test in Whileloop in Processus proctest
+INFO AWT-EventQueue-0 process.traduction.Transcriptor - Transcriptor - Print found 
+INFO AWT-EventQueue-0 process.traduction.Transcriptor - Transcriptor - Print found 
+INFO AWT-EventQueue-0 process.traduction.Transcriptor - Transcriptor - Increment found 
+INFO AWT-EventQueue-0 process.traduction.Transcriptor - Transcriptor - Print found 
+INFO AWT-EventQueue-0 process.traduction.Transcriptor - Transcriptor - Sleep found 
+INFO AWT-EventQueue-0 process.traduction.Transcriptor - Transcriptor - Print found 
+INFO Thread-2 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-2 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-2 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-2 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-2 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-2 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-2 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-2 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-2 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-2 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-2 process.rrobin.OperationExec - Executed a Print in Processus : proctest
+INFO Thread-2 process.rrobin.OperationExec - Created a Stringvariable in Processus : proctest
+INFO Thread-2 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-2 process.rrobin.OperationExec - Execution of a ForLoop in Processus : proctest
+INFO Thread-2 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-2 process.rrobin.OperationExec - Execution of a ForLoop in Processus : proctest
+INFO Thread-2 process.rrobin.OperationExec - Executed a Print in Processus : proctest
+INFO Thread-2 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-2 process.rrobin.OperationExec - Execution of a ForLoop in Processus : proctest
+INFO Thread-2 process.rrobin.OperationExec - Executing an Ifelse test in Processus : proctest
+INFO Thread-2 process.rrobin.OperationExec - Executed a Print in Processus : proctest
+INFO Thread-2 process.rrobin.OperationExec - Created a Stringvariable in Processus : proctest
+INFO Thread-2 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-2 process.rrobin.OperationExec - Execution of a ForLoop in Processus : proctest
+INFO Thread-2 process.rrobin.OperationExec - Executed a Print in Processus : proctest
+INFO Thread-2 process.rrobin.OperationExec - Created a Stringvariable in Processus : proctest
+INFO Thread-2 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-2 process.rrobin.OperationExec - Execution of a ForLoop in Processus : proctest
+INFO Thread-2 process.rrobin.OperationExec - Executed an Sleep in Processus : proctest
+INFO Thread-2 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-2 process.rrobin.OperationExec - Execution of a ForLoop in Processus : proctest
+INFO Thread-2 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-2 process.rrobin.OperationExec - Execution of a ForLoop in Processus : proctest
+INFO Thread-2 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-2 process.rrobin.OperationExec - Execution of a ForLoop in Processus : proctest
+INFO Thread-2 process.rrobin.OperationExec - Executed a Print in Processus : proctest
+INFO Thread-2 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-2 process.rrobin.OperationExec - Execution of a ForLoop in Processus : proctest
+INFO Thread-2 process.rrobin.OperationExec - Executing an Ifelse test in Processus : proctest
+INFO Thread-2 process.rrobin.OperationExec - Executed a Print in Processus : proctest
+INFO Thread-2 process.rrobin.OperationExec - Created a Stringvariable in Processus : proctest
+INFO Thread-2 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-2 process.rrobin.OperationExec - Execution of a ForLoop in Processus : proctest
+INFO Thread-2 process.rrobin.OperationExec - Executed a Print in Processus : proctest
+INFO Thread-2 process.rrobin.OperationExec - Created a Stringvariable in Processus : proctest
+INFO Thread-2 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-2 process.rrobin.OperationExec - Execution of a ForLoop in Processus : proctest
+INFO Thread-2 process.rrobin.OperationExec - Executed an Sleep in Processus : proctest
+INFO Thread-2 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-2 process.rrobin.OperationExec - Execution of a ForLoop in Processus : proctest
+INFO Thread-2 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-2 process.rrobin.OperationExec - Execution of a ForLoop in Processus : proctest
+INFO Thread-2 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-2 process.rrobin.OperationExec - Execution of a ForLoop in Processus : proctest
+INFO Thread-2 process.rrobin.OperationExec - Executed a Print in Processus : proctest
+INFO Thread-2 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-2 process.rrobin.OperationExec - Execution of a ForLoop in Processus : proctest
+INFO Thread-2 process.rrobin.OperationExec - Executing an Ifelse test in Processus : proctest
+INFO Thread-2 process.rrobin.OperationExec - Executed a Print in Processus : proctest
+INFO Thread-2 process.rrobin.OperationExec - Created a Stringvariable in Processus : proctest
+INFO Thread-2 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-2 process.rrobin.OperationExec - Execution of a ForLoop in Processus : proctest
+INFO Thread-2 process.rrobin.OperationExec - Executed a Print in Processus : proctest
+INFO Thread-2 process.rrobin.OperationExec - Created a Stringvariable in Processus : proctest
+INFO Thread-2 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-2 process.rrobin.OperationExec - Execution of a ForLoop in Processus : proctest
+INFO Thread-2 process.rrobin.OperationExec - Executed an Sleep in Processus : proctest
+INFO Thread-2 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-2 process.rrobin.OperationExec - Execution of a ForLoop in Processus : proctest
+INFO Thread-2 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-2 process.rrobin.OperationExec - Execution of a ForLoop in Processus : proctest
+INFO Thread-2 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-2 process.rrobin.OperationExec - Execution of a ForLoop in Processus : proctest
+INFO Thread-2 process.rrobin.OperationExec - Executed a Print in Processus : proctest
+INFO Thread-2 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-2 process.rrobin.OperationExec - Execution of a ForLoop in Processus : proctest
+INFO Thread-2 process.rrobin.OperationExec - Executing an Ifelse test in Processus : proctest
+INFO Thread-2 process.rrobin.OperationExec - Executed a Print in Processus : proctest
+INFO Thread-2 process.rrobin.OperationExec - Created a Stringvariable in Processus : proctest
+INFO Thread-2 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-2 process.rrobin.OperationExec - Execution of a ForLoop in Processus : proctest
+INFO Thread-2 process.rrobin.OperationExec - Executed a Print in Processus : proctest
+INFO Thread-2 process.rrobin.OperationExec - Created a Stringvariable in Processus : proctest
+INFO Thread-2 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-2 process.rrobin.OperationExec - Execution of a ForLoop in Processus : proctest
+INFO Thread-2 process.rrobin.OperationExec - Executed an Sleep in Processus : proctest
+INFO Thread-2 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-2 process.rrobin.OperationExec - Execution of a ForLoop in Processus : proctest
+INFO Thread-2 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-2 process.rrobin.OperationExec - Execution of a ForLoop in Processus : proctest
+INFO Thread-2 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-2 process.rrobin.OperationExec - Execution of a ForLoop in Processus : proctest
+INFO Thread-2 process.rrobin.OperationExec - Executed a Print in Processus : proctest
+INFO Thread-2 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-2 process.rrobin.OperationExec - Execution of a ForLoop in Processus : proctest
+INFO Thread-2 process.rrobin.OperationExec - Executing an Ifelse test in Processus : proctest
+INFO Thread-2 process.rrobin.OperationExec - Executed a Print in Processus : proctest
+INFO Thread-2 process.rrobin.OperationExec - Created a Stringvariable in Processus : proctest
+INFO Thread-2 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-2 process.rrobin.OperationExec - Execution of a ForLoop in Processus : proctest
+INFO Thread-2 process.rrobin.OperationExec - Executed a Print in Processus : proctest
+INFO Thread-2 process.rrobin.OperationExec - Created a Stringvariable in Processus : proctest
+INFO Thread-2 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-2 process.rrobin.OperationExec - Execution of a ForLoop in Processus : proctest
+INFO Thread-2 process.rrobin.OperationExec - Executed an Sleep in Processus : proctest
+INFO Thread-2 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-2 process.rrobin.OperationExec - Execution of a ForLoop in Processus : proctest
+INFO Thread-2 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-2 process.rrobin.OperationExec - Execution of a ForLoop in Processus : proctest
+INFO Thread-2 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-2 process.rrobin.OperationExec - Execution of a ForLoop in Processus : proctest
+INFO Thread-2 process.rrobin.OperationExec - Executed a Print in Processus : proctest
+INFO Thread-2 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-2 process.rrobin.OperationExec - Execution of a ForLoop in Processus : proctest
+INFO Thread-2 process.rrobin.OperationExec - Executing an Ifelse test in Processus : proctest
+INFO Thread-2 process.rrobin.OperationExec - Executed a Print in Processus : proctest
+INFO Thread-2 process.rrobin.OperationExec - Created a Stringvariable in Processus : proctest
+INFO Thread-2 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-2 process.rrobin.OperationExec - Execution of a ForLoop in Processus : proctest
+INFO Thread-2 process.rrobin.OperationExec - Executed a Print in Processus : proctest
+INFO Thread-2 process.rrobin.OperationExec - Created a Stringvariable in Processus : proctest
+INFO Thread-2 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-2 process.rrobin.OperationExec - Execution of a ForLoop in Processus : proctest
+INFO Thread-2 process.rrobin.OperationExec - Executed an Sleep in Processus : proctest
+INFO Thread-2 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-2 process.rrobin.OperationExec - Execution of a ForLoop in Processus : proctest
+INFO Thread-2 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-2 process.rrobin.OperationExec - Execution of a ForLoop in Processus : proctest
+INFO Thread-2 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-2 process.rrobin.OperationExec - Execution of a ForLoop in Processus : proctest
+INFO Thread-2 process.rrobin.OperationExec - Executed a Print in Processus : proctest
+INFO Thread-2 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-2 process.rrobin.OperationExec - Execution of a ForLoop in Processus : proctest
+INFO Thread-2 process.rrobin.OperationExec - Executing an Ifelse test in Processus : proctest
+INFO Thread-2 process.rrobin.OperationExec - Executed a Print in Processus : proctest
+INFO Thread-2 process.rrobin.OperationExec - Created a Stringvariable in Processus : proctest
+INFO Thread-2 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-2 process.rrobin.OperationExec - Execution of a ForLoop in Processus : proctest
+INFO Thread-2 process.rrobin.OperationExec - Executed a Print in Processus : proctest
+INFO Thread-2 process.rrobin.OperationExec - Created a Stringvariable in Processus : proctest
+INFO Thread-2 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-2 process.rrobin.OperationExec - Execution of a ForLoop in Processus : proctest
+INFO Thread-2 process.rrobin.OperationExec - Executed an Sleep in Processus : proctest
+INFO Thread-2 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-2 process.rrobin.OperationExec - Execution of a ForLoop in Processus : proctest
+INFO Thread-2 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-2 process.rrobin.OperationExec - Execution of a ForLoop in Processus : proctest
+INFO Thread-2 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-2 process.rrobin.OperationExec - Execution of a ForLoop in Processus : proctest
+INFO Thread-2 process.rrobin.OperationExec - Executed a Print in Processus : proctest
+INFO Thread-2 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-2 process.rrobin.OperationExec - Execution of a ForLoop in Processus : proctest
+INFO Thread-2 process.rrobin.OperationExec - Executing an Ifelse test in Processus : proctest
+INFO Thread-2 process.rrobin.OperationExec - Executed a Print in Processus : proctest
+INFO Thread-2 process.rrobin.OperationExec - Created a Stringvariable in Processus : proctest
+INFO Thread-2 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-2 process.rrobin.OperationExec - Execution of a ForLoop in Processus : proctest
+INFO Thread-2 process.rrobin.OperationExec - Executed a Print in Processus : proctest
+INFO Thread-2 process.rrobin.OperationExec - Created a Stringvariable in Processus : proctest
+INFO Thread-2 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-2 process.rrobin.OperationExec - Execution of a ForLoop in Processus : proctest
+INFO Thread-2 process.rrobin.OperationExec - Executed an Sleep in Processus : proctest
+INFO Thread-2 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-2 process.rrobin.OperationExec - Execution of a ForLoop in Processus : proctest
+INFO Thread-2 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-2 process.rrobin.OperationExec - Execution of a ForLoop in Processus : proctest
+INFO Thread-2 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-2 process.rrobin.OperationExec - Execution of a ForLoop in Processus : proctest
+INFO Thread-2 process.rrobin.OperationExec - Executed a Print in Processus : proctest
+INFO Thread-2 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-2 process.rrobin.OperationExec - Execution of a ForLoop in Processus : proctest
+INFO Thread-2 process.rrobin.OperationExec - Executing an Ifelse test in Processus : proctest
+INFO Thread-2 process.rrobin.OperationExec - Executed a Print in Processus : proctest
+INFO Thread-2 process.rrobin.OperationExec - Created a Stringvariable in Processus : proctest
+INFO Thread-2 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-2 process.rrobin.OperationExec - Execution of a ForLoop in Processus : proctest
+INFO Thread-2 process.rrobin.OperationExec - Executed a Print in Processus : proctest
+INFO Thread-2 process.rrobin.OperationExec - Created a Stringvariable in Processus : proctest
+INFO Thread-2 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-2 process.rrobin.OperationExec - Execution of a ForLoop in Processus : proctest
+INFO Thread-2 process.rrobin.OperationExec - Executed an Sleep in Processus : proctest
+INFO Thread-2 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-2 process.rrobin.OperationExec - Execution of a ForLoop in Processus : proctest
+INFO Thread-2 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-2 process.rrobin.OperationExec - Execution of a ForLoop in Processus : proctest
+INFO Thread-2 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-2 process.rrobin.OperationExec - Execution of a ForLoop in Processus : proctest
+INFO Thread-2 process.rrobin.OperationExec - Executed a Print in Processus : proctest
+INFO Thread-2 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-2 process.rrobin.OperationExec - Execution of a ForLoop in Processus : proctest
+INFO Thread-2 process.rrobin.OperationExec - Executing an Ifelse test in Processus : proctest
+INFO Thread-2 process.rrobin.OperationExec - Executed a Print in Processus : proctest
+INFO Thread-2 process.rrobin.OperationExec - Created a Stringvariable in Processus : proctest
+INFO Thread-2 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-2 process.rrobin.OperationExec - Execution of a ForLoop in Processus : proctest
+INFO Thread-2 process.rrobin.OperationExec - Executed a Print in Processus : proctest
+INFO Thread-2 process.rrobin.OperationExec - Created a Stringvariable in Processus : proctest
+INFO Thread-2 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-2 process.rrobin.OperationExec - Execution of a ForLoop in Processus : proctest
+INFO Thread-2 process.rrobin.OperationExec - Executed an Sleep in Processus : proctest
+INFO Thread-2 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-2 process.rrobin.OperationExec - Execution of a ForLoop in Processus : proctest
+INFO Thread-2 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-2 process.rrobin.OperationExec - Execution of a ForLoop in Processus : proctest
+INFO Thread-2 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-2 process.rrobin.OperationExec - Executing an Ifelse test in Processus : proctest
+INFO Thread-2 process.rrobin.OperationExec - Executed a Print in Processus : proctest
+INFO Thread-2 process.rrobin.OperationExec - Created a Stringvariable in Processus : proctest
+INFO Thread-2 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-2 process.rrobin.OperationExec - Executed a Print in Processus : proctest
+INFO Thread-2 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-2 process.rrobin.OperationExec - Execution of a Whileloop in Processus : proctest
+INFO Thread-2 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-2 process.rrobin.OperationExec - Execution of a Whileloop in Processus : proctest
+INFO Thread-2 process.rrobin.OperationExec - Executed a Print in Processus : proctest
+INFO Thread-2 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-2 process.rrobin.OperationExec - Execution of a Whileloop in Processus : proctest
+INFO Thread-2 process.rrobin.OperationExec - Executed a Print in Processus : proctest
+INFO Thread-2 process.rrobin.OperationExec - Created a Stringvariable in Processus : proctest
+INFO Thread-2 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-2 process.rrobin.OperationExec - Execution of a Whileloop in Processus : proctest
+INFO Thread-2 process.rrobin.OperationExec - Executing an Ifelse test in Processus : proctest
+INFO Thread-2 process.rrobin.OperationExec - Executed a Print in Processus : proctest
+INFO Thread-2 process.rrobin.OperationExec - Created a Stringvariable in Processus : proctest
+INFO Thread-2 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-2 process.rrobin.OperationExec - Execution of a Whileloop in Processus : proctest
+INFO Thread-2 process.rrobin.OperationExec - Executed an Increment in Processus : proctest
+INFO Thread-2 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-2 process.rrobin.OperationExec - Execution of a Whileloop in Processus : proctest
+INFO Thread-2 process.rrobin.OperationExec - Executed a Print in Processus : proctest
+INFO Thread-2 process.rrobin.OperationExec - Created a Stringvariable in Processus : proctest
+INFO Thread-2 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-2 process.rrobin.OperationExec - Execution of a Whileloop in Processus : proctest
+INFO Thread-2 process.rrobin.OperationExec - Executed an Sleep in Processus : proctest
+INFO Thread-2 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-2 process.rrobin.OperationExec - Execution of a Whileloop in Processus : proctest
+INFO Thread-2 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-2 process.rrobin.OperationExec - Execution of a Whileloop in Processus : proctest
+INFO Thread-2 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-2 process.rrobin.OperationExec - Execution of a Whileloop in Processus : proctest
+INFO Thread-2 process.rrobin.OperationExec - Executed a Print in Processus : proctest
+INFO Thread-2 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-2 process.rrobin.OperationExec - Execution of a Whileloop in Processus : proctest
+INFO Thread-2 process.rrobin.OperationExec - Executed a Print in Processus : proctest
+INFO Thread-2 process.rrobin.OperationExec - Created a Stringvariable in Processus : proctest
+INFO Thread-2 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-2 process.rrobin.OperationExec - Execution of a Whileloop in Processus : proctest
+INFO Thread-2 process.rrobin.OperationExec - Executing an Ifelse test in Processus : proctest
+INFO Thread-2 process.rrobin.OperationExec - Executed a Print in Processus : proctest
+INFO Thread-2 process.rrobin.OperationExec - Created a Stringvariable in Processus : proctest
+INFO Thread-2 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-2 process.rrobin.OperationExec - Execution of a Whileloop in Processus : proctest
+INFO Thread-2 process.rrobin.OperationExec - Executed an Increment in Processus : proctest
+INFO Thread-2 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-2 process.rrobin.OperationExec - Execution of a Whileloop in Processus : proctest
+INFO Thread-2 process.rrobin.OperationExec - Executed a Print in Processus : proctest
+INFO Thread-2 process.rrobin.OperationExec - Created a Stringvariable in Processus : proctest
+INFO Thread-2 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-2 process.rrobin.OperationExec - Execution of a Whileloop in Processus : proctest
+INFO Thread-2 process.rrobin.OperationExec - Executed an Sleep in Processus : proctest
+INFO Thread-2 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-2 process.rrobin.OperationExec - Execution of a Whileloop in Processus : proctest
+INFO Thread-2 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-2 process.rrobin.OperationExec - Execution of a Whileloop in Processus : proctest
+INFO Thread-2 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-2 process.rrobin.OperationExec - Execution of a Whileloop in Processus : proctest
+INFO Thread-2 process.rrobin.OperationExec - Executed a Print in Processus : proctest
+INFO Thread-2 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-2 process.rrobin.OperationExec - Execution of a Whileloop in Processus : proctest
+INFO Thread-2 process.rrobin.OperationExec - Executed a Print in Processus : proctest
+INFO Thread-2 process.rrobin.OperationExec - Created a Stringvariable in Processus : proctest
+INFO Thread-2 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-2 process.rrobin.OperationExec - Execution of a Whileloop in Processus : proctest
+INFO Thread-2 process.rrobin.OperationExec - Executing an Ifelse test in Processus : proctest
+INFO Thread-2 process.rrobin.OperationExec - Executed a Print in Processus : proctest
+INFO Thread-2 process.rrobin.OperationExec - Created a Stringvariable in Processus : proctest
+INFO Thread-2 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-2 process.rrobin.OperationExec - Execution of a Whileloop in Processus : proctest
+INFO Thread-2 process.rrobin.OperationExec - Executed an Increment in Processus : proctest
+INFO Thread-2 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-2 process.rrobin.OperationExec - Execution of a Whileloop in Processus : proctest
+INFO Thread-2 process.rrobin.OperationExec - Executed a Print in Processus : proctest
+INFO Thread-2 process.rrobin.OperationExec - Created a Stringvariable in Processus : proctest
+INFO Thread-2 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-2 process.rrobin.OperationExec - Execution of a Whileloop in Processus : proctest
+INFO Thread-2 process.rrobin.OperationExec - Executed an Sleep in Processus : proctest
+INFO Thread-2 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-2 process.rrobin.OperationExec - Execution of a Whileloop in Processus : proctest
+INFO Thread-2 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-2 process.rrobin.OperationExec - Execution of a Whileloop in Processus : proctest
+INFO Thread-2 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-2 process.rrobin.OperationExec - Execution of a Whileloop in Processus : proctest
+INFO Thread-2 process.rrobin.OperationExec - Executed a Print in Processus : proctest
+INFO Thread-2 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-2 process.rrobin.OperationExec - Execution of a Whileloop in Processus : proctest
+INFO Thread-2 process.rrobin.OperationExec - Executed a Print in Processus : proctest
+INFO Thread-2 process.rrobin.OperationExec - Created a Stringvariable in Processus : proctest
+INFO Thread-2 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-2 process.rrobin.OperationExec - Execution of a Whileloop in Processus : proctest
+INFO Thread-2 process.rrobin.OperationExec - Executing an Ifelse test in Processus : proctest
+INFO Thread-2 process.rrobin.OperationExec - Executed a Print in Processus : proctest
+INFO Thread-2 process.rrobin.OperationExec - Created a Stringvariable in Processus : proctest
+INFO Thread-2 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-2 process.rrobin.OperationExec - Execution of a Whileloop in Processus : proctest
+INFO Thread-2 process.rrobin.OperationExec - Executed an Increment in Processus : proctest
+INFO Thread-2 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-2 process.rrobin.OperationExec - Execution of a Whileloop in Processus : proctest
+INFO Thread-2 process.rrobin.OperationExec - Executed a Print in Processus : proctest
+INFO Thread-2 process.rrobin.OperationExec - Created a Stringvariable in Processus : proctest
+INFO Thread-2 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-2 process.rrobin.OperationExec - Execution of a Whileloop in Processus : proctest
+INFO Thread-2 process.rrobin.OperationExec - Executed an Sleep in Processus : proctest
+INFO Thread-2 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-2 process.rrobin.OperationExec - Execution of a Whileloop in Processus : proctest
+INFO Thread-2 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-2 process.rrobin.OperationExec - Execution of a Whileloop in Processus : proctest
+INFO Thread-2 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-2 process.rrobin.OperationExec - Execution of a Whileloop in Processus : proctest
+INFO Thread-2 process.rrobin.OperationExec - Executed a Print in Processus : proctest
+INFO Thread-2 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-2 process.rrobin.OperationExec - Execution of a Whileloop in Processus : proctest
+INFO Thread-2 process.rrobin.OperationExec - Executed a Print in Processus : proctest
+INFO Thread-2 process.rrobin.OperationExec - Created a Stringvariable in Processus : proctest
+INFO Thread-2 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-2 process.rrobin.OperationExec - Execution of a Whileloop in Processus : proctest
+INFO Thread-2 process.rrobin.OperationExec - Executing an Ifelse test in Processus : proctest
+INFO Thread-2 process.rrobin.OperationExec - Executed a Print in Processus : proctest
+INFO Thread-2 process.rrobin.OperationExec - Created a Stringvariable in Processus : proctest
+INFO Thread-2 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-2 process.rrobin.OperationExec - Execution of a Whileloop in Processus : proctest
+INFO Thread-2 process.rrobin.OperationExec - Executed an Increment in Processus : proctest
+INFO Thread-2 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-2 process.rrobin.OperationExec - Execution of a Whileloop in Processus : proctest
+INFO Thread-2 process.rrobin.OperationExec - Executed a Print in Processus : proctest
+INFO Thread-2 process.rrobin.OperationExec - Created a Stringvariable in Processus : proctest
+INFO Thread-2 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-2 process.rrobin.OperationExec - Execution of a Whileloop in Processus : proctest
+INFO Thread-2 process.rrobin.OperationExec - Executed an Sleep in Processus : proctest
+INFO Thread-2 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-2 process.rrobin.OperationExec - Execution of a Whileloop in Processus : proctest
+INFO Thread-2 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-2 process.rrobin.OperationExec - Execution of a Whileloop in Processus : proctest
+INFO Thread-2 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-2 process.rrobin.OperationExec - Execution of a Whileloop in Processus : proctest
+INFO Thread-2 process.rrobin.OperationExec - Executed a Print in Processus : proctest
+INFO Thread-2 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-2 process.rrobin.OperationExec - Execution of a Whileloop in Processus : proctest
+INFO Thread-2 process.rrobin.OperationExec - Executed a Print in Processus : proctest
+INFO Thread-2 process.rrobin.OperationExec - Created a Stringvariable in Processus : proctest
+INFO Thread-2 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-2 process.rrobin.OperationExec - Execution of a Whileloop in Processus : proctest
+INFO Thread-2 process.rrobin.OperationExec - Executing an Ifelse test in Processus : proctest
+INFO Thread-2 process.rrobin.OperationExec - Executed a Print in Processus : proctest
+INFO Thread-2 process.rrobin.OperationExec - Created a Stringvariable in Processus : proctest
+INFO Thread-2 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-2 process.rrobin.OperationExec - Execution of a Whileloop in Processus : proctest
+INFO Thread-2 process.rrobin.OperationExec - Executed an Increment in Processus : proctest
+INFO Thread-2 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-2 process.rrobin.OperationExec - Execution of a Whileloop in Processus : proctest
+INFO Thread-2 process.rrobin.OperationExec - Executed a Print in Processus : proctest
+INFO Thread-2 process.rrobin.OperationExec - Created a Stringvariable in Processus : proctest
+INFO Thread-2 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-2 process.rrobin.OperationExec - Execution of a Whileloop in Processus : proctest
+INFO Thread-2 process.rrobin.OperationExec - Executed an Sleep in Processus : proctest
+INFO Thread-2 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-2 process.rrobin.OperationExec - Execution of a Whileloop in Processus : proctest
+INFO Thread-2 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-2 process.rrobin.OperationExec - Execution of a Whileloop in Processus : proctest
+INFO Thread-2 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-2 process.rrobin.OperationExec - Executed a Print in Processus : proctest
+INFO Thread-2 process.rrobin.OperationExec - Created a Stringvariable in Processus : proctest
+INFO Thread-3 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO AWT-EventQueue-0 process.traduction.Transcriptor - Transcriptor - Starting transcription of a new Processus
+INFO AWT-EventQueue-0 process.traduction.Transcriptor - Transcriptor - Setting processusname to proctest
+INFO AWT-EventQueue-0 process.traduction.Transcriptor - Transcriptor - Commentary found 
+INFO AWT-EventQueue-0 process.traduction.Transcriptor - Transcriptor - Intvariable creation found 
+INFO AWT-EventQueue-0 process.traduction.Transcriptor - Transcriptor - Intvariable creation found 
+INFO AWT-EventQueue-0 process.traduction.Transcriptor - Transcriptor - Stringvariable creation found 
+INFO AWT-EventQueue-0 process.traduction.Transcriptor - Transcriptor - Stringvariable creation found 
+INFO AWT-EventQueue-0 process.traduction.Transcriptor - Transcriptor - Stringvariable creation found 
+INFO AWT-EventQueue-0 process.traduction.Transcriptor - Transcriptor - Stringvariable creation found 
+INFO AWT-EventQueue-0 process.traduction.Transcriptor - Transcriptor - Stringvariable creation found 
+INFO AWT-EventQueue-0 process.traduction.Transcriptor - Transcriptor - Intvariable creation found 
+INFO AWT-EventQueue-0 process.traduction.Transcriptor - Transcriptor - Intvariable creation found 
+INFO AWT-EventQueue-0 process.traduction.Transcriptor - Transcriptor - Print found 
+INFO AWT-EventQueue-0 process.traduction.Transcriptor - Transcriptor - Commentary found 
+INFO AWT-EventQueue-0 process.traduction.Transcriptor - Transcriptor - Transcripting a ForLoop in Processus proctest
+INFO AWT-EventQueue-0 process.traduction.Transcriptor - Transcriptor - Print found 
+INFO AWT-EventQueue-0 process.traduction.Transcriptor - Transcriptor - Transcripting a ForLoop in IFELSE test in Processus proctest
+INFO AWT-EventQueue-0 process.traduction.Transcriptor - Transcriptor - Print found 
+INFO AWT-EventQueue-0 process.traduction.Transcriptor - Transcriptor - Print found 
+INFO AWT-EventQueue-0 process.traduction.Transcriptor - Transcriptor - Print found 
+INFO AWT-EventQueue-0 process.traduction.Transcriptor - Transcriptor - Sleep found 
+INFO AWT-EventQueue-0 process.traduction.Transcriptor - Transcriptor - Commentary found 
+INFO AWT-EventQueue-0 process.traduction.Transcriptor - Transcriptor - Transcripting a IfelseTest in Processus proctest
+INFO AWT-EventQueue-0 process.traduction.Transcriptor - Transcriptor - Print found 
+INFO AWT-EventQueue-0 process.traduction.Transcriptor - Transcriptor - Print found 
+INFO AWT-EventQueue-0 process.traduction.Transcriptor - Transcriptor - Print found 
+INFO AWT-EventQueue-0 process.traduction.Transcriptor - Transcriptor - Commentary found 
+INFO AWT-EventQueue-0 process.traduction.Transcriptor - Transcriptor - Transcripting a Whileloop in Processus proctest
+INFO AWT-EventQueue-0 process.traduction.Transcriptor - Transcriptor - Print found 
+INFO AWT-EventQueue-0 process.traduction.Transcriptor - Transcriptor - Print found 
+INFO AWT-EventQueue-0 process.traduction.Transcriptor - Transcriptor - Transcripting a IFELSE test in Whileloop in Processus proctest
+INFO AWT-EventQueue-0 process.traduction.Transcriptor - Transcriptor - Print found 
+INFO AWT-EventQueue-0 process.traduction.Transcriptor - Transcriptor - Print found 
+INFO AWT-EventQueue-0 process.traduction.Transcriptor - Transcriptor - Increment found 
+INFO AWT-EventQueue-0 process.traduction.Transcriptor - Transcriptor - Print found 
+INFO AWT-EventQueue-0 process.traduction.Transcriptor - Transcriptor - Sleep found 
+INFO AWT-EventQueue-0 process.traduction.Transcriptor - Transcriptor - Print found 
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Executed a Print in Processus : proctest
+INFO Thread-4 process.rrobin.OperationExec - Created a Stringvariable in Processus : proctest
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a ForLoop in Processus : proctest
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a ForLoop in Processus : proctest
+INFO Thread-4 process.rrobin.OperationExec - Executed a Print in Processus : proctest
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a ForLoop in Processus : proctest
+INFO Thread-4 process.rrobin.OperationExec - Executing an Ifelse test in Processus : proctest
+INFO Thread-4 process.rrobin.OperationExec - Executed a Print in Processus : proctest
+INFO Thread-4 process.rrobin.OperationExec - Created a Stringvariable in Processus : proctest
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a ForLoop in Processus : proctest
+INFO Thread-4 process.rrobin.OperationExec - Executed a Print in Processus : proctest
+INFO Thread-4 process.rrobin.OperationExec - Created a Stringvariable in Processus : proctest
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a ForLoop in Processus : proctest
+INFO Thread-4 process.rrobin.OperationExec - Executed an Sleep in Processus : proctest
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a ForLoop in Processus : proctest
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a ForLoop in Processus : proctest
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a ForLoop in Processus : proctest
+INFO Thread-4 process.rrobin.OperationExec - Executed a Print in Processus : proctest
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a ForLoop in Processus : proctest
+INFO Thread-4 process.rrobin.OperationExec - Executing an Ifelse test in Processus : proctest
+INFO Thread-4 process.rrobin.OperationExec - Executed a Print in Processus : proctest
+INFO Thread-4 process.rrobin.OperationExec - Created a Stringvariable in Processus : proctest
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a ForLoop in Processus : proctest
+INFO Thread-4 process.rrobin.OperationExec - Executed a Print in Processus : proctest
+INFO Thread-4 process.rrobin.OperationExec - Created a Stringvariable in Processus : proctest
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a ForLoop in Processus : proctest
+INFO Thread-4 process.rrobin.OperationExec - Executed an Sleep in Processus : proctest
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a ForLoop in Processus : proctest
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a ForLoop in Processus : proctest
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a ForLoop in Processus : proctest
+INFO Thread-4 process.rrobin.OperationExec - Executed a Print in Processus : proctest
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a ForLoop in Processus : proctest
+INFO Thread-4 process.rrobin.OperationExec - Executing an Ifelse test in Processus : proctest
+INFO Thread-4 process.rrobin.OperationExec - Executed a Print in Processus : proctest
+INFO Thread-4 process.rrobin.OperationExec - Created a Stringvariable in Processus : proctest
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a ForLoop in Processus : proctest
+INFO Thread-4 process.rrobin.OperationExec - Executed a Print in Processus : proctest
+INFO Thread-4 process.rrobin.OperationExec - Created a Stringvariable in Processus : proctest
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a ForLoop in Processus : proctest
+INFO Thread-4 process.rrobin.OperationExec - Executed an Sleep in Processus : proctest
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a ForLoop in Processus : proctest
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a ForLoop in Processus : proctest
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a ForLoop in Processus : proctest
+INFO Thread-4 process.rrobin.OperationExec - Executed a Print in Processus : proctest
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a ForLoop in Processus : proctest
+INFO Thread-4 process.rrobin.OperationExec - Executing an Ifelse test in Processus : proctest
+INFO Thread-4 process.rrobin.OperationExec - Executed a Print in Processus : proctest
+INFO Thread-4 process.rrobin.OperationExec - Created a Stringvariable in Processus : proctest
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a ForLoop in Processus : proctest
+INFO Thread-4 process.rrobin.OperationExec - Executed a Print in Processus : proctest
+INFO Thread-4 process.rrobin.OperationExec - Created a Stringvariable in Processus : proctest
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a ForLoop in Processus : proctest
+INFO Thread-4 process.rrobin.OperationExec - Executed an Sleep in Processus : proctest
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a ForLoop in Processus : proctest
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a ForLoop in Processus : proctest
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a ForLoop in Processus : proctest
+INFO Thread-4 process.rrobin.OperationExec - Executed a Print in Processus : proctest
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a ForLoop in Processus : proctest
+INFO Thread-4 process.rrobin.OperationExec - Executing an Ifelse test in Processus : proctest
+INFO Thread-4 process.rrobin.OperationExec - Executed a Print in Processus : proctest
+INFO Thread-4 process.rrobin.OperationExec - Created a Stringvariable in Processus : proctest
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a ForLoop in Processus : proctest
+INFO Thread-4 process.rrobin.OperationExec - Executed a Print in Processus : proctest
+INFO Thread-4 process.rrobin.OperationExec - Created a Stringvariable in Processus : proctest
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a ForLoop in Processus : proctest
+INFO Thread-4 process.rrobin.OperationExec - Executed an Sleep in Processus : proctest
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a ForLoop in Processus : proctest
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a ForLoop in Processus : proctest
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a ForLoop in Processus : proctest
+INFO Thread-4 process.rrobin.OperationExec - Executed a Print in Processus : proctest
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a ForLoop in Processus : proctest
+INFO Thread-4 process.rrobin.OperationExec - Executing an Ifelse test in Processus : proctest
+INFO Thread-4 process.rrobin.OperationExec - Executed a Print in Processus : proctest
+INFO Thread-4 process.rrobin.OperationExec - Created a Stringvariable in Processus : proctest
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a ForLoop in Processus : proctest
+INFO Thread-4 process.rrobin.OperationExec - Executed a Print in Processus : proctest
+INFO Thread-4 process.rrobin.OperationExec - Created a Stringvariable in Processus : proctest
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a ForLoop in Processus : proctest
+INFO Thread-4 process.rrobin.OperationExec - Executed an Sleep in Processus : proctest
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a ForLoop in Processus : proctest
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a ForLoop in Processus : proctest
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a ForLoop in Processus : proctest
+INFO Thread-4 process.rrobin.OperationExec - Executed a Print in Processus : proctest
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a ForLoop in Processus : proctest
+INFO Thread-4 process.rrobin.OperationExec - Executing an Ifelse test in Processus : proctest
+INFO Thread-4 process.rrobin.OperationExec - Executed a Print in Processus : proctest
+INFO Thread-4 process.rrobin.OperationExec - Created a Stringvariable in Processus : proctest
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a ForLoop in Processus : proctest
+INFO Thread-4 process.rrobin.OperationExec - Executed a Print in Processus : proctest
+INFO Thread-4 process.rrobin.OperationExec - Created a Stringvariable in Processus : proctest
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a ForLoop in Processus : proctest
+INFO Thread-4 process.rrobin.OperationExec - Executed an Sleep in Processus : proctest
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a ForLoop in Processus : proctest
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a ForLoop in Processus : proctest
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a ForLoop in Processus : proctest
+INFO Thread-4 process.rrobin.OperationExec - Executed a Print in Processus : proctest
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a ForLoop in Processus : proctest
+INFO Thread-4 process.rrobin.OperationExec - Executing an Ifelse test in Processus : proctest
+INFO Thread-4 process.rrobin.OperationExec - Executed a Print in Processus : proctest
+INFO Thread-4 process.rrobin.OperationExec - Created a Stringvariable in Processus : proctest
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a ForLoop in Processus : proctest
+INFO Thread-4 process.rrobin.OperationExec - Executed a Print in Processus : proctest
+INFO Thread-4 process.rrobin.OperationExec - Created a Stringvariable in Processus : proctest
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a ForLoop in Processus : proctest
+INFO Thread-4 process.rrobin.OperationExec - Executed an Sleep in Processus : proctest
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a ForLoop in Processus : proctest
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a ForLoop in Processus : proctest
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a ForLoop in Processus : proctest
+INFO Thread-4 process.rrobin.OperationExec - Executed a Print in Processus : proctest
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a ForLoop in Processus : proctest
+INFO Thread-4 process.rrobin.OperationExec - Executing an Ifelse test in Processus : proctest
+INFO Thread-4 process.rrobin.OperationExec - Executed a Print in Processus : proctest
+INFO Thread-4 process.rrobin.OperationExec - Created a Stringvariable in Processus : proctest
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a ForLoop in Processus : proctest
+INFO Thread-4 process.rrobin.OperationExec - Executed a Print in Processus : proctest
+INFO Thread-4 process.rrobin.OperationExec - Created a Stringvariable in Processus : proctest
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a ForLoop in Processus : proctest
+INFO Thread-4 process.rrobin.OperationExec - Executed an Sleep in Processus : proctest
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a ForLoop in Processus : proctest
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a ForLoop in Processus : proctest
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a ForLoop in Processus : proctest
+INFO Thread-4 process.rrobin.OperationExec - Executed a Print in Processus : proctest
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a ForLoop in Processus : proctest
+INFO Thread-4 process.rrobin.OperationExec - Executing an Ifelse test in Processus : proctest
+INFO Thread-4 process.rrobin.OperationExec - Executed a Print in Processus : proctest
+INFO Thread-4 process.rrobin.OperationExec - Created a Stringvariable in Processus : proctest
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a ForLoop in Processus : proctest
+INFO Thread-4 process.rrobin.OperationExec - Executed a Print in Processus : proctest
+INFO Thread-4 process.rrobin.OperationExec - Created a Stringvariable in Processus : proctest
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a ForLoop in Processus : proctest
+INFO Thread-4 process.rrobin.OperationExec - Executed an Sleep in Processus : proctest
+INFO AWT-EventQueue-0 process.traduction.Transcriptor - Transcriptor - Starting transcription of a new Processus
+INFO AWT-EventQueue-0 process.traduction.Transcriptor - Transcriptor - Setting processusname to chrono
+INFO AWT-EventQueue-0 process.traduction.Transcriptor - Transcriptor - Commentary found 
+INFO AWT-EventQueue-0 process.traduction.Transcriptor - Transcriptor - Stringvariable creation found 
+INFO AWT-EventQueue-0 process.traduction.Transcriptor - Transcriptor - Stringvariable creation found 
+INFO AWT-EventQueue-0 process.traduction.Transcriptor - Transcriptor - Stringvariable creation found 
+INFO AWT-EventQueue-0 process.traduction.Transcriptor - Transcriptor - Intvariable creation found 
+INFO AWT-EventQueue-0 process.traduction.Transcriptor - Transcriptor - Intvariable creation found 
+INFO AWT-EventQueue-0 process.traduction.Transcriptor - Transcriptor - Stringvariable creation found 
+INFO AWT-EventQueue-0 process.traduction.Transcriptor - Transcriptor - Commentary found 
+INFO AWT-EventQueue-0 process.traduction.Transcriptor - Transcriptor - Print found 
+INFO AWT-EventQueue-0 process.traduction.Transcriptor - Transcriptor - Print found 
+INFO AWT-EventQueue-0 process.traduction.Transcriptor - Transcriptor - Transcripting a Whileloop in Processus chrono
+INFO AWT-EventQueue-0 process.traduction.Transcriptor - Transcriptor - Print found 
+INFO AWT-EventQueue-0 process.traduction.Transcriptor - Transcriptor - Print found 
+INFO AWT-EventQueue-0 process.traduction.Transcriptor - Transcriptor - Sleep found 
+INFO AWT-EventQueue-0 process.traduction.Transcriptor - Transcriptor - Increment found 
+INFO AWT-EventQueue-0 process.traduction.Transcriptor - Transcriptor - Print found 
+INFO Thread-5 process.rrobin.Rrobin - Round robin  - Processus 0 on 2
+INFO Thread-5 process.rrobin.OperationExec - Execution of a ForLoop in Processus : proctest
+INFO Thread-5 process.rrobin.OperationExec - Executed an Sleep in Processus : proctest
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 1 on 2
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 2
+INFO Thread-4 process.rrobin.OperationExec - Execution of a ForLoop in Processus : proctest
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 1 on 2
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 2
+INFO Thread-4 process.rrobin.OperationExec - Execution of a ForLoop in Processus : proctest
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 1 on 2
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 2
+INFO Thread-4 process.rrobin.OperationExec - Executing an Ifelse test in Processus : proctest
+INFO Thread-4 process.rrobin.OperationExec - Executed a Print in Processus : proctest
+INFO Thread-4 process.rrobin.OperationExec - Created a Stringvariable in Processus : proctest
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 1 on 2
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 2
+INFO Thread-4 process.rrobin.OperationExec - Executed a Print in Processus : proctest
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 1 on 2
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 2
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : proctest
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 1 on 2
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 2
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : proctest
+INFO Thread-4 process.rrobin.OperationExec - Executed a Print in Processus : proctest
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 1 on 2
+INFO Thread-4 process.rrobin.OperationExec - Executed a Print in Processus : chrono
+INFO Thread-4 process.rrobin.OperationExec - Created a Stringvariable in Processus : chrono
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 2
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : proctest
+INFO Thread-4 process.rrobin.OperationExec - Executed a Print in Processus : proctest
+INFO Thread-4 process.rrobin.OperationExec - Created a Stringvariable in Processus : proctest
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 1 on 2
+INFO Thread-4 process.rrobin.OperationExec - Executed a Print in Processus : chrono
+INFO Thread-4 process.rrobin.OperationExec - Created a Stringvariable in Processus : chrono
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 2
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : proctest
+INFO Thread-4 process.rrobin.OperationExec - Executing an Ifelse test in Processus : proctest
+INFO Thread-4 process.rrobin.OperationExec - Executed a Print in Processus : proctest
+INFO Thread-4 process.rrobin.OperationExec - Created a Stringvariable in Processus : proctest
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 1 on 2
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 2
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : proctest
+INFO Thread-4 process.rrobin.OperationExec - Executed an Increment in Processus : proctest
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 1 on 2
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-4 process.rrobin.OperationExec - Executed a Print in Processus : chrono
+INFO Thread-4 process.rrobin.OperationExec - Created a Stringvariable in Processus : chrono
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 2
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : proctest
+INFO Thread-4 process.rrobin.OperationExec - Executed a Print in Processus : proctest
+INFO Thread-4 process.rrobin.OperationExec - Created a Stringvariable in Processus : proctest
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 1 on 2
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-4 process.rrobin.OperationExec - Executed a Print in Processus : chrono
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 2
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : proctest
+INFO Thread-4 process.rrobin.OperationExec - Executed an Sleep in Processus : proctest
+INFO Thread-5 process.rrobin.Rrobin - Round robin  - Processus 1 on 2
+INFO Thread-5 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-5 process.rrobin.OperationExec - Executed an Sleep in Processus : chrono
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 1 on 2
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-4 process.rrobin.OperationExec - Executed an Sleep in Processus : chrono
+INFO Thread-5 process.rrobin.Rrobin - Round robin  - Processus 0 on 2
+INFO Thread-5 process.rrobin.OperationExec - Execution of a Whileloop in Processus : proctest
+INFO Thread-5 process.rrobin.Rrobin - Round robin  - Processus 1 on 2
+INFO Thread-5 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-5 process.rrobin.OperationExec - Executed an Increment in Processus : chrono
+INFO Thread-5 process.rrobin.Rrobin - Round robin  - Processus 0 on 2
+INFO Thread-5 process.rrobin.OperationExec - Execution of a Whileloop in Processus : proctest
+INFO Thread-5 process.rrobin.Rrobin - Round robin  - Processus 1 on 2
+INFO Thread-5 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-5 process.rrobin.Rrobin - Round robin  - Processus 0 on 2
+INFO Thread-5 process.rrobin.OperationExec - Execution of a Whileloop in Processus : proctest
+INFO Thread-5 process.rrobin.OperationExec - Executed a Print in Processus : proctest
+INFO Thread-5 process.rrobin.Rrobin - Round robin  - Processus 1 on 2
+INFO Thread-5 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-5 process.rrobin.Rrobin - Round robin  - Processus 0 on 2
+INFO Thread-5 process.rrobin.OperationExec - Execution of a Whileloop in Processus : proctest
+INFO Thread-5 process.rrobin.OperationExec - Executed a Print in Processus : proctest
+INFO Thread-5 process.rrobin.OperationExec - Created a Stringvariable in Processus : proctest
+INFO Thread-5 process.rrobin.Rrobin - Round robin  - Processus 1 on 2
+INFO Thread-5 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-5 process.rrobin.OperationExec - Executed a Print in Processus : chrono
+INFO Thread-5 process.rrobin.OperationExec - Created a Stringvariable in Processus : chrono
+INFO Thread-5 process.rrobin.Rrobin - Round robin  - Processus 0 on 2
+INFO Thread-5 process.rrobin.OperationExec - Execution of a Whileloop in Processus : proctest
+INFO Thread-5 process.rrobin.OperationExec - Executing an Ifelse test in Processus : proctest
+INFO Thread-5 process.rrobin.OperationExec - Executed a Print in Processus : proctest
+INFO Thread-5 process.rrobin.OperationExec - Created a Stringvariable in Processus : proctest
+INFO Thread-5 process.rrobin.Rrobin - Round robin  - Processus 1 on 2
+INFO Thread-5 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-5 process.rrobin.OperationExec - Executed a Print in Processus : chrono
+INFO Thread-5 process.rrobin.Rrobin - Round robin  - Processus 0 on 2
+INFO Thread-5 process.rrobin.OperationExec - Execution of a Whileloop in Processus : proctest
+INFO Thread-5 process.rrobin.OperationExec - Executed an Increment in Processus : proctest
+INFO Thread-5 process.rrobin.Rrobin - Round robin  - Processus 1 on 2
+INFO Thread-5 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-5 process.rrobin.OperationExec - Executed an Sleep in Processus : chrono
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 2
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : proctest
+INFO Thread-4 process.rrobin.OperationExec - Executed a Print in Processus : proctest
+INFO Thread-4 process.rrobin.OperationExec - Created a Stringvariable in Processus : proctest
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 1 on 2
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-4 process.rrobin.OperationExec - Executed an Increment in Processus : chrono
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 2
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : proctest
+INFO Thread-4 process.rrobin.OperationExec - Executed an Sleep in Processus : proctest
+INFO Thread-5 process.rrobin.Rrobin - Round robin  - Processus 0 on 2
+INFO Thread-5 process.rrobin.OperationExec - Execution of a Whileloop in Processus : proctest
+INFO Thread-5 process.rrobin.OperationExec - Executed an Sleep in Processus : proctest
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 1 on 2
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-4 process.rrobin.OperationExec - Executed an Increment in Processus : chrono
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 2
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : proctest
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 1 on 2
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 2
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : proctest
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 1 on 2
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 2
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : proctest
+INFO Thread-4 process.rrobin.OperationExec - Executed a Print in Processus : proctest
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 1 on 2
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-4 process.rrobin.OperationExec - Executed a Print in Processus : chrono
+INFO Thread-4 process.rrobin.OperationExec - Created a Stringvariable in Processus : chrono
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 2
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : proctest
+INFO Thread-4 process.rrobin.OperationExec - Executed a Print in Processus : proctest
+INFO Thread-4 process.rrobin.OperationExec - Created a Stringvariable in Processus : proctest
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 1 on 2
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-4 process.rrobin.OperationExec - Executed a Print in Processus : chrono
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 2
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : proctest
+INFO Thread-4 process.rrobin.OperationExec - Executing an Ifelse test in Processus : proctest
+INFO Thread-4 process.rrobin.OperationExec - Executed a Print in Processus : proctest
+INFO Thread-4 process.rrobin.OperationExec - Created a Stringvariable in Processus : proctest
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 1 on 2
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-4 process.rrobin.OperationExec - Executed an Sleep in Processus : chrono
+INFO Thread-5 process.rrobin.Rrobin - Round robin  - Processus 1 on 2
+INFO Thread-5 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-5 process.rrobin.OperationExec - Executed an Sleep in Processus : chrono
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 2
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : proctest
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 1 on 2
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-4 process.rrobin.OperationExec - Executed an Increment in Processus : chrono
+INFO Thread-5 process.rrobin.Rrobin - Round robin  - Processus 0 on 2
+INFO Thread-5 process.rrobin.OperationExec - Execution of a Whileloop in Processus : proctest
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 2
+INFO Thread-5 process.rrobin.Rrobin - Round robin  - Processus 1 on 2
+INFO Thread-5 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : proctest
+INFO Thread-4 process.rrobin.OperationExec - Executed a Print in Processus : proctest
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 1 on 2
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-5 process.rrobin.Rrobin - Round robin  - Processus 0 on 2
+INFO Thread-5 process.rrobin.OperationExec - Execution of a Whileloop in Processus : proctest
+INFO Thread-5 process.rrobin.OperationExec - Executed a Print in Processus : proctest
+INFO Thread-5 process.rrobin.OperationExec - Created a Stringvariable in Processus : proctest
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 2
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : proctest
+INFO Thread-4 process.rrobin.OperationExec - Executing an Ifelse test in Processus : proctest
+INFO Thread-4 process.rrobin.OperationExec - Executed a Print in Processus : proctest
+INFO Thread-4 process.rrobin.OperationExec - Created a Stringvariable in Processus : proctest
+INFO Thread-5 process.rrobin.Rrobin - Round robin  - Processus 1 on 2
+INFO Thread-5 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-5 process.rrobin.OperationExec - Executed a Print in Processus : chrono
+INFO Thread-5 process.rrobin.OperationExec - Created a Stringvariable in Processus : chrono
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 1 on 2
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-4 process.rrobin.OperationExec - Executed a Print in Processus : chrono
+INFO Thread-5 process.rrobin.Rrobin - Round robin  - Processus 0 on 2
+INFO Thread-5 process.rrobin.OperationExec - Execution of a Whileloop in Processus : proctest
+INFO Thread-5 process.rrobin.OperationExec - Executed an Increment in Processus : proctest
+INFO Thread-5 process.rrobin.Rrobin - Round robin  - Processus 1 on 2
+INFO Thread-5 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-5 process.rrobin.OperationExec - Executed an Sleep in Processus : chrono
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 2
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : proctest
+INFO Thread-4 process.rrobin.OperationExec - Executed a Print in Processus : proctest
+INFO Thread-4 process.rrobin.OperationExec - Created a Stringvariable in Processus : proctest
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 1 on 2
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-4 process.rrobin.OperationExec - Executed an Sleep in Processus : chrono
+INFO Thread-5 process.rrobin.Rrobin - Round robin  - Processus 0 on 2
+INFO Thread-5 process.rrobin.OperationExec - Execution of a Whileloop in Processus : proctest
+INFO Thread-5 process.rrobin.OperationExec - Executed an Sleep in Processus : proctest
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 2
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : proctest
+INFO Thread-4 process.rrobin.OperationExec - Executed an Sleep in Processus : proctest
+INFO Thread-5 process.rrobin.Rrobin - Round robin  - Processus 1 on 2
+INFO Thread-5 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-5 process.rrobin.OperationExec - Executed an Increment in Processus : chrono
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 1 on 2
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-5 process.rrobin.Rrobin - Round robin  - Processus 0 on 2
+INFO Thread-5 process.rrobin.OperationExec - Execution of a Whileloop in Processus : proctest
+INFO Thread-5 process.rrobin.Rrobin - Round robin  - Processus 1 on 2
+INFO Thread-5 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 2
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : proctest
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 1 on 2
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-4 process.rrobin.OperationExec - Executed a Print in Processus : chrono
+INFO Thread-4 process.rrobin.OperationExec - Created a Stringvariable in Processus : chrono
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 2
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : proctest
+INFO Thread-4 process.rrobin.OperationExec - Executed a Print in Processus : proctest
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 1 on 2
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-4 process.rrobin.OperationExec - Executed a Print in Processus : chrono
+INFO Thread-5 process.rrobin.Rrobin - Round robin  - Processus 0 on 2
+INFO Thread-5 process.rrobin.OperationExec - Execution of a Whileloop in Processus : proctest
+INFO Thread-5 process.rrobin.OperationExec - Executed a Print in Processus : proctest
+INFO Thread-5 process.rrobin.OperationExec - Created a Stringvariable in Processus : proctest
+INFO Thread-5 process.rrobin.Rrobin - Round robin  - Processus 1 on 2
+INFO Thread-5 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-5 process.rrobin.OperationExec - Executed an Sleep in Processus : chrono
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 2
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : proctest
+INFO Thread-4 process.rrobin.OperationExec - Executing an Ifelse test in Processus : proctest
+INFO Thread-4 process.rrobin.OperationExec - Executed a Print in Processus : proctest
+INFO Thread-4 process.rrobin.OperationExec - Created a Stringvariable in Processus : proctest
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 1 on 2
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-4 process.rrobin.OperationExec - Executed an Sleep in Processus : chrono
+INFO Thread-5 process.rrobin.Rrobin - Round robin  - Processus 0 on 2
+INFO Thread-5 process.rrobin.OperationExec - Execution of a Whileloop in Processus : proctest
+INFO Thread-5 process.rrobin.OperationExec - Executed an Increment in Processus : proctest
+INFO Thread-5 process.rrobin.Rrobin - Round robin  - Processus 1 on 2
+INFO Thread-5 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-5 process.rrobin.OperationExec - Executed an Increment in Processus : chrono
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 2
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : proctest
+INFO Thread-4 process.rrobin.OperationExec - Executed a Print in Processus : proctest
+INFO Thread-4 process.rrobin.OperationExec - Created a Stringvariable in Processus : proctest
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 1 on 2
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-5 process.rrobin.Rrobin - Round robin  - Processus 0 on 2
+INFO Thread-5 process.rrobin.OperationExec - Execution of a Whileloop in Processus : proctest
+INFO Thread-5 process.rrobin.OperationExec - Executed an Sleep in Processus : proctest
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 2
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : proctest
+INFO Thread-4 process.rrobin.OperationExec - Executed an Sleep in Processus : proctest
+INFO Thread-5 process.rrobin.Rrobin - Round robin  - Processus 1 on 2
+INFO Thread-5 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 1 on 2
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-5 process.rrobin.Rrobin - Round robin  - Processus 0 on 2
+INFO Thread-5 process.rrobin.OperationExec - Execution of a Whileloop in Processus : proctest
+INFO Thread-5 process.rrobin.Rrobin - Round robin  - Processus 1 on 2
+INFO Thread-5 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-5 process.rrobin.OperationExec - Executed a Print in Processus : chrono
+INFO Thread-5 process.rrobin.OperationExec - Created a Stringvariable in Processus : chrono
+INFO Thread-4 process.rrobin.OperationExec - Executed a Print in Processus : chrono
+INFO Thread-4 process.rrobin.OperationExec - Created a Stringvariable in Processus : chrono
+INFO Thread-5 process.rrobin.Rrobin - Round robin  - Processus 0 on 2
+INFO Thread-5 process.rrobin.OperationExec - Execution of a Whileloop in Processus : proctest
+INFO Thread-5 process.rrobin.Rrobin - Round robin  - Processus 1 on 2
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 2
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : proctest
+INFO Thread-5 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-5 process.rrobin.OperationExec - Executed a Print in Processus : chrono
+INFO Thread-4 process.rrobin.OperationExec - Executed a Print in Processus : proctest
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 1 on 2
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-4 process.rrobin.OperationExec - Executed an Sleep in Processus : chrono
+INFO Thread-5 process.rrobin.Rrobin - Round robin  - Processus 0 on 2
+INFO Thread-5 process.rrobin.OperationExec - Execution of a Whileloop in Processus : proctest
+INFO Thread-5 process.rrobin.OperationExec - Executed a Print in Processus : proctest
+INFO Thread-5 process.rrobin.OperationExec - Created a Stringvariable in Processus : proctest
+INFO Thread-5 process.rrobin.Rrobin - Round robin  - Processus 1 on 2
+INFO Thread-5 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-5 process.rrobin.OperationExec - Executed an Sleep in Processus : chrono
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 2
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : proctest
+INFO Thread-4 process.rrobin.OperationExec - Executing an Ifelse test in Processus : proctest
+INFO Thread-4 process.rrobin.OperationExec - Executed a Print in Processus : proctest
+INFO Thread-4 process.rrobin.OperationExec - Created a Stringvariable in Processus : proctest
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 1 on 2
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-4 process.rrobin.OperationExec - Executed an Increment in Processus : chrono
+INFO Thread-5 process.rrobin.Rrobin - Round robin  - Processus 0 on 2
+INFO Thread-5 process.rrobin.OperationExec - Execution of a Whileloop in Processus : proctest
+INFO Thread-5 process.rrobin.OperationExec - Executed an Increment in Processus : proctest
+INFO Thread-5 process.rrobin.Rrobin - Round robin  - Processus 1 on 2
+INFO Thread-5 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 2
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : proctest
+INFO Thread-4 process.rrobin.OperationExec - Executed a Print in Processus : proctest
+INFO Thread-4 process.rrobin.OperationExec - Created a Stringvariable in Processus : proctest
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 1 on 2
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-5 process.rrobin.Rrobin - Round robin  - Processus 0 on 2
+INFO Thread-5 process.rrobin.OperationExec - Execution of a Whileloop in Processus : proctest
+INFO Thread-5 process.rrobin.OperationExec - Executed an Sleep in Processus : proctest
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 2
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : proctest
+INFO Thread-4 process.rrobin.OperationExec - Executed an Sleep in Processus : proctest
+INFO Thread-5 process.rrobin.Rrobin - Round robin  - Processus 1 on 2
+INFO Thread-5 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-5 process.rrobin.OperationExec - Executed a Print in Processus : chrono
+INFO Thread-5 process.rrobin.OperationExec - Created a Stringvariable in Processus : chrono
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 1 on 2
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-4 process.rrobin.OperationExec - Executed a Print in Processus : chrono
+INFO Thread-5 process.rrobin.Rrobin - Round robin  - Processus 0 on 2
+INFO Thread-5 process.rrobin.OperationExec - Execution of a Whileloop in Processus : proctest
+INFO Thread-5 process.rrobin.Rrobin - Round robin  - Processus 1 on 2
+INFO Thread-5 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-5 process.rrobin.OperationExec - Executed an Sleep in Processus : chrono
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 2
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : proctest
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 1 on 2
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-4 process.rrobin.OperationExec - Executed an Sleep in Processus : chrono
+INFO Thread-5 process.rrobin.Rrobin - Round robin  - Processus 0 on 2
+INFO Thread-5 process.rrobin.OperationExec - Execution of a Whileloop in Processus : proctest
+INFO Thread-5 process.rrobin.OperationExec - Executed a Print in Processus : proctest
+INFO Thread-5 process.rrobin.Rrobin - Round robin  - Processus 1 on 2
+INFO Thread-5 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-5 process.rrobin.OperationExec - Executed an Increment in Processus : chrono
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 2
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : proctest
+INFO Thread-4 process.rrobin.OperationExec - Executed a Print in Processus : proctest
+INFO Thread-4 process.rrobin.OperationExec - Created a Stringvariable in Processus : proctest
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 1 on 2
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-5 process.rrobin.Rrobin - Round robin  - Processus 0 on 2
+INFO Thread-5 process.rrobin.OperationExec - Execution of a Whileloop in Processus : proctest
+INFO Thread-5 process.rrobin.OperationExec - Executing an Ifelse test in Processus : proctest
+INFO Thread-5 process.rrobin.OperationExec - Executed a Print in Processus : proctest
+INFO Thread-5 process.rrobin.OperationExec - Created a Stringvariable in Processus : proctest
+INFO Thread-5 process.rrobin.Rrobin - Round robin  - Processus 1 on 2
+INFO Thread-5 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 2
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : proctest
+INFO Thread-4 process.rrobin.OperationExec - Executed an Increment in Processus : proctest
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 1 on 2
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-4 process.rrobin.OperationExec - Executed a Print in Processus : chrono
+INFO Thread-4 process.rrobin.OperationExec - Created a Stringvariable in Processus : chrono
+INFO Thread-5 process.rrobin.Rrobin - Round robin  - Processus 0 on 2
+INFO Thread-5 process.rrobin.OperationExec - Execution of a Whileloop in Processus : proctest
+INFO Thread-5 process.rrobin.OperationExec - Executed a Print in Processus : proctest
+INFO Thread-5 process.rrobin.OperationExec - Created a Stringvariable in Processus : proctest
+INFO Thread-5 process.rrobin.Rrobin - Round robin  - Processus 1 on 2
+INFO Thread-5 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-5 process.rrobin.OperationExec - Executed a Print in Processus : chrono
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 2
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : proctest
+INFO Thread-4 process.rrobin.OperationExec - Executed an Sleep in Processus : proctest
+INFO Thread-5 process.rrobin.Rrobin - Round robin  - Processus 0 on 2
+INFO Thread-5 process.rrobin.OperationExec - Execution of a Whileloop in Processus : proctest
+INFO Thread-5 process.rrobin.OperationExec - Executed an Sleep in Processus : proctest
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 1 on 2
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-4 process.rrobin.OperationExec - Executed an Sleep in Processus : chrono
+INFO Thread-5 process.rrobin.Rrobin - Round robin  - Processus 1 on 2
+INFO Thread-5 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-5 process.rrobin.OperationExec - Executed an Sleep in Processus : chrono
+INFO Thread-5 process.rrobin.Rrobin - Round robin  - Processus 0 on 2
+INFO Thread-5 process.rrobin.OperationExec - Execution of a Whileloop in Processus : proctest
+INFO Thread-5 process.rrobin.Rrobin - Round robin  - Processus 1 on 2
+INFO Thread-5 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-5 process.rrobin.OperationExec - Executed an Increment in Processus : chrono
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 2
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : proctest
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 1 on 2
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 2
+INFO Thread-4 process.rrobin.OperationExec - Executed a Print in Processus : proctest
+INFO Thread-4 process.rrobin.OperationExec - Created a Stringvariable in Processus : proctest
+INFO Thread-5 process.rrobin.Rrobin - Round robin  - Processus 0 on 2
+INFO Thread-5 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-5 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-4 process.rrobin.OperationExec - Executed a Print in Processus : chrono
+INFO Thread-4 process.rrobin.OperationExec - Created a Stringvariable in Processus : chrono
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-4 process.rrobin.OperationExec - Executed a Print in Processus : chrono
+INFO Thread-5 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-5 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-5 process.rrobin.OperationExec - Executed an Sleep in Processus : chrono
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-4 process.rrobin.OperationExec - Executed an Sleep in Processus : chrono
+INFO Thread-5 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-5 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-5 process.rrobin.OperationExec - Executed an Increment in Processus : chrono
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-5 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-5 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-4 process.rrobin.OperationExec - Executed a Print in Processus : chrono
+INFO Thread-4 process.rrobin.OperationExec - Created a Stringvariable in Processus : chrono
+INFO Thread-5 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-5 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-5 process.rrobin.OperationExec - Executed a Print in Processus : chrono
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-4 process.rrobin.OperationExec - Executed an Sleep in Processus : chrono
+INFO Thread-5 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-5 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-5 process.rrobin.OperationExec - Executed an Sleep in Processus : chrono
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-4 process.rrobin.OperationExec - Executed an Increment in Processus : chrono
+INFO Thread-5 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-5 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-5 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-5 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-5 process.rrobin.OperationExec - Executed a Print in Processus : chrono
+INFO Thread-5 process.rrobin.OperationExec - Created a Stringvariable in Processus : chrono
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-4 process.rrobin.OperationExec - Executed a Print in Processus : chrono
+INFO Thread-5 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-5 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-5 process.rrobin.OperationExec - Executed an Sleep in Processus : chrono
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-4 process.rrobin.OperationExec - Executed an Sleep in Processus : chrono
+INFO Thread-5 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-5 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-5 process.rrobin.OperationExec - Executed an Increment in Processus : chrono
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-5 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-5 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-4 process.rrobin.OperationExec - Executed a Print in Processus : chrono
+INFO Thread-4 process.rrobin.OperationExec - Created a Stringvariable in Processus : chrono
+INFO Thread-5 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-5 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-5 process.rrobin.OperationExec - Executed a Print in Processus : chrono
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-4 process.rrobin.OperationExec - Executed an Sleep in Processus : chrono
+INFO Thread-5 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-5 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-5 process.rrobin.OperationExec - Executed an Sleep in Processus : chrono
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-4 process.rrobin.OperationExec - Executed an Increment in Processus : chrono
+INFO Thread-5 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-5 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-5 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-5 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-5 process.rrobin.OperationExec - Executed a Print in Processus : chrono
+INFO Thread-5 process.rrobin.OperationExec - Created a Stringvariable in Processus : chrono
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-4 process.rrobin.OperationExec - Executed a Print in Processus : chrono
+INFO Thread-5 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-5 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-5 process.rrobin.OperationExec - Executed an Sleep in Processus : chrono
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-4 process.rrobin.OperationExec - Executed an Sleep in Processus : chrono
+INFO Thread-5 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-5 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-5 process.rrobin.OperationExec - Executed an Increment in Processus : chrono
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-5 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-5 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-4 process.rrobin.OperationExec - Executed a Print in Processus : chrono
+INFO Thread-4 process.rrobin.OperationExec - Created a Stringvariable in Processus : chrono
+INFO Thread-5 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-5 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-5 process.rrobin.OperationExec - Executed a Print in Processus : chrono
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-4 process.rrobin.OperationExec - Executed an Sleep in Processus : chrono
+INFO Thread-5 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-5 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-5 process.rrobin.OperationExec - Executed an Sleep in Processus : chrono
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-4 process.rrobin.OperationExec - Executed an Increment in Processus : chrono
+INFO Thread-5 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-5 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-5 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-5 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-5 process.rrobin.OperationExec - Executed a Print in Processus : chrono
+INFO Thread-5 process.rrobin.OperationExec - Created a Stringvariable in Processus : chrono
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-4 process.rrobin.OperationExec - Executed a Print in Processus : chrono
+INFO Thread-5 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-5 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-5 process.rrobin.OperationExec - Executed an Sleep in Processus : chrono
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-4 process.rrobin.OperationExec - Executed an Sleep in Processus : chrono
+INFO Thread-5 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-5 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-5 process.rrobin.OperationExec - Executed an Increment in Processus : chrono
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-5 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-5 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-4 process.rrobin.OperationExec - Executed a Print in Processus : chrono
+INFO Thread-4 process.rrobin.OperationExec - Created a Stringvariable in Processus : chrono
+INFO Thread-5 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-5 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-5 process.rrobin.OperationExec - Executed a Print in Processus : chrono
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-4 process.rrobin.OperationExec - Executed an Sleep in Processus : chrono
+INFO Thread-5 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-5 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-5 process.rrobin.OperationExec - Executed an Sleep in Processus : chrono
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-4 process.rrobin.OperationExec - Executed an Increment in Processus : chrono
+INFO Thread-5 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-5 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-5 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-5 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-5 process.rrobin.OperationExec - Executed a Print in Processus : chrono
+INFO Thread-5 process.rrobin.OperationExec - Created a Stringvariable in Processus : chrono
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-4 process.rrobin.OperationExec - Executed a Print in Processus : chrono
+INFO Thread-5 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-5 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-5 process.rrobin.OperationExec - Executed an Sleep in Processus : chrono
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-4 process.rrobin.OperationExec - Executed an Sleep in Processus : chrono
+INFO Thread-5 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-5 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-5 process.rrobin.OperationExec - Executed an Increment in Processus : chrono
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-5 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-5 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-4 process.rrobin.OperationExec - Executed a Print in Processus : chrono
+INFO Thread-4 process.rrobin.OperationExec - Created a Stringvariable in Processus : chrono
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-4 process.rrobin.OperationExec - Executed a Print in Processus : chrono
+INFO Thread-5 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-5 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-5 process.rrobin.OperationExec - Executed an Sleep in Processus : chrono
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-4 process.rrobin.OperationExec - Executed an Sleep in Processus : chrono
+INFO Thread-5 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-5 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-5 process.rrobin.OperationExec - Executed an Increment in Processus : chrono
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-5 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-5 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-4 process.rrobin.OperationExec - Executed a Print in Processus : chrono
+INFO Thread-4 process.rrobin.OperationExec - Created a Stringvariable in Processus : chrono
+INFO Thread-5 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-5 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-5 process.rrobin.OperationExec - Executed a Print in Processus : chrono
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-4 process.rrobin.OperationExec - Executed an Sleep in Processus : chrono
+INFO Thread-5 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-5 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-5 process.rrobin.OperationExec - Executed an Sleep in Processus : chrono
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-4 process.rrobin.OperationExec - Executed an Increment in Processus : chrono
+INFO Thread-5 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-5 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-5 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-5 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-5 process.rrobin.OperationExec - Executed a Print in Processus : chrono
+INFO Thread-5 process.rrobin.OperationExec - Created a Stringvariable in Processus : chrono
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-4 process.rrobin.OperationExec - Executed a Print in Processus : chrono
+INFO Thread-5 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-5 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-5 process.rrobin.OperationExec - Executed an Sleep in Processus : chrono
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-4 process.rrobin.OperationExec - Executed an Sleep in Processus : chrono
+INFO Thread-5 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-5 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-5 process.rrobin.OperationExec - Executed an Increment in Processus : chrono
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-5 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-5 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-5 process.rrobin.OperationExec - Executed a Print in Processus : chrono
+INFO Thread-5 process.rrobin.OperationExec - Created a Stringvariable in Processus : chrono
+INFO Thread-5 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-5 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-5 process.rrobin.OperationExec - Executed a Print in Processus : chrono
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-4 process.rrobin.OperationExec - Executed an Sleep in Processus : chrono
+INFO Thread-5 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-5 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-5 process.rrobin.OperationExec - Executed an Sleep in Processus : chrono
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-4 process.rrobin.OperationExec - Executed an Increment in Processus : chrono
+INFO Thread-5 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-5 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-5 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-5 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-4 process.rrobin.OperationExec - Executed a Print in Processus : chrono
+INFO Thread-4 process.rrobin.OperationExec - Created a Stringvariable in Processus : chrono
+INFO Thread-5 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-5 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-5 process.rrobin.OperationExec - Executed a Print in Processus : chrono
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-4 process.rrobin.OperationExec - Executed an Sleep in Processus : chrono
+INFO Thread-5 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-5 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-5 process.rrobin.OperationExec - Executed an Sleep in Processus : chrono
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-4 process.rrobin.OperationExec - Executed an Increment in Processus : chrono
+INFO Thread-5 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-5 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-5 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-5 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-5 process.rrobin.OperationExec - Executed a Print in Processus : chrono
+INFO Thread-5 process.rrobin.OperationExec - Created a Stringvariable in Processus : chrono
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-4 process.rrobin.OperationExec - Executed a Print in Processus : chrono
+INFO Thread-5 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-5 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-5 process.rrobin.OperationExec - Executed an Sleep in Processus : chrono
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-4 process.rrobin.OperationExec - Executed an Sleep in Processus : chrono
+INFO Thread-5 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-5 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-5 process.rrobin.OperationExec - Executed an Increment in Processus : chrono
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-5 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-5 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-5 process.rrobin.OperationExec - Executed a Print in Processus : chrono
+INFO Thread-5 process.rrobin.OperationExec - Created a Stringvariable in Processus : chrono
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-4 process.rrobin.OperationExec - Executed a Print in Processus : chrono
+INFO Thread-5 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-5 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-5 process.rrobin.OperationExec - Executed an Sleep in Processus : chrono
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-4 process.rrobin.OperationExec - Executed an Sleep in Processus : chrono
+INFO Thread-5 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-5 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-5 process.rrobin.OperationExec - Executed an Increment in Processus : chrono
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-5 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-5 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-4 process.rrobin.OperationExec - Executed a Print in Processus : chrono
+INFO Thread-4 process.rrobin.OperationExec - Created a Stringvariable in Processus : chrono
+INFO Thread-5 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-5 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-5 process.rrobin.OperationExec - Executed a Print in Processus : chrono
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-4 process.rrobin.OperationExec - Executed an Sleep in Processus : chrono
+INFO Thread-5 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-5 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-5 process.rrobin.OperationExec - Executed an Sleep in Processus : chrono
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-4 process.rrobin.OperationExec - Executed an Increment in Processus : chrono
+INFO Thread-5 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-5 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-5 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-5 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-5 process.rrobin.OperationExec - Executed a Print in Processus : chrono
+INFO Thread-5 process.rrobin.OperationExec - Created a Stringvariable in Processus : chrono
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-4 process.rrobin.OperationExec - Executed a Print in Processus : chrono
+INFO Thread-5 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-5 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-5 process.rrobin.OperationExec - Executed an Sleep in Processus : chrono
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-4 process.rrobin.OperationExec - Executed an Sleep in Processus : chrono
+INFO Thread-5 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-5 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-5 process.rrobin.OperationExec - Executed an Increment in Processus : chrono
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-5 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-5 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-4 process.rrobin.OperationExec - Executed a Print in Processus : chrono
+INFO Thread-4 process.rrobin.OperationExec - Created a Stringvariable in Processus : chrono
+INFO Thread-5 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-5 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-5 process.rrobin.OperationExec - Executed a Print in Processus : chrono
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-4 process.rrobin.OperationExec - Executed an Sleep in Processus : chrono
+INFO Thread-5 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-5 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-5 process.rrobin.OperationExec - Executed an Sleep in Processus : chrono
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-4 process.rrobin.OperationExec - Executed an Increment in Processus : chrono
+INFO Thread-5 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-5 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-4 process.rrobin.OperationExec - Executed a Print in Processus : chrono
+INFO Thread-4 process.rrobin.OperationExec - Created a Stringvariable in Processus : chrono
+INFO Thread-5 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-5 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-5 process.rrobin.OperationExec - Executed a Print in Processus : chrono
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-4 process.rrobin.OperationExec - Executed an Sleep in Processus : chrono
+INFO Thread-5 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-5 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-5 process.rrobin.OperationExec - Executed an Sleep in Processus : chrono
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-4 process.rrobin.OperationExec - Executed an Increment in Processus : chrono
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-4 process.rrobin.OperationExec - Executed an Increment in Processus : chrono
+INFO Thread-5 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-5 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-5 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-5 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-5 process.rrobin.OperationExec - Executed a Print in Processus : chrono
+INFO Thread-5 process.rrobin.OperationExec - Created a Stringvariable in Processus : chrono
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-4 process.rrobin.OperationExec - Executed a Print in Processus : chrono
+INFO Thread-5 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-5 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-5 process.rrobin.OperationExec - Executed an Sleep in Processus : chrono
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-4 process.rrobin.OperationExec - Executed an Sleep in Processus : chrono
+INFO Thread-5 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-5 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-5 process.rrobin.OperationExec - Executed an Increment in Processus : chrono
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-5 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-5 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-4 process.rrobin.OperationExec - Executed a Print in Processus : chrono
+INFO Thread-4 process.rrobin.OperationExec - Created a Stringvariable in Processus : chrono
+INFO Thread-5 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-5 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-5 process.rrobin.OperationExec - Executed a Print in Processus : chrono
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-4 process.rrobin.OperationExec - Executed an Sleep in Processus : chrono
+INFO Thread-5 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-5 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-5 process.rrobin.OperationExec - Executed an Sleep in Processus : chrono
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-4 process.rrobin.OperationExec - Executed an Increment in Processus : chrono
+INFO Thread-5 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-5 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-5 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-5 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-5 process.rrobin.OperationExec - Executed a Print in Processus : chrono
+INFO Thread-5 process.rrobin.OperationExec - Created a Stringvariable in Processus : chrono
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-4 process.rrobin.OperationExec - Executed a Print in Processus : chrono
+INFO Thread-5 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-5 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-5 process.rrobin.OperationExec - Executed an Sleep in Processus : chrono
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-4 process.rrobin.OperationExec - Executed an Sleep in Processus : chrono
+INFO Thread-5 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-5 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-5 process.rrobin.OperationExec - Executed an Increment in Processus : chrono
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-5 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-5 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-4 process.rrobin.OperationExec - Executed a Print in Processus : chrono
+INFO Thread-4 process.rrobin.OperationExec - Created a Stringvariable in Processus : chrono
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-4 process.rrobin.OperationExec - Executed a Print in Processus : chrono
+INFO Thread-5 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-5 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-5 process.rrobin.OperationExec - Executed an Sleep in Processus : chrono
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-4 process.rrobin.OperationExec - Executed an Sleep in Processus : chrono
+INFO Thread-5 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-5 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-5 process.rrobin.OperationExec - Executed an Increment in Processus : chrono
+INFO Thread-5 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-5 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-5 process.rrobin.OperationExec - Executed an Increment in Processus : chrono
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-5 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-5 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-4 process.rrobin.OperationExec - Executed a Print in Processus : chrono
+INFO Thread-4 process.rrobin.OperationExec - Created a Stringvariable in Processus : chrono
+INFO Thread-5 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-5 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-5 process.rrobin.OperationExec - Executed a Print in Processus : chrono
+INFO Thread-5 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-5 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-5 process.rrobin.OperationExec - Executed an Sleep in Processus : chrono
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-4 process.rrobin.OperationExec - Executed an Sleep in Processus : chrono
+INFO Thread-5 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-5 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-5 process.rrobin.OperationExec - Executed an Increment in Processus : chrono
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-5 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-5 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-4 process.rrobin.OperationExec - Executed a Print in Processus : chrono
+INFO Thread-4 process.rrobin.OperationExec - Created a Stringvariable in Processus : chrono
+INFO Thread-5 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-5 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-5 process.rrobin.OperationExec - Executed a Print in Processus : chrono
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-4 process.rrobin.OperationExec - Executed an Sleep in Processus : chrono
+INFO Thread-5 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-5 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-5 process.rrobin.OperationExec - Executed an Sleep in Processus : chrono
+INFO Thread-5 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-5 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-5 process.rrobin.OperationExec - Executed an Increment in Processus : chrono
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-5 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-5 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-4 process.rrobin.OperationExec - Executed a Print in Processus : chrono
+INFO Thread-4 process.rrobin.OperationExec - Created a Stringvariable in Processus : chrono
+INFO Thread-5 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-5 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-5 process.rrobin.OperationExec - Executed a Print in Processus : chrono
+INFO Thread-4 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-4 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-4 process.rrobin.OperationExec - Executed an Sleep in Processus : chrono
+INFO Thread-5 process.rrobin.Rrobin - Round robin  - Processus 0 on 1
+INFO Thread-5 process.rrobin.OperationExec - Execution of a Whileloop in Processus : chrono
+INFO Thread-5 process.rrobin.OperationExec - Executed an Sleep in Processus : chrono

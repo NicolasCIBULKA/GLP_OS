@@ -26,7 +26,7 @@ public class Primitivetranscriptor extends Thread{
 	// --------------------------------------
 	
 	private static int primitive_identifier = 0;
-	private static String HardDisks_position = "/home/nico/Bureau/Fac/L2/S2/GLP/GLP_OS/GLP_OS/Projet_OS/src/scripts/";
+	private static String HardDisks_position = "	";
 	
 	// --------------------------------------
 	// Attributs

@@ -1,0 +1,9 @@
+PROCESSUSNAME chrono
+# Definition des variables
+INT value = 0
+INT max = 60
+# Programme
+WHILE value < max ;
+	INCREMENT value
+ENDWHILE
+PRINT value
