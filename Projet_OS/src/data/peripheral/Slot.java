@@ -1,5 +1,14 @@
 package data.peripheral;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.PrintStream;
+
+
 public class Slot {
 
 	// --------------------------------------
@@ -7,17 +16,27 @@ public class Slot {
 	// --------------------------------------
 	
 	private String slotposition;
-	private int size;
-	
-	private static String fileposition = "../harddisks";
+	File slot;
+	String name;
+	boolean slotFile;
+
+	private static String fileposition = "/Users/theomarmeisse/Desktop/harddisks/";
 	
 	// --------------------------------------
 	// Methods
 	// --------------------------------------
 	
 	public Slot(String name) {
-		this.setSize(0);
+		this.name = name;
 		this.setSlotposition(fileposition + name);
+		 slot = new File(fileposition + name);
+		 try {
+			slotFile = new File(fileposition + name).createNewFile();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		 
 	}
 	
 	// getters and setters
@@ -29,23 +48,57 @@ public class Slot {
 	public void setSlotposition(String slotposition) {
 		this.slotposition = slotposition;
 	}
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+	public void deleteSlot() {
+		slot.delete();
+	}
 	
-	public int getSize() {
+
+
+	public void write(String text) {
+		try {
+            PrintStream writer = new PrintStream(new FileOutputStream(slot,true));
+          
+            try {
+                 writer.print(text);
+              
+            } finally {
+                 writer.close(); 
+            }
+          
+       } catch (IOException e) {
+            e.printStackTrace();
+       }
+		
+	}
+
+	public void read() { 
+		try {
+			BufferedReader reader = new BufferedReader(new FileReader(slot));
+			try {
+		      String CurrentLine;
+		      while ((CurrentLine = reader.readLine()) != null) {
+		        System.out.println(CurrentLine);
+		      }
+			}
+		      finally {
+		    	  reader.close();
+		      }
+		    } catch (IOException e) {
+		      e.printStackTrace();
+		    }
+		
+	}
+	public long getSize() {
+		long size = slot.length();
+		size = size*8;
 		return size;
-	}
-	
-	public void setSize(int size) {
-		this.size = size;
-	}
-
-	public void setContent(String text) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	public void getContent() {
-		// TODO Auto-generated method stub
-		
 	}
 	
 }
