@@ -253,7 +253,7 @@ public class GUI extends JFrame implements Runnable{
 		
 		affichdisk.setEditable(false);
 		
-		pandisk.setBorder(BorderFactory.createTitledBorder("HDD"));
+		pandisk.setBorder(BorderFactory.createTitledBorder("Instruments "));
 		pandisk.setLayout(new BorderLayout());
 		ChartPanel chartpan1= new ChartPanel(pchart.getCpuPie(), 200, 225, 150,150, 200, 200, true, true, false, false, false, true);
 		ChartPanel chartpan2= new ChartPanel(pchart.getSlotPie(), 200, 225, 150,150, 200, 200, true, true, false, false, false, true);
