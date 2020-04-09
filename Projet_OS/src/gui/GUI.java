@@ -24,6 +24,8 @@ import javax.swing.table.JTableHeader;
 import javax.swing.text.DefaultCaret;
 import javax.swing.text.Document;
 
+import org.jfree.chart.ChartPanel;
+
 import data.peripheral.*;
 import data.processus.Processus;
 import data.processus.Processuslist;
@@ -107,6 +109,10 @@ public class GUI extends JFrame implements Runnable{
 	private JScrollPane scrolldisk = new JScrollPane(affichdisk,JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
 	//scroll for the screen
 	private JScrollPane scroll = new JScrollPane(affichecran,JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
+	
+	//charts
+	PieChart pchart = new PieChart();
+	
 	
 	// HTML generator for the processus table
 	ProcTable ptable = new ProcTable();
@@ -246,9 +252,14 @@ public class GUI extends JFrame implements Runnable{
 		//pandisk
 		
 		affichdisk.setEditable(false);
-		pandisk.add(scrolldisk);
+		
 		pandisk.setBorder(BorderFactory.createTitledBorder("HDD"));
-		pandisk.setLayout(new GridLayout(1,1));
+		pandisk.setLayout(new BorderLayout());
+		ChartPanel chartpan1= new ChartPanel(pchart.getCpuPie(), 200, 225, 150,150, 200, 200, true, true, false, false, false, true);
+		ChartPanel chartpan2= new ChartPanel(pchart.getSlotPie(), 200, 225, 150,150, 200, 200, true, true, false, false, false, true);
+		pandisk.add(chartpan1, BorderLayout.NORTH );
+		pandisk.add(chartpan2, BorderLayout.SOUTH );
+		
 		
 		DefaultCaret caret = (DefaultCaret)affichecran.getCaret();
 		caret.setUpdatePolicy(DefaultCaret.ALWAYS_UPDATE);

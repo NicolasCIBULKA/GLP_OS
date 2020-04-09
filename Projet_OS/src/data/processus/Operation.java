@@ -15,7 +15,7 @@ public abstract class Operation {
 	// Attributs
 	// --------------------------------------
 	private int operationpriority;
-	private int cpuusing; // Number between 1 and 100 that determin the % of CPU that is used to execute the operation
+	private int cpuusing; // Number between 1 and 100 that determines the % of CPU that is used to execute the operation
 	// --------------------------------------
 	// Methods
 	// --------------------------------------
