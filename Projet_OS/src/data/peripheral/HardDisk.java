@@ -36,12 +36,13 @@ public class HardDisk extends Peripheral {
 
 	public HardDisk(String peripheralid) {
 		super(peripheralid);
+		File[] children = HardDisk.listFiles();
+		for (int i=0; children != null && i<children.length; i++) {
+		children[i].delete(); 
+		}
 		
-		 if (HardDisk.exists()) {
-	        }
-		 else {
 		HardDisk.mkdir();
-	        }
+	        
 		info = new File("/Users/theomarmeisse/Desktop/harddisks/info.csv");
 		info.delete();
 		try {
@@ -168,11 +169,10 @@ public class HardDisk extends Peripheral {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		slot1.write("BABAAB");
+		slot1.write("BABAABUYHT");
 		slot2.write("2+2 76");
 		slot3.write("ASTALABAMBA");
 		hd.eraseSlot("Slot2");
-		
 		
 	}
 	

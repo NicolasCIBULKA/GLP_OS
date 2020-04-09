@@ -19,6 +19,7 @@ public class Slot {
 	File slot;
 	String name;
 	boolean slotFile;
+	int sizeMax;
 
 	private static String fileposition = "/Users/theomarmeisse/Desktop/harddisks/";
 	
@@ -61,7 +62,12 @@ public class Slot {
 	
 
 
-	public void write(String text) {
+	public void write(String text) throws StringIndexOutOfBoundsException {
+		int sizeEntry = text.length();
+		if(sizeEntry + sizeMax >= 2000) {
+			throw new StringIndexOutOfBoundsException();
+		}
+		else
 		try {
             PrintStream writer = new PrintStream(new FileOutputStream(slot,true));
           
@@ -76,6 +82,7 @@ public class Slot {
             e.printStackTrace();
        }
 		
+		sizeMax = sizeMax + sizeEntry;
 	}
 
 	public void read() { 
