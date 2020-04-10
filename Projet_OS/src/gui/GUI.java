@@ -79,6 +79,9 @@ public class GUI extends JFrame implements Runnable{
 	private Screen screen= new Screen("screen");
 	private ScreenDriver screenDriver = new ScreenDriver("screenDriver", authScreen, screen);
 	
+	//hardisk
+	private HardDisk hd1=new HardDisk("hd1");
+	
 	// Arraylist of Processus
 	Processuslist plist = new Processuslist();
 	// Round robin
@@ -105,8 +108,7 @@ public class GUI extends JFrame implements Runnable{
 
 	//scroll for the process display
 	private JScrollPane scrollprocess = new JScrollPane(affichprocess,JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
-	//scroll for the disk
-	private JScrollPane scrolldisk = new JScrollPane(affichdisk,JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+	
 	//scroll for the screen
 	private JScrollPane scroll = new JScrollPane(affichecran,JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
 	

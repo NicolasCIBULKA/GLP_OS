@@ -1,8 +1,15 @@
 package gui;
 
+import java.util.HashMap;
+
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.JFreeChart;
+import org.jfree.chart.plot.PlotOrientation;
+import org.jfree.data.category.CategoryDataset;
+import org.jfree.data.category.DefaultCategoryDataset;
 import org.jfree.data.general.DefaultPieDataset;
+
+import data.peripheral.Slot;
 
 
 /**
@@ -13,6 +20,9 @@ import org.jfree.data.general.DefaultPieDataset;
  */
 
 public class PieChart {
+	
+	
+	
 
 	//utilisation de constantes pour evaluer le rendu graphique. voir les commentaire pour regler les dataset
 	public JFreeChart getCpuPie() {
@@ -38,4 +48,5 @@ public class PieChart {
 
 		return ChartFactory.createPieChart("", dataset, true, true, false);
 	}
+	
 }
