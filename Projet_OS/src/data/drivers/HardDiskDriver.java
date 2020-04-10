@@ -128,6 +128,12 @@ public class HardDiskDriver extends Driver{
        
 }
 
+	public HardDisk getHd() {
+		return hd;
+	}
+	
+	
+
 	
 }
 

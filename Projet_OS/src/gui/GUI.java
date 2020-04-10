@@ -61,6 +61,9 @@ public class GUI extends JFrame implements Runnable{
 	//peripherals and drivers
 	//----------------------
 	
+	
+	
+	
 	// Instance of the GUI 
 	private GUI instance = this;
 	
@@ -80,7 +83,9 @@ public class GUI extends JFrame implements Runnable{
 	private ScreenDriver screenDriver = new ScreenDriver("screenDriver", authScreen, screen);
 	
 	//hardisk
+	private Interaction authhdd = new Interaction();
 	private HardDisk hd1=new HardDisk("hd1");
+	private HardDiskDriver hd1driver = new HardDiskDriver("hd1driver", authhdd, hd1);
 	
 	// Arraylist of Processus
 	Processuslist plist = new Processuslist();
@@ -90,14 +95,22 @@ public class GUI extends JFrame implements Runnable{
 	// Transcriptor for keyboard imput 
 	Primitivetranscriptor traductor = new Primitivetranscriptor( roundrobin);
 	
+	
+	
+	
 	//-------------------------
 	//five major parts of the GUI
 	//--------------------------
+	
+	
+	
 	private JPanel panel = new JPanel();
 	private JPanel panprocess = new JPanel();
 	private JPanel pandisk = new JPanel();
 	private MouseGUI mousegui = new MouseGUI();
 	private KeyboardGUI keyboardgui = new KeyboardGUI();
+	
+	
 	
 	//elements to display info on screen and for processes/hdd display (top of the gridlayout)
 	
@@ -313,13 +326,13 @@ public class GUI extends JFrame implements Runnable{
 		affichecran.setText(screenDriver.toString());
 		int activeprocposition = roundrobin.getActiveprocposition();
 		Processuslist plist = roundrobin.getPlist();
-		int CPUUsing = roundrobin.getCPUUsing();
+		
 		
 		
 		//to refresh the values of the bar chart:
 		//if the slot exist, the number of character used (max size =2000char) in it is put into the hasmap slotcount and divided by 20 to get a % result
 		for(int index=0; index<5; index++) {
-			if(hd1.getSlotlist().containsKey("Slot"+index)) {
+			if(hd1driver.getHd().getSlotlist().containsKey("Slot"+index)) {
 				bchart.getSlotCount().put("Slot"+index, bchart.getSlotmap().get("Slot"+index).getCharSize()/20);
 			}
 		}
