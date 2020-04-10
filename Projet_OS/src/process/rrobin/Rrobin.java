@@ -29,7 +29,7 @@ public class Rrobin extends Thread implements Runnable{
 	private ScreenDriver scdriver;
 	private OperationExec executor;
 	private int activeprocposition;
-	
+	private int CPUUsing;
 	
 	// --------------------------------------
 	// Methods
@@ -76,6 +76,7 @@ public class Rrobin extends Thread implements Runnable{
 				while(indice < this.bursttime){
 					//System.out.println("oui");
 					int opindice = activeproc.getAlreadydoneoperation();
+					this.setCPUUsing(activeproc.getOplist().get(opindice).getCpuusing());
 					executor.operationexecution(activeproc, activeproc.getOplist().get(opindice), scdriver);
 					// Sleep until a new clock iteration
 					try {
@@ -226,6 +227,14 @@ public class Rrobin extends Thread implements Runnable{
 
 	public void setBuffer(Processuslist buffer) {
 		this.buffer = buffer;
+	}
+
+	public int getCPUUsing() {
+		return CPUUsing;
+	}
+
+	public void setCPUUsing(int cPUUsing) {
+		CPUUsing = cPUUsing;
 	}
 
 	public ScreenDriver getScdriver() {

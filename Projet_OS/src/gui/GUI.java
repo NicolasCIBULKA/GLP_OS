@@ -79,6 +79,9 @@ public class GUI extends JFrame implements Runnable{
 	private Screen screen= new Screen("screen");
 	private ScreenDriver screenDriver = new ScreenDriver("screenDriver", authScreen, screen);
 	
+	//hardisk
+	private HardDisk hd1=new HardDisk("hd1");
+	
 	// Arraylist of Processus
 	Processuslist plist = new Processuslist();
 	// Round robin
@@ -99,14 +102,13 @@ public class GUI extends JFrame implements Runnable{
 	//elements to display info on screen and for processes/hdd display (top of the gridlayout)
 	
 	private JTextArea affichecran = new JTextArea();
-	private JTextArea invitecomm = new JTextArea();
+	private JTextField invitecomm = new JTextField();
 	private JEditorPane affichprocess= new JEditorPane();
 	private JTextArea affichdisk= new JTextArea();
 
 	//scroll for the process display
 	private JScrollPane scrollprocess = new JScrollPane(affichprocess,JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
-	//scroll for the disk
-	private JScrollPane scrolldisk = new JScrollPane(affichdisk,JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+	
 	//scroll for the screen
 	private JScrollPane scroll = new JScrollPane(affichecran,JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
 	
@@ -310,6 +312,8 @@ public class GUI extends JFrame implements Runnable{
 		affichecran.setText(screenDriver.toString());
 		int activeprocposition = roundrobin.getActiveprocposition();
 		Processuslist plist = roundrobin.getPlist();
+		int CPUUsing = roundrobin.getCPUUsing();
+		
 		ptable.refreshProcTable(plist , activeprocposition);
 		try {
 			affichprocess.setPage("file:./tab.html");
@@ -405,7 +409,6 @@ public class GUI extends JFrame implements Runnable{
 		    	traductor.transcriptor(invitecomm.getText(), screenDriver);
 				keyboard.resetContent();
 				invitecomm.setText(null);
-
 				if(roundrobin.getBuffer().getProcessuslist().size() > 0) {
 					Thread th = new Thread(instance);
 					if(!th.isAlive()) {
