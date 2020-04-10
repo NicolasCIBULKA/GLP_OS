@@ -43,6 +43,7 @@ public class Slot {
 		slot.delete();
 	}
 	
+	
 	// getters and setters
 	
 	public String getSlotposition() {
