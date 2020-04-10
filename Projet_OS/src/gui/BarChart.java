@@ -46,7 +46,7 @@ public class BarChart {
 
 			
 		
-		return ChartFactory.createBarChart("Storage", "", "% used", dataset, PlotOrientation.HORIZONTAL, true, true, false);
+		return ChartFactory.createBarChart("", "", "% used", dataset, PlotOrientation.HORIZONTAL, true, true, false);
 	}
 
 	public HashMap<String, Slot> getSlotmap() {

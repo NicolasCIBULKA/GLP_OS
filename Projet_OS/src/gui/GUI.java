@@ -315,6 +315,17 @@ public class GUI extends JFrame implements Runnable{
 		Processuslist plist = roundrobin.getPlist();
 		int CPUUsing = roundrobin.getCPUUsing();
 		
+		
+		//to refresh the values of the bar chart:
+		//if the slot exist, the number of character used (max size =2000char) in it is put into the hasmap slotcount and divided by 20 to get a % result
+		for(int index=0; index<5; index++) {
+			if(hd1.getSlotlist().containsKey("Slot"+index)) {
+				bchart.getSlotCount().put("Slot"+index, bchart.getSlotmap().get("Slot"+index).getCharSize()/20);
+			}
+		}
+		
+		
+		
 		ptable.refreshProcTable(plist , activeprocposition);
 		try {
 			affichprocess.setPage("file:./tab.html");
