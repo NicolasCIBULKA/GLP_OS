@@ -26,7 +26,7 @@ public class Primitivetranscriptor extends Thread{
 	// --------------------------------------
 	
 	private static int primitive_identifier = 0;
-	private static String HardDisks_position = "	";
+	private static String HardDisks_position = "src/scripts/";
 	
 	// --------------------------------------
 	// Attributs

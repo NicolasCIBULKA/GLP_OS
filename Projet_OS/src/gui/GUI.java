@@ -99,7 +99,7 @@ public class GUI extends JFrame implements Runnable{
 	//elements to display info on screen and for processes/hdd display (top of the gridlayout)
 	
 	private JTextArea affichecran = new JTextArea();
-	private JTextArea invitecomm = new JTextArea();
+	private JTextField invitecomm = new JTextField();
 	private JEditorPane affichprocess= new JEditorPane();
 	private JTextArea affichdisk= new JTextArea();
 
@@ -310,6 +310,7 @@ public class GUI extends JFrame implements Runnable{
 		affichecran.setText(screenDriver.toString());
 		int activeprocposition = roundrobin.getActiveprocposition();
 		Processuslist plist = roundrobin.getPlist();
+		
 		ptable.refreshProcTable(plist , activeprocposition);
 		try {
 			affichprocess.setPage("file:./tab.html");
@@ -405,7 +406,6 @@ public class GUI extends JFrame implements Runnable{
 		    	traductor.transcriptor(invitecomm.getText(), screenDriver);
 				keyboard.resetContent();
 				invitecomm.setText(null);
-
 				if(roundrobin.getBuffer().getProcessuslist().size() > 0) {
 					Thread th = new Thread(instance);
 					if(!th.isAlive()) {
