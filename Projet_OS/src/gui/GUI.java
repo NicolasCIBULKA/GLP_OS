@@ -327,7 +327,7 @@ public class GUI extends JFrame implements Runnable{
 		int activeprocposition = roundrobin.getActiveprocposition();
 		Processuslist plist = roundrobin.getPlist();
 		
-		
+		pchart.refreshData(); //refresh the dataset of the pie chart
 		
 		//to refresh the values of the bar chart:
 		//if the slot exist, the number of character used (max size =2000char) in it is put into the hasmap slotcount and divided by 20 to get a % result
