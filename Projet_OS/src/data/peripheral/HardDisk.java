@@ -27,11 +27,7 @@ public class HardDisk extends Peripheral {
 	File HardDisk = new File("/Users/theomarmeisse/Desktop/harddisks");
 	File info;
 	
-	
-	// --------------------------------------
-	// Methods
-	// --------------------------------------
-	
+
 	// Constructor
 
 	public HardDisk(String peripheralid) {
@@ -64,7 +60,7 @@ public class HardDisk extends Peripheral {
 		slotlist.put(slot.getName(), slot);
 		try {
 			writer = new PrintStream(new FileOutputStream(info,true));
-			writer.println(slot.getName()+";"+ slot.getSize()+";");
+			writer.println(slot.getName()+";"+ slot.getByteSize()+";");
 			writer.close();
 		} catch (IOException e) {
 			e.printStackTrace();
