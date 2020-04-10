@@ -310,6 +310,7 @@ public class GUI extends JFrame implements Runnable{
 		affichecran.setText(screenDriver.toString());
 		int activeprocposition = roundrobin.getActiveprocposition();
 		Processuslist plist = roundrobin.getPlist();
+		int CPUUsing = roundrobin.getCPUUsing();
 		
 		ptable.refreshProcTable(plist , activeprocposition);
 		try {
