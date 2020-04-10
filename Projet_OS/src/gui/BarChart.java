@@ -4,6 +4,7 @@ import java.util.HashMap;
 
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.JFreeChart;
+import org.jfree.chart.plot.PlotOrientation;
 import org.jfree.data.category.DefaultCategoryDataset;
 
 import data.peripheral.Slot;
@@ -17,12 +18,17 @@ import data.peripheral.Slot;
  */
 public class BarChart {
 	
-	
-	private HashMap<String,Slot> slotCount = new HashMap<String,Slot>();
+	private HashMap<String,Slot> slotmap = new HashMap<String,Slot>();
+	private HashMap<String,Integer> slotCount = new HashMap<String,Integer>();
 
 	
-	public BarChart(HashMap<String,Slot> hmap) {
-		this.slotCount=hmap;
+	public BarChart(HashMap<String,Slot> slotlist) {
+		this.slotmap=slotlist;
+		slotCount.put("Slot1", 0);
+		slotCount.put("Slot2", 0);
+		slotCount.put("Slot3", 0);
+		slotCount.put("Slot4", 0);
+		slotCount.put("Slot5", 0);
 	}
 	
 	public JFreeChart getSlotBarChart() {
@@ -32,15 +38,24 @@ public class BarChart {
 		DefaultCategoryDataset dataset = new DefaultCategoryDataset();
 		
 		//?
-		dataset.setValue(2000-slotCount.get("Slot1").getCharSize(), "series", "slot#1");
-		dataset.setValue(2000-slotCount.get("Slot2").getCharSize(), "series", "slot#2");
-		dataset.setValue(2000-slotCount.get("Slot3").getCharSize(), "series", "slot#3");
-		dataset.setValue(2000-slotCount.get("Slot4").getCharSize(), "series", "slot#4");
-		dataset.setValue(2000-slotCount.get("Slot5").getCharSize(), "series", "slot#5");
+		dataset.setValue(slotCount.get("Slot1"), "used", "slot#1");
+		dataset.setValue(slotCount.get("Slot2"), "used", "slot#2");
+		dataset.setValue(slotCount.get("Slot3"), "used", "slot#3");
+		dataset.setValue(slotCount.get("Slot4"), "used", "slot#4");
+		dataset.setValue(slotCount.get("Slot5"), "used", "slot#5");
 
 			
 		
-		
-		return ChartFactory.createBarChart("Storage", "slot #", "% used", dataset);
+		return ChartFactory.createBarChart("Storage", "", "% used", dataset, PlotOrientation.HORIZONTAL, true, true, false);
 	}
+
+	public HashMap<String, Slot> getSlotmap() {
+		return slotmap;
+	}
+
+	public HashMap<String, Integer> getSlotCount() {
+		return slotCount;
+	}
+	
+	
 }
