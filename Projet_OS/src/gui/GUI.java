@@ -254,11 +254,11 @@ public class GUI extends JFrame implements Runnable{
 		affichdisk.setEditable(false);
 		
 		pandisk.setBorder(BorderFactory.createTitledBorder("Instruments "));
-		pandisk.setLayout(new BorderLayout());
+		pandisk.setLayout(new GridLayout(2,1));
 		ChartPanel chartpan1= new ChartPanel(pchart.getCpuPie(), 200, 225, 150,150, 200, 200, true, true, false, false, false, true);
 		ChartPanel chartpan2= new ChartPanel(pchart.getSlotPie(), 200, 225, 150,150, 200, 200, true, true, false, false, false, true);
-		pandisk.add(chartpan1, BorderLayout.NORTH );
-		pandisk.add(chartpan2, BorderLayout.SOUTH );
+		pandisk.add(chartpan1 );
+		pandisk.add(chartpan2 );
 		
 		
 		DefaultCaret caret = (DefaultCaret)affichecran.getCaret();
