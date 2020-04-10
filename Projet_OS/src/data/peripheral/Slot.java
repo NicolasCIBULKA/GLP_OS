@@ -35,10 +35,12 @@ public class Slot {
 		 try {
 			slotFile = new File(fileposition + name).createNewFile();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		 
+	}
+	public void delete( ) {
+		slot.delete();
 	}
 	
 	// getters and setters
@@ -57,52 +59,12 @@ public class Slot {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public void deleteSlot() {
-		slot.delete();
-	}
+
 	
 
 
-	public void write(String text) throws StringIndexOutOfBoundsException {
-		int sizeEntry = text.length();
-		if(sizeEntry + size >= sizeMax) {
-			throw new StringIndexOutOfBoundsException();
-		}
-		else
-		try {
-            PrintStream writer = new PrintStream(new FileOutputStream(slot,true));
-          
-            try {
-                 writer.print(text);
-              
-            } finally {
-                 writer.close(); 
-            }
-          
-       } catch (IOException e) {
-            e.printStackTrace();
-       }
-		
-		size = size + sizeEntry;
-	}
 
-	public void read() { 
-		try {
-			BufferedReader reader = new BufferedReader(new FileReader(slot));
-			try {
-		      String CurrentLine;
-		      while ((CurrentLine = reader.readLine()) != null) {
-		        System.out.println(CurrentLine);
-		      }
-			}
-		      finally {
-		    	  reader.close();
-		      }
-		    } catch (IOException e) {
-		      e.printStackTrace();
-		    }
-		
-	}
+
 	public long getByteSize() {
 		long size = slot.length();
 		size = size*8;
@@ -113,5 +75,8 @@ public class Slot {
 	}
 	public int getMaxSize() {
 		return sizeMax;
+	}
+	public File getSlot() {
+		return slot;
 	}
 }
