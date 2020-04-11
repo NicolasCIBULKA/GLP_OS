@@ -190,7 +190,6 @@ public class OperationExec {
 				ArrayListVisitor<Void> visitor = new OperationVisitor();
 				visitor.visit(comp);
 				if(comp.getResult().getContent() == 0) {
-					// System.out.println(comp.getA().getContent() + " " + comp.getComparator() + " " + comp.getB().getContent());
 					whloop.setNeedcheck(false);
 				}
 				else {

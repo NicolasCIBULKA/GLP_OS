@@ -36,7 +36,8 @@ public class PieChart {
 	}
 	
 	public void refreshData() {
-		dataset.setValue("CPU used",roundrobin.getCPUUsing());
+		int CPUUsing = roundrobin.getCPUUsing();
+		dataset.setValue("CPU used",CPUUsing);
 		dataset.setValue("CPU left", 100-roundrobin.getCPUUsing() );
 		
 	}

@@ -90,41 +90,42 @@ public class HardDiskDriver extends Driver{
 		hd.setSlotlist(stmp);
 		
 		   
-       try { File tempFile = new File(info.getAbsolutePath() + ".tmp");
-        BufferedReader br = new BufferedReader(new FileReader("/Users/theomarmeisse/Desktop/harddisks/info.csv"));
-         writer = new PrintStream(new FileOutputStream(tempFile));
-        String line = null;
+       try { 
+    	   File tempFile = new File(info.getAbsolutePath() + ".tmp");
+    	   BufferedReader br = new BufferedReader(new FileReader("/Users/theomarmeisse/Desktop/harddisks/info.csv"));
+    	   writer = new PrintStream(new FileOutputStream(tempFile));
+    	   String line = null;
 
         
-        while ((line = br.readLine()) != null) {
-        	String[] slot = line.split(";");
-        	String value = slot[0];
-            if (!value.equals(slotName)) {
-                writer.println(line);
-            }
-        }
-        writer.close();
-        br.close();
+	        while ((line = br.readLine()) != null) {
+	        	String[] slot = line.split(";");
+	        	String value = slot[0];
+	            if (!value.equals(slotName)) {
+	                writer.println(line);
+	            }
+	        }
+	        writer.close();
+	        br.close();
+	
+	        
+	        if (!info.delete()) {
+	            System.out.println("Could not delete file");
+	            return;
+	        }
 
         
-        if (!info.delete()) {
-            System.out.println("Could not delete file");
-            return;
-        }
-
-        
-        if (!tempFile.renameTo(info))
-            System.out.println("Could not rename file");
-        }
-    catch (FileNotFoundException e) {
-        e.printStackTrace();
-    }
-    catch (IOException e) {
-        e.printStackTrace();
-    }
-       hd.decrementSlotnumber();
-       s.delete();
-       
+	        if (!tempFile.renameTo(info))
+	            System.out.println("Could not rename file");
+	        }
+	    catch (FileNotFoundException e) {
+	        e.printStackTrace();
+	    }
+	    catch (IOException e) {
+	        e.printStackTrace();
+	    }
+	   	hd.decrementSlotnumber();
+	   	s.delete();
+       	
        
 }
 

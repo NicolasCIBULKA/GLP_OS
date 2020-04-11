@@ -24,7 +24,7 @@ public class Print extends Operation{
 	
 	public Print(Variable operation) {
 		this.printop = operation;
-		this.setCpuusing(63);
+		this.setCpuusing(50);
 	}
 
 	public Print(String line) {

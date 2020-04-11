@@ -65,6 +65,8 @@ public class Rrobin extends Thread implements Runnable{
 			// taking a processus
 			logger.info("Round robin  - Processus " + processusindice + " on " + this.getPlist().getProcessuslist().size());
 			Processus activeproc = this.getPlist().getProcessuslist().get(processusindice);
+			this.setCPUUsing(activeproc.getOplist().get(activeproc.getAlreadydoneoperation()).getCpuusing());
+			logger.info("Round Ribon - Processus : CPU using is a " + this.getCPUUsing() + "%");
 			setActiveprocposition(processusindice);
 			//System.out.println(activeproc.getProcessusname());
 			// Testing if the processus is almost finished
@@ -76,7 +78,7 @@ public class Rrobin extends Thread implements Runnable{
 				while(indice < this.bursttime){
 					//System.out.println("oui");
 					int opindice = activeproc.getAlreadydoneoperation();
-					this.setCPUUsing(activeproc.getOplist().get(opindice).getCpuusing());
+				
 					executor.operationexecution(activeproc, activeproc.getOplist().get(opindice), scdriver);
 					// Sleep until a new clock iteration
 					try {

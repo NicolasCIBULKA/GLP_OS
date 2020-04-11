@@ -326,7 +326,7 @@ public class GUI extends JFrame implements Runnable{
 		affichecran.setText(screenDriver.toString());
 		int activeprocposition = roundrobin.getActiveprocposition();
 		Processuslist plist = roundrobin.getPlist();
-		
+		int CPUUsage = roundrobin.getCPUUsing();
 		pchart.refreshData(); //refresh the dataset of the pie chart
 		
 		//to refresh the values of the bar chart:
@@ -356,6 +356,8 @@ public class GUI extends JFrame implements Runnable{
 			roundrobin.RrobinUnit();
 			Updatevalues();
 		}while(roundrobin.getPlist().getProcessuslist().size() > 0);
+		roundrobin.setCPUUsing(0);
+		Updatevalues();
 	}
 	
 	

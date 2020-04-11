@@ -88,6 +88,10 @@ public class Primitivetranscriptor extends Thread{
 			// else if the primitive is write
 			else if(tabinput[primitive_identifier].contains("write")) {
 				String slotname = tabinput[2];
+				String stradd = "";
+				for(int i=4; i < tabinput.length-1 ; i++) {
+					stradd += tabinput[i];
+				}
 				
 			}
 		}
@@ -102,7 +106,7 @@ public class Primitivetranscriptor extends Thread{
 			// if the primitive is a wipe
 			if(tabinput[primitive_identifier].contains("wipe")) {
 				String slotname = tabinput[2];
-				
+
 			}
 			// else if the primitive is a addlost primitive
 			else if(tabinput[primitive_identifier].contains("addslost")) {

@@ -6,4 +6,3 @@ INT un = 1
 PRINT debut
 nombre = nombre + un
 SLEEP 1000
-
