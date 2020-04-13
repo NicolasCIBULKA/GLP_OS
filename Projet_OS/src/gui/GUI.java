@@ -128,7 +128,7 @@ public class GUI extends JFrame implements Runnable{
 	//charts
 	PieChart pchart = new PieChart(roundrobin);
 	
-	BarChart bchart = new BarChart(hd1.getSlotlist());
+	BarChart bchart = new BarChart(hd1driver.getHd().getSlotlist());
 	
 	// HTML generator for the processus table
 	ProcTable ptable = new ProcTable();
