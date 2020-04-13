@@ -22,7 +22,7 @@ public class Slot {
 	int sizeMax = 2000;
 	int size;
 
-	private static String fileposition = "/Users/theomarmeisse/Desktop/harddisks/";
+	private static String fileposition = "/src/harddisks/";
 	
 	// --------------------------------------
 	// Methods

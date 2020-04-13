@@ -26,7 +26,7 @@ public class HardDisk extends Peripheral {
 	private int slotnumber = 0;
 	private int maxSlot = 5;
 	PrintStream writer;
-	File HardDisk = new File("/Users/theomarmeisse/Desktop/harddisks");
+	File HardDisk = new File("/src/harddisks");
 	File info;
 	
 
@@ -41,7 +41,7 @@ public class HardDisk extends Peripheral {
 		
 		HardDisk.mkdir();
 	        
-		info = new File("/Users/theomarmeisse/Desktop/harddisks/info.csv");
+		info = new File("/src/harddisks/info.csv");
 		info.delete();
 		try {
 			 writer = new PrintStream(new FileOutputStream(info,true));
