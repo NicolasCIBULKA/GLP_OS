@@ -1,17 +1,11 @@
 package data.peripheral;
 
 
-import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
-import java.io.FileReader;
-import java.io.IOException;
 import java.io.PrintStream;
 import java.util.HashMap;
-import data.drivers.FullHDException;
-import data.drivers.HardDiskDriver;
-import data.drivers.Interaction;
 
 
 public class HardDisk extends Peripheral {
@@ -26,22 +20,27 @@ public class HardDisk extends Peripheral {
 	private int slotnumber = 0;
 	private int maxSlot = 5;
 	PrintStream writer;
-	File HardDisk = new File("/src/harddisks");
+	File HardDisk = new File("./src/harddisks");
 	File info;
 	
-
+	
 	// Constructor
 
 	public HardDisk(String peripheralid) {
 		super(peripheralid);
+		if(HardDisk.exists()) {
+		}
+		else {	
+		HardDisk.mkdir();
+		}
 		File[] children = HardDisk.listFiles();
 		for (int i=0; children != null && i<children.length; i++) {
 		children[i].delete(); 
 		}
 		
-		HardDisk.mkdir();
+		
 	        
-		info = new File("/src/harddisks/info.csv");
+		info = new File("./src/harddisks/info.csv");
 		info.delete();
 		try {
 			 writer = new PrintStream(new FileOutputStream(info,true));

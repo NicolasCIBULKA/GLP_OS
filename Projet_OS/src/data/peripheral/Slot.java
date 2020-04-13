@@ -1,12 +1,7 @@
 package data.peripheral;
 
-import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.FileReader;
 import java.io.IOException;
-import java.io.PrintStream;
 
 
 public class Slot {
@@ -22,7 +17,7 @@ public class Slot {
 	int sizeMax = 2000;
 	int size;
 
-	private static String fileposition = "/src/harddisks/";
+	private static String fileposition = "./src/harddisks/";
 	
 	// --------------------------------------
 	// Methods
