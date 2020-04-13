@@ -92,7 +92,7 @@ public class HardDiskDriver extends Driver{
 		   
        try { 
     	   File tempFile = new File(info.getAbsolutePath() + ".tmp");
-    	   BufferedReader br = new BufferedReader(new FileReader("/Users/theomarmeisse/Desktop/harddisks/info.csv"));
+    	   BufferedReader br = new BufferedReader(new FileReader("/src/harddisks/info.csv"));
     	   writer = new PrintStream(new FileOutputStream(tempFile));
     	   String line = null;
 
@@ -133,7 +133,7 @@ public class HardDiskDriver extends Driver{
 		return hd;
 	}
 	
-	
+
 
 	
 }
