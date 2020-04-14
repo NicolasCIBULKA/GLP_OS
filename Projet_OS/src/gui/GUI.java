@@ -171,57 +171,7 @@ public class GUI extends JFrame implements Runnable{
 	
 		
 		
-		/*contentPane.setLayout(new GridBagLayout());
-		GridBagConstraints gridcons = new GridBagConstraints();
-		gridcons.fill=GridBagConstraints.BOTH;
-		gridcons.insets = new Insets(5, 5, 5, 5);
-
 		
-		//adding the five parts to the frame
-		
-		//screen
-		gridcons.weightx=2;
-		gridcons.weighty=2;
-		gridcons.gridx=0;
-		gridcons.gridy=0;
-		gridcons.gridheight=4;
-		gridcons.gridwidth=2;
-		contentPane.add(panel, gridcons);
-		
-		//disk
-		gridcons.weightx=1;
-		gridcons.weighty=1;
-		gridcons.gridx=3;
-		gridcons.gridy=0;
-		gridcons.gridheight=4;
-		gridcons.gridwidth=1;
-		contentPane.add(pandisk, gridcons);
-		
-		//processes
-		gridcons.gridx=4;
-		gridcons.gridy=0;
-		gridcons.gridheight=4;
-		gridcons.gridwidth=1;
-		contentPane.add(panprocess, gridcons);
-		
-		//keyboard
-		gridcons.weightx=0;
-		gridcons.weighty=0;
-		gridcons.gridx=0;
-		gridcons.gridy=4;
-		gridcons.gridheight=2;
-		gridcons.gridwidth=2;
-		contentPane.add(keyboardgui.getPankeybrd(), gridcons);
-		
-		//mouse
-		gridcons.gridx=3;
-		gridcons.gridy=4;
-		gridcons.gridheight=2;
-		gridcons.gridwidth=2;
-		gridcons.weightx=0;
-		gridcons.weighty=0;
-		contentPane.add(mousegui.getPanel(), gridcons);
-		*/
 		
 		//adjusting the panels of each five parts:
 		
@@ -326,7 +276,7 @@ public class GUI extends JFrame implements Runnable{
 		affichecran.setText(screenDriver.toString());
 		int activeprocposition = roundrobin.getActiveprocposition();
 		Processuslist plist = roundrobin.getPlist();
-		int CPUUsage = roundrobin.getCPUUsing();
+		
 		pchart.refreshData(); //refresh the dataset of the pie chart
 		
 		//to refresh the values of the bar chart:
