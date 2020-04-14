@@ -248,9 +248,7 @@ public class GUI extends JFrame implements Runnable{
 		try {
 			hd1driver.addSlot(slot1);
 			hd1driver.addSlot(slot4);
-			hd1driver.write("rrrrrrdipnnnizzzzzzzzzzzzzzzzzzzzzzzuhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhddddddddddddddddddrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr", "slot1");
-			hd1driver.write("rrrrrrdipnnnizzzzzzzzzzzzzzzzzzzzzzzuhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhddddddddddddddddddrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr", "slot4");
-		}catch(FullHDException e){
+			}catch(FullHDException e){
 			e.printStackTrace();
 		}
 		

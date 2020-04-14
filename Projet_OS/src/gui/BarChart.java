@@ -4,11 +4,15 @@ import java.util.HashMap;
 
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.JFreeChart;
+import org.jfree.chart.axis.AxisLocation;
+import org.jfree.chart.axis.NumberAxis;
+import org.jfree.chart.axis.ValueAxis;
+import org.jfree.chart.plot.CategoryPlot;
 import org.jfree.chart.plot.PlotOrientation;
 import org.jfree.data.category.DefaultCategoryDataset;
 
 import data.drivers.HardDiskDriver;
-import data.peripheral.Slot;
+
 
 /**
  * 
@@ -23,6 +27,7 @@ public class BarChart {
 	private DefaultCategoryDataset dataset = new DefaultCategoryDataset();
 	private HashMap<String,Integer> charCount = new HashMap<String,Integer>();
 
+    ValueAxis yAxis = new NumberAxis("utilisation des slots");
 	
 	public BarChart(HardDiskDriver harddisk) {
 
@@ -33,23 +38,25 @@ public class BarChart {
 		charCount.put("Slot3", 0);
 		charCount.put("Slot4", 0);
 		charCount.put("Slot5", 0);
+		
 	}
 	
 	public JFreeChart getSlotBarChart() {
-			
+		
 		dataset.setValue(0, "used", "slot#1");
 		dataset.setValue(0, "used", "slot#2");
 		dataset.setValue(15, "used", "slot#3");
 		dataset.setValue(0, "used", "slot#4");
 		dataset.setValue(0, "used", "slot#5");
-			
 		
-		return ChartFactory.createBarChart("", "", "% used", dataset, PlotOrientation.HORIZONTAL, true, true, false);
+		
+		return ChartFactory.createBarChart("", "", "utilisation des slots", dataset, PlotOrientation.HORIZONTAL, true, true, false);
 	}
 
 	public void refreshData() {
+		
 		//to refresh the values of the bar chart:
-		//if the slot exist, the number of character used (max size =2000char) in it is put into the hasmap slotcount and divided by 20 to get a % result
+		//if the slot exist, the number of character used (max size =2000char) in it is put into the hashmap slotcount and divided by 20 to get a % result
 		for(int index=1; index<6; index++) {
 				if(hddriver.getHd().getSlotlist().containsKey("slot"+index)) {
 				charCount.put("slot"+index, hddriver.getHd().getSlotlist().get("slot"+index).getCharSize()/20);
@@ -66,6 +73,7 @@ public class BarChart {
 	public HashMap<String, Integer> getCharCount() {
 		return charCount;
 	}
+	
 	
 	
 }
