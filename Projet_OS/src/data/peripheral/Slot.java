@@ -59,6 +59,9 @@ public class Slot {
 	
 
 
+	public void setSize(int newSize) {
+		this.size=newSize;
+	}
 
 
 	public long getByteSize() {

@@ -62,7 +62,7 @@ public class HardDiskDriver extends Driver{
             e.printStackTrace();
        }
 		
-		size = size + sizeEntry;
+		s.setSize(size + sizeEntry);
 	}
 	
 	public void read(String slotName) { 

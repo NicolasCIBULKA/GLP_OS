@@ -15,7 +15,7 @@ public class HardDisk extends Peripheral {
 	// --------------------------------------
 	
 	private boolean canAddContent;
-	private HashMap<String,Slot> slotlist = new HashMap();
+	private HashMap<String,Slot> slotlist = new HashMap<String,Slot>();
 	
 	private int slotnumber = 0;
 	private int maxSlot = 5;

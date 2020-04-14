@@ -87,6 +87,17 @@ public class GUI extends JFrame implements Runnable{
 	private HardDisk hd1=new HardDisk("hd1");
 	private HardDiskDriver hd1driver = new HardDiskDriver("hd1driver", authhdd, hd1);
 	
+	private Slot slot1 = new Slot("slot1");
+	private Slot slot4 = new Slot("slot4");
+	
+	
+	private HardDisk hd2=new HardDisk("hd2");
+	private HardDiskDriver hd2driver = new HardDiskDriver("hd2driver", authhdd, hd2);
+	
+	
+	
+	
+	
 	// Arraylist of Processus
 	Processuslist plist = new Processuslist();
 	// Round robin
@@ -128,7 +139,7 @@ public class GUI extends JFrame implements Runnable{
 	//charts
 	PieChart pchart = new PieChart(roundrobin);
 	
-	BarChart bchart = new BarChart(hd1driver.getHd().getSlotlist());
+	BarChart bchart = new BarChart(hd1driver);
 	
 	// HTML generator for the processus table
 	ProcTable ptable = new ProcTable();
@@ -234,6 +245,17 @@ public class GUI extends JFrame implements Runnable{
 		//and pan Mouse are now handled in keyboardgui class
 		
 		
+		try {
+			hd1driver.addSlot(slot1);
+			hd1driver.addSlot(slot4);
+			hd1driver.write("rrrrrrdipnnnizzzzzzzzzzzzzzzzzzzzzzzuhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhddddddddddddddddddrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr", "slot1");
+			hd1driver.write("rrrrrrdipnnnizzzzzzzzzzzzzzzzzzzzzzzuhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhddddddddddddddddddrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr", "slot4");
+		}catch(FullHDException e){
+			e.printStackTrace();
+		}
+		
+		
+		
 		//action listeners
 		invitecomm.addKeyListener(new EnterKeyAction());
 		
@@ -279,14 +301,8 @@ public class GUI extends JFrame implements Runnable{
 		
 		pchart.refreshData(); //refresh the dataset of the pie chart
 		
-		//to refresh the values of the bar chart:
-		//if the slot exist, the number of character used (max size =2000char) in it is put into the hasmap slotcount and divided by 20 to get a % result
-		for(int index=0; index<5; index++) {
-			if(hd1driver.getHd().getSlotlist().containsKey("Slot"+index)) {
-				bchart.getSlotCount().put("Slot"+index, bchart.getSlotmap().get("Slot"+index).getCharSize()/20);
-			}
-		}
 		
+		bchart.refreshData();
 		
 		
 		ptable.refreshProcTable(plist , activeprocposition);
@@ -365,6 +381,8 @@ public class GUI extends JFrame implements Runnable{
 				panel.setBackground(Color.WHITE);
 				scroll.setVisible(true);
 				invitecomm.setVisible(true);
+				
+				bchart.refreshData();
 				
 			}else {
 				
