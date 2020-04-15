@@ -87,9 +87,7 @@ public class GUI extends JFrame implements Runnable{
 	private HardDisk hd1=new HardDisk("hd1");
 	private HardDiskDriver hd1driver = new HardDiskDriver("hd1driver", authhdd, hd1);
 	
-	private Slot slot1 = new Slot("slot1");
-	private Slot slot4 = new Slot("slot4");
-	
+
 	
 	private HardDisk hd2=new HardDisk("hd2");
 	private HardDiskDriver hd2driver = new HardDiskDriver("hd2driver", authhdd, hd2);

@@ -1,15 +1,12 @@
 package process.traduction;
 
 import java.io.BufferedReader;
-import java.io.BufferedWriter;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
-import java.io.FileWriter;
 import java.io.IOException;
-
 import data.drivers.*;
-import data.primitive.Primitive;
 import data.processus.Processus;
 import process.rrobin.Rrobin;
 
