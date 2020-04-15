@@ -17,18 +17,18 @@ public class Slot {
 	int sizeMax = 2000;
 	int size;
 
-	private static String fileposition = "./src/harddisks/";
+	
 	
 	// --------------------------------------
 	// Methods
 	// --------------------------------------
 	
-	public Slot(String name) {
+	public Slot(String name,HardDisk hd) {
 		this.name = name;
-		this.setSlotposition(fileposition + name);
-		 slot = new File(fileposition + name);
+		String fileposition = hd.getHdPosition()+"/"+name;
+		 slot = new File(fileposition);
 		 try {
-			slotFile = new File(fileposition + name).createNewFile();
+			slotFile = new File(fileposition).createNewFile();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

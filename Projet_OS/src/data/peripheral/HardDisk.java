@@ -20,7 +20,9 @@ public class HardDisk extends Peripheral {
 	private int slotnumber = 0;
 	private int maxSlot = 5;
 	PrintStream writer;
-	File HardDisk = new File("./src/harddisks");
+	int hdNumber = 1; 
+	File HardDisk = new File("./src/harddisks"+hdNumber);
+	String hdPosition = "./src/harddisks"+hdNumber;
 	File info;
 	
 	
@@ -28,7 +30,12 @@ public class HardDisk extends Peripheral {
 
 	public HardDisk(String peripheralid) {
 		super(peripheralid);
+		HardDisk = new File("./src/harddisks"+hdNumber);
 		if(HardDisk.exists()) {
+			hdNumber++;
+			HardDisk = new File("./src/harddisks"+hdNumber);
+			hdPosition = "./src/harddisks"+hdNumber;
+			HardDisk.mkdir();
 		}
 		else {	
 		HardDisk.mkdir();
@@ -40,7 +47,7 @@ public class HardDisk extends Peripheral {
 		
 		
 	        
-		info = new File("./src/harddisks/info.csv");
+		info = new File(hdPosition+"/info.csv");
 		info.delete();
 		try {
 			 writer = new PrintStream(new FileOutputStream(info,true));
@@ -93,6 +100,21 @@ public class HardDisk extends Peripheral {
 	}
 	public File getInfo() {
 		return info;
+	}
+
+
+	public void setSlotnumber(int slotnumber) {
+		this.slotnumber = slotnumber;
+	}
+
+
+	public int getHdNumber() {
+		return hdNumber;
+	}
+
+
+	public String getHdPosition() {
+		return hdPosition;
 	}
 	
 	

@@ -23,10 +23,12 @@ public class HardDiskDriver extends Driver{
 		info = hd.getInfo();
 	}
 	
-	public void addSlot(Slot slot) throws FullHDException{
+	public void addSlot(String name) throws FullHDException{
+		Slot slot = new Slot(name,hd);
 		if(hd.getSlotnumber() == hd.getMaxSlot() || hd.getSlotlist().containsKey(slot.getName())) {
 			throw new FullHDException();
 		}
+		
 		HashMap<String,Slot> stmp = hd.getSlotlist();
 		stmp.put(slot.getName(), slot);
 		hd.setSlotlist(stmp);
@@ -66,6 +68,31 @@ public class HardDiskDriver extends Driver{
        }
 		
 		s.setSize(size + sizeEntry);
+		try { 
+	    	   File tempFile = new File(info.getAbsolutePath() + ".tmp");
+	    	   BufferedReader br = new BufferedReader(new FileReader(hd.getHdPosition()+"/info.csv"));
+	    	   writer = new PrintStream(new FileOutputStream(tempFile));
+	    	   String line = null;
+
+	        
+		        while ((line = br.readLine()) != null) {
+		        	String[] slot = line.split(";");
+		        	String value = slot[0];
+		            if (!value.equals(slotName)) {
+		                writer.println(line);
+		            }
+		            else {
+		            	writer.println(s.getName()+";"+ s.getByteSize()+";");
+		            }
+		        }
+		        writer.close();
+		        br.close();
+		        if (!tempFile.renameTo(info)) {
+		            System.out.println("Could not rename file");
+		        }
+	}catch (IOException e) {
+        e.printStackTrace();
+    }
 	}
 	
 	public void read(String slotName) { 
@@ -96,7 +123,7 @@ public class HardDiskDriver extends Driver{
 		   
        try { 
     	   File tempFile = new File(info.getAbsolutePath() + ".tmp");
-    	   BufferedReader br = new BufferedReader(new FileReader("./src/harddisks/info.csv"));
+    	   BufferedReader br = new BufferedReader(new FileReader(hd.getHdPosition()+"/info.csv"));
     	   writer = new PrintStream(new FileOutputStream(tempFile));
     	   String line = null;
 
@@ -139,19 +166,19 @@ public class HardDiskDriver extends Driver{
 	
 	public static void main(String[] args) {
 		HardDisk hd = new HardDisk("76");
-		Slot slot1 = new Slot("A");
-		Slot slot2 = new Slot("B");
-		Slot slot3 = new Slot("C");
+		HardDisk hd2 = new HardDisk("tre");
+
 		Interaction authorization = new Interaction();
 		HardDiskDriver hdd = new HardDiskDriver("23",authorization,hd);
+		HardDiskDriver hdd2 = new HardDiskDriver("23",authorization,hd2);
 		try {
-			hdd.addSlot(slot1);
-			hdd.addSlot(slot2);
-			hdd.addSlot(slot3);
+			hdd.addSlot("A");
+			hdd2.addSlot("B");
+			hdd2.addSlot("C");
 			hdd.write("Elle a les yeux bleus pour effacer ce ciel gris ","A");
-			hdd.write("Elle a les yeux bleus pour effacer ce ciel fruit ","C");
-			hdd.write("Elle a les yeux bleus pour effacer ce ciel gris ","B");
-			hdd.eraseSlot("B");
+			hdd2.write("Elle a les yeux bleus pour effacer ce ciel fruit ","C");
+			hdd2.write("Elle a les yeux bleus pour effacer ce ciel gris ","B");
+			hdd2.eraseSlot("B");
 		} catch (FullHDException e) {
 			e.printStackTrace();
 		}
