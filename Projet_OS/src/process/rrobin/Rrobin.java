@@ -82,7 +82,7 @@ public class Rrobin extends Thread implements Runnable{
 					executor.operationexecution(activeproc, activeproc.getOplist().get(opindice), scdriver);
 					// Sleep until a new clock iteration
 					try {
-						Thread.sleep(1);
+						Thread.sleep(5);
 					} catch (InterruptedException e) {
 						e.printStackTrace();
 					}
@@ -104,6 +104,7 @@ public class Rrobin extends Thread implements Runnable{
 			if(activeproc.getAlreadydoneoperation() == activeproc.getProcessussize()) {
 				plist.getProcessuslist().remove(activeproc);
 			}
+			this.SRTF();
 		}
 	}
 	// Round robin algorithm
@@ -162,6 +163,9 @@ public class Rrobin extends Thread implements Runnable{
 			}
 		} while(this.getPlist().getProcessuslist().size() > 0);
 	}
+	
+	// Optimisation of Round Robin - Shortest remaining time first 
+	
 	public void SRTF(){
 		//set the shortest process as the current process
 		Processuslist srtf = new Processuslist();

@@ -275,8 +275,6 @@ public class GUI extends JFrame implements Runnable{
 		mousegui.getStartstop().addActionListener(new StartandStopAction());
 		
 			
-		
-		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		pack();
 		Updatevalues();
@@ -286,7 +284,7 @@ public class GUI extends JFrame implements Runnable{
 	
 	
 	public void Updatevalues() {
-		affichecran.setText(" ");
+		//affichecran.setText("");
 		affichecran.setText(screenDriver.toString());
 		int activeprocposition = roundrobin.getActiveprocposition();
 		Processuslist plist = roundrobin.getPlist();
@@ -340,7 +338,6 @@ public class GUI extends JFrame implements Runnable{
 			else {
 				Updatevalues();
 			}
-			
 			/*
 			keyboard.resetContent();
 			invitecomm.setText(null);

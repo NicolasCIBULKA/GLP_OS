@@ -105,11 +105,14 @@ public class Primitivetranscriptor extends Thread{
 		else if(tabinput.length == 6){
 			// if the primitive is a wipe
 			if(tabinput[primitive_identifier].contains("wipe")) {
-				String slotname = tabinput[2];
-
+				String hdname = tabinput[2];
+				String slotname = tabinput[4];
+				
 			}
 			// else if the primitive is a addlost primitive
 			else if(tabinput[primitive_identifier].contains("addslost")) {
+				String hdname = tabinput[2];
+				
 				
 			}
 			// else if the primitive is a delslot primitive

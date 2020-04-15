@@ -39,6 +39,9 @@ public class HardDiskDriver extends Driver{
 		}
 		hd.incrementSlotnumber();
 	}
+	
+	
+	
 	public void write(String text, String slotName) throws StringIndexOutOfBoundsException {
 		Slot s = hd.getSlotlist().get(slotName);
 		int size = s.getCharSize();
@@ -83,6 +86,7 @@ public class HardDiskDriver extends Driver{
 		    }
 		
 	}
+	
 	public void eraseSlot(String slotName) {
 		Slot s = hd.getSlotlist().get(slotName);
 		HashMap<String,Slot> stmp = hd.getSlotlist();

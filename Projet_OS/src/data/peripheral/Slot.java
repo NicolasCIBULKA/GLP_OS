@@ -34,10 +34,10 @@ public class Slot {
 		}
 		 
 	}
+	
 	public void delete( ) {
 		slot.delete();
 	}
-	
 	
 	// getters and setters
 	
