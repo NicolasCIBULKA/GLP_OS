@@ -94,6 +94,7 @@ public class GUI extends JFrame implements Runnable{
 	private HardDisk hd2=new HardDisk("hd2");
 	private HardDiskDriver hd2driver = new HardDiskDriver("hd2driver", authhdd, hd2);
 	
+
 	
 	
 	
@@ -139,7 +140,8 @@ public class GUI extends JFrame implements Runnable{
 	//charts
 	PieChart pchart = new PieChart(roundrobin);
 	
-	BarChart bchart = new BarChart(hd1driver);
+	BarChart bchart = new BarChart(hd1driver, hd2driver);
+	
 	
 	// HTML generator for the processus table
 	ProcTable ptable = new ProcTable();
@@ -178,8 +180,6 @@ public class GUI extends JFrame implements Runnable{
 		
 		mousegui.getPanel().setPreferredSize(new Dimension(400, 200));
 		contentPane.add(mousegui.getPanel());
-		
-	
 		
 		
 		
@@ -245,12 +245,6 @@ public class GUI extends JFrame implements Runnable{
 		//and pan Mouse are now handled in keyboardgui class
 		
 		
-		try {
-			hd1driver.addSlot(slot1);
-			hd1driver.addSlot(slot4);
-			}catch(FullHDException e){
-			e.printStackTrace();
-		}
 		
 		
 		
@@ -275,13 +269,13 @@ public class GUI extends JFrame implements Runnable{
 				temp[i][j].addActionListener(new KeyLetter());
 			}
 		
-		
-		
-			//for the mouse and the turn on button of the screen
-			mousegui.getStartstop().addActionListener(new StartandStopAction());
-			
-			
 		}
+		
+		//for the mouse and the turn on button of the screen
+		mousegui.getStartstop().addActionListener(new StartandStopAction());
+		
+			
+		
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		pack();
@@ -301,7 +295,6 @@ public class GUI extends JFrame implements Runnable{
 		
 		
 		bchart.refreshData();
-		
 		
 		ptable.refreshProcTable(plist , activeprocposition);
 		try {
@@ -394,6 +387,7 @@ public class GUI extends JFrame implements Runnable{
 			status=!status;
 		}
 	}
+	
 
 	private class EnterKeyAction implements KeyListener{
 		@Override

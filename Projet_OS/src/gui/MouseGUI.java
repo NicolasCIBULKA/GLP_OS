@@ -13,6 +13,8 @@ public class MouseGUI {
 	//adding a button to turn on the screen because there is some room left in this panel
 	private JButton startstop =new JButton("Start");
 	
+	
+	
 	private JButton up =new JButton("/\\");
 	private JButton left =new JButton("<");
 	private JButton click =new JButton("click");
@@ -100,4 +102,5 @@ public class MouseGUI {
 		return enter;
 	}
 	
+
 }
