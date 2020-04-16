@@ -21,7 +21,7 @@ public class HardDisk extends Peripheral {
 	private int maxSlot = 5;
 	PrintStream writer;
 	int hdNumber = 1; 
-	File HardDisk = new File("./src/harddisks"+hdNumber);
+	File HardDisk ;
 	String hdPosition = "./src/harddisks"+hdNumber;
 	File info;
 	
@@ -38,11 +38,11 @@ public class HardDisk extends Peripheral {
 			HardDisk.mkdir();
 		}
 		else {	
-		HardDisk.mkdir();
+		//HardDisk.mkdir();
 		}
 		File[] children = HardDisk.listFiles();
 		for (int i=0; children != null && i<children.length; i++) {
-		children[i].delete(); 
+		//children[i].delete(); 
 		}
 		
 		
@@ -50,12 +50,13 @@ public class HardDisk extends Peripheral {
 		info = new File(hdPosition+"/info.csv");
 		info.delete();
 		try {
-			 writer = new PrintStream(new FileOutputStream(info,true));
+			writer = new PrintStream(new FileOutputStream(info,true));
 			writer.println("Slot; Taille(en bytes)");
 			writer.close();
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
+		
 		
 	}
 	

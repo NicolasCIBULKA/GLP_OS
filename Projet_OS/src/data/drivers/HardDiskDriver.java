@@ -17,20 +17,15 @@ import logs.LoggerUtility;
 
 
 public class HardDiskDriver extends Driver{
-<<<<<<< HEAD
 
 	// --------------------------------------
 	// Attributs
 	// --------------------------------------
 	
-=======
-	
-	private static Logger logger = LoggerUtility.getLogger(HardDiskDriver.class, "text");
->>>>>>> branch 'master' of https://github.com/NicolasCIBULKA/GLP_OS.git
 	private HardDisk hd;
 	private PrintStream writer;
 	private File info;
-	
+	private static Logger logger = LoggerUtility.getLogger(HardDiskDriver.class, "text");
 	// --------------------------------------
 	// Methods
 	// --------------------------------------
@@ -194,7 +189,7 @@ public class HardDiskDriver extends Driver{
 			hdd.addSlot("A");
 			hdd2.addSlot("B");
 			hdd2.addSlot("C");
-			hdd.write("Elle a les yeux bleus pour effacer ce ciel gris ","A");
+			//hdd.write("Elle a les yeux bleus pour effacer ce ciel gris ","A");
 			hdd2.write("Elle a les yeux bleus pour effacer ce ciel fruit ","C");
 			hdd2.write("Elle a les yeux bleus pour effacer ce ciel gris ","B");
 			hdd2.eraseSlot("B");

@@ -87,12 +87,6 @@ public class GUI extends JFrame implements Runnable{
 	
 	private HardDisk hd1=new HardDisk("hd1");
 	private HardDiskDriver hd1driver = new HardDiskDriver("hd1driver", authhdd, hd1);
-	
-<<<<<<< HEAD
-=======
-
-	
->>>>>>> branch 'master' of https://github.com/NicolasCIBULKA/GLP_OS.git
 	private HardDisk hd2=new HardDisk("hd2");
 	private HardDiskDriver hd2driver = new HardDiskDriver("hd2driver", authhdd, hd2);
 	
@@ -327,7 +321,7 @@ public class GUI extends JFrame implements Runnable{
 			
 			//screenDriver.resetScreen();
 			
-			traductor.transcriptor(invitecomm.getText(), screenDriver);
+			traductor.transcriptor(invitecomm.getText(), screenDriver, hd1driver, hd2driver);
 			keyboard.resetContent();
 			invitecomm.setText(null);
 
@@ -392,7 +386,7 @@ public class GUI extends JFrame implements Runnable{
 		@Override
 		public void keyPressed(KeyEvent e) {
 		    if (e.getKeyCode()==KeyEvent.VK_ENTER){
-		    	traductor.transcriptor(invitecomm.getText(), screenDriver);
+		    	traductor.transcriptor(invitecomm.getText(), screenDriver, hd1driver, hd2driver);
 				keyboard.resetContent();
 				invitecomm.setText(null);
 				if(roundrobin.getBuffer().getProcessuslist().size() > 0) {

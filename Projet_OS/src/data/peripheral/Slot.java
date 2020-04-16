@@ -26,8 +26,8 @@ public class Slot {
 	public Slot(String name,HardDisk hd) {
 		this.name = name;
 		String fileposition = hd.getHdPosition()+"/"+name;
-		 slot = new File(fileposition);
-		 try {
+		slot = new File(fileposition);
+		try {
 			slotFile = new File(fileposition).createNewFile();
 		} catch (IOException e) {
 			e.printStackTrace();
