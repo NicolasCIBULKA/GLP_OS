@@ -1,0 +1,18 @@
+PROCESSUSNAME chrono
+# Definition des variables
+STRING debut = ------------------- DEBUT CHRONO -------------------
+STRING fin = ------------------- FIN CHRONO -------------------
+STRING explication = Ce programme est un compteur qui dure pendant 60 secondes
+INT value = 0
+INT max = 60
+STRING str = valeur du compteur :
+# Programme
+PRINT debut
+PRINT explication
+WHILE value < max ;
+	PRINT str
+	PRINT value
+	SLEEP 1000
+	INCREMENT value
+ENDWHILE
+PRINT fin

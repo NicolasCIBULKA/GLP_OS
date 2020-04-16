@@ -57,9 +57,6 @@ public class Slot {
 		this.name = name;
 	}
 
-	
-
-
 	public void setSize(int newSize) {
 		this.size=newSize;
 	}

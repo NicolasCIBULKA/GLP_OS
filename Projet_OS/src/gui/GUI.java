@@ -85,9 +85,9 @@ public class GUI extends JFrame implements Runnable{
 	//hardisk
 	private Interaction authhdd = new Interaction();
 	
-	private HardDisk hd1=new HardDisk("hd1");
+	private HardDisk hd1=new HardDisk("hd1", "./src/harddisks1");
 	private HardDiskDriver hd1driver = new HardDiskDriver("hd1driver", authhdd, hd1);
-	private HardDisk hd2=new HardDisk("hd2");
+	private HardDisk hd2=new HardDisk("hd2", "./src/harddisks2");
 	private HardDiskDriver hd2driver = new HardDiskDriver("hd2driver", authhdd, hd2);
 	
 
@@ -102,15 +102,10 @@ public class GUI extends JFrame implements Runnable{
 	
 	// Transcriptor for keyboard imput 
 	Primitivetranscriptor traductor = new Primitivetranscriptor( roundrobin);
-	
-	
-	
-	
+
 	//-------------------------
 	//five major parts of the GUI
 	//--------------------------
-	
-	
 	
 	private JPanel panel = new JPanel();
 	private JPanel panprocess = new JPanel();
@@ -324,7 +319,7 @@ public class GUI extends JFrame implements Runnable{
 			traductor.transcriptor(invitecomm.getText(), screenDriver, hd1driver, hd2driver);
 			keyboard.resetContent();
 			invitecomm.setText(null);
-
+			//Updatevalues();
 			if(roundrobin.getBuffer().getProcessuslist().size() > 0) {
 				Thread th = new Thread(instance);
 				if(!th.isAlive()) {

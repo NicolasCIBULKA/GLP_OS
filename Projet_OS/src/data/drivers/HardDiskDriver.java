@@ -17,22 +17,9 @@ import logs.LoggerUtility;
 
 
 public class HardDiskDriver extends Driver{
-
-	// --------------------------------------
-	// Attributs
-	// --------------------------------------
-	
 	
 	private static Logger logger = LoggerUtility.getLogger(HardDiskDriver.class, "text");
 	private HardDisk hd;
-	private PrintStream writer;
-	private File info;
-	private static Logger logger = LoggerUtility.getLogger(HardDiskDriver.class, "text");
-	// --------------------------------------
-	// Methods
-	// --------------------------------------
-	
-	// Construtor
 	PrintStream writer;
 	File info;
 	public HardDiskDriver(String driverID, Interaction authorization, HardDisk hd) {
@@ -108,9 +95,9 @@ public class HardDiskDriver extends Driver{
 		        if (!tempFile.renameTo(info)) {
 		            logger.info("Could not rename file");
 		        }
-	}catch (IOException e) {
-        e.printStackTrace();
-    }
+		}catch (IOException e) {
+	        e.printStackTrace();
+	    }
 	}
 	
 	public void read(String slotName) { 
@@ -193,7 +180,7 @@ public class HardDiskDriver extends Driver{
 			hdd.addSlot("A");
 			hdd2.addSlot("B");
 			hdd2.addSlot("C");
-			//hdd.write("Elle a les yeux bleus pour effacer ce ciel gris ","A");
+			hdd.write("Elle a les yeux bleus pour effacer ce ciel gris ","A");
 			hdd2.write("Elle a les yeux bleus pour effacer ce ciel fruit ","C");
 			hdd2.write("Elle a les yeux bleus pour effacer ce ciel gris ","B");
 			hdd2.eraseSlot("B");
@@ -204,4 +191,3 @@ public class HardDiskDriver extends Driver{
 
 	
 }
-
