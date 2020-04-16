@@ -22,6 +22,8 @@ public class HardDiskDriver extends Driver{
 	// Attributs
 	// --------------------------------------
 	
+	
+	private static Logger logger = LoggerUtility.getLogger(HardDiskDriver.class, "text");
 	private HardDisk hd;
 	private PrintStream writer;
 	private File info;
@@ -31,6 +33,8 @@ public class HardDiskDriver extends Driver{
 	// --------------------------------------
 	
 	// Construtor
+	PrintStream writer;
+	File info;
 	public HardDiskDriver(String driverID, Interaction authorization, HardDisk hd) {
 		super(driverID, authorization);
 		this.hd = hd;
@@ -179,12 +183,12 @@ public class HardDiskDriver extends Driver{
 	}
 	
 	public static void main(String[] args) {
-		HardDisk hd = new HardDisk("76");
-		HardDisk hd2 = new HardDisk("tre");
+		HardDisk hd = new HardDisk("76","./src/harddisks1");
+		HardDisk hd2 = new HardDisk("tre","./src/harddisks2");
 
 		Interaction authorization = new Interaction();
 		HardDiskDriver hdd = new HardDiskDriver("23",authorization,hd);
-		HardDiskDriver hdd2 = new HardDiskDriver("23",authorization,hd2);
+		HardDiskDriver hdd2 = new HardDiskDriver("3",authorization,hd2);
 		try {
 			hdd.addSlot("A");
 			hdd2.addSlot("B");

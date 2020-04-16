@@ -28,7 +28,7 @@ public class HardDisk extends Peripheral {
 	
 	// Constructor
 
-	public HardDisk(String peripheralid) {
+	public HardDisk(String peripheralid,String hdPosition) {
 		super(peripheralid);
 		HardDisk = new File("./src/harddisks"+hdNumber);
 		if(HardDisk.exists()) {
@@ -44,6 +44,8 @@ public class HardDisk extends Peripheral {
 		for (int i=0; children != null && i<children.length; i++) {
 		//children[i].delete(); 
 		}
+		this.hdPosition = hdPosition;
+		HardDisk = new File(hdPosition);
 		
 		
 	        
