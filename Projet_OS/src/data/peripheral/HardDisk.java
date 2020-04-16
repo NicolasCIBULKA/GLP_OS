@@ -22,7 +22,7 @@ public class HardDisk extends Peripheral {
 	PrintStream writer;
 	int hdNumber = 1; 
 	File HardDisk ;
-	String hdPosition = "./src/harddisks"+hdNumber;
+	String hdPosition;
 	File info;
 	
 	
@@ -30,20 +30,6 @@ public class HardDisk extends Peripheral {
 
 	public HardDisk(String peripheralid,String hdPosition) {
 		super(peripheralid);
-		HardDisk = new File("./src/harddisks"+hdNumber);
-		if(HardDisk.exists()) {
-			hdNumber++;
-			HardDisk = new File("./src/harddisks"+hdNumber);
-			hdPosition = "./src/harddisks"+hdNumber;
-			HardDisk.mkdir();
-		}
-		else {	
-		//HardDisk.mkdir();
-		}
-		File[] children = HardDisk.listFiles();
-		for (int i=0; children != null && i<children.length; i++) {
-		//children[i].delete(); 
-		}
 		this.hdPosition = hdPosition;
 		HardDisk = new File(hdPosition);
 		
