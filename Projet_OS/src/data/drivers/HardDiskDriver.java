@@ -14,9 +14,19 @@ import data.peripheral.Slot;
 
 public class HardDiskDriver extends Driver{
 
+	// --------------------------------------
+	// Attributs
+	// --------------------------------------
+	
 	private HardDisk hd;
-	PrintStream writer;
-	File info;
+	private PrintStream writer;
+	private File info;
+	
+	// --------------------------------------
+	// Methods
+	// --------------------------------------
+	
+	// Construtor
 	public HardDiskDriver(String driverID, Interaction authorization, HardDisk hd) {
 		super(driverID, authorization);
 		this.hd = hd;

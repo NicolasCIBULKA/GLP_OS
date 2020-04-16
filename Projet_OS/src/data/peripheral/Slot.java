@@ -48,6 +48,7 @@ public class Slot {
 	public void setSlotposition(String slotposition) {
 		this.slotposition = slotposition;
 	}
+	
 	public String getName() {
 		return name;
 	}
@@ -69,12 +70,15 @@ public class Slot {
 		size = size*8;
 		return size;
 	}
+	
 	public int getCharSize() {
 		return size;
 	}
+	
 	public int getMaxSize() {
 		return sizeMax;
 	}
+	
 	public File getSlot() {
 		return slot;
 	}
