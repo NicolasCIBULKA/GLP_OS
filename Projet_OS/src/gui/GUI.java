@@ -88,6 +88,11 @@ public class GUI extends JFrame implements Runnable{
 	private HardDisk hd1=new HardDisk("hd1");
 	private HardDiskDriver hd1driver = new HardDiskDriver("hd1driver", authhdd, hd1);
 	
+<<<<<<< HEAD
+=======
+
+	
+>>>>>>> branch 'master' of https://github.com/NicolasCIBULKA/GLP_OS.git
 	private HardDisk hd2=new HardDisk("hd2");
 	private HardDiskDriver hd2driver = new HardDiskDriver("hd2driver", authhdd, hd2);
 	

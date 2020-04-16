@@ -9,15 +9,24 @@ import java.io.IOException;
 import java.io.PrintStream;
 import java.util.HashMap;
 
+import org.apache.log4j.Logger;
+
 import data.peripheral.HardDisk;
 import data.peripheral.Slot;
+import logs.LoggerUtility;
+
 
 public class HardDiskDriver extends Driver{
+<<<<<<< HEAD
 
 	// --------------------------------------
 	// Attributs
 	// --------------------------------------
 	
+=======
+	
+	private static Logger logger = LoggerUtility.getLogger(HardDiskDriver.class, "text");
+>>>>>>> branch 'master' of https://github.com/NicolasCIBULKA/GLP_OS.git
 	private HardDisk hd;
 	private PrintStream writer;
 	private File info;
@@ -98,7 +107,7 @@ public class HardDiskDriver extends Driver{
 		        writer.close();
 		        br.close();
 		        if (!tempFile.renameTo(info)) {
-		            System.out.println("Could not rename file");
+		            logger.info("Could not rename file");
 		        }
 	}catch (IOException e) {
         e.printStackTrace();
@@ -112,7 +121,7 @@ public class HardDiskDriver extends Driver{
 			try {
 		      String CurrentLine;
 		      while ((CurrentLine = reader.readLine()) != null) {
-		        System.out.println(CurrentLine);
+		        logger.info(CurrentLine);
 		      }
 			}
 		      finally {
@@ -150,13 +159,13 @@ public class HardDiskDriver extends Driver{
 	
 	        
 	        if (!info.delete()) {
-	            System.out.println("Could not delete file");
+	            logger.info("Could not delete file");
 	            return;
 	        }
 
         
 	        if (!tempFile.renameTo(info))
-	            System.out.println("Could not rename file");
+	            logger.info("Could not rename file");
 	        }
 	    catch (FileNotFoundException e) {
 	        e.printStackTrace();
