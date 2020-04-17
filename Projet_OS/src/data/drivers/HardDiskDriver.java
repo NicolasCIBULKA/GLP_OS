@@ -1,10 +1,12 @@
 package data.drivers;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintStream;
 import java.util.HashMap;
@@ -21,6 +23,7 @@ public class HardDiskDriver extends Driver{
 	private static Logger logger = LoggerUtility.getLogger(HardDiskDriver.class, "text");
 	private HardDisk hd;
 	PrintStream writer;
+	private HashMap<String, String> slotinfo = new HashMap<String,String>();
 	File info;
 	public HardDiskDriver(String driverID, Interaction authorization, HardDisk hd) {
 		super(driverID, authorization);
@@ -33,7 +36,6 @@ public class HardDiskDriver extends Driver{
 		if(hd.getSlotnumber() == hd.getMaxSlot() || hd.getSlotlist().containsKey(slot.getName())) {
 			throw new FullHDException();
 		}
-		
 		HashMap<String,Slot> stmp = hd.getSlotlist();
 		stmp.put(slot.getName(), slot);
 		hd.setSlotlist(stmp);
@@ -47,8 +49,54 @@ public class HardDiskDriver extends Driver{
 		hd.incrementSlotnumber();
 	}
 	
-	public void updatehd(HardDisk hd) {
-		
+	
+	
+	public void refill() {
+ 	   try {
+ 		   BufferedReader br = new BufferedReader(new FileReader(hd.getHdPosition()+"/info.csv"));
+ 		   String line;
+ 		   String[] tabline;
+ 		   HashMap<String,Slot> slotlist = new HashMap<String,Slot>();
+ 		   while ((line = br.readLine()) != null) {
+ 			   tabline = line.split(";");
+ 			   Slot sl = new Slot(tabline[0], hd);
+ 			   slotlist.put(tabline[0],sl);
+ 		   }
+ 		  // System.out.println(slotlist);
+ 		   br.close();
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+	}
+	
+	
+	public void updatehd() {
+		try {
+			BufferedWriter brwriter = new BufferedWriter(new FileWriter(hd.getHdPosition()+"/info.csv"));
+			File hdpos = new File(hd.getHdPosition());
+			String[] list = hdpos.list();
+			slotinfo.clear();
+			for(int i = 0 ; i < list.length; i++) {
+				File file = new File("./src/harddisks"+hd.getHdNumber()+"/"+list[i]);
+				if(!file.getName().contains("info.csv") ) {
+					long octets = file.length();
+					String stroctets = Long.toString(octets);
+					String filename = file.getName();
+					slotinfo.put(filename, stroctets);
+					brwriter.write(file.getName()+";"+octets+"\n");
+				}
+			}
+			//System.out.println(slotinfo);
+			brwriter.close();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	public void write(String text, String slotName) throws StringIndexOutOfBoundsException {
@@ -171,9 +219,17 @@ public class HardDiskDriver extends Driver{
 		return hd;
 	}
 	
+	public HashMap<String, String> getSlotinfo() {
+		return slotinfo;
+	}
+
+	public void setSlotinfo(HashMap<String, String> slotinfo) {
+		this.slotinfo = slotinfo;
+	}
+
 	public static void main(String[] args) {
-		HardDisk hd = new HardDisk("76","./src/harddisks1");
-		HardDisk hd2 = new HardDisk("tre","./src/harddisks2");
+		HardDisk hd = new HardDisk("76","./src/harddisks1", 1);
+		HardDisk hd2 = new HardDisk("tre","./src/harddisks2", 2);
 
 		Interaction authorization = new Interaction();
 		HardDiskDriver hdd = new HardDiskDriver("23",authorization,hd);

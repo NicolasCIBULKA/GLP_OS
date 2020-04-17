@@ -14,7 +14,7 @@ public class Slot {
 	File slot;
 	String name;
 	boolean slotFile;
-	int sizeMax = 2000;
+	private static int sizeMax = 2000;
 	int size;
 
 	
@@ -57,8 +57,8 @@ public class Slot {
 		this.name = name;
 	}
 
-	public void setSize(int newSize) {
-		this.size=newSize;
+	public void setSize(long octets) {
+		this.size=(int) octets;
 	}
 
 

@@ -20,7 +20,7 @@ public class HardDisk extends Peripheral {
 	private int slotnumber = 0;
 	private int maxSlot = 5;
 	PrintStream writer;
-	int hdNumber = 1; 
+	private int hdNumber; 
 	File HardDisk ;
 	String hdPosition;
 	File info;
@@ -28,18 +28,15 @@ public class HardDisk extends Peripheral {
 	
 	// Constructor
 
-	public HardDisk(String peripheralid,String hdPosition) {
+	public HardDisk(String peripheralid,String hdPosition, int hdNumber) {
 		super(peripheralid);
 		this.hdPosition = hdPosition;
 		HardDisk = new File(hdPosition);
-		
-		
-	        
+		this.hdNumber = hdNumber;	        
 		info = new File(hdPosition+"/info.csv");
 		info.delete();
 		try {
 			writer = new PrintStream(new FileOutputStream(info,true));
-			writer.println("Slot; Taille(en bytes)");
 			writer.close();
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();

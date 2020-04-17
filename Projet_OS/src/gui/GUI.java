@@ -85,14 +85,11 @@ public class GUI extends JFrame implements Runnable{
 	//hardisk
 	private Interaction authhdd = new Interaction();
 	
-	private HardDisk hd1=new HardDisk("hd1", "./src/harddisks1");
+	private HardDisk hd1=new HardDisk("hd1", "./src/harddisks1", 1);
 	private HardDiskDriver hd1driver = new HardDiskDriver("hd1driver", authhdd, hd1);
-	private HardDisk hd2=new HardDisk("hd2", "./src/harddisks2");
+	
+	private HardDisk hd2=new HardDisk("hd2", "./src/harddisks2", 2);
 	private HardDiskDriver hd2driver = new HardDiskDriver("hd2driver", authhdd, hd2);
-	
-
-	
-	
 	
 	
 	// Arraylist of Processus
@@ -102,7 +99,7 @@ public class GUI extends JFrame implements Runnable{
 	
 	// Transcriptor for keyboard imput 
 	Primitivetranscriptor traductor = new Primitivetranscriptor( roundrobin);
-
+	
 	//-------------------------
 	//five major parts of the GUI
 	//--------------------------
@@ -172,8 +169,7 @@ public class GUI extends JFrame implements Runnable{
 		mousegui.getPanel().setPreferredSize(new Dimension(400, 200));
 		contentPane.add(mousegui.getPanel());
 		
-		
-		
+	
 		
 		//adjusting the panels of each five parts:
 		
@@ -281,7 +277,8 @@ public class GUI extends JFrame implements Runnable{
 		Processuslist plist = roundrobin.getPlist();
 		
 		pchart.refreshData(); //refresh the dataset of the pie chart
-		
+		hd1driver.updatehd();
+		hd2driver.updatehd();
 		
 		bchart.refreshData();
 		
@@ -340,6 +337,7 @@ public class GUI extends JFrame implements Runnable{
 			else {
 				//Updatevalues();
 			}
+			bchart.refreshData();
 			/*
 			keyboard.resetContent();
 			invitecomm.setText(null);

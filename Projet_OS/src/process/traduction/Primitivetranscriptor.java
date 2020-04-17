@@ -56,18 +56,25 @@ public class Primitivetranscriptor extends Thread{
 				String slotname = tabinput[4];
 				String hdname = tabinput[2];
 				String selectedhd =" ";
+				
 				if(hdname.contentEquals("hd1")) {
 					selectedhd = "harddisks1/";
-				
 				}
 				else if(hdname.contentEquals("hd2")) {
 					selectedhd = "harddisks2/";
 				}
-				// we need to test before adding slot (doing it when the HD is ready)
-				String slotadress = HardDisks_position + selectedhd + slotname;
-				proctr.transcription(proc, slotadress);
-				// we add the processus to the bufferarray, to execute it a the next round robin iteration
-				roundrobin.addProcRR(proc);				
+				String path = "./src/"+selectedhd+slotname;
+				File file = new File(path);
+				if (file.exists()) {
+					// we need to test before adding slot (doing it when the HD is ready)
+					String slotadress = HardDisks_position + selectedhd + slotname;
+					proctr.transcription(proc, slotadress);
+					// we add the processus to the bufferarray, to execute it a the next round robin iteration
+					roundrobin.addProcRR(proc);		
+				}
+				else {
+					scdriver.dynamicScreenadd("Slot "+ slotname +" in Disk " + hdname + " doesn't exisits, please create it and add a processus in before\n");
+				}
 			}
 			// if the primitive is a wipe		
 			if(tabinput[primitive_identifier].contains("wipe")) {
@@ -166,7 +173,7 @@ public class Primitivetranscriptor extends Thread{
 				String slotname = tabinput[4];
 				if(hdname.equals(hd1.getHd().getperipheralid())) {
 					if(slotname.contentEquals("slot1") || slotname.contentEquals("slot2")  ||slotname.contentEquals("slot3")  ||slotname.contentEquals("slot4") ||slotname.contentEquals("slot5")) {
-						if(hd1.getHd().getSlotlist().containsKey(slotname)) {
+						if(hd1.getSlotinfo().containsKey(slotname)) {
 							scdriver.dynamicScreenadd("ERROR : " + slotname + " already exists\n");
 						}
 						else {
@@ -184,7 +191,7 @@ public class Primitivetranscriptor extends Thread{
 				}
 				else if(hdname.equals(hd2.getHd().getperipheralid())) {
 					if(slotname.contentEquals("slot1") || slotname.contentEquals("slot2")  ||slotname.contentEquals("slot3")  ||slotname.contentEquals("slot4") ||slotname.contentEquals("slot5")) {
-						if(hd2.getHd().getSlotlist().containsKey(slotname)) {
+						if(hd2.getSlotinfo().containsKey(slotname)) {
 							scdriver.dynamicScreenadd("ERROR : " + slotname + " already exists\n");
 						}
 						else {
@@ -262,15 +269,17 @@ public class Primitivetranscriptor extends Thread{
 			if(hdname.contentEquals("hd1")) {
 				File testexists = new File ("./src/harddisks1/"+slotname);
 				if(testexists.exists()) {
-					try {
-						BufferedWriter write = new BufferedWriter(new FileWriter("./src/harddisks1/"+slotname, true));
-						write.write(stradd);
-						write.close();
-						scdriver.dynamicScreenadd("Writing operation in slot "+ slotname+" of the disk "+hdname+" has been done \n");
-					} catch (IOException e) {
-						scdriver.dynamicScreenadd("ERROR : Writing in slot " + slotname + " wasn't possible, please retry\n");
+					if(testexists.length() + stradd.length() < 2000) {
+						try {
+							BufferedWriter write = new BufferedWriter(new FileWriter("./src/harddisks1/"+slotname, true));
+							write.write(stradd);
+							write.close();
+							scdriver.dynamicScreenadd("Writing operation in slot "+ slotname+" of the disk "+hdname+" has been done \n");
+						} catch (IOException e) {
+							scdriver.dynamicScreenadd("ERROR : Writing in slot " + slotname + " wasn't possible, please retry\n");
+						}
+						//hd1.write(stradd, slotname);
 					}
-					//hd1.write(stradd, slotname);
 				}
 				else {
 					scdriver.dynamicScreenadd("ERROR : Slot " + slotname + " in Disk "+ hdname +" does not exists, please create in first\n");
@@ -279,15 +288,17 @@ public class Primitivetranscriptor extends Thread{
 			else if(hdname.contentEquals("hd2")) {
 				File testexists = new File ("./src/harddisks2/"+slotname);
 				if(testexists.exists()) {
-					try {
-						BufferedWriter write = new BufferedWriter(new FileWriter("./src/harddisks2/"+slotname, true));
-						write.write(stradd);
-						write.close();
-						scdriver.dynamicScreenadd("Writing primitive on the slot "+slotname+" in disk "+hdname+" has succeed\n");
-					} catch (IOException e) {
-						scdriver.dynamicScreenadd("ERROR : Writing in slot " + slotname + " wasn't possible, please retry\n");
+					if(testexists.length() + stradd.length() < 2000) {
+						try {
+							BufferedWriter write = new BufferedWriter(new FileWriter("./src/harddisks2/"+slotname, true));
+							write.write(stradd);
+							write.close();
+							scdriver.dynamicScreenadd("Writing primitive on the slot "+slotname+" in disk "+hdname+" has succeed\n");
+						} catch (IOException e) {
+							scdriver.dynamicScreenadd("ERROR : Writing in slot " + slotname + " wasn't possible, please retry\n");
+						}
+						//hd2.write(stradd, slotname);
 					}
-					//hd2.write(stradd, slotname);
 				}
 				else {
 					scdriver.dynamicScreenadd("ERROR : Slot " + slotname + " in Disk "+ hdname +" does not exists, please create in first\n");
