@@ -120,7 +120,6 @@ public class OperationExec {
 		// Execution of print
 		else if(operation instanceof Print) {
 			logger.info("Executed a Print in Processus : " + proc.getProcessusname());
-			//ArrayListVisitor<Void> visitor = new OperationVisitor();
 			Print printer = (Print) operation;
 			if(printer.getPrintop() instanceof Intvariable) {
 				Intvariable var = proc.getVarbuffer().getIntvariablelist().get(printer.getPrintop().getName());
@@ -131,7 +130,6 @@ public class OperationExec {
 				Stringvariable var = proc.getVarbuffer().getStringvariablelist().get(printer.getPrintop().getName());
 				scdriver.dynamicScreenadd(proc.getProcessusname()+" >> "+var.toString() + "\n");
 			}
-			//visitor.visit(printer);
 			proc.setAlreadydoneoperation(proc.getAlreadydoneoperation() + 1);
 		}
 		// skip if we are in instance of a variable
@@ -221,7 +219,6 @@ public class OperationExec {
 			String pname = proc.getProcessusname();
 			test.getIfprocessus().setProcessusname(pname);
 			test.getElseprocessus().setProcessusname(pname);
-			// System.out.println(test.isNeedcheck());
 			if(test.isNeedcheck() == true) {
 				Comparaison comp = test.getComparaison();
 				ArrayListVisitor<Void> visitor = new OperationVisitor();
@@ -250,7 +247,7 @@ public class OperationExec {
 					proc.setAlreadydoneoperation(proc.getAlreadydoneoperation() + 1);
 				}
 			}
-			//else {
+			
 				int res = test.getComparaison().getResult().getContent();
 				if(res == 0 && test.getIfprocessus().getAlreadydoneoperation() < test.getIfprocessus().getNboperation()) {
 					int currentop = test.getIfprocessus().getAlreadydoneoperation();
@@ -272,12 +269,8 @@ public class OperationExec {
 					test.setNeedcheck(true);
 					proc.setAlreadydoneoperation(proc.getAlreadydoneoperation() + 1);
 				}
-			//}
-		}
-		/*
-		else if(operation == null) {
 			
 		}
-		*/
+		
 	}
 }
