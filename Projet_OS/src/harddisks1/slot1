@@ -1,0 +1,30 @@
+PROCESSUSNAME base10_to_binaire
+# Definition des variables
+STRING debut = -------------------- DEBUT CONVERTISSEUR --------------------
+STRING fin = -------------------- FIN CONVERTISSEUR --------------------
+STRING desc = Le bit de poids faible est le premier ecrit et celui de poids fort est en haut
+STRING nombredebits = Le nombre de bits est donc :
+STRING nombreanalyse = Le programme réalise la conversion en binaire du nombre suivant :
+INT value = 564957645
+INT deux = 2
+INT un = 1
+INT nbbits = 0
+STRING binone = 1
+STRING binzero = 0
+INT modulo = 0
+INT zero = 0
+# Programme
+PRINT debut
+PRINT nombreanalyse
+PRINT value
+PRINT desc
+WHILE value > zero ;
+INCREMENT nbbits
+modulo = value % deux
+PRINT modulo
+value = value / deux
+SLEEP 200
+ENDWHILE ;
+PRINT nombredebits
+PRINT nbbits
+PRINT fin
