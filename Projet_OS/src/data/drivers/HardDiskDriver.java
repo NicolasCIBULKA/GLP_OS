@@ -47,7 +47,9 @@ public class HardDiskDriver extends Driver{
 		hd.incrementSlotnumber();
 	}
 	
-	
+	public void updatehd(HardDisk hd) {
+		
+	}
 	
 	public void write(String text, String slotName) throws StringIndexOutOfBoundsException {
 		Slot s = hd.getSlotlist().get(slotName);

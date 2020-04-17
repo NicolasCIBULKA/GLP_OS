@@ -303,7 +303,18 @@ public class GUI extends JFrame implements Runnable{
 			Updatevalues();
 		}while(roundrobin.getPlist().getProcessuslist().size() > 0);
 		roundrobin.setCPUUsing(0);
-		Updatevalues();
+		bchart.refreshData();
+		pchart.refreshData(); //refresh the dataset of the pie chart
+		try {
+			affichprocess.setPage("file:./tab.html");
+			Document doc = affichprocess.getDocument();
+			doc.putProperty(Document.StreamDescriptionProperty, null);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		ptable.refreshProcTable(plist , roundrobin.getActiveprocposition());
+		//Updatevalues();
 	}
 	
 	
@@ -327,7 +338,7 @@ public class GUI extends JFrame implements Runnable{
 				}
 			}
 			else {
-				Updatevalues();
+				//Updatevalues();
 			}
 			/*
 			keyboard.resetContent();
