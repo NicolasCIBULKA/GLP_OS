@@ -1,2 +1,16 @@
-PROCESSUSNAME fibonacci
-# Définition des variables
+PROCESSUSNAME Suite
+# Definition des variables
+STRING debut = ----------------------- SUITE -----------------------
+STRING fin = --------------------- FIN SUITE ---------------------
+INT limite = 400
+INT i = 1
+STRING valeur = valeur de la suite :
+# Code
+PRINT debut
+FOR i FROM 2 TO 20 ;
+SLEEP 500
+i = i + i
+PRINT valeur
+PRINT i
+DONE
+PRINT fin

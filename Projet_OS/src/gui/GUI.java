@@ -276,12 +276,8 @@ public class GUI extends JFrame implements Runnable{
 		int activeprocposition = roundrobin.getActiveprocposition();
 		Processuslist plist = roundrobin.getPlist();
 		
-		pchart.refreshData(); //refresh the dataset of the pie chart
-		hd1driver.updatehd();
-		hd2driver.updatehd();
-		
+		pchart.refreshData(); //refresh the dataset of the pie chart		
 		bchart.refreshData();
-		
 		ptable.refreshProcTable(plist , activeprocposition);
 		try {
 			affichprocess.setPage("file:./tab.html");
@@ -338,6 +334,8 @@ public class GUI extends JFrame implements Runnable{
 				//Updatevalues();
 			}
 			bchart.refreshData();
+			hd1driver.updatehd();
+			hd2driver.updatehd();
 			/*
 			keyboard.resetContent();
 			invitecomm.setText(null);
@@ -402,6 +400,8 @@ public class GUI extends JFrame implements Runnable{
 				else {
 					Updatevalues();
 				}
+				hd1driver.updatehd();
+				hd2driver.updatehd();
 		    }
 
 		}
