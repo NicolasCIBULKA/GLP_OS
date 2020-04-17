@@ -103,37 +103,7 @@ public class Primitivetranscriptor extends Thread{
 				else {
 					scdriver.dynamicScreenadd("Slot "+ slotname +" does not exists in HardDisk" + hdname + "\n");
 				}
-					/*if(slotname.contentEquals("slot1") || slotname.contentEquals("slot2")  ||slotname.contentEquals("slot3")  ||slotname.contentEquals("slot4") ||slotname.contentEquals("slot5")  ) {
-						if(file.exists()) {
-							try {
-								BufferedWriter brwrite = new BufferedWriter(new FileWriter("./src/harddisks1/"+slotname));
-								brwrite.write("");
-								brwrite.close();
-								scdriver.dynamicScreenadd("Slot "+ slotname +" in Disk " + hdname + " has been sucessfully reset\n");
-								
-							} catch (IOException e) {
-								// TODO Auto-generated catch block
-								e.printStackTrace();
-							}
-							hd1.eraseSlot(slotname);
-							try {
-								hd1.addSlot(slotname);
-							} catch (FullHDException e) {
-								// TODO Auto-generated catch block
-								e.printStackTrace();
-							}
-							scdriver.dynamicScreenadd("Slot "+ slotname +" in Disk " + hdname + " has been sucessfully reset\n");
-
-						}
-						else {
-							scdriver.dynamicScreenadd("Slot "+ slotname +" does not exists in HardDisk" + hdname + "\n");
-						}
-						*
-					}
-					else {
-						scdriver.dynamicScreenadd("Please use slot named \"slot[1-5]\", for example \"slot4\" \n");
-					}
-						*/		
+							
 				
 			}
 			// else if the primitive is read
@@ -278,7 +248,6 @@ public class Primitivetranscriptor extends Thread{
 						} catch (IOException e) {
 							scdriver.dynamicScreenadd("ERROR : Writing in slot " + slotname + " wasn't possible, please retry\n");
 						}
-						//hd1.write(stradd, slotname);
 					}
 				}
 				else {
@@ -297,7 +266,6 @@ public class Primitivetranscriptor extends Thread{
 						} catch (IOException e) {
 							scdriver.dynamicScreenadd("ERROR : Writing in slot " + slotname + " wasn't possible, please retry\n");
 						}
-						//hd2.write(stradd, slotname);
 					}
 				}
 				else {
