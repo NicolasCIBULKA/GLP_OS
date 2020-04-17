@@ -105,10 +105,7 @@ public class Processus {
 			}
 		}
 		return result;
-		/*
-		cpuBurstLeft = operationlist.size();
-		return operationlist.size();
-		*/
+		
 	}
 	
 	public int getProcessussize() {

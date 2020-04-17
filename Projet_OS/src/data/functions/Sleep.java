@@ -24,12 +24,7 @@ public class Sleep extends Operation{
 		this.setTime(time);
 		this.setCpuusing(15);
 	}
-	/*
-	public Sleep(Processus processus) {
-		super(processus);
-		this.setTime(1000);
-	}
-	*/
+	
 	public Sleep() {
 		this.setTime(1000);
 	}

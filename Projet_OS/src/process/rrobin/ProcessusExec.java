@@ -115,28 +115,18 @@ public class ProcessusExec {
 						
 						// Execution of print
 						else if(proc.getOplist().get(i) instanceof Print) {
-							//System.out.println(proc.getOplist());
 							ArrayListVisitor<Void> visitor = new OperationVisitor();
 							Print printer = (Print) proc.getOplist().get(i);
-							//System.out.println(proc.getVarbuffer().getIntvariablelist().get(printer.getPrintop().getName()));
 							if(printer.getPrintop() instanceof Intvariable) {
 								Intvariable var = proc.getVarbuffer().getIntvariablelist().get(printer.getPrintop().getName());
-								//System.out.println(proc.getVarbuffer().getIntvariablelist());
-								//System.out.println(var.getContent());
-								//printer.setPrintop(var);
 								scdriver.addStringScreen(var.toString());
 							}
 							else if(printer.getPrintop() instanceof Stringvariable) {
 								Stringvariable var = proc.getVarbuffer().getStringvariablelist().get(printer.getPrintop().getName());
-								//System.out.println(var.toString());
-								//printer.setPrintop(var);
 								scdriver.addStringScreen(var.toString());
 							}
-							//System.out.println(proc.getVarbuffer().getIntvariablelist());
-							//System.out.println(proc.getVarbuffer().getStringvariablelist());
 							visitor.visit(printer);
-							//System.out.println(printer.getPrintop());
-							
+			
 						}
 						// Execution of the loops Operation
 						
@@ -166,7 +156,6 @@ public class ProcessusExec {
 							ArrayListVisitor<Void> visitor = new OperationVisitor();
 							visitor.visit(comp);
 							while(comp.getResult().getContent() == 0) {
-								//System.out.println( "comparaison" + comp.getResult().getContent() );
 								whloop.getOperations().setVarbuffer(proc.getVarbuffer());
 								execution(whloop.getOperations());
 								proc.setVarbuffer(whloop.getOperations().getVarbuffer());

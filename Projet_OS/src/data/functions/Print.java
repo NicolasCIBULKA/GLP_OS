@@ -46,7 +46,6 @@ public class Print extends Operation{
 	}
 	
 	public String print() {
-		//System.out.println(this.getPrintop());
 		return this.getPrintop().toString();
 	}
 }

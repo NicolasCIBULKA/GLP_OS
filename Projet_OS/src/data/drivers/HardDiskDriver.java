@@ -19,6 +19,10 @@ import logs.LoggerUtility;
 
 
 public class HardDiskDriver extends Driver{
+	 
+	// --------------------------------------
+	// Attributs
+	// --------------------------------------
 	
 	private static Logger logger = LoggerUtility.getLogger(HardDiskDriver.class, "text");
 	private HardDisk hd;
@@ -30,6 +34,10 @@ public class HardDiskDriver extends Driver{
 		this.hd = hd;
 		info = hd.getInfo();
 	}
+	
+	// --------------------------------------
+	// Methods
+	// --------------------------------------
 	
 	public void addSlot(String name) throws FullHDException{
 		Slot slot = new Slot(name,hd);
@@ -227,25 +235,6 @@ public class HardDiskDriver extends Driver{
 		this.slotinfo = slotinfo;
 	}
 
-	public static void main(String[] args) {
-		HardDisk hd = new HardDisk("76","./src/harddisks1", 1);
-		HardDisk hd2 = new HardDisk("tre","./src/harddisks2", 2);
-
-		Interaction authorization = new Interaction();
-		HardDiskDriver hdd = new HardDiskDriver("23",authorization,hd);
-		HardDiskDriver hdd2 = new HardDiskDriver("3",authorization,hd2);
-		try {
-			hdd.addSlot("A");
-			hdd2.addSlot("B");
-			hdd2.addSlot("C");
-			hdd.write("Elle a les yeux bleus pour effacer ce ciel gris ","A");
-			hdd2.write("Elle a les yeux bleus pour effacer ce ciel fruit ","C");
-			hdd2.write("Elle a les yeux bleus pour effacer ce ciel gris ","B");
-			hdd2.eraseSlot("B");
-		} catch (FullHDException e) {
-			e.printStackTrace();
-		}
-	}
 
 	
 }

@@ -96,7 +96,6 @@ public class Transcriptor {
 								// We test the case if a ifelse test is called in the loop
 								splittedline = line.split(" ");
 								if(splittedline[identifier_loop_test_function_allocate_POSITION].contains("IF")) {
-									//System.out.println("oui");
 									logger.info("Transcriptor - Transcripting a ForLoop in IFELSE test in Processus "+ proc.getProcessusname() );
 									if(splittedline.length == 5) {
 										Processus ifproc = new Processus();
@@ -144,7 +143,6 @@ public class Transcriptor {
 								}
 								else {
 									Operation loopoperation = operationfinder(line, currentline, intvariablelist, stringvariablelist);
-									//System.out.println( "loopoperation " + loopoperation);
 									forloop.getOperations().addOperation(loopoperation);
 									
 								}
@@ -152,7 +150,6 @@ public class Transcriptor {
 								currentline++;
 							}
 						currentline++;
-						//System.out.println(forloop.getOperations().getOplist());
 						proc.addOperation(forloop);
 						}
 						else {
@@ -187,7 +184,6 @@ public class Transcriptor {
 								// We test the case if a ifelse test is called in the loop
 								splittedline = line.split(" ");
 								if(splittedline[identifier_loop_test_function_allocate_POSITION].contains("IF")) {
-									//System.out.println("oui");
 									if(splittedline.length == 5) {
 										logger.info("Transcriptor - Transcripting a IFELSE test in Whileloop in Processus "+ proc.getProcessusname() );
 										Processus ifproc = new Processus();
@@ -304,13 +300,11 @@ public class Transcriptor {
 					Operation operation = operationfinder(line, currentline, intvariablelist, stringvariablelist);
 					if(operation != null) {
 						proc.addOperation(operation);
-						//System.out.println(proc.getOplist());
 					}
 				}
 				currentline++;
 			}
 			procfile.close();
-			//System.out.println(this.intvariablelist);
 		} 
 		catch (IOException e) {
 			e.printStackTrace();
@@ -341,10 +335,8 @@ public class Transcriptor {
 		}
 		// Operation haven't been recognized
 		else if(splittedline.length == 5) {
-			//System.out.println("addition" + splittedline[3]);
 			if(splittedline[identifier_arithmetical_POSITION].contains("+")) {
 				logger.info("Transcriptor - Addition found ");
-				//System.out.println("addition" + linenumber);
 				String op1 = splittedline[2];
 				String op2 = splittedline[4];
 				String sol = splittedline[0];
@@ -447,9 +439,7 @@ public class Transcriptor {
 			if(splittedline.length == 2) {
 				logger.info("Transcriptor - Print found ");
 				if(stringvariablelist.containsKey(splittedline[1])) {
-					//System.out.println(splittedline[1]);
 					Print operation = new Print(stringvariablelist.get(splittedline[1]));
-					//System.out.println("operation avant passage " + operation.getPrintop());
 					return operation;
 				}
 				else if(intvariablelist.containsKey(splittedline[1])) {
@@ -540,7 +530,6 @@ public class Transcriptor {
 				for(int i = 3; i < splittedline.length; i++) {
 					result += splittedline[i]  + " ";
 				}
-				//String finalresult = result.replaceAll(result, "\"");
 				Stringvariable operation = new Stringvariable(splittedline[1], result);
 				stringvariablelist.put(splittedline[1], operation);
 				return operation;
