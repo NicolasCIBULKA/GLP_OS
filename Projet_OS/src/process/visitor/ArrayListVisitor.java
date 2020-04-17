@@ -20,7 +20,6 @@ public interface ArrayListVisitor<T> {
 	
 	// Driver
 	
-	// T visit(ScreenDriver node);
 	
 	// Arithmetical operations
 	
