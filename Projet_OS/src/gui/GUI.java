@@ -216,7 +216,7 @@ public class GUI extends JFrame implements Runnable{
 		
 		affichdisk.setEditable(false);
 		
-		pandisk.setBorder(BorderFactory.createTitledBorder("Instruments "));
+		pandisk.setBorder(BorderFactory.createTitledBorder("Instruments"));
 		pandisk.setLayout(new GridLayout(2,1));
 		ChartPanel chartpan1= new ChartPanel(pchart.getCpuPie(), 200, 225, 150,150, 200, 200, true, true, false, false, false, true);
 		ChartPanel chartpan2= new ChartPanel(bchart.getSlotBarChart(), 200, 225, 150,150, 200, 200, true, true, false, false, false, true);
@@ -270,7 +270,14 @@ public class GUI extends JFrame implements Runnable{
 	
 	
 	public void Updatevalues() {
+		affichecran.setText("");
 		affichecran.setText(screenDriver.toString());
+		
+		
+		//System.out.println(screenDriver.toString());
+		//affichecran.repaint();
+		//affichecran.selectAll();
+		//affichecran.replaceSelection("");
 		int activeprocposition = roundrobin.getActiveprocposition();
 		Processuslist plist = roundrobin.getPlist();
 		
@@ -291,6 +298,7 @@ public class GUI extends JFrame implements Runnable{
 	public void run() {
 		do {
 			roundrobin.RrobinUnit();
+			
 			Updatevalues();
 		}while(roundrobin.getPlist().getProcessuslist().size() > 0);
 		roundrobin.setCPUUsing(0);
@@ -326,7 +334,7 @@ public class GUI extends JFrame implements Runnable{
 			else {
 			}
 			bchart.refreshData();
-<<<<<<< HEAD
+
 			hd1driver.updatehd();
 			hd2driver.updatehd();
 			/*
@@ -335,10 +343,6 @@ public class GUI extends JFrame implements Runnable{
 			affichecran.setText(" ");
 			affichecran.setText(screenDriver.toString());
 			*/
-=======
-			
->>>>>>> branch 'master' of https://github.com/NicolasCIBULKA/GLP_OS.git
-			
 		}
 	}
 

@@ -15,6 +15,7 @@ public class ScreenDriver extends Driver{
 	// --------------------------------------
 	private Screen screen;
 	private String translatedscreen;
+	private String lastline;
 	// --------------------------------------
 	// Methods
 	// --------------------------------------
@@ -68,18 +69,30 @@ public class ScreenDriver extends Driver{
 	public void dynamicScreenadd(String scadd) {
 		String content;
 		content = screen.getScreencontent();
-		this.resetScreen();
-		screen.setScreencontent(content + scadd);
+		//this.resetScreen();
+		//this.setTranslatedscreen("");
+		//screen.setScreencontent(content + scadd);
+		this.addStringScreen(scadd);
 	}
 	
 	// toString
 	
+	public String getLastline() {
+		return lastline;
+	}
+
+	public void setLastline(String lastline) {
+		this.lastline = lastline;
+	}
+
 	public String toString() {
 		String[] screentab = this.getScreencontent().split(";");
+		String translate = ">> OS_SIMULATION :\n";
 		for(int i = 0; i < screentab.length; i++) {
-			this.setTranslatedscreen(this.getTranslatedscreen() + screentab[i]);
+			//translate = this.getTranslatedscreen();
+			translate += screentab[i];
 		}
-		return this.translatedscreen;
+		return translate;
 	}
 	
 	
