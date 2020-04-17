@@ -30,7 +30,6 @@ public class ProcTable {
 		try {
 			BufferedWriter writer = new BufferedWriter(new FileWriter(tabpath, false));
 			writer.write("<table style=\" border-collapse:collapse; \">");
-			//writer.write("<style>td{border : 1px solid black;}</style>");
 			writer.write("<tr>");
 			writer.write("<td style = \"border:1px solid black; border-collapse:collapse; \">Processus Name</td><td style = \" border-collapse:collapse; border:1px solid black; \">Active</td>");
 			String text;
