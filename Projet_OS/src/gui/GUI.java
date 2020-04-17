@@ -175,7 +175,6 @@ public class GUI extends JFrame implements Runnable{
 		
 		//screen
 		affichecran.setEditable(false);
-		//affichprocess.setEditable(false);
 		scroll.setAutoscrolls(true);
 		
 		
@@ -271,7 +270,6 @@ public class GUI extends JFrame implements Runnable{
 	
 	
 	public void Updatevalues() {
-		//affichecran.setText("");
 		affichecran.setText(screenDriver.toString());
 		int activeprocposition = roundrobin.getActiveprocposition();
 		Processuslist plist = roundrobin.getPlist();
@@ -311,7 +309,6 @@ public class GUI extends JFrame implements Runnable{
 			e.printStackTrace();
 		}
 		ptable.refreshProcTable(plist , roundrobin.getActiveprocposition());
-		//Updatevalues();
 	}
 	
 	
@@ -319,10 +316,6 @@ public class GUI extends JFrame implements Runnable{
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			
-			//affichecran.setText(affichecran.getText() + "\n" + invitecomm.getText());
-			//System.out.println(invitecomm.getText());
-			
-			//screenDriver.resetScreen();
 			
 			traductor.transcriptor(invitecomm.getText(), screenDriver, hd1driver, hd2driver);
 			keyboard.resetContent();
@@ -335,15 +328,9 @@ public class GUI extends JFrame implements Runnable{
 				}
 			}
 			else {
-				//Updatevalues();
 			}
 			bchart.refreshData();
-			/*
-			keyboard.resetContent();
-			invitecomm.setText(null);
-			affichecran.setText(" ");
-			affichecran.setText(screenDriver.toString());
-			*/
+			
 			
 		}
 	}
