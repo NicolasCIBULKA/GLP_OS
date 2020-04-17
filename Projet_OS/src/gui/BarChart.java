@@ -72,24 +72,8 @@ public class BarChart {
 
 	public void refreshData() {
 		
-		//to refresh the values of the bar chart:
-		/*
-		try {
-			BufferedReader brread = new BufferedReader(new FileReader(hd1driver.getHd().getHdPosition()+"info.csv"));
-			String line;
-			String[] tabline;
-			while((line = brread.readLine()) != null) {
-				tabline = line.split(";");
-				
-			}
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		*/
+
+		
 		//if the slot exist, the number of character used (max size =2000char) in it is put into the hashmap slotcount and divided by 20 to get a % result
 		for(int index=1; index<= 5; index++) {
 			if(hd1driver.getSlotinfo().containsKey("slot"+index)) {
